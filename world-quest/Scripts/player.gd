@@ -2,6 +2,8 @@ extends CharacterBody2D
 @export var speed = 100
 var screen_size
 
+# testing github commit changes
+
 func _ready():
 	''' player startup '''
 	screen_size = get_viewport_rect().size
