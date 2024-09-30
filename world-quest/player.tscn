@@ -1,13 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4en6qsd4qi5m"]
+[gd_scene load_steps=13 format=3 uid="uid://b4en6qsd4qi5m"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_a5bgk"]
-[ext_resource type="Texture2D" uid="uid://dto4hn4je6y8k" path="res://icon.svg" id="2_84idv"]
+[ext_resource type="Texture2D" uid="uid://dfli4rxfoq5kv" path="res://art/walk_down1.png" id="2_axghm"]
+[ext_resource type="Texture2D" uid="uid://cgdlg5oapti6" path="res://art/walk_down2.png" id="3_guxlf"]
+[ext_resource type="Texture2D" uid="uid://bsl1fpxfhoswp" path="res://art/walk_down3.png" id="4_72a5i"]
+[ext_resource type="Texture2D" uid="uid://dwier5yq3rcct" path="res://art/walk_up1.png" id="5_qjc8i"]
+[ext_resource type="Texture2D" uid="uid://iew4vc3e46yw" path="res://art/walk_up2.png" id="6_mqxss"]
+[ext_resource type="Texture2D" uid="uid://2u3deri8v8b4" path="res://art/walk_up3.png" id="7_1xf24"]
+[ext_resource type="Texture2D" uid="uid://cdffxisseh61j" path="res://art/walk_right1.png" id="8_nud40"]
+[ext_resource type="Texture2D" uid="uid://elpk8c23vx35" path="res://art/walk_right2.png" id="9_6mf5x"]
+[ext_resource type="Texture2D" uid="uid://dadihanxxqffg" path="res://art/walk_right3.png" id="10_4fi24"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_85u5v"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_84idv")
+"texture": ExtResource("2_axghm")
 }],
 "loop": true,
 "name": &"idle",
@@ -15,7 +23,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_84idv")
+"texture": ExtResource("5_qjc8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mqxss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1xf24")
 }],
 "loop": true,
 "name": &"walk_back",
@@ -23,7 +37,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_84idv")
+"texture": ExtResource("2_axghm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_guxlf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_72a5i")
 }],
 "loop": true,
 "name": &"walk_front",
@@ -31,7 +51,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_84idv")
+"texture": ExtResource("8_nud40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6mf5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4fi24")
 }],
 "loop": true,
 "name": &"walk_side",
@@ -46,7 +72,7 @@ script = ExtResource("1_a5bgk")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_85u5v")
-animation = &"idle"
+animation = &"walk_back"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_g3ct8")

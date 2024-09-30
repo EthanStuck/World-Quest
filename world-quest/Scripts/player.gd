@@ -14,15 +14,6 @@ func _process(delta):
 
 func move(delta):
 	''' controls player movement '''
-	# player movement x direction
-	if Input.is_action_pressed('move_right'):
-		velocity.x = 1
-		$Animations.animation = 'walk_side'
-	elif Input.is_action_pressed('move_left'):
-		velocity.x = -1
-		$Animations.animation = 'walk_side'
-	else:
-		velocity.x = 0
 	
 	# player movement y direction
 	if Input.is_action_pressed('move_down'):
@@ -33,6 +24,16 @@ func move(delta):
 		$Animations.animation = 'walk_back'
 	else:
 		velocity.y = 0
+	
+	# player movement x direction
+	if Input.is_action_pressed('move_right'):
+		velocity.x = 1
+		$Animations.animation = 'walk_side'
+	elif Input.is_action_pressed('move_left'):
+		velocity.x = -1
+		$Animations.animation = 'walk_side'
+	else:
+		velocity.x = 0
 	
 	# normalize movement
 	if velocity.length() > 0:
