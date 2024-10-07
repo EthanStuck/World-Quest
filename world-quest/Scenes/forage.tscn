@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkodwqm8vyx33"]
+[gd_scene load_steps=7 format=3 uid="uid://dkodwqm8vyx33"]
 
 [ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://art/Environment/Town/Town Ground.png" id="1_wkxcn"]
 [ext_resource type="Script" path="res://Scripts/forage.gd" id="1_xne0s"]
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="2_yeobe"]
 [ext_resource type="PackedScene" uid="uid://bgf7u8fldjavx" path="res://Scenes/forage_item.tscn" id="4_q0gx5"]
+[ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="5_5jdd0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4d0a"]
 size = Vector2(247, 20)
@@ -56,6 +57,9 @@ offset_bottom = 170.0
 text = "
 "
 uppercase = true
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_5jdd0")
 
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
 [connection signal="collected" from="Items/ForageItem" to="." method="_on_forage_item_collected"]

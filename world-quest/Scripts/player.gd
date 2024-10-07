@@ -2,12 +2,15 @@ extends CharacterBody2D
 @export var speed = 100
 var screen_size = Vector2(1000,1000)
 
+
+var foot_step = false
 # testing github commit changes
 
 func _ready():
 	''' player startup '''
 	#screen_size = get_viewport_rect().size
 	$Animations.play()
+	$GameMusic.play()
 	
 func _process(delta):
 	''' continuous processes '''
@@ -41,6 +44,8 @@ func move(delta):
 	if velocity.length() > 0:
 		$Animations.play()
 		velocity = velocity.normalized() * speed
+		foot_step_sound()
+		
 	
 	else:
 		#$Animations.animation = 'idle'
@@ -55,3 +60,13 @@ func move(delta):
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		velocity = velocity.slide(collision.get_normal())
+
+func foot_step_sound():
+	''' make foot step sounds when walking '''
+	if not foot_step:
+		$FootStep.play()
+		# make sound slightly less repetitive
+		$FootStep.pitch_scale = randf_range(.95, 1.05)
+		foot_step = true
+		await get_tree().create_timer(.55).timeout
+		foot_step = false
