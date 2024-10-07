@@ -7,7 +7,7 @@ size = Vector2(69, 152)
 
 [node name="Statue" type="Area2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="FullSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_8dt6n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

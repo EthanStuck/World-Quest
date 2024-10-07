@@ -39,10 +39,12 @@ func move(delta):
 	
 	# normalize movement
 	if velocity.length() > 0:
+		$Animations.play()
 		velocity = velocity.normalized() * speed
 	
 	else:
-		$Animations.animation = 'idle'
+		#$Animations.animation = 'idle'
+		$Animations.stop()
 	
 	# update position and control animation direction
 	$Animations.flip_h = velocity.x < 0
