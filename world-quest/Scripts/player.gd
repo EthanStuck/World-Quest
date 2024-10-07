@@ -1,12 +1,12 @@
 extends CharacterBody2D
 @export var speed = 100
-var screen_size
+var screen_size = Vector2(1000,1000)
 
 # testing github commit changes
 
 func _ready():
 	''' player startup '''
-	screen_size = get_viewport_rect().size
+	#screen_size = get_viewport_rect().size
 	$Animations.play()
 	
 func _process(delta):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b4en6qsd4qi5m"]
+[gd_scene load_steps=14 format=3 uid="uid://b4en6qsd4qi5m"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_a5bgk"]
 [ext_resource type="Texture2D" uid="uid://700db6nyeu8g" path="res://art/Characters/main character/walk_up1.png" id="2_8qcdx"]
@@ -65,10 +65,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3ct8"]
-size = Vector2(32, 60)
+size = Vector2(28, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_usnea"]
+size = Vector2(27, 77)
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(566, 287)
 script = ExtResource("1_a5bgk")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
@@ -76,6 +78,16 @@ scale = Vector2(0.11, 0.11)
 sprite_frames = SubResource("SpriteFrames_85u5v")
 animation = &"idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1, 28)
 shape = SubResource("RectangleShape2D_g3ct8")
+
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="HurtBoxShape" type="CollisionShape2D" parent="HurtBox"]
+visible = false
+position = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_usnea")
+
+[node name="Camera2D" type="Camera2D" parent="."]
