@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkodwqm8vyx33"]
+[gd_scene load_steps=6 format=3 uid="uid://dkodwqm8vyx33"]
 
 [ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://art/Environment/Town/Town Ground.png" id="1_wkxcn"]
 [ext_resource type="Script" path="res://Scripts/forage.gd" id="1_xne0s"]
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="2_yeobe"]
+[ext_resource type="PackedScene" uid="uid://bgf7u8fldjavx" path="res://Scenes/forage_item.tscn" id="4_q0gx5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4d0a"]
 size = Vector2(247, 20)
@@ -24,4 +25,43 @@ position = Vector2(479, 55)
 position = Vector2(485.5, 1)
 shape = SubResource("RectangleShape2D_a4d0a")
 
+[node name="Items" type="Node" parent="."]
+
+[node name="ForageItem" parent="Items" instance=ExtResource("4_q0gx5")]
+position = Vector2(192, 183)
+
+[node name="ForageItem2" parent="Items" instance=ExtResource("4_q0gx5")]
+position = Vector2(714, 587)
+
+[node name="ForageItem3" parent="Items" instance=ExtResource("4_q0gx5")]
+position = Vector2(812, 224)
+
+[node name="ForageItem4" parent="Items" instance=ExtResource("4_q0gx5")]
+position = Vector2(164, 619)
+
+[node name="ForageItem5" parent="Items" instance=ExtResource("4_q0gx5")]
+position = Vector2(458, 499)
+
+[node name="ForageItem6" parent="Items" instance=ExtResource("4_q0gx5")]
+position = Vector2(633, 340)
+
+[node name="ForageItem7" parent="Items" instance=ExtResource("4_q0gx5")]
+position = Vector2(396, 873)
+
+[node name="NumItemsLabel" type="Label" parent="."]
+offset_left = 461.0
+offset_top = 147.0
+offset_right = 501.0
+offset_bottom = 170.0
+text = "
+"
+uppercase = true
+
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
+[connection signal="collected" from="Items/ForageItem" to="." method="_on_forage_item_collected"]
+[connection signal="collected" from="Items/ForageItem2" to="." method="_on_forage_item_collected"]
+[connection signal="collected" from="Items/ForageItem3" to="." method="_on_forage_item_collected"]
+[connection signal="collected" from="Items/ForageItem4" to="." method="_on_forage_item_collected"]
+[connection signal="collected" from="Items/ForageItem5" to="." method="_on_forage_item_collected"]
+[connection signal="collected" from="Items/ForageItem6" to="." method="_on_forage_item_collected"]
+[connection signal="collected" from="Items/ForageItem7" to="." method="_on_forage_item_collected"]
