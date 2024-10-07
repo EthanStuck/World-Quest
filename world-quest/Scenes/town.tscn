@@ -1,0 +1,175 @@
+[gd_scene load_steps=6 format=3 uid="uid://cygpy8pi86l0o"]
+
+[ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://art/Environment/Town/Town Ground.png" id="1_jlrqu"]
+[ext_resource type="PackedScene" uid="uid://e12gx1qyncbd" path="res://Scenes/house_1.tscn" id="2_tpas1"]
+[ext_resource type="PackedScene" uid="uid://wsw1srii3b3" path="res://Scenes/statue.tscn" id="3_b6cju"]
+[ext_resource type="PackedScene" uid="uid://dfbw8ambj1nh7" path="res://Scenes/old_man.tscn" id="4_l2skv"]
+[ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="5_5quc5"]
+
+[node name="Town" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1000.0
+offset_bottom = 1000.0
+texture = ExtResource("1_jlrqu")
+
+[node name="Statue" parent="." instance=ExtResource("3_b6cju")]
+position = Vector2(500, 440)
+
+[node name="Foliage" type="Node" parent="."]
+
+[node name="Trees" type="Node" parent="Foliage"]
+
+[node name="Tree" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(860, 43)
+
+[node name="Tree2" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(746, 14)
+
+[node name="Tree3" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(647, -31)
+
+[node name="Tree4" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(967, 11)
+
+[node name="Tree5" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(593, 57)
+
+[node name="Tree6" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(681, 114)
+
+[node name="Tree7" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(72, -1)
+
+[node name="Tree8" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(152, 8)
+
+[node name="Tree9" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(374, -8)
+
+[node name="Tree10" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(240, 59)
+
+[node name="Tree11" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(305, 108)
+
+[node name="Tree12" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(361, 137)
+
+[node name="Tree13" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(49, 98)
+
+[node name="Tree14" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(128, 136)
+
+[node name="Tree15" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(200, 155)
+
+[node name="Tree16" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(270, 207)
+
+[node name="Tree17" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(55, 225)
+
+[node name="Tree18" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(360, 238)
+
+[node name="Tree19" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(42, 310)
+
+[node name="Tree20" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(293, 286)
+
+[node name="Tree21" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(239, 833)
+
+[node name="Tree22" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(983, 260)
+
+[node name="Tree23" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(622, 231)
+
+[node name="Tree24" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(854, 206)
+
+[node name="Tree25" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(922, 300)
+
+[node name="Tree26" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(991, 642)
+
+[node name="Tree27" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(781, 138)
+
+[node name="Tree28" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(925, 115)
+
+[node name="Tree29" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(644, 761)
+
+[node name="Tree30" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(338, 790)
+
+[node name="Tree31" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(46, 716)
+
+[node name="Tree32" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(139, 853)
+
+[node name="Tree33" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(402, 761)
+
+[node name="Tree34" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(48, 911)
+
+[node name="Tree35" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(210, 942)
+
+[node name="Tree36" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(303, 901)
+
+[node name="Tree37" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(394, 897)
+
+[node name="Tree38" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(699, 811)
+
+[node name="Tree39" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(656, 882)
+
+[node name="Tree40" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(976, 765)
+
+[node name="Tree41" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(908, 810)
+
+[node name="Tree42" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(788, 850)
+
+[node name="Tree43" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(848, 912)
+
+[node name="Tree44" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(736, 938)
+
+[node name="Tree45" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
+position = Vector2(952, 933)
+
+[node name="Houses" type="Node" parent="."]
+
+[node name="House1" parent="Houses" instance=ExtResource("2_tpas1")]
+position = Vector2(158, 313)
+
+[node name="House2" parent="Houses" instance=ExtResource("2_tpas1")]
+position = Vector2(784, 311)
+
+[node name="House3" parent="Houses" instance=ExtResource("2_tpas1")]
+position = Vector2(156, 592)
+
+[node name="House4" parent="Houses" instance=ExtResource("2_tpas1")]
+position = Vector2(789, 599)
+
+[node name="NPCs" type="Node" parent="."]
+
+[node name="Old Man" parent="NPCs" instance=ExtResource("4_l2skv")]
+position = Vector2(558, 498)

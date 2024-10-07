@@ -1,15 +1,15 @@
 [gd_scene load_steps=13 format=3 uid="uid://b4en6qsd4qi5m"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_a5bgk"]
-[ext_resource type="Texture2D" uid="uid://r4ci8pi5cpg1" path="res://art/walk_down1.png" id="2_axghm"]
-[ext_resource type="Texture2D" uid="uid://cvelqkwtrc6vo" path="res://art/walk_down2.png" id="3_guxlf"]
-[ext_resource type="Texture2D" uid="uid://bbys273ya281p" path="res://art/walk_down3.png" id="4_72a5i"]
-[ext_resource type="Texture2D" uid="uid://700db6nyeu8g" path="res://art/walk_up1.png" id="5_qjc8i"]
-[ext_resource type="Texture2D" uid="uid://dlqc1q61ryiwg" path="res://art/walk_up2.png" id="6_mqxss"]
-[ext_resource type="Texture2D" uid="uid://4i5q4hk2l5da" path="res://art/walk_up3.png" id="7_1xf24"]
-[ext_resource type="Texture2D" uid="uid://cw4urovdklshf" path="res://art/walk_right1.png" id="8_nud40"]
-[ext_resource type="Texture2D" uid="uid://do0hu7jew0ydb" path="res://art/walk_right2.png" id="9_6mf5x"]
-[ext_resource type="Texture2D" uid="uid://bbh8bj88m1omm" path="res://art/walk_right3.png" id="10_4fi24"]
+[ext_resource type="Texture2D" path="res://art/walk_down1.png" id="2_axghm"]
+[ext_resource type="Texture2D" path="res://art/walk_down2.png" id="3_guxlf"]
+[ext_resource type="Texture2D" path="res://art/walk_down3.png" id="4_72a5i"]
+[ext_resource type="Texture2D" path="res://art/walk_up1.png" id="5_qjc8i"]
+[ext_resource type="Texture2D" path="res://art/walk_up2.png" id="6_mqxss"]
+[ext_resource type="Texture2D" path="res://art/walk_up3.png" id="7_1xf24"]
+[ext_resource type="Texture2D" path="res://art/walk_right1.png" id="8_nud40"]
+[ext_resource type="Texture2D" path="res://art/walk_right2.png" id="9_6mf5x"]
+[ext_resource type="Texture2D" path="res://art/walk_right3.png" id="10_4fi24"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_85u5v"]
 animations = [{
@@ -72,7 +72,7 @@ script = ExtResource("1_a5bgk")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_85u5v")
-animation = &"walk_back"
+animation = &"walk_side"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_g3ct8")

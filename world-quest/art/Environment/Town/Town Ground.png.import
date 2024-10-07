@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tlx8cbp6ooef"
-path="res://.godot/imported/background_boaz_2.png-374227f86a9c334dd9434db41dc63b57.ctex"
+uid="uid://bkmkjtn4exo32"
+path="res://.godot/imported/Town Ground.png-202fc3a33a5f4e82c1edd4ce1ad7aeb2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Town/background_boaz_2.png"
-dest_files=["res://.godot/imported/background_boaz_2.png-374227f86a9c334dd9434db41dc63b57.ctex"]
+source_file="res://art/Environment/Town/Town Ground.png"
+dest_files=["res://.godot/imported/Town Ground.png-202fc3a33a5f4e82c1edd4ce1ad7aeb2.ctex"]
 
 [params]
 

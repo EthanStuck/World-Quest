@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://wsw1srii3b3"]
+
+[ext_resource type="Texture2D" uid="uid://du2g0ycxrhtgl" path="res://art/Environment/Town/Statue-Full.png" id="1_8dt6n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qih3b"]
+size = Vector2(69, 152)
+
+[node name="Statue" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8dt6n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-0.5, 4)
+shape = SubResource("RectangleShape2D_qih3b")
