@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://da5yjfi57uhll"]
 
 [ext_resource type="Script" path="res://Scripts/fight.gd" id="1_5hnik"]
-[ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://art/Environment/Town/Town Ground.png" id="1_a25oi"]
+[ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://Art/Environment/Town/Town Ground.png" id="1_a25oi"]
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="2_ngss5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bb52g"]
