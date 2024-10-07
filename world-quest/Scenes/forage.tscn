@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkodwqm8vyx33"]
+
+[ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://art/Environment/Town/Town Ground.png" id="1_wkxcn"]
+[ext_resource type="Script" path="res://Scripts/forage.gd" id="1_xne0s"]
+[ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="2_yeobe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4d0a"]
+size = Vector2(247, 20)
+
+[node name="Forage" type="Node"]
+script = ExtResource("1_xne0s")
+
+[node name="Floor-Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_wkxcn")
+
+[node name="Player" parent="." instance=ExtResource("2_yeobe")]
+position = Vector2(479, 55)
+
+[node name="TravelBack" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TravelBack"]
+position = Vector2(485.5, 1)
+shape = SubResource("RectangleShape2D_a4d0a")
+
+[connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]

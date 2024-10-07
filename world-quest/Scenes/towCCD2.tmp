@@ -23,7 +23,7 @@ size = Vector2(20, 294)
 [node name="Town" type="Node"]
 script = ExtResource("1_coop3")
 
-[node name="Floor-Background" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1000.0
 offset_bottom = 1000.0
 texture = ExtResource("1_jlrqu")
@@ -220,7 +220,4 @@ position = Vector2(998, 471)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Travel Areas/ToFarming"]
 shape = SubResource("RectangleShape2D_xsqjt")
 
-[connection signal="area_entered" from="Travel Areas/ToFishing" to="." method="_on_to_fishing_area_entered"]
-[connection signal="area_entered" from="Travel Areas/ToFighting" to="." method="_on_to_fighting_area_entered"]
 [connection signal="area_entered" from="Travel Areas/ToForaging" to="." method="_on_to_foraging_area_entered"]
-[connection signal="area_entered" from="Travel Areas/ToFarming" to="." method="_on_to_farming_area_entered"]

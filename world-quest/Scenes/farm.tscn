@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6j0228ya77aj"]
+
+[ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://art/Environment/Town/Town Ground.png" id="1_anppi"]
+[ext_resource type="Script" path="res://Scripts/farm.gd" id="1_w7msv"]
+[ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="2_j2auh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_igecs"]
+size = Vector2(20, 185)
+
+[node name="Farm" type="Node"]
+script = ExtResource("1_w7msv")
+
+[node name="Floor-Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_anppi")
+
+[node name="Player" parent="." instance=ExtResource("2_j2auh")]
+position = Vector2(50, 502)
+
+[node name="TravelBack" type="Area2D" parent="."]
+position = Vector2(1, 502)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TravelBack"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_igecs")
+
+[connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
