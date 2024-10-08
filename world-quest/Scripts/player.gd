@@ -15,7 +15,7 @@ func _ready():
 func _process(delta):
 	''' continuous processes '''
 	move(delta)
-	$Animations.z_index = position.y
+	$Animations.z_index = position.y + 35
 
 
 func move(delta):

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/tree.gd" id="1_r6lwm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oyo2m"]
-size = Vector2(76, 67)
+size = Vector2(20, 40)
 
 [node name="Tree" type="StaticBody2D"]
 script = ExtResource("1_r6lwm")
@@ -13,6 +13,5 @@ script = ExtResource("1_r6lwm")
 texture = ExtResource("1_r2btx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-1, 64.5)
+position = Vector2(-2, 78)
 shape = SubResource("RectangleShape2D_oyo2m")

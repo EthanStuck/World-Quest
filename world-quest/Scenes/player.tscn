@@ -15,7 +15,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_mop0j")
+"texture": ExtResource("6_xjg1r")
 }],
 "loop": true,
 "name": &"idle",
@@ -88,7 +88,7 @@ animation = &"idle"
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(1, 28)
+position = Vector2(1, 33)
 shape = SubResource("RectangleShape2D_g3ct8")
 
 [node name="HurtBox" type="Area2D" parent="."]
