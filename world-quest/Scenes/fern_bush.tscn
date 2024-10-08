@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://djfagua3lio6l"]
+
+[ext_resource type="Texture2D" uid="uid://tr6whecr1nc8" path="res://Art/Environment/FernBush.png" id="1_cvnoo"]
+[ext_resource type="Script" path="res://Scripts/fern_bush.gd" id="1_o2ce0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o54bb"]
+size = Vector2(42, 11)
+
+[node name="FernBush" type="StaticBody2D"]
+script = ExtResource("1_o2ce0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cvnoo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-1, 9.5)
+shape = SubResource("RectangleShape2D_o54bb")

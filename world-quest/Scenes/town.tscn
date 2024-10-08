@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://cygpy8pi86l0o"]
+[gd_scene load_steps=13 format=3 uid="uid://cygpy8pi86l0o"]
 
 [ext_resource type="Script" path="res://Scripts/town.gd" id="1_coop3"]
 [ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://Art/Environment/Town/Town Ground.png" id="1_jlrqu"]
 [ext_resource type="PackedScene" uid="uid://e12gx1qyncbd" path="res://Scenes/house_1.tscn" id="2_tpas1"]
 [ext_resource type="PackedScene" uid="uid://wsw1srii3b3" path="res://Scenes/statue.tscn" id="3_b6cju"]
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="3_m0p8w"]
+[ext_resource type="PackedScene" uid="uid://djfagua3lio6l" path="res://Scenes/fern_bush.tscn" id="4_3o3g6"]
 [ext_resource type="PackedScene" uid="uid://dfbw8ambj1nh7" path="res://Scenes/old_man.tscn" id="4_l2skv"]
 [ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="5_5quc5"]
 
@@ -166,6 +167,11 @@ position = Vector2(736, 938)
 
 [node name="Tree45" parent="Foliage/Trees" instance=ExtResource("5_5quc5")]
 position = Vector2(952, 933)
+
+[node name="Ferns" type="Node" parent="Foliage"]
+
+[node name="FernBush" parent="Foliage/Ferns" instance=ExtResource("4_3o3g6")]
+position = Vector2(348, 395)
 
 [node name="Houses" type="Node" parent="."]
 
