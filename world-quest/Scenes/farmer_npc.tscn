@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://duyr5g3f3mqn1"]
+
+[ext_resource type="Texture2D" uid="uid://mb0og728rrec" path="res://Art/Characters/NPCs/NPC1.png" id="1_fjdhi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbfbb"]
+size = Vector2(26, 11)
+
+[node name="FarmerNPC" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fjdhi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 26.5)
+shape = SubResource("RectangleShape2D_cbfbb")

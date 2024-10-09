@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/fern_bush.gd" id="1_o2ce0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o54bb"]
-size = Vector2(42, 11)
+size = Vector2(20, 11)
 
 [node name="FernBush" type="StaticBody2D"]
 script = ExtResource("1_o2ce0")
@@ -14,5 +14,5 @@ texture = ExtResource("1_cvnoo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(-1, 9.5)
+position = Vector2(0, 9.5)
 shape = SubResource("RectangleShape2D_o54bb")

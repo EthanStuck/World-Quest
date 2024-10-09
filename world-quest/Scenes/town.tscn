@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cygpy8pi86l0o"]
+[gd_scene load_steps=15 format=3 uid="uid://cygpy8pi86l0o"]
 
 [ext_resource type="Script" path="res://Scripts/town.gd" id="1_coop3"]
 [ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://Art/Environment/Town/Town Ground.png" id="1_jlrqu"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://djfagua3lio6l" path="res://Scenes/fern_bush.tscn" id="4_3o3g6"]
 [ext_resource type="PackedScene" uid="uid://dfbw8ambj1nh7" path="res://Scenes/old_man.tscn" id="4_l2skv"]
 [ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="5_5quc5"]
+[ext_resource type="PackedScene" uid="uid://duyr5g3f3mqn1" path="res://Scenes/farmer_npc.tscn" id="7_kku8a"]
+[ext_resource type="Script" path="res://Scripts/farmer_npc.gd" id="8_5xvmd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_orjsd"]
 size = Vector2(223, 20)
@@ -191,6 +193,10 @@ position = Vector2(789, 599)
 
 [node name="Old Man" parent="NPCs" instance=ExtResource("4_l2skv")]
 position = Vector2(558, 498)
+
+[node name="FarmerNPC" parent="NPCs" instance=ExtResource("7_kku8a")]
+position = Vector2(840, 402)
+script = ExtResource("8_5xvmd")
 
 [node name="Statue" parent="." instance=ExtResource("3_b6cju")]
 position = Vector2(500, 440)
