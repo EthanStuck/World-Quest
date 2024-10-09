@@ -99,6 +99,7 @@ position = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_usnea")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
 
 [node name="FootStep" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamMP3_yh3a6")
