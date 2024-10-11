@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bgf7u8fldjavx"]
 
 [ext_resource type="Script" path="res://Scripts/forage_item.gd" id="1_ndofj"]
-[ext_resource type="Texture2D" uid="uid://d0jfgehpy7fxi" path="res://Art/Items/ForageItem.png" id="1_xe2eq"]
+[ext_resource type="Texture2D" uid="uid://d0jfgehpy7fxi" path="res://art/Items/ForageItem.png" id="1_xe2eq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jdy85"]
 radius = 17.0294

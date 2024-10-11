@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dfbw8ambj1nh7"]
 
 [ext_resource type="Script" path="res://Scripts/old_man.gd" id="1_qcy3c"]
-[ext_resource type="Texture2D" uid="uid://d0k4vibananc8" path="res://Art/Characters/NPCs/Old Man.png" id="1_qq18h"]
+[ext_resource type="Texture2D" uid="uid://d0k4vibananc8" path="res://art/Characters/NPCs/Old Man.png" id="1_qq18h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ncor"]
 size = Vector2(32, 18)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b6j0228ya77aj"]
 
-[ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://Art/Environment/Town/Town Ground.png" id="1_anppi"]
+[ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://art/Environment/Town/Town Ground.png" id="1_anppi"]
 [ext_resource type="Script" path="res://Scripts/farm.gd" id="1_w7msv"]
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="2_j2auh"]
 

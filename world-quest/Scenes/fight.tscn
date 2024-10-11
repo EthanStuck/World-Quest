@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://da5yjfi57uhll"]
+[gd_scene load_steps=7 format=3 uid="uid://da5yjfi57uhll"]
 
 [ext_resource type="Script" path="res://Scripts/fight.gd" id="1_5hnik"]
-[ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://Art/Environment/Town/Town Ground.png" id="1_a25oi"]
+[ext_resource type="Texture2D" uid="uid://bpc11km4px56g" path="res://art/Environment/Town/fight Ground.png" id="2_caon1"]
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="2_ngss5"]
+[ext_resource type="PackedScene" uid="uid://e12gx1qyncbd" path="res://Scenes/house_1.tscn" id="4_r2q4q"]
+[ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="5_0nka1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bb52g"]
 size = Vector2(20, 183)
@@ -13,7 +15,7 @@ script = ExtResource("1_5hnik")
 [node name="Floor-Background" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_a25oi")
+texture = ExtResource("2_caon1")
 
 [node name="Player" parent="." instance=ExtResource("2_ngss5")]
 position = Vector2(949, 477)
@@ -24,5 +26,63 @@ position = Vector2(1001, 482)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TravelBack"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_bb52g")
+
+[node name="Houses" type="Node" parent="."]
+
+[node name="House1" parent="Houses" instance=ExtResource("4_r2q4q")]
+position = Vector2(698, 632)
+
+[node name="House2" parent="Houses" instance=ExtResource("4_r2q4q")]
+position = Vector2(706, 860)
+
+[node name="House3" parent="Houses" instance=ExtResource("4_r2q4q")]
+position = Vector2(682, 282)
+
+[node name="House4" parent="Houses" instance=ExtResource("4_r2q4q")]
+position = Vector2(660, 70)
+
+[node name="House5" parent="Houses" instance=ExtResource("4_r2q4q")]
+position = Vector2(922, 194)
+
+[node name="House6" parent="Houses" instance=ExtResource("4_r2q4q")]
+position = Vector2(912, 670)
+
+[node name="Trees" type="Node" parent="."]
+
+[node name="Tree" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(90, 234)
+
+[node name="Tree2" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(124, 627)
+
+[node name="Tree3" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(292, 18)
+
+[node name="Tree4" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(336, 808)
+
+[node name="Tree5" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(247, 661)
+
+[node name="Tree6" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(166, 62)
+
+[node name="Tree7" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(268, 197)
+
+[node name="Tree8" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(82, 820)
+
+[node name="Tree9" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(79, 441)
+
+[node name="Tree10" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(58, 37)
+
+[node name="Tree11" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(230, 873)
+
+[node name="Tree12" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(229, 335)
 
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
