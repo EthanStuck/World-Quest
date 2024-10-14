@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@export var speed = 100
+@export var speed = 75
 var screen_size = Vector2(1000,1000)
 
 

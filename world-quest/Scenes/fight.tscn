@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://da5yjfi57uhll"]
+[gd_scene load_steps=8 format=3 uid="uid://da5yjfi57uhll"]
 
 [ext_resource type="Script" path="res://Scripts/fight.gd" id="1_5hnik"]
 [ext_resource type="Texture2D" uid="uid://bpc11km4px56g" path="res://art/Environment/Town/fight Ground.png" id="2_caon1"]
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="2_ngss5"]
 [ext_resource type="PackedScene" uid="uid://e12gx1qyncbd" path="res://Scenes/house_1.tscn" id="4_r2q4q"]
 [ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="5_0nka1"]
+[ext_resource type="PackedScene" uid="uid://dqorqwyu7jkle" path="res://Scenes/phantom.tscn" id="6_n2p6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bb52g"]
 size = Vector2(20, 183)
@@ -30,59 +31,96 @@ shape = SubResource("RectangleShape2D_bb52g")
 [node name="Houses" type="Node" parent="."]
 
 [node name="House1" parent="Houses" instance=ExtResource("4_r2q4q")]
-position = Vector2(698, 632)
+position = Vector2(917, 795)
 
 [node name="House2" parent="Houses" instance=ExtResource("4_r2q4q")]
-position = Vector2(706, 860)
+position = Vector2(713, 904)
 
 [node name="House3" parent="Houses" instance=ExtResource("4_r2q4q")]
-position = Vector2(682, 282)
+position = Vector2(731, 289)
 
 [node name="House4" parent="Houses" instance=ExtResource("4_r2q4q")]
 position = Vector2(660, 70)
 
 [node name="House5" parent="Houses" instance=ExtResource("4_r2q4q")]
-position = Vector2(922, 194)
+position = Vector2(914, 167)
 
 [node name="House6" parent="Houses" instance=ExtResource("4_r2q4q")]
-position = Vector2(912, 670)
+position = Vector2(796, 626)
 
 [node name="Trees" type="Node" parent="."]
 
 [node name="Tree" parent="Trees" instance=ExtResource("5_0nka1")]
-position = Vector2(90, 234)
+position = Vector2(55, 214)
 
 [node name="Tree2" parent="Trees" instance=ExtResource("5_0nka1")]
-position = Vector2(124, 627)
+position = Vector2(74, 669)
 
 [node name="Tree3" parent="Trees" instance=ExtResource("5_0nka1")]
-position = Vector2(292, 18)
+position = Vector2(240, 43)
 
 [node name="Tree4" parent="Trees" instance=ExtResource("5_0nka1")]
-position = Vector2(336, 808)
+position = Vector2(294, 882)
 
 [node name="Tree5" parent="Trees" instance=ExtResource("5_0nka1")]
 position = Vector2(247, 661)
 
 [node name="Tree6" parent="Trees" instance=ExtResource("5_0nka1")]
-position = Vector2(166, 62)
+position = Vector2(134, 77)
 
 [node name="Tree7" parent="Trees" instance=ExtResource("5_0nka1")]
 position = Vector2(268, 197)
 
 [node name="Tree8" parent="Trees" instance=ExtResource("5_0nka1")]
-position = Vector2(82, 820)
+position = Vector2(114, 844)
 
 [node name="Tree9" parent="Trees" instance=ExtResource("5_0nka1")]
-position = Vector2(79, 441)
+position = Vector2(131, 295)
 
 [node name="Tree10" parent="Trees" instance=ExtResource("5_0nka1")]
 position = Vector2(58, 37)
 
 [node name="Tree11" parent="Trees" instance=ExtResource("5_0nka1")]
-position = Vector2(230, 873)
+position = Vector2(210, 902)
 
 [node name="Tree12" parent="Trees" instance=ExtResource("5_0nka1")]
-position = Vector2(229, 335)
+position = Vector2(367, 199)
+
+[node name="Tree13" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(171, 721)
+
+[node name="Tree14" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(333, 37)
+
+[node name="Tree15" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(321, 713)
+
+[node name="Tree16" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(35, 893)
+
+[node name="Tree17" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(407, 885)
+
+[node name="Tree18" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(197, 155)
+
+[node name="Tree19" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(141, 567)
+
+[node name="Tree20" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(44, 345)
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Phantom" parent="Enemies" instance=ExtResource("6_n2p6c")]
+position = Vector2(26, 517)
+
+[node name="Phantom2" parent="Enemies" instance=ExtResource("6_n2p6c")]
+position = Vector2(119, 433)
+
+[node name="Phantom3" parent="Enemies" instance=ExtResource("6_n2p6c")]
+position = Vector2(22, 459)
+
+[node name="Fight_music" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
