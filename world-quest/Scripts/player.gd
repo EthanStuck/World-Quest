@@ -16,6 +16,8 @@ func _process(delta):
 	''' continuous processes '''
 	move(delta)
 	$Animations.z_index = position.y + 35
+	if Input.is_action_just_pressed('strike'):
+		strike(delta)
 
 
 func move(delta):
@@ -34,14 +36,12 @@ func move(delta):
 	# player movement x direction
 	if Input.is_action_pressed('move_right'):
 		velocity.x = 1
-		$Animations.animation = 'walk_side'
-		if Input.is_action_pressed('strike'):
-			$Animations.animation = 'strike_right'
+		if not Input.is_action_pressed('strike'):
+			$Animations.animation = 'walk_side'
 	elif Input.is_action_pressed('move_left'):
 		velocity.x = -1
-		$Animations.animation = 'walk_side'
-		if Input.is_action_pressed('strike'):
-			$Animations.animation = 'strike_left'
+		if not Input.is_action_pressed('strike'):
+			$Animations.animation = 'walk_side'
 	else:
 		velocity.x = 0
 	
@@ -66,6 +66,17 @@ func move(delta):
 	if collision:
 		velocity = velocity.slide(collision.get_normal())
 
+func strike(delta):
+	if velocity.x >= 0:
+		$Animations.animation = 'strike_right'
+	else:
+		$Animations.animation = 'strike_left'
+	$HitBox/HitBoxShape.disabled = false
+	await get_tree().create_timer(.25).timeout
+	$HitBox/HitBoxShape.disabled = true
+	$Animations.animation = 'idle'
+		
+
 func foot_step_sound():
 	''' make foot step sounds when walking '''
 	if not foot_step:
@@ -75,3 +86,8 @@ func foot_step_sound():
 		foot_step = true
 		await get_tree().create_timer(.55).timeout
 		foot_step = false
+
+
+
+#func _on_hurt_box_area_entered(area: Area2D) -> void:
+	#queue_free()

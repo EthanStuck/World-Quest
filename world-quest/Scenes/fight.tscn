@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://da5yjfi57uhll"]
 
 [ext_resource type="Script" path="res://Scripts/fight.gd" id="1_5hnik"]
-[ext_resource type="Texture2D" uid="uid://bpc11km4px56g" path="res://art/Environment/Town/fight Ground.png" id="2_caon1"]
+[ext_resource type="Texture2D" uid="uid://bpc11km4px56g" path="res://Art/Environment/Town/fight Ground.png" id="2_caon1"]
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="2_ngss5"]
 [ext_resource type="PackedScene" uid="uid://e12gx1qyncbd" path="res://Scenes/house_1.tscn" id="4_r2q4q"]
 [ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="5_0nka1"]

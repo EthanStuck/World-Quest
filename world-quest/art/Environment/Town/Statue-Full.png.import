@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://du2g0ycxrhtgl"
-path="res://.godot/imported/Statue-Full.png-47e2c9f400a086423f6b8f18c750a412.ctex"
+path="res://.godot/imported/Statue-Full.png-be125532560ba15bd01e77a96c03c2fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Environment/Town/Statue-Full.png"
-dest_files=["res://.godot/imported/Statue-Full.png-47e2c9f400a086423f6b8f18c750a412.ctex"]
+source_file="res://Art/Environment/Town/Statue-Full.png"
+dest_files=["res://.godot/imported/Statue-Full.png-be125532560ba15bd01e77a96c03c2fa.ctex"]
 
 [params]
 
