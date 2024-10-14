@@ -28,7 +28,6 @@ size = Vector2(29, 11)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgc4m"]
 size = Vector2(31, 50)
 
-
 [node name="Phantom" type="RigidBody2D"]
 collision_mask = 0
 gravity_scale = 0.0
@@ -48,7 +47,6 @@ collision_mask = 2
 
 [node name="HurtBoxShape" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(-0.5, -2)
-
 shape = SubResource("RectangleShape2D_bgc4m")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

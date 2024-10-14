@@ -113,6 +113,7 @@ position = Vector2(1, 33)
 shape = SubResource("RectangleShape2D_g3ct8")
 
 [node name="HurtBox" type="Area2D" parent="."]
+collision_mask = 5
 
 [node name="HurtBoxShape" type="CollisionShape2D" parent="HurtBox"]
 visible = false
@@ -134,6 +135,7 @@ collision_layer = 2
 collision_mask = 4
 
 [node name="HitBoxShape" type="CollisionShape2D" parent="HitBox"]
+visible = false
 position = Vector2(-1.5, 3)
 shape = SubResource("RectangleShape2D_kxntb")
 disabled = true

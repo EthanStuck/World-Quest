@@ -15,9 +15,5 @@ func _physics_process(delta: float) -> void:
 
 
 
-#func _on_body_entered(body: Node2D) -> void:
+#func _on_hurt_box_area_entered(area: Area2D) -> void:
 	#queue_free()
-
-
-func _on_hurt_box_area_entered(area: Area2D) -> void:
-	queue_free()
