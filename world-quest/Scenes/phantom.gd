@@ -10,7 +10,7 @@ func _physics_process(delta: float) -> void:
 		$Animations.play()
 		player_position = player.position
 		target_position = (player_position - position).normalized()
-		if position.distance_to(player_position) > 3:
+		if position.distance_to(player_position) < 400:
 			move_and_collide(target_position * speed)
 
 

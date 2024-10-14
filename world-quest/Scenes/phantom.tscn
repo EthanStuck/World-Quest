@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqorqwyu7jkle"]
+[gd_scene load_steps=8 format=3 uid="uid://dqorqwyu7jkle"]
 
 [ext_resource type="Script" path="res://Scenes/phantom.gd" id="1_qechl"]
 [ext_resource type="Texture2D" uid="uid://b8ofu6ug1inw1" path="res://art/Characters/Enemies/phantom frame1.png" id="2_x86mg"]
@@ -25,8 +25,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_meiti"]
 size = Vector2(29, 11)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgc4m"]
+size = Vector2(883, 605)
+
 [node name="Phantom" type="RigidBody2D"]
 collision_mask = 0
+gravity_scale = 0.0
 script = ExtResource("1_qechl")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
@@ -36,5 +40,11 @@ animation = &"floating"
 [node name="Hurt Box" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 23.5)
 shape = SubResource("RectangleShape2D_meiti")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(431.5, 292.5)
+shape = SubResource("RectangleShape2D_bgc4m")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
