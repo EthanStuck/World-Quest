@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dfbw8ambj1nh7" path="res://Scenes/old_man.tscn" id="4_l2skv"]
 [ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="5_5quc5"]
 [ext_resource type="PackedScene" path="res://Scenes/rock_1.tscn" id="5_xd64k"]
-[ext_resource type="PackedScene" path="res://Scenes/farmer_npc.tscn" id="7_kku8a"]
+[ext_resource type="PackedScene" uid="uid://djxpxdkw8e8aa" path="res://Scenes/farmer_npc.tscn" id="7_kku8a"]
 [ext_resource type="Script" path="res://Scripts/farmer_npc.gd" id="8_5xvmd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_orjsd"]
@@ -201,7 +201,7 @@ position = Vector2(789, 599)
 position = Vector2(558, 498)
 
 [node name="FarmerNPC" parent="NPCs" instance=ExtResource("7_kku8a")]
-position = Vector2(840, 402)
+position = Vector2(529, 576)
 script = ExtResource("8_5xvmd")
 
 [node name="Statue" parent="." instance=ExtResource("3_b6cju")]

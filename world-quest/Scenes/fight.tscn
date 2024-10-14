@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://da5yjfi57uhll"]
+[gd_scene load_steps=9 format=3 uid="uid://da5yjfi57uhll"]
 
 [ext_resource type="Script" path="res://Scripts/fight.gd" id="1_5hnik"]
 [ext_resource type="Texture2D" uid="uid://bpc11km4px56g" path="res://art/Environment/Town/fight Ground.png" id="2_caon1"]
@@ -9,6 +9,8 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bb52g"]
 size = Vector2(20, 183)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_rfsu7"]
 
 [node name="Fight" type="Node"]
 script = ExtResource("1_5hnik")
@@ -122,5 +124,12 @@ position = Vector2(119, 433)
 position = Vector2(22, 459)
 
 [node name="Fight_music" type="AudioStreamPlayer2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.517647, 0, 0.6, 0.4)
+top_level = true
+offset_right = 1001.0
+offset_bottom = 1000.0
+texture = SubResource("CanvasTexture_rfsu7")
 
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]

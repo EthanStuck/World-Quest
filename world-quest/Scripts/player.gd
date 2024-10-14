@@ -35,9 +35,13 @@ func move(delta):
 	if Input.is_action_pressed('move_right'):
 		velocity.x = 1
 		$Animations.animation = 'walk_side'
-	elif Input.is_action_pressed('move_left'):
+		if Input.is_action_pressed('strike'):
+			$Animations.animation = 'strike_right'
+	if Input.is_action_pressed('move_left'):
 		velocity.x = -1
 		$Animations.animation = 'walk_side'
+		if Input.is_action_pressed('strike'):
+			$Animations.animation = 'strike_left'
 	else:
 		velocity.x = 0
 	

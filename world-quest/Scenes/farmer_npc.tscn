@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://duyr5g3f3mqn1"]
+[gd_scene load_steps=3 format=3 uid="uid://djxpxdkw8e8aa"]
 
-[ext_resource type="Texture2D" uid="uid://mb0og728rrec" path="res://Art/Characters/NPCs/NPC1.png" id="1_fjdhi"]
+[ext_resource type="Texture2D" uid="uid://mb0og728rrec" path="res://art/Characters/NPCs/NPC1.png" id="1_fjdhi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbfbb"]
 size = Vector2(26, 11)
@@ -14,3 +14,13 @@ texture = ExtResource("1_fjdhi")
 visible = false
 position = Vector2(0, 26.5)
 shape = SubResource("RectangleShape2D_cbfbb")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = -54.0
+offset_top = 30.0
+offset_right = 161.0
+offset_bottom = 109.0
+theme_override_font_sizes/normal_font_size = 13
+text = "You have to help us! Defeat the spirits and get back the pieces of our statue? Maybe go to the west first..."
+tab_size = 3
