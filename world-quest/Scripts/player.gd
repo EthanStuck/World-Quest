@@ -1,6 +1,8 @@
 extends CharacterBody2D
 @export var speed = 100
 var screen_size = Vector2(1000,1000)
+@export var inv: Inv
+
 
 
 var foot_step = false
@@ -70,3 +72,6 @@ func foot_step_sound():
 		foot_step = true
 		await get_tree().create_timer(.55).timeout
 		foot_step = false
+	
+func collect(item):
+	inv.insert(item)
