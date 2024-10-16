@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=4 uid="uid://b4en6qsd4qi5m"]
+[gd_scene load_steps=20 format=4 uid="uid://b4en6qsd4qi5m"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_a5bgk"]
 [ext_resource type="Texture2D" uid="uid://700db6nyeu8g" path="res://art/Characters/main character/walk_up1.png" id="2_8qcdx"]
 [ext_resource type="Texture2D" uid="uid://bmaut37ovpj5y" path="res://art/Characters/main character/strike_left.png" id="3_08vig"]
+[ext_resource type="Texture2D" uid="uid://4drssm70csm1" path="res://art/Characters/main character/strike_down.png" id="3_c7xug"]
 [ext_resource type="Texture2D" uid="uid://clpmgy8fkn0r8" path="res://art/Characters/main character/strike_right.png" id="3_hncnx"]
 [ext_resource type="Texture2D" uid="uid://dlqc1q61ryiwg" path="res://art/Characters/main character/walk_up2.png" id="3_l78oe"]
 [ext_resource type="Texture2D" uid="uid://4i5q4hk2l5da" path="res://art/Characters/main character/walk_up3.png" id="4_xmkfh"]
@@ -22,6 +23,14 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_c7xug")
+}],
+"loop": true,
+"name": &"strike down",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -105,7 +114,7 @@ script = ExtResource("1_a5bgk")
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.11, 0.11)
 sprite_frames = SubResource("SpriteFrames_85u5v")
-animation = &"strike_left"
+animation = &"strike down"
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 visible = false
