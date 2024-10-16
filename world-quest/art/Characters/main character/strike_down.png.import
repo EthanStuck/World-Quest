@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0jfgehpy7fxi"
-path="res://.godot/imported/ForageItem.png-557a6442697ad80fc577384a6ba8db3e.ctex"
+uid="uid://4drssm70csm1"
+path="res://.godot/imported/strike_down.png-7a58be949dce8b0fd43264862c0c3da5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Items/ForageItem.png"
-dest_files=["res://.godot/imported/ForageItem.png-557a6442697ad80fc577384a6ba8db3e.ctex"]
+source_file="res://art/Characters/main character/strike_down.png"
+dest_files=["res://.godot/imported/strike_down.png-7a58be949dce8b0fd43264862c0c3da5.ctex"]
 
 [params]
 

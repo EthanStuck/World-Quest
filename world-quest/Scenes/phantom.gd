@@ -11,6 +11,7 @@ var target
 var target_place
 
 func _physics_process(delta: float) -> void:
+
 		$Animations.play()
 		player_position = player.position
 		target_position = (player_position - position).normalized()
@@ -27,7 +28,9 @@ func _physics_process(delta: float) -> void:
 
 
 
+
 func _on_hurt_box_area_entered(area: Area2D) -> void:
+
 	''' phantom gets killed '''
 	queue_free()
 
@@ -44,3 +47,4 @@ func _on_wander_timer_timeout() -> void:
 	await get_tree().create_timer(randf_range(0,4)).timeout
 	$WanderTimer.start()
 	
+
