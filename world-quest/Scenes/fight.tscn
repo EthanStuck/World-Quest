@@ -115,13 +115,19 @@ position = Vector2(44, 345)
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Phantom" parent="Enemies" instance=ExtResource("6_n2p6c")]
-position = Vector2(26, 517)
+position = Vector2(32, 534)
 
 [node name="Phantom2" parent="Enemies" instance=ExtResource("6_n2p6c")]
 position = Vector2(119, 433)
 
 [node name="Phantom3" parent="Enemies" instance=ExtResource("6_n2p6c")]
 position = Vector2(22, 459)
+
+[node name="Phantom4" parent="Enemies" instance=ExtResource("6_n2p6c")]
+position = Vector2(135, 203)
+
+[node name="Phantom5" parent="Enemies" instance=ExtResource("6_n2p6c")]
+position = Vector2(128, 746)
 
 [node name="Fight_music" type="AudioStreamPlayer2D" parent="."]
 
@@ -130,8 +136,10 @@ modulate = Color(0.517647, 0, 0.6, 0.4)
 top_level = true
 z_index = 4096
 z_as_relative = false
-offset_right = 1001.0
-offset_bottom = 1000.0
+offset_left = -1.0
+offset_top = -4.0
+offset_right = 1000.0
+offset_bottom = 996.0
 texture = SubResource("CanvasTexture_rfsu7")
 
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]

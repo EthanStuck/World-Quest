@@ -72,14 +72,15 @@ func strike(delta):
 		$HitBox/HitBoxShape.disabled = false
 		await get_tree().create_timer(.25).timeout
 		$HitBox/HitBoxShape.disabled = true
-		$Animations.animation = 'walk_right'
+		$Animations.animation = 'walk_side'
 	else:
-		$Animations.animation = 'strike_left'
+		#$Animations.flip_h = velocity.x < 0
+		$Animations.animation = 'strike_right'
 		print("check")
 		$HitBox/HitBoxShape.disabled = false
 		await get_tree().create_timer(.25).timeout
 		$HitBox/HitBoxShape.disabled = true
-		$Animations.animation = 'walk_left'
+		$Animations.animation = 'walk_side'
 
 func foot_step_sound():
 	''' make foot step sounds when walking '''
