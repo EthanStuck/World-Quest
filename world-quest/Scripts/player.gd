@@ -26,10 +26,12 @@ func move(delta):
 	# player movement y direction
 	if Input.is_action_pressed('move_down'):
 		velocity.y = 1
-		$Animations.animation = 'walk_front'
+		if not Input.is_action_pressed('move_right') and not Input.is_action_pressed('move_left'):
+			$Animations.animation = 'walk_front'
 	elif Input.is_action_pressed('move_up'):
 		velocity.y = -1
-		$Animations.animation = 'walk_back'
+		if not Input.is_action_pressed('move_right') and not Input.is_action_pressed('move_left'):
+			$Animations.animation = 'walk_back'
 	else:
 		velocity.y = 0
 	

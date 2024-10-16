@@ -12,6 +12,7 @@ var target_place
 
 func _physics_process(delta: float) -> void:
 
+		$Animations.z_index = position.y + 24
 		$Animations.play()
 		player_position = player.position
 		target_position = (player_position - position).normalized()
@@ -47,4 +48,3 @@ func _on_wander_timer_timeout() -> void:
 	await get_tree().create_timer(randf_range(0,4)).timeout
 	$WanderTimer.start()
 	
-

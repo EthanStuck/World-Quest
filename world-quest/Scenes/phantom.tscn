@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dqorqwyu7jkle"]
 
 [ext_resource type="Script" path="res://Scenes/phantom.gd" id="1_qechl"]
-[ext_resource type="Texture2D" uid="uid://b8ofu6ug1inw1" path="res://art/Characters/Enemies/phantom frame1.png" id="2_x86mg"]
-[ext_resource type="Texture2D" uid="uid://ckftu0mmoyn8s" path="res://art/Characters/Enemies/phantom frame 2.png" id="3_85o8e"]
-[ext_resource type="Texture2D" uid="uid://yxcjnwjegvqw" path="res://art/Characters/Enemies/phantom frame 3.png" id="4_rsolf"]
+[ext_resource type="Texture2D" uid="uid://b8ofu6ug1inw1" path="res://Art/Characters/Enemies/phantom frame1.png" id="2_x86mg"]
+[ext_resource type="Texture2D" uid="uid://ckftu0mmoyn8s" path="res://Art/Characters/Enemies/phantom frame 2.png" id="3_85o8e"]
+[ext_resource type="Texture2D" uid="uid://yxcjnwjegvqw" path="res://Art/Characters/Enemies/phantom frame 3.png" id="4_rsolf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_57unu"]
 animations = [{
@@ -36,7 +36,7 @@ script = ExtResource("1_qechl")
 sprite_frames = SubResource("SpriteFrames_57unu")
 animation = &"floating"
 
-[node name="Hurt Box" type="CollisionShape2D" parent="."]
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 23.5)
 shape = SubResource("RectangleShape2D_meiti")
 
@@ -45,6 +45,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="HurtBoxShape" type="CollisionShape2D" parent="HurtBox"]
+visible = false
 position = Vector2(-0.5, -2)
 shape = SubResource("RectangleShape2D_bgc4m")
 
