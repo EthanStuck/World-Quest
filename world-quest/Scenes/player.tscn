@@ -92,7 +92,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3ct8"]
-size = Vector2(28, 11)
+size = Vector2(2, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_usnea"]
 size = Vector2(27, 77)
@@ -106,7 +106,7 @@ data = PackedByteArray("SUQzBAAAAAABPVRYWFgAAAASAAADbWFqb3JfYnJhbmQAbXA0MgBUWFhY
 loop = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kxntb"]
-size = Vector2(57, 98)
+size = Vector2(6, 10)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_a5bgk")
@@ -117,8 +117,7 @@ sprite_frames = SubResource("SpriteFrames_85u5v")
 animation = &"strike down"
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(1, 33)
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_g3ct8")
 
 [node name="HurtBox" type="Area2D" parent="."]
@@ -144,8 +143,6 @@ collision_layer = 2
 collision_mask = 4
 
 [node name="HitBoxShape" type="CollisionShape2D" parent="HitBox"]
-visible = false
-position = Vector2(-1.5, 3)
 shape = SubResource("RectangleShape2D_kxntb")
 disabled = true
 
