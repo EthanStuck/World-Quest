@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8ofu6ug1inw1"
-path="res://.godot/imported/phantom frame1.png-993f8d20e299559decaba67ed76474f3.ctex"
+path="res://.godot/imported/phantom frame1.png-d9613af9ec25e9276a76ccbf36464dec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Characters/Enemies/phantom frame1.png"
-dest_files=["res://.godot/imported/phantom frame1.png-993f8d20e299559decaba67ed76474f3.ctex"]
+source_file="res://art/Characters/Enemies/phantom frame1.png"
+dest_files=["res://.godot/imported/phantom frame1.png-d9613af9ec25e9276a76ccbf36464dec.ctex"]
 
 [params]
 

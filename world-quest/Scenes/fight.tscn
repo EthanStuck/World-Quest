@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://da5yjfi57uhll"]
 
 [ext_resource type="Script" path="res://Scripts/fight.gd" id="1_5hnik"]
-[ext_resource type="Texture2D" uid="uid://bpc11km4px56g" path="res://Art/Environment/Town/fight Ground.png" id="2_caon1"]
+[ext_resource type="Texture2D" uid="uid://bpc11km4px56g" path="res://art/Environment/Town/fight Ground.png" id="2_caon1"]
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="2_ngss5"]
 [ext_resource type="PackedScene" uid="uid://e12gx1qyncbd" path="res://Scenes/house_1.tscn" id="4_r2q4q"]
 [ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="5_0nka1"]
@@ -33,7 +33,7 @@ shape = SubResource("RectangleShape2D_bb52g")
 [node name="Houses" type="Node" parent="."]
 
 [node name="House1" parent="Houses" instance=ExtResource("4_r2q4q")]
-position = Vector2(917, 795)
+position = Vector2(921, 784)
 
 [node name="House2" parent="Houses" instance=ExtResource("4_r2q4q")]
 position = Vector2(713, 904)
@@ -112,6 +112,21 @@ position = Vector2(141, 567)
 [node name="Tree20" parent="Trees" instance=ExtResource("5_0nka1")]
 position = Vector2(44, 345)
 
+[node name="Tree21" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(721, 739)
+
+[node name="Tree22" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(612, 190)
+
+[node name="Tree23" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(792, 118)
+
+[node name="Tree24" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(875, 303)
+
+[node name="Tree25" parent="Trees" instance=ExtResource("5_0nka1")]
+position = Vector2(843, 909)
+
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Phantom" parent="Enemies" instance=ExtResource("6_n2p6c")]
@@ -136,10 +151,10 @@ modulate = Color(0.517647, 0, 0.6, 0.4)
 top_level = true
 z_index = 4096
 z_as_relative = false
-offset_left = -1.0
-offset_top = -4.0
-offset_right = 1000.0
-offset_bottom = 996.0
+offset_left = -227.0
+offset_top = -235.0
+offset_right = 1223.0
+offset_bottom = 1220.0
 texture = SubResource("CanvasTexture_rfsu7")
 
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]

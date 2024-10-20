@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://tr6whecr1nc8"
-path="res://.godot/imported/FernBush.png-7427f90151e36e7c5e8fed2850f51475.ctex"
+path="res://.godot/imported/FernBush.png-a0d0fb1d427d0951e5ec7cb792039759.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Environment/FernBush.png"
-dest_files=["res://.godot/imported/FernBush.png-7427f90151e36e7c5e8fed2850f51475.ctex"]
+source_file="res://art/Environment/FernBush.png"
+dest_files=["res://.godot/imported/FernBush.png-a0d0fb1d427d0951e5ec7cb792039759.ctex"]
 
 [params]
 

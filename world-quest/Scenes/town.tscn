@@ -1,14 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://cygpy8pi86l0o"]
+[gd_scene load_steps=17 format=3 uid="uid://cygpy8pi86l0o"]
 
 [ext_resource type="Script" path="res://Scripts/town.gd" id="1_coop3"]
-[ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://Art/Environment/Town/Town Ground.png" id="1_jlrqu"]
+[ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://art/Environment/Town/Town Ground.png" id="1_jlrqu"]
 [ext_resource type="PackedScene" uid="uid://e12gx1qyncbd" path="res://Scenes/house_1.tscn" id="2_tpas1"]
 [ext_resource type="PackedScene" uid="uid://wsw1srii3b3" path="res://Scenes/statue.tscn" id="3_b6cju"]
+[ext_resource type="PackedScene" uid="uid://b3khgaycsndjn" path="res://Scenes/dne_sign.tscn" id="3_ccisg"]
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="3_m0p8w"]
-[ext_resource type="PackedScene" uid="uid://djfagua3lio6l" path="res://Scenes/fern_bush.tscn" id="4_3o3g6"]
+[ext_resource type="PackedScene" path="res://Scenes/fern_bush.tscn" id="4_3o3g6"]
 [ext_resource type="PackedScene" uid="uid://dfbw8ambj1nh7" path="res://Scenes/old_man.tscn" id="4_l2skv"]
 [ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="5_5quc5"]
-[ext_resource type="PackedScene" uid="uid://co3ujvpfkw4ww" path="res://Scenes/rock_1.tscn" id="5_xd64k"]
+[ext_resource type="PackedScene" path="res://Scenes/rock_1.tscn" id="5_xd64k"]
 [ext_resource type="PackedScene" uid="uid://djxpxdkw8e8aa" path="res://Scenes/farmer_npc.tscn" id="7_kku8a"]
 [ext_resource type="Script" path="res://Scripts/farmer_npc.gd" id="8_5xvmd"]
 
@@ -31,6 +32,18 @@ script = ExtResource("1_coop3")
 offset_right = 1000.0
 offset_bottom = 1000.0
 texture = ExtResource("1_jlrqu")
+
+[node name="Signs" type="Node" parent="."]
+
+[node name="StaticBody2D" parent="Signs" instance=ExtResource("3_ccisg")]
+z_index = 4
+position = Vector2(495, 157)
+
+[node name="StaticBody2D2" parent="Signs" instance=ExtResource("3_ccisg")]
+z_index = 4
+position = Vector2(811, 469)
+rotation = 1.5708
+skew = -1.28805
 
 [node name="Foliage" type="Node" parent="."]
 
@@ -187,7 +200,7 @@ position = Vector2(575, 263)
 position = Vector2(158, 313)
 
 [node name="House2" parent="Houses" instance=ExtResource("2_tpas1")]
-position = Vector2(784, 311)
+position = Vector2(785, 309)
 
 [node name="House3" parent="Houses" instance=ExtResource("2_tpas1")]
 position = Vector2(156, 592)
@@ -198,7 +211,7 @@ position = Vector2(789, 599)
 [node name="NPCs" type="Node" parent="."]
 
 [node name="Old Man" parent="NPCs" instance=ExtResource("4_l2skv")]
-position = Vector2(558, 498)
+position = Vector2(555, 502)
 
 [node name="FarmerNPC" parent="NPCs" instance=ExtResource("7_kku8a")]
 position = Vector2(529, 576)
