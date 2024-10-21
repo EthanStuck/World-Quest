@@ -1,26 +1,46 @@
-[gd_scene load_steps=3 format=3 uid="uid://djxpxdkw8e8aa"]
+[gd_scene load_steps=5 format=3 uid="uid://djxpxdkw8e8aa"]
 
-[ext_resource type="Texture2D" uid="uid://mb0og728rrec" path="res://art/Characters/NPCs/NPC1.png" id="1_fjdhi"]
+[ext_resource type="Texture2D" uid="uid://8mf3747dj6f7" path="res://Art/Characters/NPCs/NPC1.png" id="1_fjdhi"]
+[ext_resource type="Script" path="res://Scripts/farmer_npc.gd" id="1_sv8d0"]
+[ext_resource type="Texture2D" uid="uid://8viiykyl7sll" path="res://Art/Characters/NPCs/2.png" id="2_arsxi"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbfbb"]
-size = Vector2(26, 11)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_whvul"]
+radius = 29.0
+height = 86.0
 
 [node name="FarmerNPC" type="StaticBody2D"]
+script = ExtResource("1_sv8d0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(24, -135)
 texture = ExtResource("1_fjdhi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, 26.5)
-shape = SubResource("RectangleShape2D_cbfbb")
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(24, -135)
+shape = SubResource("CapsuleShape2D_whvul")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 44.0
+offset_top = -143.0
+offset_right = 249.0
+offset_bottom = -49.0
+texture = ExtResource("2_arsxi")
+flip_v = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect"]
 modulate = Color(0, 0, 0, 1)
-offset_left = -54.0
-offset_top = 30.0
-offset_right = 161.0
-offset_bottom = 109.0
-theme_override_font_sizes/normal_font_size = 13
+layout_mode = 0
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 183.0
+offset_bottom = 78.0
+theme_override_font_sizes/normal_font_size = 10
 text = "You have to help us! Defeat the spirits and get back the pieces of our statue? Maybe go to the west first..."
 tab_size = 3
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
