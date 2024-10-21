@@ -111,7 +111,7 @@ volume_db = -15.49
 stream = SubResource("AudioStreamMP3_c5osl")
 
 [node name="Inv_UI" parent="." instance=ExtResource("12_b8y0o")]
-offset_left = -40.0
-offset_top = -74.0
-offset_right = 48.0
+offset_left = -59.0
+offset_top = -102.0
+offset_right = 67.0
 offset_bottom = -44.0

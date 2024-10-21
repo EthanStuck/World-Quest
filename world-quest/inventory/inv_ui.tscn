@@ -8,16 +8,16 @@
 custom_minimum_size = Vector2(58, 11)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 88.0
-offset_bottom = 29.0
+offset_right = 128.0
+offset_bottom = 59.0
 script = ExtResource("1_1unr6")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
 offset_left = -1.0
 offset_top = -1.0
-offset_right = 85.0
-offset_bottom = 39.0
+offset_right = 126.0
+offset_bottom = 59.0
 texture = ExtResource("2_wj0p5")
 patch_margin_left = 6
 patch_margin_top = 6
@@ -31,40 +31,50 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -27.5
-offset_top = -4.0
-offset_right = 29.5
-offset_bottom = 5.0
+offset_left = -57.5
+offset_top = -25.0
+offset_right = 63.5
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 5
 
 [node name="inv_UI_slot1" parent="NinePatchRect/GridContainer" instance=ExtResource("3_hrpd8")]
+custom_minimum_size = Vector2(20, 23)
 layout_mode = 2
 
 [node name="inv_UI_slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_hrpd8")]
+custom_minimum_size = Vector2(20, 23)
 layout_mode = 2
 
 [node name="inv_UI_slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_hrpd8")]
+custom_minimum_size = Vector2(20, 23)
 layout_mode = 2
 
 [node name="inv_UI_slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_hrpd8")]
+custom_minimum_size = Vector2(20, 23)
 layout_mode = 2
 
 [node name="inv_UI_slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_hrpd8")]
+custom_minimum_size = Vector2(20, 23)
 layout_mode = 2
 
 [node name="inv_UI_slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_hrpd8")]
+custom_minimum_size = Vector2(20, 23)
 layout_mode = 2
 
 [node name="inv_UI_slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_hrpd8")]
+custom_minimum_size = Vector2(20, 23)
 layout_mode = 2
 
 [node name="inv_UI_slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_hrpd8")]
+custom_minimum_size = Vector2(20, 23)
 layout_mode = 2
 
 [node name="inv_UI_slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_hrpd8")]
+custom_minimum_size = Vector2(20, 23)
 layout_mode = 2
 
 [node name="inv_UI_slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_hrpd8")]
+custom_minimum_size = Vector2(20, 23)
 layout_mode = 2

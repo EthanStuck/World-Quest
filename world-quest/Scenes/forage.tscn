@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkodwqm8vyx33"]
+[gd_scene load_steps=9 format=3 uid="uid://dkodwqm8vyx33"]
 
 [ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://art/Environment/Town/Town Ground.png" id="1_wkxcn"]
 [ext_resource type="Script" path="res://Scripts/forage.gd" id="1_xne0s"]
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="2_yeobe"]
-[ext_resource type="PackedScene" uid="uid://bgf7u8fldjavx" path="res://Scenes/forage_item.tscn" id="4_q0gx5"]
 [ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="5_5jdd0"]
+[ext_resource type="PackedScene" uid="uid://cw5da6guu1o84" path="res://Scenes/yellowrock.tscn" id="6_g2t7q"]
+[ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="6_t14jb"]
+[ext_resource type="PackedScene" uid="uid://chbwegjy1k1il" path="res://Scenes/oldforagingdude.tscn" id="7_5nsiv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4d0a"]
 size = Vector2(247, 20)
@@ -17,9 +19,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_wkxcn")
 
-[node name="Player" parent="." instance=ExtResource("2_yeobe")]
-position = Vector2(479, 55)
-
 [node name="TravelBack" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TravelBack"]
@@ -27,27 +26,6 @@ position = Vector2(485.5, 1)
 shape = SubResource("RectangleShape2D_a4d0a")
 
 [node name="Items" type="Node" parent="."]
-
-[node name="ForageItem" parent="Items" instance=ExtResource("4_q0gx5")]
-position = Vector2(192, 183)
-
-[node name="ForageItem2" parent="Items" instance=ExtResource("4_q0gx5")]
-position = Vector2(714, 587)
-
-[node name="ForageItem3" parent="Items" instance=ExtResource("4_q0gx5")]
-position = Vector2(812, 224)
-
-[node name="ForageItem4" parent="Items" instance=ExtResource("4_q0gx5")]
-position = Vector2(164, 619)
-
-[node name="ForageItem5" parent="Items" instance=ExtResource("4_q0gx5")]
-position = Vector2(458, 499)
-
-[node name="ForageItem6" parent="Items" instance=ExtResource("4_q0gx5")]
-position = Vector2(633, 340)
-
-[node name="ForageItem7" parent="Items" instance=ExtResource("4_q0gx5")]
-position = Vector2(396, 873)
 
 [node name="NumItemsLabel" type="Label" parent="."]
 offset_left = 461.0
@@ -61,11 +39,127 @@ uppercase = true
 [node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_5jdd0")
 
+[node name="yellowrock" parent="." instance=ExtResource("6_g2t7q")]
+position = Vector2(713, 336)
+
+[node name="yellowrock2" parent="." instance=ExtResource("6_g2t7q")]
+position = Vector2(169, 176)
+
+[node name="yellowrock3" parent="." instance=ExtResource("6_g2t7q")]
+position = Vector2(827, 165)
+
+[node name="yellowrock4" parent="." instance=ExtResource("6_g2t7q")]
+position = Vector2(627, 171)
+
+[node name="yellowrock5" parent="." instance=ExtResource("6_g2t7q")]
+position = Vector2(338, 678)
+
+[node name="yellowrock6" parent="." instance=ExtResource("6_g2t7q")]
+position = Vector2(146, 842)
+
+[node name="yellowrock7" parent="." instance=ExtResource("6_g2t7q")]
+position = Vector2(263, 721)
+
+[node name="Player" parent="." instance=ExtResource("2_yeobe")]
+position = Vector2(479, 55)
+
+[node name="Tree" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(66, 134)
+
+[node name="Tree2" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(253, 327)
+
+[node name="Tree3" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(243, 119)
+
+[node name="Tree4" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(831, 635)
+
+[node name="Tree5" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(746, 634)
+
+[node name="Tree6" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(653, 639)
+
+[node name="Tree7" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(343, 857)
+
+[node name="Tree8" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(259, 855)
+
+[node name="Tree9" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(161, 849)
+
+[node name="Tree10" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(69, 860)
+
+[node name="Tree11" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(348, 698)
+
+[node name="Tree12" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(261, 699)
+
+[node name="Tree13" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(168, 689)
+
+[node name="Tree27" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(915, 640)
+
+[node name="Tree28" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(914, 812)
+
+[node name="Tree29" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(156, 138)
+
+[node name="Tree30" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(831, 805)
+
+[node name="Tree31" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(742, 808)
+
+[node name="Tree32" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(648, 809)
+
+[node name="Tree14" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(74, 688)
+
+[node name="Tree15" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(881, 158)
+
+[node name="Tree16" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(886, 313)
+
+[node name="Tree17" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(805, 158)
+
+[node name="Tree18" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(713, 166)
+
+[node name="Tree19" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(804, 319)
+
+[node name="Tree20" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(712, 316)
+
+[node name="Tree21" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(625, 314)
+
+[node name="Tree22" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(628, 162)
+
+[node name="Tree23" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(341, 325)
+
+[node name="Tree24" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(339, 114)
+
+[node name="Tree25" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(155, 327)
+
+[node name="Tree26" parent="." instance=ExtResource("6_t14jb")]
+position = Vector2(71, 327)
+
+[node name="oldforagingdude" parent="." instance=ExtResource("7_5nsiv")]
+position = Vector2(362, 510)
+
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
-[connection signal="collected" from="Items/ForageItem" to="." method="_on_forage_item_collected"]
-[connection signal="collected" from="Items/ForageItem2" to="." method="_on_forage_item_collected"]
-[connection signal="collected" from="Items/ForageItem3" to="." method="_on_forage_item_collected"]
-[connection signal="collected" from="Items/ForageItem4" to="." method="_on_forage_item_collected"]
-[connection signal="collected" from="Items/ForageItem5" to="." method="_on_forage_item_collected"]
-[connection signal="collected" from="Items/ForageItem6" to="." method="_on_forage_item_collected"]
-[connection signal="collected" from="Items/ForageItem7" to="." method="_on_forage_item_collected"]

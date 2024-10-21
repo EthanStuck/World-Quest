@@ -72,6 +72,7 @@ func foot_step_sound():
 		foot_step = true
 		await get_tree().create_timer(.55).timeout
 		foot_step = false
-	
+func player():
+	pass
 func collect(item):
 	inv.insert(item)

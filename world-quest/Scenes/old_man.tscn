@@ -22,5 +22,6 @@ offset_top = -89.0
 offset_right = 232.0
 offset_bottom = -10.0
 theme_override_font_sizes/normal_font_size = 13
-text = "Hello outsider! Welcome to the quaint town of Sherwood Creek. Unfortunately the town isn't what it used to be..."
+text = "Hello Outsider! Welcome to Sherwood Creek, this town isn't what it used to be.
+"
 tab_size = 3
