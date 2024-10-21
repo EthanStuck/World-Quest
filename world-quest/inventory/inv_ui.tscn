@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=3 uid="uid://n0f2ys4hudtp"]
+
+[ext_resource type="Script" path="res://inventory/Inv_UI.gd" id="1_1unr6"]
+[ext_resource type="Texture2D" uid="uid://sv3gaqbj2n75" path="res://inventory/background2.png" id="2_wj0p5"]
+[ext_resource type="PackedScene" uid="uid://b7dc8wmy2ywms" path="res://inventory/inv_ui_slot.tscn" id="3_hrpd8"]
+
+[node name="Inv_UI" type="Control"]
+custom_minimum_size = Vector2(58, 11)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 59.0
+script = ExtResource("1_1unr6")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 126.0
+offset_bottom = 59.0
+texture = ExtResource("2_wj0p5")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.5
+offset_top = -25.0
+offset_right = 63.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="inv_UI_slot1" parent="NinePatchRect/GridContainer" instance=ExtResource("3_hrpd8")]
+custom_minimum_size = Vector2(20, 23)
+layout_mode = 2
+
+[node name="inv_UI_slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_hrpd8")]
+custom_minimum_size = Vector2(20, 23)
+layout_mode = 2
+
+[node name="inv_UI_slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_hrpd8")]
+custom_minimum_size = Vector2(20, 23)
+layout_mode = 2
+
+[node name="inv_UI_slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_hrpd8")]
+custom_minimum_size = Vector2(20, 23)
+layout_mode = 2
+
+[node name="inv_UI_slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_hrpd8")]
+custom_minimum_size = Vector2(20, 23)
+layout_mode = 2
+
+[node name="inv_UI_slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_hrpd8")]
+custom_minimum_size = Vector2(20, 23)
+layout_mode = 2
+
+[node name="inv_UI_slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_hrpd8")]
+custom_minimum_size = Vector2(20, 23)
+layout_mode = 2
+
+[node name="inv_UI_slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_hrpd8")]
+custom_minimum_size = Vector2(20, 23)
+layout_mode = 2
+
+[node name="inv_UI_slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_hrpd8")]
+custom_minimum_size = Vector2(20, 23)
+layout_mode = 2
+
+[node name="inv_UI_slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_hrpd8")]
+custom_minimum_size = Vector2(20, 23)
+layout_mode = 2

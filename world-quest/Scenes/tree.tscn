@@ -3,16 +3,21 @@
 [ext_resource type="Texture2D" uid="uid://bu43y0ujl8udi" path="res://art/Environment/Tree.png" id="1_r2btx"]
 [ext_resource type="Script" path="res://Scripts/tree.gd" id="1_r6lwm"]
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oyo2m"]
 size = Vector2(20, 40)
+
 
 [node name="Tree" type="StaticBody2D"]
 script = ExtResource("1_r6lwm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
 texture = ExtResource("1_r2btx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
 visible = false
 position = Vector2(-2, 78)
 shape = SubResource("RectangleShape2D_oyo2m")
+
