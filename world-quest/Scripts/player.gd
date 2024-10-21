@@ -46,11 +46,11 @@ func move(delta):
 	if Input.is_action_pressed('move_right'):
 		velocity.x = 1
 		if not Input.is_action_pressed('strike'):
-			$Animations.animation = 'walk_side'
+			$Animations.animation = 'walk_right'
 	elif Input.is_action_pressed('move_left'):
 		velocity.x = -1
 		if not Input.is_action_pressed('strike'):
-			$Animations.animation = 'walk_side'
+			$Animations.animation = 'walk_left'
 	else:
 		velocity.x = 0
 	
@@ -66,7 +66,7 @@ func move(delta):
 		$Animations.stop()
 	
 	# update position and control animation direction
-	$Animations.flip_h = velocity.x < 0
+	#$Animations.flip_h = velocity.x < 0
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, screen_size)
 	
@@ -82,14 +82,14 @@ func strike(delta):
 		$HitBox/HitBoxShape.disabled = false
 		await get_tree().create_timer(.25).timeout
 		$HitBox/HitBoxShape.disabled = true
-		$Animations.animation = 'walk_side'
+		$Animations.animation = 'walk_right'
 	else:
 		#$Animations.flip_h = velocity.x < 0
-		$Animations.animation = 'strike_right'
+		$Animations.animation = 'strike_left'
 		$HitBox/HitBoxShape.disabled = false
 		await get_tree().create_timer(.25).timeout
 		$HitBox/HitBoxShape.disabled = true
-		$Animations.animation = 'walk_side'
+		$Animations.animation = 'walk_left'
 
 func foot_step_sound():
 	''' make foot step sounds when walking '''

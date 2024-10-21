@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://b4en6qsd4qi5m"]
+[gd_scene load_steps=28 format=4 uid="uid://b4en6qsd4qi5m"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_a5bgk"]
 [ext_resource type="Texture2D" uid="uid://700db6nyeu8g" path="res://art/Characters/main character/walk_up1.png" id="2_8qcdx"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://cw4urovdklshf" path="res://art/Characters/main character/walk_right1.png" id="8_g8co0"]
 [ext_resource type="Texture2D" uid="uid://do0hu7jew0ydb" path="res://art/Characters/main character/walk_right2.png" id="9_o7gx5"]
 [ext_resource type="Texture2D" uid="uid://bbh8bj88m1omm" path="res://art/Characters/main character/walk_right3.png" id="10_5skrh"]
+[ext_resource type="Texture2D" uid="uid://bhaspen2ii6ss" path="res://art/Characters/main character/walk_left1.png" id="11_2l7kw"]
+[ext_resource type="Texture2D" uid="uid://ce0v770lgtjfi" path="res://art/Characters/main character/walk_left2.png" id="12_q1ojq"]
+[ext_resource type="Texture2D" uid="uid://bvbeokb4bkfnp" path="res://art/Characters/main character/walk_left3.png" id="13_nb6w2"]
 [ext_resource type="Texture2D" uid="uid://cogeeivnw4vg3" path="res://art/HUD/healthbar_under.png" id="14_2qv34"]
 [ext_resource type="Script" path="res://Scenes/progress_bar.gd" id="14_fyhi1"]
 [ext_resource type="AudioStream" uid="uid://ckc4lrcvldgmd" path="res://Sounds/Effects/hurt_sound2.mp3" id="14_oclw3"]
@@ -83,6 +86,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("11_2l7kw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_q1ojq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_nb6w2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_q1ojq")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("8_g8co0")
 }, {
 "duration": 1.0,
@@ -90,9 +110,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("10_5skrh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_o7gx5")
 }],
 "loop": true,
-"name": &"walk_side",
+"name": &"walk_right",
 "speed": 5.0
 }]
 
@@ -119,7 +142,7 @@ script = ExtResource("1_a5bgk")
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.11, 0.11)
 sprite_frames = SubResource("SpriteFrames_85u5v")
-animation = &"strike_left"
+animation = &"walk_right"
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 36.875)
