@@ -190,8 +190,6 @@ position = Vector2(135, 203)
 [node name="Phantom5" parent="Enemies" instance=ExtResource("6_n2p6c")]
 position = Vector2(128, 746)
 
-[node name="Fight_music" type="AudioStreamPlayer2D" parent="."]
-
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.517647, 0, 0.6, 0.4)
 z_index = 4096
@@ -201,5 +199,7 @@ offset_top = -241.0
 offset_right = 1245.0
 offset_bottom = 1262.0
 texture = SubResource("CanvasTexture_rfsu7")
+
+[node name="fight_music" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]

@@ -1,6 +1,12 @@
 extends CharacterBody2D
+class_name Player
+
+signal health_update
+
 @export var speed = 75
 var screen_size = Vector2(1000,1000)
+@export var maxHealth = 80
+@export var currentHealth: int = maxHealth
 
 
 var foot_step = false
@@ -9,6 +15,7 @@ var foot_step = false
 func _ready():
 	''' player startup '''
 	#screen_size = get_viewport_rect().size
+	$Death_message.hide()
 	$Animations.play()
 	$GameMusic.play()
 	
@@ -69,6 +76,7 @@ func move(delta):
 		velocity = velocity.slide(collision.get_normal())
 
 func strike(delta):
+	$StrikeSound.play()
 	if velocity.x >= 0:
 		$Animations.animation = 'strike_right'
 		$HitBox/HitBoxShape.disabled = false
@@ -78,7 +86,6 @@ func strike(delta):
 	else:
 		#$Animations.flip_h = velocity.x < 0
 		$Animations.animation = 'strike_right'
-		print("check")
 		$HitBox/HitBoxShape.disabled = false
 		await get_tree().create_timer(.25).timeout
 		$HitBox/HitBoxShape.disabled = true
@@ -96,5 +103,17 @@ func foot_step_sound():
 
 
 
-#func _on_hurt_box_area_entered(area: Area2D) -> void:
-	#queue_free()
+func _on_hurt_box_area_entered(area: Area2D) -> void:
+	$HurtSound.play()
+	currentHealth -= 10
+	# Detects player death and restarts lvl
+	if currentHealth < 0:
+		$Death_timer.start()
+		$Death_message.show()
+		position = Vector2(1000,477)
+		await $Death_timer.timeout
+		$Death_message.hide()
+		currentHealth = maxHealth
+		
+	health_update.emit()
+	

@@ -7,23 +7,28 @@
 [ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="5_5jdd0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4d0a"]
-size = Vector2(247, 20)
+size = Vector2(247, 273)
 
 [node name="Forage" type="Node"]
 script = ExtResource("1_xne0s")
 
 [node name="Floor-Background" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -254.0
+offset_top = -252.0
+offset_right = 746.0
+offset_bottom = 748.0
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_wkxcn")
 
 [node name="Player" parent="." instance=ExtResource("2_yeobe")]
 position = Vector2(479, 55)
+speed = 75
+maxHealth = 80
 
 [node name="TravelBack" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TravelBack"]
-position = Vector2(485.5, 1)
+position = Vector2(485.5, -125.5)
 shape = SubResource("RectangleShape2D_a4d0a")
 
 [node name="Items" type="Node" parent="."]
@@ -41,7 +46,7 @@ position = Vector2(812, 224)
 position = Vector2(164, 619)
 
 [node name="ForageItem5" parent="Items" instance=ExtResource("4_q0gx5")]
-position = Vector2(458, 499)
+position = Vector2(494, 501)
 
 [node name="ForageItem6" parent="Items" instance=ExtResource("4_q0gx5")]
 position = Vector2(633, 340)

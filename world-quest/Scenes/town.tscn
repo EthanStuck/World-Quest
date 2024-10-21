@@ -46,12 +46,10 @@ texture = ExtResource("1_jlrqu")
 [node name="Signs" type="Node" parent="."]
 
 [node name="dne_sign" parent="Signs" instance=ExtResource("3_ccisg")]
-visible = false
 z_index = 4
 position = Vector2(495, 157)
 
 [node name="dne_sign2" parent="Signs" instance=ExtResource("3_ccisg")]
-visible = false
 z_index = 4
 position = Vector2(811, 469)
 rotation = 1.5708
@@ -335,7 +333,7 @@ position = Vector2(1055, 1071)
 [node name="Ferns" type="Node" parent="Foliage"]
 
 [node name="FernBush" parent="Foliage/Ferns" instance=ExtResource("4_3o3g6")]
-position = Vector2(348, 395)
+position = Vector2(327, 386)
 
 [node name="Rocks" type="Node" parent="Foliage"]
 
@@ -369,7 +367,9 @@ script = ExtResource("8_5xvmd")
 position = Vector2(500, 440)
 
 [node name="Player" parent="." instance=ExtResource("3_m0p8w")]
-position = Vector2(421, 488)
+position = Vector2(433, 496)
+speed = 75
+maxHealth = 80
 
 [node name="Travel Areas" type="Node" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://b4en6qsd4qi5m"]
+[gd_scene load_steps=25 format=4 uid="uid://b4en6qsd4qi5m"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_a5bgk"]
 [ext_resource type="Texture2D" uid="uid://700db6nyeu8g" path="res://art/Characters/main character/walk_up1.png" id="2_8qcdx"]
@@ -13,6 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://cw4urovdklshf" path="res://art/Characters/main character/walk_right1.png" id="8_g8co0"]
 [ext_resource type="Texture2D" uid="uid://do0hu7jew0ydb" path="res://art/Characters/main character/walk_right2.png" id="9_o7gx5"]
 [ext_resource type="Texture2D" uid="uid://bbh8bj88m1omm" path="res://art/Characters/main character/walk_right3.png" id="10_5skrh"]
+[ext_resource type="Texture2D" uid="uid://cogeeivnw4vg3" path="res://art/HUD/healthbar_under.png" id="14_2qv34"]
+[ext_resource type="Script" path="res://Scenes/progress_bar.gd" id="14_fyhi1"]
+[ext_resource type="AudioStream" uid="uid://ckc4lrcvldgmd" path="res://Sounds/Effects/hurt_sound2.mp3" id="14_oclw3"]
+[ext_resource type="Texture2D" uid="uid://bir2xjants3bb" path="res://art/HUD/healthbar_over.png" id="15_6jhfj"]
+[ext_resource type="AudioStream" uid="uid://b1ndw0pglixa2" path="res://Sounds/Effects/sword-sound-effect-2-234986.mp3" id="15_kno2j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_85u5v"]
 animations = [{
@@ -92,7 +97,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3ct8"]
-size = Vector2(2, 1)
+size = Vector2(28, 7.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_usnea"]
 size = Vector2(27, 77)
@@ -106,7 +111,7 @@ data = PackedByteArray("SUQzBAAAAAABPVRYWFgAAAASAAADbWFqb3JfYnJhbmQAbXA0MgBUWFhY
 loop = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kxntb"]
-size = Vector2(6, 10)
+size = Vector2(43, 34)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_a5bgk")
@@ -114,36 +119,79 @@ script = ExtResource("1_a5bgk")
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.11, 0.11)
 sprite_frames = SubResource("SpriteFrames_85u5v")
-animation = &"strike down"
+animation = &"strike_left"
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(-1, 36.875)
 shape = SubResource("RectangleShape2D_g3ct8")
 
 [node name="HurtBox" type="Area2D" parent="."]
 collision_mask = 5
 
 [node name="HurtBoxShape" type="CollisionShape2D" parent="HurtBox"]
-visible = false
 position = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_usnea")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [node name="FootStep" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamMP3_yh3a6")
-volume_db = -15.49
+volume_db = -1.0
 
 [node name="GameMusic" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamMP3_c5osl")
+
+[node name="HurtSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_oclw3")
+
+[node name="StrikeSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_kno2j")
 
 [node name="HitBox" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 4
 
 [node name="HitBoxShape" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(1.5, -6)
 shape = SubResource("RectangleShape2D_kxntb")
 disabled = true
+
+[node name="HealthBar" type="TextureProgressBar" parent="." node_paths=PackedStringArray("player")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = -52.0
+offset_right = 23.0
+offset_bottom = -44.0
+grow_horizontal = 2
+max_value = 80.0
+nine_patch_stretch = true
+texture_under = ExtResource("14_2qv34")
+texture_progress = ExtResource("15_6jhfj")
+script = ExtResource("14_fyhi1")
+player = NodePath("..")
+
+[node name="Death_message" type="Label" parent="."]
+z_index = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_top = -40.0
+offset_right = 42.0
+offset_bottom = -17.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "TRY AGAIN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Death_timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
