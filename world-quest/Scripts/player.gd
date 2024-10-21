@@ -5,7 +5,7 @@ signal health_update
 
 @export var speed = 75
 var screen_size = Vector2(1000,1000)
-@export var maxHealth = 80
+@export var maxHealth = 300
 @export var currentHealth: int = maxHealth
 
 
@@ -15,7 +15,7 @@ var foot_step = false
 func _ready():
 	''' player startup '''
 	#screen_size = get_viewport_rect().size
-	$Death_message.hide()
+	$Death/Death_message.hide()
 	$Animations.play()
 	$GameMusic.play()
 	
@@ -108,11 +108,11 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 	currentHealth -= 10
 	# Detects player death and restarts lvl
 	if currentHealth < 0:
-		$Death_timer.start()
-		$Death_message.show()
+		$Death/Death_message.show()
+		$Death/Death_timer.start()
 		position = Vector2(1000,477)
-		await $Death_timer.timeout
-		$Death_message.hide()
+		await $Death/Death_timer.timeout
+		$Death/Death_message.hide()
 		currentHealth = maxHealth
 		
 	health_update.emit()

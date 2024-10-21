@@ -22,8 +22,6 @@ texture = ExtResource("1_wkxcn")
 
 [node name="Player" parent="." instance=ExtResource("2_yeobe")]
 position = Vector2(479, 55)
-speed = 75
-maxHealth = 80
 
 [node name="TravelBack" type="Area2D" parent="."]
 

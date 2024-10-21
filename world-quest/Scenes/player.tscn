@@ -191,30 +191,32 @@ offset_top = -52.0
 offset_right = 23.0
 offset_bottom = -44.0
 grow_horizontal = 2
-max_value = 80.0
 nine_patch_stretch = true
 texture_under = ExtResource("14_2qv34")
 texture_progress = ExtResource("15_6jhfj")
 script = ExtResource("14_fyhi1")
 player = NodePath("..")
 
-[node name="Death_message" type="Label" parent="."]
-z_index = 2
+[node name="Death" type="Node" parent="."]
+
+[node name="Death_message" type="Label" parent="Death"]
+top_level = true
+z_index = 10
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -42.0
-offset_top = -40.0
-offset_right = 42.0
-offset_bottom = -17.0
+offset_left = -278.0
+offset_top = -97.0
+offset_right = -122.0
+offset_bottom = -55.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 30
 text = "TRY AGAIN"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Death_timer" type="Timer" parent="."]
-wait_time = 2.0
+[node name="Death_timer" type="Timer" parent="Death"]
+wait_time = 3.0
 one_shot = true
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

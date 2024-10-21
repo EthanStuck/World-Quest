@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="2_ngss5"]
 [ext_resource type="PackedScene" uid="uid://e12gx1qyncbd" path="res://Scenes/house_1.tscn" id="4_r2q4q"]
 [ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="5_0nka1"]
-[ext_resource type="PackedScene" uid="uid://dqorqwyu7jkle" path="res://Scenes/phantom.tscn" id="6_n2p6c"]
+[ext_resource type="PackedScene" uid="uid://cnorusg3fx75f" path="res://Scenes/spawner.tscn" id="6_ae61f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bb52g"]
 size = Vector2(261, 183)
@@ -24,7 +24,7 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_caon1")
 
 [node name="Player" parent="." instance=ExtResource("2_ngss5")]
-position = Vector2(949, 477)
+position = Vector2(965, 479)
 
 [node name="TravelBack" type="Area2D" parent="."]
 position = Vector2(1001, 482)
@@ -168,38 +168,48 @@ position = Vector2(127, -78)
 position = Vector2(272, -69)
 
 [node name="Tree38" parent="Trees" instance=ExtResource("5_0nka1")]
-position = Vector2(15, -76)
+position = Vector2(-17, -101)
 
 [node name="Tree39" parent="Trees" instance=ExtResource("5_0nka1")]
 position = Vector2(170, 1133)
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="Phantom" parent="Enemies" instance=ExtResource("6_n2p6c")]
-position = Vector2(32, 534)
-
-[node name="Phantom2" parent="Enemies" instance=ExtResource("6_n2p6c")]
-position = Vector2(119, 433)
-
-[node name="Phantom3" parent="Enemies" instance=ExtResource("6_n2p6c")]
-position = Vector2(22, 459)
-
-[node name="Phantom4" parent="Enemies" instance=ExtResource("6_n2p6c")]
-position = Vector2(135, 203)
-
-[node name="Phantom5" parent="Enemies" instance=ExtResource("6_n2p6c")]
-position = Vector2(128, 746)
-
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.517647, 0, 0.6, 0.4)
 z_index = 4096
 z_as_relative = false
-offset_left = -257.0
-offset_top = -241.0
-offset_right = 1245.0
-offset_bottom = 1262.0
+offset_left = -255.0
+offset_top = -238.0
+offset_right = 1247.0
+offset_bottom = 1265.0
 texture = SubResource("CanvasTexture_rfsu7")
 
 [node name="fight_music" type="AudioStreamPlayer2D" parent="."]
 
+[node name="SpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="." groups=["Spawn"]]
+position = Vector2(100, 365)
+
+[node name="Marker2D2" type="Marker2D" parent="." groups=["Spawn"]]
+position = Vector2(89, 486)
+
+[node name="Marker2D3" type="Marker2D" parent="." groups=["Spawn"]]
+position = Vector2(78, 563)
+
+[node name="Marker2D4" type="Marker2D" parent="." groups=["Spawn"]]
+position = Vector2(103, 342)
+
+[node name="Marker2D5" type="Marker2D" parent="." groups=["Spawn"]]
+position = Vector2(32, 592)
+
+[node name="Marker2D6" type="Marker2D" parent="." groups=["Spawn"]]
+position = Vector2(162, 483)
+
+[node name="Spawner" parent="." instance=ExtResource("6_ae61f")]
+position = Vector2(30, 506)
+
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

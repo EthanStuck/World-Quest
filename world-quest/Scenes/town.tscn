@@ -368,8 +368,6 @@ position = Vector2(500, 440)
 
 [node name="Player" parent="." instance=ExtResource("3_m0p8w")]
 position = Vector2(433, 496)
-speed = 75
-maxHealth = 80
 
 [node name="Travel Areas" type="Node" parent="."]
 
@@ -402,7 +400,6 @@ position = Vector2(128.5, 0)
 shape = SubResource("RectangleShape2D_xsqjt")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 modulate = Color(0.517647, 0, 0.6, 0.4)
 offset_left = -248.0
 offset_top = -240.0

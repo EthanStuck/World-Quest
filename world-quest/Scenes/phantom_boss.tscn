@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://dbe4ybb8sw1bg"]
+
+[ext_resource type="Script" path="res://Scenes/phantom_boss.gd" id="1_yl0oe"]
+[ext_resource type="Texture2D" uid="uid://bl1xwrfpu7ll" path="res://art/Characters/Enemies/phantomBoss1.png" id="2_1jd57"]
+[ext_resource type="Texture2D" uid="uid://dkr0c8emhsdt0" path="res://art/Characters/Enemies/phantomBoss2.png" id="3_gancp"]
+[ext_resource type="Texture2D" uid="uid://22peltxndg70" path="res://art/Characters/Enemies/phantomBoss3.png" id="4_chjct"]
+[ext_resource type="AudioStream" uid="uid://c3ybtlj478ae2" path="res://Sounds/Effects/phantom_death.mp3" id="5_f4qgd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_57unu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1jd57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gancp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_chjct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gancp")
+}],
+"loop": false,
+"name": &"float",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_meiti"]
+size = Vector2(41, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgc4m"]
+size = Vector2(31, 50)
+
+[node name="Phantom_Boss" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_yl0oe")
+
+[node name="Animations" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -4)
+sprite_frames = SubResource("SpriteFrames_57unu")
+animation = &"float"
+frame = 2
+frame_progress = 1.0
+
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 24)
+shape = SubResource("RectangleShape2D_meiti")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="HurtBoxShape" type="CollisionShape2D" parent="HurtBox"]
+visible = false
+position = Vector2(-0.5, -2)
+shape = SubResource("RectangleShape2D_bgc4m")
+
+[node name="WanderTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+autostart = true
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_f4qgd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="timeout" from="WanderTimer" to="." method="_on_wander_timer_timeout"]

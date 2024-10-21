@@ -9,7 +9,7 @@ var chasing = false
 var wander = false
 var target
 var target_place
-var maxHealth = 20
+var maxHealth = 100
 var currentHealth: int = maxHealth
 var knockbackPower = 300
 
