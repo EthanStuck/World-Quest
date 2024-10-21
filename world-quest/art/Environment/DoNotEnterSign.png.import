@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://donmri5iwl6nj"
-path="res://.godot/imported/DoNotEnterSign.png-b5498063bd9a2a925cb2ba190550dda3.ctex"
+path="res://.godot/imported/DoNotEnterSign.png-343348ce86a9ee03d9f7880343d026f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Environment/DoNotEnterSign.png"
-dest_files=["res://.godot/imported/DoNotEnterSign.png-b5498063bd9a2a925cb2ba190550dda3.ctex"]
+source_file="res://art/Environment/DoNotEnterSign.png"
+dest_files=["res://.godot/imported/DoNotEnterSign.png-343348ce86a9ee03d9f7880343d026f2.ctex"]
 
 [params]
 
