@@ -1,25 +1,25 @@
-[gd_scene load_steps=28 format=4 uid="uid://b4en6qsd4qi5m"]
+[gd_scene load_steps=29 format=4 uid="uid://b4en6qsd4qi5m"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_a5bgk"]
-[ext_resource type="Texture2D" uid="uid://700db6nyeu8g" path="res://art/Characters/main character/walk_up1.png" id="2_8qcdx"]
-[ext_resource type="Texture2D" uid="uid://bmaut37ovpj5y" path="res://art/Characters/main character/strike_left.png" id="3_08vig"]
-[ext_resource type="Texture2D" uid="uid://4drssm70csm1" path="res://art/Characters/main character/strike_down.png" id="3_c7xug"]
-[ext_resource type="Texture2D" uid="uid://clpmgy8fkn0r8" path="res://art/Characters/main character/strike_right.png" id="3_hncnx"]
-[ext_resource type="Texture2D" uid="uid://dlqc1q61ryiwg" path="res://art/Characters/main character/walk_up2.png" id="3_l78oe"]
-[ext_resource type="Texture2D" uid="uid://4i5q4hk2l5da" path="res://art/Characters/main character/walk_up3.png" id="4_xmkfh"]
-[ext_resource type="Texture2D" uid="uid://r4ci8pi5cpg1" path="res://art/Characters/main character/walk_down1.png" id="5_mop0j"]
-[ext_resource type="Texture2D" uid="uid://cvelqkwtrc6vo" path="res://art/Characters/main character/walk_down2.png" id="6_xjg1r"]
-[ext_resource type="Texture2D" uid="uid://bbys273ya281p" path="res://art/Characters/main character/walk_down3.png" id="7_6dare"]
-[ext_resource type="Texture2D" uid="uid://cw4urovdklshf" path="res://art/Characters/main character/walk_right1.png" id="8_g8co0"]
-[ext_resource type="Texture2D" uid="uid://do0hu7jew0ydb" path="res://art/Characters/main character/walk_right2.png" id="9_o7gx5"]
-[ext_resource type="Texture2D" uid="uid://bbh8bj88m1omm" path="res://art/Characters/main character/walk_right3.png" id="10_5skrh"]
-[ext_resource type="Texture2D" uid="uid://bhaspen2ii6ss" path="res://art/Characters/main character/walk_left1.png" id="11_2l7kw"]
-[ext_resource type="Texture2D" uid="uid://ce0v770lgtjfi" path="res://art/Characters/main character/walk_left2.png" id="12_q1ojq"]
-[ext_resource type="Texture2D" uid="uid://bvbeokb4bkfnp" path="res://art/Characters/main character/walk_left3.png" id="13_nb6w2"]
-[ext_resource type="Texture2D" uid="uid://cogeeivnw4vg3" path="res://art/HUD/healthbar_under.png" id="14_2qv34"]
+[ext_resource type="Texture2D" uid="uid://700db6nyeu8g" path="res://Art/Characters/main character/walk_up1.png" id="2_8qcdx"]
+[ext_resource type="Texture2D" uid="uid://bmaut37ovpj5y" path="res://Art/Characters/main character/strike_left.png" id="3_08vig"]
+[ext_resource type="Texture2D" uid="uid://4drssm70csm1" path="res://Art/Characters/main character/strike_down.png" id="3_c7xug"]
+[ext_resource type="Texture2D" uid="uid://clpmgy8fkn0r8" path="res://Art/Characters/main character/strike_right.png" id="3_hncnx"]
+[ext_resource type="Texture2D" uid="uid://dlqc1q61ryiwg" path="res://Art/Characters/main character/walk_up2.png" id="3_l78oe"]
+[ext_resource type="Texture2D" uid="uid://4i5q4hk2l5da" path="res://Art/Characters/main character/walk_up3.png" id="4_xmkfh"]
+[ext_resource type="Texture2D" uid="uid://r4ci8pi5cpg1" path="res://Art/Characters/main character/walk_down1.png" id="5_mop0j"]
+[ext_resource type="Texture2D" uid="uid://cvelqkwtrc6vo" path="res://Art/Characters/main character/walk_down2.png" id="6_xjg1r"]
+[ext_resource type="Texture2D" uid="uid://bbys273ya281p" path="res://Art/Characters/main character/walk_down3.png" id="7_6dare"]
+[ext_resource type="Texture2D" uid="uid://cw4urovdklshf" path="res://Art/Characters/main character/walk_right1.png" id="8_g8co0"]
+[ext_resource type="Texture2D" uid="uid://do0hu7jew0ydb" path="res://Art/Characters/main character/walk_right2.png" id="9_o7gx5"]
+[ext_resource type="Texture2D" uid="uid://bbh8bj88m1omm" path="res://Art/Characters/main character/walk_right3.png" id="10_5skrh"]
+[ext_resource type="Texture2D" uid="uid://bhaspen2ii6ss" path="res://Art/Characters/main character/walk_left1.png" id="11_2l7kw"]
+[ext_resource type="Texture2D" uid="uid://ce0v770lgtjfi" path="res://Art/Characters/main character/walk_left2.png" id="12_q1ojq"]
+[ext_resource type="Texture2D" uid="uid://bvbeokb4bkfnp" path="res://Art/Characters/main character/walk_left3.png" id="13_nb6w2"]
+[ext_resource type="Texture2D" uid="uid://cogeeivnw4vg3" path="res://Art/HUD/healthbar_under.png" id="14_2qv34"]
 [ext_resource type="Script" path="res://Scenes/progress_bar.gd" id="14_fyhi1"]
 [ext_resource type="AudioStream" uid="uid://ckc4lrcvldgmd" path="res://Sounds/Effects/hurt_sound2.mp3" id="14_oclw3"]
-[ext_resource type="Texture2D" uid="uid://bir2xjants3bb" path="res://art/HUD/healthbar_over.png" id="15_6jhfj"]
+[ext_resource type="Texture2D" uid="uid://bir2xjants3bb" path="res://Art/HUD/healthbar_over.png" id="15_6jhfj"]
 [ext_resource type="AudioStream" uid="uid://b1ndw0pglixa2" path="res://Sounds/Effects/sword-sound-effect-2-234986.mp3" id="15_kno2j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_85u5v"]
@@ -136,6 +136,9 @@ loop = true
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kxntb"]
 size = Vector2(43, 34)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81ucm"]
+size = Vector2(20, 76)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_a5bgk")
 
@@ -145,11 +148,14 @@ sprite_frames = SubResource("SpriteFrames_85u5v")
 animation = &"walk_right"
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1, 36.875)
 shape = SubResource("RectangleShape2D_g3ct8")
 
 [node name="HurtBox" type="Area2D" parent="."]
-collision_mask = 5
+visible = false
+collision_layer = 2
+collision_mask = 4
 
 [node name="HurtBoxShape" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(1.5, 1.5)
@@ -174,6 +180,7 @@ stream = ExtResource("14_oclw3")
 stream = ExtResource("15_kno2j")
 
 [node name="HitBox" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 4
 
@@ -216,5 +223,12 @@ vertical_alignment = 1
 [node name="Death_timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="InteractArea" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_81ucm")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

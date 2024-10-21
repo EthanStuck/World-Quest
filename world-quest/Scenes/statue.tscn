@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://wsw1srii3b3"]
 
-[ext_resource type="Texture2D" uid="uid://du2g0ycxrhtgl" path="res://art/Environment/Town/Statue-Full.png" id="1_8dt6n"]
+[ext_resource type="Texture2D" uid="uid://du2g0ycxrhtgl" path="res://Art/Environment/Town/Statue-Full.png" id="1_8dt6n"]
 [ext_resource type="Script" path="res://Scripts/statue.gd" id="1_abat6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qih3b"]

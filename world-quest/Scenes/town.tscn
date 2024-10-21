@@ -412,7 +412,10 @@ flip_h = true
 stream = ExtResource("12_wvob6")
 autoplay = true
 
+[node name="StatueInteractZone" type="Area2D" parent="."]
+
 [connection signal="area_entered" from="Travel Areas/ToFishing" to="." method="_on_to_fishing_area_entered"]
 [connection signal="area_entered" from="Travel Areas/ToFighting" to="." method="_on_to_fighting_area_entered"]
 [connection signal="area_entered" from="Travel Areas/ToForaging" to="." method="_on_to_foraging_area_entered"]
 [connection signal="area_entered" from="Travel Areas/ToFarming" to="." method="_on_to_farming_area_entered"]
+[connection signal="area_entered" from="StatueInteractZone" to="." method="_on_statue_interact_zone_area_entered"]

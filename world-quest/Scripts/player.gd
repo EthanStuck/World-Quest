@@ -117,3 +117,7 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 		
 	health_update.emit()
 	
+var left_piece = false
+var right_piece = false
+var top_piece = false
+var south_piece = false

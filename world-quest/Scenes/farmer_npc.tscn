@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://djxpxdkw8e8aa"]
 
-[ext_resource type="Texture2D" uid="uid://mb0og728rrec" path="res://Art/Characters/NPCs/NPC1.png" id="1_fjdhi"]
+[ext_resource type="Texture2D" uid="uid://8mf3747dj6f7" path="res://Art/Characters/NPCs/NPC1.png" id="1_fjdhi"]
 [ext_resource type="Script" path="res://Scripts/farmer_npc.gd" id="1_sv8d0"]
 [ext_resource type="Texture2D" uid="uid://8viiykyl7sll" path="res://Art/Characters/NPCs/2.png" id="2_arsxi"]
 
@@ -33,6 +33,7 @@ flip_v = true
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect"]
 modulate = Color(0, 0, 0, 1)
+layout_mode = 0
 offset_left = 26.0
 offset_top = 18.0
 offset_right = 183.0
