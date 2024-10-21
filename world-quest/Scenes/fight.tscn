@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://da5yjfi57uhll"]
+[gd_scene load_steps=10 format=3 uid="uid://da5yjfi57uhll"]
 
 [ext_resource type="Script" path="res://Scripts/fight.gd" id="1_5hnik"]
-[ext_resource type="Texture2D" uid="uid://bpc11km4px56g" path="res://art/Environment/Town/fight Ground.png" id="2_caon1"]
+[ext_resource type="Texture2D" uid="uid://bpc11km4px56g" path="res://Art/Environment/Town/fight Ground.png" id="2_caon1"]
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="2_ngss5"]
 [ext_resource type="PackedScene" uid="uid://e12gx1qyncbd" path="res://Scenes/house_1.tscn" id="4_r2q4q"]
 [ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="5_0nka1"]
 [ext_resource type="PackedScene" uid="uid://dqorqwyu7jkle" path="res://Scenes/phantom.tscn" id="6_n2p6c"]
+[ext_resource type="AudioStream" uid="uid://o2l22x6d5k35" path="res://Sounds/dancefightclub.wav" id="7_c4lbt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bb52g"]
 size = Vector2(261, 183)
@@ -201,5 +202,7 @@ offset_bottom = 1262.0
 texture = SubResource("CanvasTexture_rfsu7")
 
 [node name="fight_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_c4lbt")
+autoplay = true
 
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]

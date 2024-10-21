@@ -1,17 +1,17 @@
 [gd_scene load_steps=19 format=3 uid="uid://cygpy8pi86l0o"]
 
 [ext_resource type="Script" path="res://Scripts/town.gd" id="1_coop3"]
-[ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://art/Environment/Town/Town Ground.png" id="1_jlrqu"]
+[ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://Art/Environment/Town/Town Ground.png" id="1_jlrqu"]
 [ext_resource type="PackedScene" uid="uid://e12gx1qyncbd" path="res://Scenes/house_1.tscn" id="2_tpas1"]
 [ext_resource type="PackedScene" uid="uid://wsw1srii3b3" path="res://Scenes/statue.tscn" id="3_b6cju"]
 [ext_resource type="PackedScene" uid="uid://b3khgaycsndjn" path="res://Scenes/dne_sign.tscn" id="3_ccisg"]
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="3_m0p8w"]
-[ext_resource type="PackedScene" path="res://Scenes/fern_bush.tscn" id="4_3o3g6"]
+[ext_resource type="PackedScene" uid="uid://djfagua3lio6l" path="res://Scenes/fern_bush.tscn" id="4_3o3g6"]
 [ext_resource type="PackedScene" uid="uid://dfbw8ambj1nh7" path="res://Scenes/old_man.tscn" id="4_l2skv"]
 [ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="5_5quc5"]
-[ext_resource type="PackedScene" path="res://Scenes/rock_1.tscn" id="5_xd64k"]
+[ext_resource type="PackedScene" uid="uid://co3ujvpfkw4ww" path="res://Scenes/rock_1.tscn" id="5_xd64k"]
 [ext_resource type="PackedScene" uid="uid://djxpxdkw8e8aa" path="res://Scenes/farmer_npc.tscn" id="7_kku8a"]
-[ext_resource type="Script" path="res://Scripts/farmer_npc.gd" id="8_5xvmd"]
+[ext_resource type="AudioStream" uid="uid://t4ryq6nkg2ad" path="res://Sounds/moonlightcoffee.mp3" id="12_wvob6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_orjsd"]
 size = Vector2(223, 266)
@@ -361,15 +361,12 @@ position = Vector2(555, 502)
 
 [node name="FarmerNPC" parent="NPCs" instance=ExtResource("7_kku8a")]
 position = Vector2(529, 576)
-script = ExtResource("8_5xvmd")
 
 [node name="Statue" parent="." instance=ExtResource("3_b6cju")]
 position = Vector2(500, 440)
 
 [node name="Player" parent="." instance=ExtResource("3_m0p8w")]
 position = Vector2(433, 496)
-speed = 75
-maxHealth = 80
 
 [node name="Travel Areas" type="Node" parent="."]
 
@@ -410,6 +407,10 @@ offset_right = 443.0
 offset_bottom = 1256.0
 texture = SubResource("GradientTexture2D_njl3l")
 flip_h = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_wvob6")
+autoplay = true
 
 [connection signal="area_entered" from="Travel Areas/ToFishing" to="." method="_on_to_fishing_area_entered"]
 [connection signal="area_entered" from="Travel Areas/ToFighting" to="." method="_on_to_fighting_area_entered"]

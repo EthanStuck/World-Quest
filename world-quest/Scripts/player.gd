@@ -17,7 +17,7 @@ func _ready():
 	#screen_size = get_viewport_rect().size
 	$Death_message.hide()
 	$Animations.play()
-	$GameMusic.play()
+	
 	
 func _process(delta):
 	''' continuous processes '''
