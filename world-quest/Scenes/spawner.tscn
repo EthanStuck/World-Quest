@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnorusg3fx75f"]
+
+[ext_resource type="Texture2D" uid="uid://d0lfw0b6kfpnq" path="res://art/Environment/Rock1.png" id="1_hafse"]
+
+[node name="Spawner" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_hafse")

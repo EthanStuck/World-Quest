@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://dqorqwyu7jkle"]
+
+[ext_resource type="Script" path="res://Scripts/phantom.gd" id="1_qechl"]
+[ext_resource type="Texture2D" uid="uid://b8ofu6ug1inw1" path="res://art/Characters/Enemies/phantom frame1.png" id="2_x86mg"]
+[ext_resource type="Texture2D" uid="uid://ckftu0mmoyn8s" path="res://art/Characters/Enemies/phantom frame 2.png" id="3_85o8e"]
+[ext_resource type="Texture2D" uid="uid://yxcjnwjegvqw" path="res://art/Characters/Enemies/phantom frame 3.png" id="4_rsolf"]
+[ext_resource type="AudioStream" uid="uid://c3ybtlj478ae2" path="res://Sounds/Effects/phantom_death.mp3" id="5_w83hq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_57unu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x86mg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_85o8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rsolf")
+}],
+"loop": true,
+"name": &"floating",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_meiti"]
+size = Vector2(29, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgc4m"]
+size = Vector2(31, 50)
+
+[node name="Phantom" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_qechl")
+
+[node name="Animations" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_57unu")
+animation = &"floating"
+
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 23.5)
+shape = SubResource("RectangleShape2D_meiti")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="HurtBoxShape" type="CollisionShape2D" parent="HurtBox"]
+visible = false
+position = Vector2(-0.5, -2)
+shape = SubResource("RectangleShape2D_bgc4m")
+
+[node name="WanderTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+autostart = true
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_w83hq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="timeout" from="WanderTimer" to="." method="_on_wander_timer_timeout"]

@@ -1,16 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://e12gx1qyncbd"]
+[gd_scene load_steps=4 format=3 uid="uid://e12gx1qyncbd"]
 
 [ext_resource type="Texture2D" uid="uid://btk0vewery1jx" path="res://art/Environment/Town/House 1.png" id="1_nf15a"]
+[ext_resource type="Script" path="res://Scripts/house_1.gd" id="1_r8ujt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mu7mt"]
-size = Vector2(142, 202)
+size = Vector2(142, 87)
 
 [node name="House1" type="StaticBody2D"]
+script = ExtResource("1_r8ujt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_nf15a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(0, -2)
+position = Vector2(0, 55.5)
 shape = SubResource("RectangleShape2D_mu7mt")

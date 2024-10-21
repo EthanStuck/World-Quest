@@ -1,27 +1,46 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfbw8ambj1nh7"]
+[gd_scene load_steps=5 format=3 uid="uid://dfbw8ambj1nh7"]
 
-[ext_resource type="Texture2D" uid="uid://d0k4vibananc8" path="res://art/Characters/NPCs/Old Man.png" id="1_qq18h"]
+[ext_resource type="Script" path="res://Scripts/old_man.gd" id="1_qcy3c"]
+[ext_resource type="Texture2D" uid="uid://d0k4vibananc8" path="res://Art/Characters/NPCs/Old Man.png" id="1_qq18h"]
+[ext_resource type="Texture2D" uid="uid://8viiykyl7sll" path="res://Art/Characters/NPCs/2.png" id="3_nbwiq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ncor"]
-size = Vector2(32, 60)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ouclt"]
+radius = 27.0
+height = 90.0
 
-[node name="Old Man" type="Area2D"]
+[node name="Old Man" type="StaticBody2D"]
+script = ExtResource("1_qcy3c")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-51, 71)
 texture = ExtResource("1_qq18h")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, 2)
-shape = SubResource("RectangleShape2D_8ncor")
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-50, 84)
+shape = SubResource("CapsuleShape2D_ouclt")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -32.0
+offset_top = -13.0
+offset_right = 166.0
+offset_bottom = 79.0
+texture = ExtResource("3_nbwiq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect"]
 modulate = Color(0, 0, 0, 1)
-offset_left = 17.0
-offset_top = -89.0
-offset_right = 232.0
-offset_bottom = -10.0
-theme_override_font_sizes/normal_font_size = 13
-text = "Hello Outsider! Welcome to Sherwood Creek, this town isn't what it used to be.
-"
+
+offset_left = 24.0
+offset_top = 18.0
+offset_right = 185.0
+offset_bottom = 88.0
+theme_override_font_sizes/normal_font_size = 10
+text = "Hello outsider! Welcome to the quaint town of Sherwood Creek. Unfortunately the town isn't what it used to be..."
+
 tab_size = 3
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

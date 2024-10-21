@@ -5,14 +5,17 @@
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="2_j2auh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igecs"]
-size = Vector2(20, 185)
+size = Vector2(231, 185)
 
 [node name="Farm" type="Node"]
 script = ExtResource("1_w7msv")
 
 [node name="Floor-Background" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -230.0
+offset_top = -251.0
+offset_right = 770.0
+offset_bottom = 749.0
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_anppi")
 
 [node name="Player" parent="." instance=ExtResource("2_j2auh")]
@@ -22,7 +25,7 @@ position = Vector2(50, 502)
 position = Vector2(1, 502)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TravelBack"]
-position = Vector2(0, -0.5)
+position = Vector2(-125.5, -0.5)
 shape = SubResource("RectangleShape2D_igecs")
 
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
