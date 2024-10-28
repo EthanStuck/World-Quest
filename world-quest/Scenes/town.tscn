@@ -368,6 +368,7 @@ position = Vector2(500, 440)
 
 [node name="Player" parent="." instance=ExtResource("3_m0p8w")]
 position = Vector2(433, 496)
+inv = null
 
 [node name="Travel Areas" type="Node" parent="."]
 
@@ -401,9 +402,9 @@ shape = SubResource("RectangleShape2D_xsqjt")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.517647, 0, 0.6, 0.4)
-offset_left = -248.0
+offset_left = -249.0
 offset_top = -240.0
-offset_right = 443.0
+offset_right = 442.0
 offset_bottom = 1256.0
 texture = SubResource("GradientTexture2D_njl3l")
 flip_h = true
