@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dfbw8ambj1nh7"]
 
 [ext_resource type="Script" path="res://Scripts/old_man.gd" id="1_qcy3c"]
-[ext_resource type="Texture2D" uid="uid://d0k4vibananc8" path="res://Art/Characters/NPCs/Old Man.png" id="1_qq18h"]
-[ext_resource type="Texture2D" uid="uid://8viiykyl7sll" path="res://Art/Characters/NPCs/2.png" id="3_nbwiq"]
+[ext_resource type="Texture2D" uid="uid://d0k4vibananc8" path="res://art/Characters/NPCs/Old Man.png" id="1_qq18h"]
+[ext_resource type="Texture2D" uid="uid://8viiykyl7sll" path="res://art/Characters/NPCs/2.png" id="3_nbwiq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ouclt"]
 radius = 27.0
@@ -32,14 +32,13 @@ texture = ExtResource("3_nbwiq")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TextureRect"]
 modulate = Color(0, 0, 0, 1)
-
+layout_mode = 0
 offset_left = 24.0
 offset_top = 18.0
 offset_right = 185.0
 offset_bottom = 88.0
 theme_override_font_sizes/normal_font_size = 10
 text = "Hello outsider! Welcome to the quaint town of Sherwood Creek. Unfortunately the town isn't what it used to be..."
-
 tab_size = 3
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

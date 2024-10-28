@@ -1,18 +1,14 @@
-
-[gd_scene load_steps=9 format=3 uid="uid://dkodwqm8vyx33"]
-
+[gd_scene load_steps=11 format=3 uid="uid://dkodwqm8vyx33"]
 
 [ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://art/Environment/Town/Town Ground.png" id="1_wkxcn"]
 [ext_resource type="Script" path="res://Scripts/forage.gd" id="1_xne0s"]
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="2_yeobe"]
 [ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="5_5jdd0"]
-
 [ext_resource type="PackedScene" uid="uid://cw5da6guu1o84" path="res://Scenes/yellowrock.tscn" id="6_g2t7q"]
-[ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="6_t14jb"]
-[ext_resource type="PackedScene" uid="uid://chbwegjy1k1il" path="res://Scenes/oldforagingdude.tscn" id="7_5nsiv"]
-
 [ext_resource type="AudioStream" uid="uid://jtisxo0leha" path="res://Sounds/8_bit_ice_cave_lofi.mp3" id="6_k1mo2"]
-
+[ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="6_t14jb"]
+[ext_resource type="PackedScene" uid="uid://djfagua3lio6l" path="res://Scenes/fern_bush.tscn" id="9_8ujb5"]
+[ext_resource type="PackedScene" uid="uid://co3ujvpfkw4ww" path="res://Scenes/rock_1.tscn" id="10_osbjn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4d0a"]
 size = Vector2(247, 273)
@@ -21,6 +17,7 @@ size = Vector2(247, 273)
 script = ExtResource("1_xne0s")
 
 [node name="Floor-Background" type="TextureRect" parent="."]
+anchors_preset = -1
 offset_left = -254.0
 offset_top = -252.0
 offset_right = 746.0
@@ -47,7 +44,6 @@ uppercase = true
 
 [node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_5jdd0")
-
 
 [node name="yellowrock" parent="." instance=ExtResource("6_g2t7q")]
 position = Vector2(713, 336)
@@ -169,12 +165,226 @@ position = Vector2(155, 327)
 [node name="Tree26" parent="." instance=ExtResource("6_t14jb")]
 position = Vector2(71, 327)
 
-[node name="oldforagingdude" parent="." instance=ExtResource("7_5nsiv")]
-position = Vector2(362, 510)
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_k1mo2")
 autoplay = true
 
+[node name="FernBush" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(593, 756)
+
+[node name="FernBush36" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(568, 218)
+
+[node name="FernBush37" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(680, 471)
+
+[node name="FernBush38" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(590, 669)
+
+[node name="FernBush39" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(570, 297)
+
+[node name="FernBush40" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(415, 362)
+
+[node name="FernBush41" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(411, 759)
+
+[node name="FernBush42" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(947, 728)
+
+[node name="FernBush43" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(891, 739)
+
+[node name="FernBush20" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(836, 565)
+
+[node name="FernBush21" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(879, 564)
+
+[node name="FernBush22" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(760, 555)
+
+[node name="FernBush23" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(721, 540)
+
+[node name="FernBush24" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(182, 579)
+
+[node name="FernBush25" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(111, 599)
+
+[node name="FernBush26" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(102, 581)
+
+[node name="FernBush27" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(275, 612)
+
+[node name="FernBush28" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(303, 600)
+
+[node name="FernBush29" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(987, 447)
+
+[node name="FernBush30" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(932, 427)
+
+[node name="FernBush31" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(267, 217)
+
+[node name="FernBush32" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(399, 228)
+
+[node name="FernBush33" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(209, 269)
+
+[node name="FernBush34" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(171, 248)
+
+[node name="FernBush35" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(52, 246)
+
+[node name="FernBush2" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(781, 732)
+
+[node name="FernBush3" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(681, 751)
+
+[node name="FernBush4" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(301, 787)
+
+[node name="FernBush5" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(696, 589)
+
+[node name="FernBush6" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(654, 420)
+
+[node name="FernBush7" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(668, 257)
+
+[node name="FernBush8" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(913, 250)
+
+[node name="FernBush9" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(835, 408)
+
+[node name="FernBush10" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(837, 250)
+
+[node name="FernBush11" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(749, 250)
+
+[node name="FernBush12" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(549, 132)
+
+[node name="FernBush13" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(590, 261)
+
+[node name="FernBush14" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(108, 776)
+
+[node name="FernBush15" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(323, 439)
+
+[node name="FernBush16" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(184, 420)
+
+[node name="FernBush17" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(74, 434)
+
+[node name="FernBush18" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(379, 264)
+
+[node name="FernBush19" parent="." instance=ExtResource("9_8ujb5")]
+position = Vector2(382, 189)
+
+[node name="Rock1" parent="." instance=ExtResource("10_osbjn")]
+position = Vector2(99, 451)
+
+[node name="Rock2" parent="." instance=ExtResource("10_osbjn")]
+position = Vector2(728, 408)
+
+[node name="Rock3" parent="." instance=ExtResource("10_osbjn")]
+position = Vector2(852, 723)
+
+[node name="Rock4" parent="." instance=ExtResource("10_osbjn")]
+position = Vector2(716, 737)
+
+[node name="Rock5" parent="." instance=ExtResource("10_osbjn")]
+position = Vector2(785, 583)
+
+[node name="Rock6" parent="." instance=ExtResource("10_osbjn")]
+position = Vector2(397, 164)
+
+[node name="Rock7" parent="." instance=ExtResource("10_osbjn")]
+position = Vector2(558, 266)
+
+[node name="Rock8" parent="." instance=ExtResource("10_osbjn")]
+position = Vector2(35, 641)
+
+[node name="Rock9" parent="." instance=ExtResource("10_osbjn")]
+position = Vector2(915, 558)
+
+[node name="Rock10" parent="." instance=ExtResource("10_osbjn")]
+position = Vector2(889, 419)
+
+[node name="Rock11" parent="." instance=ExtResource("10_osbjn")]
+position = Vector2(783, 240)
+
+[node name="Rock12" parent="." instance=ExtResource("10_osbjn")]
+position = Vector2(813, 423)
+
+[node name="Rock13" parent="." instance=ExtResource("10_osbjn")]
+position = Vector2(673, 404)
+
+[node name="Rock14" parent="." instance=ExtResource("10_osbjn")]
+position = Vector2(358, 419)
+
+[node name="Rock15" parent="." instance=ExtResource("10_osbjn")]
+position = Vector2(245, 609)
+
+[node name="Rock16" parent="." instance=ExtResource("10_osbjn")]
+position = Vector2(111, 407)
+
+[node name="Rock17" parent="." instance=ExtResource("10_osbjn")]
+position = Vector2(783, 530)
+
+[node name="Rock18" parent="." instance=ExtResource("10_osbjn")]
+position = Vector2(626, 710)
+
+[node name="Rock19" parent="." instance=ExtResource("10_osbjn")]
+position = Vector2(143, 610)
+
+[node name="Rock20" parent="." instance=ExtResource("10_osbjn")]
+position = Vector2(269, 423)
+
+[node name="Rock21" parent="." instance=ExtResource("10_osbjn")]
+position = Vector2(356, 247)
+
+[node name="Rock22" parent="." instance=ExtResource("10_osbjn")]
+position = Vector2(238, 227)
+
+[node name="Rock23" parent="." instance=ExtResource("10_osbjn")]
+position = Vector2(131, 254)
+
+[node name="Rock24" parent="." instance=ExtResource("10_osbjn")]
+position = Vector2(85, 227)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 370.0
+offset_top = 434.0
+offset_right = 624.0
+offset_bottom = 582.0
+theme_override_font_sizes/bold_italics_font_size = 13
+theme_override_font_sizes/italics_font_size = 13
+bbcode_enabled = true
+text = "[center][i][color=#666666][b]In the forest, rocks lie in wait,
+Behind trees that you must locate.
+Find them at 2, 5, 7, then 14,
+The rest are at 19, 20, and 26, unseen.
+Seven rocks in total, hidden from view,
+Discover them all—your task is through![/b][/color][/i]
+"
 
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
