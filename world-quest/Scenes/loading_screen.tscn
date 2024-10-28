@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6lhpejvb6bj4"]
+
+[ext_resource type="Script" path="res://Scripts/loading_screen.gd" id="1_s3edh"]
+[ext_resource type="Texture2D" uid="uid://ca5hqwonydlcm" path="res://art/HUD/load_text1.png" id="2_20ehg"]
+[ext_resource type="Texture2D" uid="uid://cpa3mntlv4kqf" path="res://art/Environment/Town/loading_background.png" id="2_t0dhh"]
+[ext_resource type="Texture2D" uid="uid://b4q46j3gep8v7" path="res://art/HUD/load_text2.png" id="3_nov16"]
+[ext_resource type="Texture2D" uid="uid://bg1qmgaohdxfj" path="res://art/HUD/load_text3.png" id="4_aleh1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_74j1w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_20ehg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nov16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_aleh1")
+}],
+"loop": true,
+"name": &"load_text",
+"speed": 5.0
+}]
+
+[node name="loading_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s3edh")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 400.0
+texture = ExtResource("2_t0dhh")
+
+[node name="loading_animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(54, 12)
+sprite_frames = SubResource("SpriteFrames_74j1w")
+animation = &"load_text"
+frame_progress = 0.723491
+speed_scale = 0.5
+
+[node name="load_time" type="Timer" parent="."]
+wait_time = 15.0
+
+[connection signal="timeout" from="load_time" to="." method="_on_load_time_timeout"]
