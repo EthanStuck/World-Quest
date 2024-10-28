@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://b4en6qsd4qi5m"]
+[gd_scene load_steps=29 format=4 uid="uid://b4en6qsd4qi5m"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_a5bgk"]
 [ext_resource type="Texture2D" uid="uid://700db6nyeu8g" path="res://art/Characters/main character/walk_up1.png" id="2_8qcdx"]
@@ -21,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://ckc4lrcvldgmd" path="res://Sounds/Effects/hurt_sound2.mp3" id="14_oclw3"]
 [ext_resource type="Texture2D" uid="uid://bir2xjants3bb" path="res://art/HUD/healthbar_over.png" id="15_6jhfj"]
 [ext_resource type="AudioStream" uid="uid://b1ndw0pglixa2" path="res://Sounds/Effects/sword-sound-effect-2-234986.mp3" id="15_kno2j"]
+[ext_resource type="Texture2D" uid="uid://dapjhie8nsoce" path="res://art/HUD/compass.png" id="17_m33ck"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_85u5v"]
 animations = [{
@@ -162,6 +163,12 @@ process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
+[node name="Compass" type="Sprite2D" parent="Camera2D"]
+top_level = true
+z_index = 4096
+position = Vector2(-164, -163)
+texture = ExtResource("17_m33ck")
+
 [node name="FootStep" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamMP3_yh3a6")
 volume_db = -1.0
@@ -185,6 +192,7 @@ shape = SubResource("RectangleShape2D_kxntb")
 disabled = true
 
 [node name="HealthBar" type="TextureProgressBar" parent="." node_paths=PackedStringArray("player")]
+z_index = 4096
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
