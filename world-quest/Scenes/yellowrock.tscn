@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cw5da6guu1o84"]
+
+[ext_resource type="Script" path="res://yellowrock.gd" id="1_44txw"]
+[ext_resource type="Resource" uid="uid://cr8x3yjoxpcc2" path="res://inventory/items/yellowrock.tres" id="2_jh6ox"]
+[ext_resource type="Texture2D" uid="uid://d0jfgehpy7fxi" path="res://art/Items/ForageItem.png" id="2_osoca"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yfkp0"]
+radius = 36.0
+
+[node name="yellowrock" type="StaticBody2D"]
+script = ExtResource("1_44txw")
+item = ExtResource("2_jh6ox")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_osoca")
+
+[node name="Interactable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable_area"]
+shape = SubResource("CircleShape2D_yfkp0")
+
+[connection signal="body_entered" from="Interactable_area" to="." method="_on_interactable_area_body_entered"]

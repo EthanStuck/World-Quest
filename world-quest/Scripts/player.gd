@@ -5,8 +5,12 @@ signal health_update
 
 @export var speed = 75
 var screen_size = Vector2(1000,1000)
+
+@export var inv: Inv
+
 @export var maxHealth = 300
 @export var currentHealth: int = maxHealth
+
 
 
 var foot_step = false
@@ -100,6 +104,12 @@ func foot_step_sound():
 		foot_step = true
 		await get_tree().create_timer(.55).timeout
 		foot_step = false
+
+func player():
+	pass
+func collect(item):
+	inv.insert(item)
+
 
 
 

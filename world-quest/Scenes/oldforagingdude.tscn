@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://chbwegjy1k1il"]
+
+[ext_resource type="Texture2D" uid="uid://d0k4vibananc8" path="res://art/Characters/NPCs/Old Man.png" id="1_sk0t4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urf8c"]
+
+[node name="oldforagingdude" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sk0t4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_urf8c")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 19.0
+offset_top = -106.0
+offset_right = 289.0
+offset_bottom = 105.0
+text = "In the forest, rocks lie in wait,
+Behind trees that you must locate.
+Find them at 2, 5, 7, then 14,
+The rest are at 19, 20, and 26, unseen.
+Seven rocks in total, hidden from view,
+Discover them all—your task is through!"
+tab_size = 3

@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=4 uid="uid://b4en6qsd4qi5m"]
+[gd_scene load_steps=31 format=4 uid="uid://b4en6qsd4qi5m"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_a5bgk"]
 [ext_resource type="Texture2D" uid="uid://700db6nyeu8g" path="res://art/Characters/main character/walk_up1.png" id="2_8qcdx"]
+[ext_resource type="Resource" uid="uid://b56wuqxufjoy1" path="res://inventory/playerinv.tres" id="2_afkq7"]
 [ext_resource type="Texture2D" uid="uid://bmaut37ovpj5y" path="res://art/Characters/main character/strike_left.png" id="3_08vig"]
 [ext_resource type="Texture2D" uid="uid://4drssm70csm1" path="res://art/Characters/main character/strike_down.png" id="3_c7xug"]
 [ext_resource type="Texture2D" uid="uid://clpmgy8fkn0r8" path="res://art/Characters/main character/strike_right.png" id="3_hncnx"]
@@ -14,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://do0hu7jew0ydb" path="res://art/Characters/main character/walk_right2.png" id="9_o7gx5"]
 [ext_resource type="Texture2D" uid="uid://bbh8bj88m1omm" path="res://art/Characters/main character/walk_right3.png" id="10_5skrh"]
 [ext_resource type="Texture2D" uid="uid://bhaspen2ii6ss" path="res://art/Characters/main character/walk_left1.png" id="11_2l7kw"]
+[ext_resource type="PackedScene" uid="uid://n0f2ys4hudtp" path="res://inventory/inv_ui.tscn" id="12_b8y0o"]
 [ext_resource type="Texture2D" uid="uid://ce0v770lgtjfi" path="res://art/Characters/main character/walk_left2.png" id="12_q1ojq"]
 [ext_resource type="Texture2D" uid="uid://bvbeokb4bkfnp" path="res://art/Characters/main character/walk_left3.png" id="13_nb6w2"]
 [ext_resource type="Texture2D" uid="uid://cogeeivnw4vg3" path="res://art/HUD/healthbar_under.png" id="14_2qv34"]
@@ -138,6 +140,7 @@ size = Vector2(20, 76)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_a5bgk")
+inv = ExtResource("2_afkq7")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.11, 0.11)
@@ -174,6 +177,12 @@ stream = SubResource("AudioStreamMP3_yh3a6")
 volume_db = -1.0
 
 [node name="GameMusic" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Inv_UI" parent="." instance=ExtResource("12_b8y0o")]
+offset_left = -61.0
+offset_top = -116.0
+offset_right = 65.0
+offset_bottom = -58.0
 
 [node name="HurtSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_oclw3")
