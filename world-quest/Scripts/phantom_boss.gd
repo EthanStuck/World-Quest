@@ -41,6 +41,7 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 	if currentHealth <= 0:
 		queue_free()
 		wave_counter.emit()
+		player.left_piece = true
 		
 #func knockback():
 	#var kb_position = (player_position + position).normalized()
