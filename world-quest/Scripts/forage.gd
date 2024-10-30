@@ -14,7 +14,7 @@ func _on_yellowrock_body_entered(body: Node2D) -> void:
 	total_pickup += 1
 	
 	# when all pieces collected, spawn fragment
-	if total_pickup == 7:
+	if total_pickup == 8:
 		if not FragmentHandler.south_fragment and not FragmentHandler.south_complete:
 			$PickupSound.play()
 			var fragment_instance = fragment.instantiate()

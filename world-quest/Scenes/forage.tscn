@@ -58,13 +58,16 @@ position = Vector2(827, 165)
 position = Vector2(627, 171)
 
 [node name="yellowrock5" parent="." instance=ExtResource("6_g2t7q")]
-position = Vector2(338, 678)
+position = Vector2(363, 686)
 
 [node name="yellowrock6" parent="." instance=ExtResource("6_g2t7q")]
 position = Vector2(146, 842)
 
 [node name="yellowrock7" parent="." instance=ExtResource("6_g2t7q")]
 position = Vector2(263, 721)
+
+[node name="yellowrock8" parent="." instance=ExtResource("6_g2t7q")]
+position = Vector2(483, 175)
 
 [node name="Player" parent="." instance=ExtResource("2_yeobe")]
 position = Vector2(479, 55)
@@ -398,3 +401,4 @@ position = Vector2(491, 497)
 [connection signal="body_entered" from="yellowrock5" to="." method="_on_yellowrock_body_entered"]
 [connection signal="body_entered" from="yellowrock6" to="." method="_on_yellowrock_body_entered"]
 [connection signal="body_entered" from="yellowrock7" to="." method="_on_yellowrock_body_entered"]
+[connection signal="body_entered" from="yellowrock8" to="." method="_on_yellowrock_body_entered"]

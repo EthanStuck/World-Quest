@@ -22,11 +22,11 @@ visible = false
 position = Vector2(-0.5, 63.5)
 shape = SubResource("RectangleShape2D_qih3b")
 
-[node name="FullSprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_810h5")
-
 [node name="BaseSprite" type="Sprite2D" parent="."]
 texture = ExtResource("3_cxhnj")
+
+[node name="FullSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_810h5")
 
 [node name="Fragment-TL" type="Sprite2D" parent="."]
 position = Vector2(-31, -14)

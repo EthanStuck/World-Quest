@@ -358,16 +358,16 @@ position = Vector2(789, 599)
 
 [node name="Old Man" parent="NPCs" instance=ExtResource("4_l2skv")]
 visible = false
-position = Vector2(547, 533)
+position = Vector2(574, 498)
 
 [node name="FarmerNPC" parent="NPCs" instance=ExtResource("7_kku8a")]
-position = Vector2(548, 576)
+position = Vector2(568, 572)
 
 [node name="Statue" parent="." instance=ExtResource("3_b6cju")]
 position = Vector2(500, 440)
 
 [node name="Player" parent="." instance=ExtResource("3_m0p8w")]
-position = Vector2(398, 519)
+position = Vector2(400, 485)
 inv = null
 
 [node name="Travel Areas" type="Node" parent="."]
