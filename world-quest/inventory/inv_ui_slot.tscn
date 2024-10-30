@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bluh76428bv1p" path="res://inventory/slot2.png" id="1_0crku"]
 [ext_resource type="Script" path="res://inventory/inv_ui_slot.gd" id="1_p6g4r"]
-[ext_resource type="Texture2D" uid="uid://d0jfgehpy7fxi" path="res://art/Items/ForageItem.png" id="3_d4ndf"]
+[ext_resource type="Texture2D" uid="uid://d0jfgehpy7fxi" path="res://Art/Items/ForageItem.png" id="3_d4ndf"]
 
 [node name="inv_UI_slot" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)

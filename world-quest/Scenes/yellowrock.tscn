@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bfs71d1sfekpu"]
 
-[ext_resource type="Script" path="res://yellowrock.gd" id="1_44txw"]
+[ext_resource type="Script" path="res://Scripts/yellowrock.gd" id="1_44txw"]
 [ext_resource type="Resource" uid="uid://cr8x3yjoxpcc2" path="res://inventory/items/yellowrock.tres" id="2_jh6ox"]
 [ext_resource type="Texture2D" uid="uid://d0jfgehpy7fxi" path="res://Art/Items/ForageItem.png" id="2_osoca"]
 [ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="4_rkky3"]

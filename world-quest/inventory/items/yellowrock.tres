@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://cr8x3yjoxpcc2"]
 
 [ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_iy064"]
-[ext_resource type="Texture2D" uid="uid://d0jfgehpy7fxi" path="res://art/Items/ForageItem.png" id="2_jla1u"]
+[ext_resource type="Texture2D" uid="uid://d0jfgehpy7fxi" path="res://Art/Items/ForageItem.png" id="2_jla1u"]
 
 [resource]
 script = ExtResource("1_iy064")

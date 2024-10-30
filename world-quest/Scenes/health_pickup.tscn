@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8d5hveitqiwo"]
+
+[ext_resource type="Script" path="res://Scripts/health_pickup.gd" id="1_bj6em"]
+[ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="1_d16y6"]
+[ext_resource type="Texture2D" uid="uid://dcv560t3hkvjp" path="res://Art/Items/Health Pickup.png" id="1_n0b0q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bpdu7"]
+radius = 13.0384
+
+[node name="HealthPickup" type="Area2D" groups=["health"]]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("1_bj6em")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_n0b0q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bpdu7")
+disabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_d16y6")
+pitch_scale = 3.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

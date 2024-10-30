@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://b4en6qsd4qi5m"]
+[gd_scene load_steps=32 format=4 uid="uid://b4en6qsd4qi5m"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_a5bgk"]
 [ext_resource type="Texture2D" uid="uid://700db6nyeu8g" path="res://Art/Characters/main character/walk_up1.png" id="2_8qcdx"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bir2xjants3bb" path="res://Art/HUD/healthbar_over.png" id="15_6jhfj"]
 [ext_resource type="AudioStream" uid="uid://b1ndw0pglixa2" path="res://Sounds/Effects/sword-sound-effect-2-234986.mp3" id="15_kno2j"]
 [ext_resource type="Texture2D" uid="uid://dapjhie8nsoce" path="res://Art/HUD/compass.png" id="17_m33ck"]
+[ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="25_vhyrv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_85u5v"]
 animations = [{
@@ -161,6 +162,15 @@ collision_mask = 4
 position = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_usnea")
 
+[node name="HealthPickupBox" type="Area2D" parent="."]
+visible = false
+collision_layer = 2
+collision_mask = 32
+
+[node name="HealthBoxShape" type="CollisionShape2D" parent="HealthPickupBox"]
+position = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_usnea")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 process_callback = 0
 position_smoothing_enabled = true
@@ -192,7 +202,7 @@ stream = ExtResource("15_kno2j")
 
 [node name="HitBox" type="Area2D" parent="."]
 visible = false
-collision_layer = 2
+collision_layer = 16
 collision_mask = 4
 
 [node name="HitBoxShape" type="CollisionShape2D" parent="HitBox"]
@@ -245,4 +255,8 @@ visible = false
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_81ucm")
 
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_vhyrv")
+
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="area_entered" from="HealthPickupBox" to="." method="_on_health_pickup_box_area_entered"]

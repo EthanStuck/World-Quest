@@ -11,6 +11,8 @@ var screen_size = Vector2(1000,1000)
 @export var maxHealth = 300
 @export var currentHealth: int = maxHealth
 
+var dead = false
+
 
 
 var foot_step = false
@@ -24,10 +26,11 @@ func _ready():
 	
 func _process(delta):
 	''' continuous processes '''
-	move(delta)
-	$Animations.z_index = position.y + 35
-	if Input.is_action_just_pressed('strike'):
-		strike(delta)
+	if not dead:
+		move(delta)
+		$Animations.z_index = position.y + 35
+		if Input.is_action_just_pressed('strike'):
+			strike(delta)
 
 
 func move(delta):
@@ -117,16 +120,24 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 	currentHealth -= 10
 	# Detects player death and restarts lvl
 	if currentHealth < 0:
+		dead = true
+		$Animations.modulate = Color(1,0,0)
+		await get_tree().create_timer(.25).timeout
 		$Death/Death_message.show()
 		$Death/Death_timer.start()
 		position = Vector2(1000,477)
 		await $Death/Death_timer.timeout
 		$Death/Death_message.hide()
 		currentHealth = maxHealth
+
+	else:
+		$Animations.modulate = Color(1,0,0)
+		await get_tree().create_timer(.25).timeout
+		$Animations.modulate = Color(1,1,1)
 		
 	health_update.emit()
 	
-var left_piece = false
-var right_piece = false
-var top_piece = false
-var south_piece = false
+
+func _on_health_pickup_box_area_entered(area: Area2D) -> void:
+	currentHealth += 30
+	$PickupSound.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkodwqm8vyx33"]
+[gd_scene load_steps=12 format=3 uid="uid://dkodwqm8vyx33"]
 
 [ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://Art/Environment/Town/Town Ground.png" id="1_wkxcn"]
 [ext_resource type="Script" path="res://Scripts/forage.gd" id="1_xne0s"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://jtisxo0leha" path="res://Sounds/8_bit_ice_cave_lofi.mp3" id="6_k1mo2"]
 [ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="6_t14jb"]
 [ext_resource type="PackedScene" path="res://Scenes/fern_bush.tscn" id="9_8ujb5"]
+[ext_resource type="PackedScene" uid="uid://kdrbwj02fqyp" path="res://Scenes/fragment_south.tscn" id="10_jvdji"]
 [ext_resource type="PackedScene" path="res://Scenes/rock_1.tscn" id="10_osbjn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4d0a"]
@@ -385,5 +386,8 @@ The rest are at 19, 20, and 26, unseen.
 Seven rocks in total, hidden from view,
 Discover them all—your task is through![/b][/color][/i]
 "
+
+[node name="FragmentSouth" parent="." instance=ExtResource("10_jvdji")]
+position = Vector2(479, 231)
 
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]

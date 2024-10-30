@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://ioby3sn611eg"]
+
+[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_cyvxu"]
+[ext_resource type="Texture2D" uid="uid://dj8ukb7sdndle" path="res://Art/Environment/Town/Statue/Statue Fragment TR.png" id="2_lc3x5"]
+
+[resource]
+script = ExtResource("1_cyvxu")
+name = "FragmentNorth"
+texture = ExtResource("2_lc3x5")
