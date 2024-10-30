@@ -1,18 +1,65 @@
-[gd_scene load_steps=4 format=3 uid="uid://wsw1srii3b3"]
+[gd_scene load_steps=10 format=3 uid="uid://wsw1srii3b3"]
 
-[ext_resource type="Texture2D" uid="uid://du2g0ycxrhtgl" path="res://Art/Environment/Town/Statue-Full.png" id="1_8dt6n"]
 [ext_resource type="Script" path="res://Scripts/statue.gd" id="1_abat6"]
+[ext_resource type="Texture2D" uid="uid://ueb6fv7hf2gr" path="res://Art/Environment/Town/Statue/Statue-Full-Glow.png" id="2_810h5"]
+[ext_resource type="Texture2D" uid="uid://bh85u2qscbadu" path="res://Art/Environment/Town/Statue/Statue-Base.png" id="3_cxhnj"]
+[ext_resource type="Texture2D" uid="uid://bmu2bw8sopqq5" path="res://Art/Environment/Town/Statue/Statue Fragment TL.png" id="4_su3p7"]
+[ext_resource type="Texture2D" uid="uid://dj8ukb7sdndle" path="res://Art/Environment/Town/Statue/Statue Fragment TR.png" id="5_jowu3"]
+[ext_resource type="Texture2D" uid="uid://cwfxwmr1yw5y8" path="res://Art/Environment/Town/Statue/Statue Fragment BL.png" id="6_rlpat"]
+[ext_resource type="Texture2D" uid="uid://ckjj27gfsx6im" path="res://Art/Environment/Town/Statue/Statue Fragment BR.png" id="7_rpxsq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qih3b"]
 size = Vector2(69, 33)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8w04x"]
+size = Vector2(118, 70)
+
 [node name="Statue" type="StaticBody2D"]
 script = ExtResource("1_abat6")
-
-[node name="FullSprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_8dt6n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2(-0.5, 63.5)
 shape = SubResource("RectangleShape2D_qih3b")
+
+[node name="FullSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_810h5")
+
+[node name="BaseSprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_cxhnj")
+
+[node name="Fragment-TL" type="Sprite2D" parent="."]
+position = Vector2(-31, -14)
+texture = ExtResource("4_su3p7")
+
+[node name="Fragment-TR" type="Sprite2D" parent="."]
+position = Vector2(31, -14)
+texture = ExtResource("5_jowu3")
+
+[node name="Fragment-BL" type="Sprite2D" parent="."]
+position = Vector2(-34, 13)
+texture = ExtResource("6_rlpat")
+
+[node name="Fragment-BR" type="Sprite2D" parent="."]
+position = Vector2(34, 13)
+texture = ExtResource("7_rpxsq")
+
+[node name="InteractZone" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractZone"]
+visible = false
+position = Vector2(0, 61)
+shape = SubResource("RectangleShape2D_8w04x")
+
+[node name="InteractLabel" type="Label" parent="."]
+offset_left = -98.0
+offset_top = 84.0
+offset_right = 99.0
+offset_bottom = 107.0
+size_flags_horizontal = 4
+text = "Press 'E' to Add Fragment"
+
+[connection signal="area_entered" from="InteractZone" to="." method="_on_interact_zone_area_entered"]
+[connection signal="area_exited" from="InteractZone" to="." method="_on_interact_zone_area_exited"]

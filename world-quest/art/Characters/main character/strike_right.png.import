@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://clpmgy8fkn0r8"
-path="res://.godot/imported/strike_right.png-3dbf43feb7302f515e48f05159203887.ctex"
+path="res://.godot/imported/strike_right.png-edf7d6653b1ff9c7b02db9bc6a5d725f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Characters/main character/strike_right.png"
-dest_files=["res://.godot/imported/strike_right.png-3dbf43feb7302f515e48f05159203887.ctex"]
+source_file="res://Art/Characters/main character/strike_right.png"
+dest_files=["res://.godot/imported/strike_right.png-edf7d6653b1ff9c7b02db9bc6a5d725f.ctex"]
 
 [params]
 

@@ -14,7 +14,6 @@ var screen_size = Vector2(1000,1000)
 
 
 var foot_step = false
-# testing github commit changes
 
 func _ready():
 	''' player startup '''

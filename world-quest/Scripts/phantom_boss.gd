@@ -12,6 +12,7 @@ var target_place
 var maxHealth = 100
 var currentHealth: int = maxHealth
 var knockbackPower = 300
+@onready var fragment = preload("res://Scenes/fragment_fight.tscn")
 
 func _physics_process(delta: float) -> void:
 		$Animations.animation = 'float'
@@ -42,6 +43,10 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 		queue_free()
 		wave_counter.emit()
 		player.left_piece = true
+		var fragment_instance = fragment.instantiate()
+		get_parent().add_child(fragment_instance)
+		fragment_instance.global_position = global_position
+		FragmentHandler.west_complete = true
 		
 #func knockback():
 	#var kb_position = (player_position + position).normalized()

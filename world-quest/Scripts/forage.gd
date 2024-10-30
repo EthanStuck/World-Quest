@@ -15,12 +15,3 @@ func _on_forage_item_collected() -> void:
 	$NumItemsLabel.text = 'Items found: ' + str(items_collected)
 	$PickupSound.play()
 	
-#func _process(delta):
-	#if Input.is_action_pressed('move_down'):
-		#$Player/FootStep.play()
-	#elif Input.is_action_pressed('move_up'):
-		#$Player/FootStep.play()
-	#elif Input.is_action_pressed('move_right'):
-		#$Player/FootStep.play()
-	#elif Input.is_action_pressed('move_left'):
-		#$Player/FootStep.play()

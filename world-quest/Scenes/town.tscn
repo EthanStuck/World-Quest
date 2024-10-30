@@ -1,10 +1,10 @@
 [gd_scene load_steps=19 format=3 uid="uid://cygpy8pi86l0o"]
 
 [ext_resource type="Script" path="res://Scripts/town.gd" id="1_coop3"]
-[ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://art/Environment/Town/Town Ground.png" id="1_jlrqu"]
+[ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://Art/Environment/Town/Town Ground.png" id="1_jlrqu"]
 [ext_resource type="PackedScene" uid="uid://e12gx1qyncbd" path="res://Scenes/house_1.tscn" id="2_tpas1"]
 [ext_resource type="PackedScene" uid="uid://wsw1srii3b3" path="res://Scenes/statue.tscn" id="3_b6cju"]
-[ext_resource type="PackedScene" uid="uid://b3khgaycsndjn" path="res://Scenes/dne_sign.tscn" id="3_ccisg"]
+[ext_resource type="PackedScene" path="res://Scenes/dne_sign.tscn" id="3_ccisg"]
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="3_m0p8w"]
 [ext_resource type="PackedScene" path="res://Scenes/fern_bush.tscn" id="4_3o3g6"]
 [ext_resource type="PackedScene" uid="uid://dfbw8ambj1nh7" path="res://Scenes/old_man.tscn" id="4_l2skv"]
@@ -367,7 +367,7 @@ position = Vector2(529, 576)
 position = Vector2(500, 440)
 
 [node name="Player" parent="." instance=ExtResource("3_m0p8w")]
-position = Vector2(433, 496)
+position = Vector2(309, 494)
 inv = null
 
 [node name="Travel Areas" type="Node" parent="."]
@@ -401,10 +401,11 @@ position = Vector2(128.5, 0)
 shape = SubResource("RectangleShape2D_xsqjt")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 modulate = Color(0.517647, 0, 0.6, 0.4)
-offset_left = -249.0
+offset_left = -248.0
 offset_top = -240.0
-offset_right = 442.0
+offset_right = 443.0
 offset_bottom = 1256.0
 texture = SubResource("GradientTexture2D_njl3l")
 flip_h = true
@@ -413,10 +414,7 @@ flip_h = true
 stream = ExtResource("12_wvob6")
 autoplay = true
 
-[node name="StatueInteractZone" type="Area2D" parent="."]
-
 [connection signal="area_entered" from="Travel Areas/ToFishing" to="." method="_on_to_fishing_area_entered"]
 [connection signal="area_entered" from="Travel Areas/ToFighting" to="." method="_on_to_fighting_area_entered"]
 [connection signal="area_entered" from="Travel Areas/ToForaging" to="." method="_on_to_foraging_area_entered"]
 [connection signal="area_entered" from="Travel Areas/ToFarming" to="." method="_on_to_farming_area_entered"]
-[connection signal="area_entered" from="StatueInteractZone" to="." method="_on_statue_interact_zone_area_entered"]

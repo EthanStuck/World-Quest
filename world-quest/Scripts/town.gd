@@ -17,18 +17,3 @@ func _on_to_fighting_area_entered(area: Area2D) -> void:
 func _on_to_farming_area_entered(area: Area2D) -> void:
 	''' Send player to farming scene '''
 	get_tree().change_scene_to_file("res://Scenes/farm.tscn")
-
-
-func _on_statue_interact_zone_area_entered(area: Area2D) -> void:
-	''' early version of adding to statue mechanic '''
-	if $Player.left_piece:
-		$Statue.modulate = Color(0,1,0)
-		
-	if $Player.right_piece:
-		$Statue.modulate = Color(1,0,0)
-	
-	if $Player.top_piece:
-		$Statue.modulate = Color(0,0,1)
-		
-	if $Player.south_piece:
-		$Statue.modulate = Color(0,1,1)
