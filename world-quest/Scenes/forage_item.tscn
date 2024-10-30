@@ -1,13 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgf7u8fldjavx"]
+[gd_scene load_steps=6 format=3 uid="uid://bgf7u8fldjavx"]
 
 [ext_resource type="Script" path="res://Scripts/forage_item.gd" id="1_ndofj"]
 [ext_resource type="Texture2D" uid="uid://d0jfgehpy7fxi" path="res://Art/Items/ForageItem.png" id="1_xe2eq"]
 [ext_resource type="Resource" uid="uid://bkl2qmegppbd0" path="res://inventory/items/foragingitem.tres" id="2_o31mx"]
+[ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="4_gtc1l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jdy85"]
 radius = 17.0294
 
 [node name="ForageItem" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_ndofj")
 item = ExtResource("2_o31mx")
 
@@ -17,5 +20,8 @@ texture = ExtResource("1_xe2eq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -1)
 shape = SubResource("CircleShape2D_jdy85")
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_gtc1l")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

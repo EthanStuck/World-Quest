@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://csumdjittcjlm"]
+
+[ext_resource type="Script" path="res://Scripts/fragment_east.gd" id="1_h0rd4"]
+[ext_resource type="Texture2D" uid="uid://ckjj27gfsx6im" path="res://Art/Environment/Town/Statue/Statue Fragment BR.png" id="2_yb1qm"]
+[ext_resource type="Texture2D" uid="uid://bcocmp8fyoi3d" path="res://Art/Environment/Town/Statue/Statue Fragment BR Glow.png" id="3_tomdl"]
+[ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="4_31wvg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bma85"]
+radius = 23.0868
+
+[node name="FragmentEast" type="Area2D"]
+script = ExtResource("1_h0rd4")
+
+[node name="BaseSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_yb1qm")
+
+[node name="GlowSprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_tomdl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bma85")
+disabled = true
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_31wvg")
+pitch_scale = 3.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

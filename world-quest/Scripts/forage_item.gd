@@ -11,6 +11,7 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player"):  # Ensure the area entered is the player
 		player = area
 		collected.emit()
+		#$PickupSound.play()
 		queue_free()
 	
 func drop_item():

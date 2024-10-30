@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3kvkjwynd2h6"]
+[gd_scene load_steps=5 format=3 uid="uid://d3kvkjwynd2h6"]
 
 [ext_resource type="Texture2D" uid="uid://bmu2bw8sopqq5" path="res://Art/Environment/Town/Statue/Statue Fragment TL.png" id="1_1qskx"]
 [ext_resource type="Script" path="res://Scripts/fragment_fight.gd" id="1_4yvgv"]
+[ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="3_50s5u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_me6o1"]
 radius = 24.3311
@@ -21,6 +22,10 @@ texture = ExtResource("1_1qskx")
 wait_time = 3.0
 one_shot = true
 autostart = true
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_50s5u")
+pitch_scale = 3.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

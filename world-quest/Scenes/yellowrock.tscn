@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cw5da6guu1o84"]
+[gd_scene load_steps=6 format=3 uid="uid://bfs71d1sfekpu"]
 
 [ext_resource type="Script" path="res://yellowrock.gd" id="1_44txw"]
 [ext_resource type="Resource" uid="uid://cr8x3yjoxpcc2" path="res://inventory/items/yellowrock.tres" id="2_jh6ox"]
-[ext_resource type="Texture2D" uid="uid://d0jfgehpy7fxi" path="res://art/Items/ForageItem.png" id="2_osoca"]
+[ext_resource type="Texture2D" uid="uid://d0jfgehpy7fxi" path="res://Art/Items/ForageItem.png" id="2_osoca"]
+[ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="4_rkky3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yfkp0"]
 radius = 36.0
@@ -18,5 +19,9 @@ texture = ExtResource("2_osoca")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable_area"]
 shape = SubResource("CircleShape2D_yfkp0")
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_rkky3")
+pitch_scale = 3.0
 
 [connection signal="body_entered" from="Interactable_area" to="." method="_on_interactable_area_body_entered"]

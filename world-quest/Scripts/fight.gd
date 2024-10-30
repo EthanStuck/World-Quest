@@ -46,8 +46,8 @@ func _wave_counter():
 	if wave_spawn_count == 8:
 		timer.set_wait_time(1)
 		
-	print_debug("wave spawn count:", wave_spawn_count)
-	print_debug("wave num:", wave_num)
+	#print_debug("wave spawn count:", wave_spawn_count)
+	#print_debug("wave num:", wave_num)
 	if wave_spawn_count % 7 == 0:
 		wave_num +=1
 		timer.set_wait_time(10)
