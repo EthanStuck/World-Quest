@@ -8,20 +8,20 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_yfkp0"]
 radius = 36.0
 
-[node name="yellowrock" type="StaticBody2D"]
+[node name="yellowrock" type="Area2D"]
+collision_layer = 8
+collision_mask = 64
 script = ExtResource("1_44txw")
 item = ExtResource("2_jh6ox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_osoca")
 
-[node name="Interactable_area" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable_area"]
-shape = SubResource("CircleShape2D_yfkp0")
-
 [node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_rkky3")
 pitch_scale = 3.0
 
-[connection signal="body_entered" from="Interactable_area" to="." method="_on_interactable_area_body_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yfkp0")
+
+[connection signal="body_entered" from="." to="." method="_on_interactable_area_body_entered"]

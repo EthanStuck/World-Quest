@@ -22,6 +22,7 @@ func _on_timer_timeout() -> void:
 func playercollect():
 	''' add to player inventory '''
 	player.collect(item)
+	#pass
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -29,7 +30,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
 		player = body
 		playercollect()
-		FragmentHandler.west_fragment = true
+		FragmentHandler.south_fragment = true
 		$PickupSound.play()
 		await get_tree().create_timer(0.1).timeout
 		queue_free()

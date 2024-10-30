@@ -361,13 +361,13 @@ visible = false
 position = Vector2(547, 533)
 
 [node name="FarmerNPC" parent="NPCs" instance=ExtResource("7_kku8a")]
-position = Vector2(529, 576)
+position = Vector2(548, 576)
 
 [node name="Statue" parent="." instance=ExtResource("3_b6cju")]
 position = Vector2(500, 440)
 
 [node name="Player" parent="." instance=ExtResource("3_m0p8w")]
-position = Vector2(309, 494)
+position = Vector2(398, 519)
 inv = null
 
 [node name="Travel Areas" type="Node" parent="."]

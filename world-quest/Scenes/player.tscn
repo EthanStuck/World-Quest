@@ -140,6 +140,8 @@ size = Vector2(43, 34)
 size = Vector2(20, 76)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 65
+collision_mask = 9
 script = ExtResource("1_a5bgk")
 inv = ExtResource("2_afkq7")
 
@@ -249,7 +251,6 @@ wait_time = 3.0
 one_shot = true
 
 [node name="InteractArea" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
 position = Vector2(0, 2)

@@ -6,7 +6,7 @@ func _ready():
 
 func _on_area_entered(area: Area2D) -> void:
 	''' gets collected '''
-	FragmentHandler.west_fragment = true
+	FragmentHandler.north_fragment = true
 	$PickupSound.play()
 	await get_tree().create_timer(0.1).timeout
 	queue_free()
