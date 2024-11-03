@@ -1,34 +1,44 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfbw8ambj1nh7"]
+[gd_scene load_steps=6 format=3 uid="uid://dfbw8ambj1nh7"]
 
 [ext_resource type="Script" path="res://Scripts/old_man.gd" id="1_qcy3c"]
-[ext_resource type="Texture2D" uid="uid://d0k4vibananc8" path="res://art/Characters/NPCs/Old Man.png" id="1_qq18h"]
-[ext_resource type="Texture2D" uid="uid://8viiykyl7sll" path="res://art/Characters/NPCs/2.png" id="3_nbwiq"]
+[ext_resource type="Texture2D" uid="uid://d0k4vibananc8" path="res://Art/Characters/NPCs/Old Man.png" id="1_qq18h"]
+[ext_resource type="Texture2D" uid="uid://8viiykyl7sll" path="res://Art/Characters/NPCs/2.png" id="3_nbwiq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1a1b"]
+size = Vector2(28, 11)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ouclt"]
 radius = 27.0
 height = 90.0
 
 [node name="Old Man" type="StaticBody2D"]
+scale = Vector2(0.998551, 0.997812)
 script = ExtResource("1_qcy3c")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-51, 71)
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_qq18h")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 26.5)
+shape = SubResource("RectangleShape2D_a1a1b")
+
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(51, -71)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-50, 84)
+visible = false
+position = Vector2(-51, 71)
 shape = SubResource("CapsuleShape2D_ouclt")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -32.0
-offset_top = -13.0
-offset_right = 166.0
-offset_bottom = 79.0
+z_index = 2000
+offset_left = 19.0
+offset_top = -84.0
+offset_right = 217.0
+offset_bottom = 8.0
 texture = ExtResource("3_nbwiq")
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TextureRect"]
 modulate = Color(0, 0, 0, 1)
@@ -40,6 +50,26 @@ offset_bottom = 94.0
 theme_override_font_sizes/normal_font_size = 10
 text = "Defeat the spirits in combat to get back the piece of the statue! Press space to attack, goodluck!"
 tab_size = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="InteractLabel" type="Label" parent="."]
+z_index = 2000
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0435
+offset_top = 36.079
+offset_right = 88.9565
+offset_bottom = 59.079
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+text = "Press 'E' to Talk"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

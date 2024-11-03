@@ -356,11 +356,10 @@ position = Vector2(789, 599)
 [node name="NPCs" type="Node" parent="."]
 
 [node name="Old Man" parent="NPCs" instance=ExtResource("4_l2skv")]
-visible = false
-position = Vector2(574, 498)
+position = Vector2(-192, 975)
 
 [node name="FarmerNPC" parent="NPCs" instance=ExtResource("7_kku8a")]
-position = Vector2(568, 572)
+position = Vector2(606, 422)
 
 [node name="Statue" parent="." instance=ExtResource("3_b6cju")]
 position = Vector2(500, 440)

@@ -190,6 +190,7 @@ volume_db = -1.0
 [node name="GameMusic" type="AudioStreamPlayer2D" parent="."]
 
 [node name="Inv_UI" parent="." instance=ExtResource("12_b8y0o")]
+z_index = 1500
 offset_left = -61.0
 offset_top = -116.0
 offset_right = 65.0
@@ -212,7 +213,7 @@ shape = SubResource("RectangleShape2D_kxntb")
 disabled = true
 
 [node name="HealthBar" type="TextureProgressBar" parent="." node_paths=PackedStringArray("player")]
-z_index = 4096
+z_index = 1500
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
