@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://Art/Environment/Town/Town Ground.png" id="1_jlrqu"]
 [ext_resource type="PackedScene" uid="uid://e12gx1qyncbd" path="res://Scenes/house_1.tscn" id="2_tpas1"]
 [ext_resource type="PackedScene" uid="uid://wsw1srii3b3" path="res://Scenes/statue.tscn" id="3_b6cju"]
-[ext_resource type="PackedScene" path="res://Scenes/dne_sign.tscn" id="3_ccisg"]
+[ext_resource type="PackedScene" uid="uid://b3khgaycsndjn" path="res://Scenes/dne_sign.tscn" id="3_ccisg"]
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="3_m0p8w"]
-[ext_resource type="PackedScene" path="res://Scenes/fern_bush.tscn" id="4_3o3g6"]
+[ext_resource type="PackedScene" uid="uid://djfagua3lio6l" path="res://Scenes/fern_bush.tscn" id="4_3o3g6"]
 [ext_resource type="PackedScene" uid="uid://dfbw8ambj1nh7" path="res://Scenes/old_man.tscn" id="4_l2skv"]
 [ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="5_5quc5"]
-[ext_resource type="PackedScene" path="res://Scenes/rock_1.tscn" id="5_xd64k"]
+[ext_resource type="PackedScene" uid="uid://co3ujvpfkw4ww" path="res://Scenes/rock_1.tscn" id="5_xd64k"]
 [ext_resource type="PackedScene" uid="uid://djxpxdkw8e8aa" path="res://Scenes/farmer_npc.tscn" id="7_kku8a"]
 [ext_resource type="AudioStream" uid="uid://t4ryq6nkg2ad" path="res://Sounds/moonlightcoffee.mp3" id="12_wvob6"]
 
@@ -36,11 +36,10 @@ gradient = SubResource("Gradient_11grr")
 script = ExtResource("1_coop3")
 
 [node name="Floor-Background" type="TextureRect" parent="."]
-offset_left = -245.0
-offset_top = -244.0
-offset_right = 755.0
-offset_bottom = 756.0
-scale = Vector2(1.5, 1.5)
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 1250.0
+offset_bottom = 1250.0
 texture = ExtResource("1_jlrqu")
 
 [node name="Signs" type="Node" parent="."]
@@ -346,7 +345,7 @@ position = Vector2(575, 263)
 position = Vector2(158, 313)
 
 [node name="House2" parent="Houses" instance=ExtResource("2_tpas1")]
-position = Vector2(785, 309)
+position = Vector2(780, 310)
 
 [node name="House3" parent="Houses" instance=ExtResource("2_tpas1")]
 position = Vector2(156, 592)
@@ -401,7 +400,6 @@ position = Vector2(128.5, 0)
 shape = SubResource("RectangleShape2D_xsqjt")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 modulate = Color(0.517647, 0, 0.6, 0.4)
 offset_left = -248.0
 offset_top = -240.0

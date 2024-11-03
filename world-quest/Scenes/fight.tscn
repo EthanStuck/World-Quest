@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="2_ngss5"]
 [ext_resource type="PackedScene" uid="uid://e12gx1qyncbd" path="res://Scenes/house_1.tscn" id="4_r2q4q"]
 [ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="5_0nka1"]
-[ext_resource type="PackedScene" path="res://Scenes/spawner.tscn" id="6_ae61f"]
+[ext_resource type="PackedScene" uid="uid://cnorusg3fx75f" path="res://Scenes/spawner.tscn" id="6_ae61f"]
 [ext_resource type="AudioStream" uid="uid://o2l22x6d5k35" path="res://Sounds/dancefightclub.wav" id="7_c4lbt"]
 [ext_resource type="PackedScene" uid="uid://dfbw8ambj1nh7" path="res://Scenes/old_man.tscn" id="8_1r8wm"]
 [ext_resource type="PackedScene" uid="uid://b8d5hveitqiwo" path="res://Scenes/health_pickup.tscn" id="9_vbpnq"]
@@ -23,7 +23,6 @@ offset_left = -254.0
 offset_top = -240.0
 offset_right = 746.0
 offset_bottom = 760.0
-scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_caon1")
 
 [node name="Player" parent="." instance=ExtResource("2_ngss5")]

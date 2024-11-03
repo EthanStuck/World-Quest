@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bfs71d1sfekpu" path="res://Scenes/yellowrock.tscn" id="6_g2t7q"]
 [ext_resource type="AudioStream" uid="uid://jtisxo0leha" path="res://Sounds/8_bit_ice_cave_lofi.mp3" id="6_k1mo2"]
 [ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="6_t14jb"]
-[ext_resource type="PackedScene" path="res://Scenes/fern_bush.tscn" id="9_8ujb5"]
-[ext_resource type="PackedScene" path="res://Scenes/rock_1.tscn" id="10_osbjn"]
+[ext_resource type="PackedScene" uid="uid://djfagua3lio6l" path="res://Scenes/fern_bush.tscn" id="9_8ujb5"]
+[ext_resource type="PackedScene" uid="uid://co3ujvpfkw4ww" path="res://Scenes/rock_1.tscn" id="10_osbjn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4d0a"]
 size = Vector2(247, 273)
@@ -21,7 +21,6 @@ offset_left = -254.0
 offset_top = -252.0
 offset_right = 746.0
 offset_bottom = 748.0
-scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_wkxcn")
 
 [node name="TravelBack" type="Area2D" parent="."]
