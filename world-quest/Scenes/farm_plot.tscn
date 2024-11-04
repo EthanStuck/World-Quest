@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://d02uuaegyf06h"]
+
+[ext_resource type="Texture2D" uid="uid://l7o76a33q8k1" path="res://Art/Environment/Farm/Farm Plot.png" id="1_4px4q"]
+[ext_resource type="Script" path="res://Scripts/farm_plot.gd" id="1_m33kp"]
+[ext_resource type="Texture2D" uid="uid://k0yrnrvf1vs6" path="res://Art/Environment/Farm/Farm Plot Fence Top.png" id="2_e7m40"]
+[ext_resource type="Texture2D" uid="uid://bwg3gjgjkc1je" path="res://Art/Environment/Farm/Farm Plot Fence Sides.png" id="3_cwcy1"]
+[ext_resource type="Texture2D" uid="uid://1acdg20x65e6" path="res://Art/Environment/Farm/Farm Plot Fence Bottom.png" id="4_5vtnn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwjsc"]
+size = Vector2(174, 8.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6418"]
+size = Vector2(6, 154)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnrfn"]
+size = Vector2(62, 8.5)
+
+[node name="FarmPlot" type="StaticBody2D"]
+script = ExtResource("1_m33kp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4px4q")
+
+[node name="FenceTop" type="Sprite2D" parent="."]
+position = Vector2(-3, -78)
+texture = ExtResource("2_e7m40")
+
+[node name="FenceSides" type="Sprite2D" parent="."]
+position = Vector2(-3, 0)
+texture = ExtResource("3_cwcy1")
+
+[node name="FenceBottom" type="Sprite2D" parent="."]
+position = Vector2(-3, 77)
+texture = ExtResource("4_5vtnn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-3, -67.25)
+shape = SubResource("RectangleShape2D_lwjsc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-87, 13)
+shape = SubResource("RectangleShape2D_l6418")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(81, 13)
+shape = SubResource("RectangleShape2D_l6418")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-59, 87)
+shape = SubResource("RectangleShape2D_lnrfn")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(53, 87)
+shape = SubResource("RectangleShape2D_lnrfn")

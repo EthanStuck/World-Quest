@@ -77,6 +77,7 @@ interact={
 2d_physics/layer_5="Sword"
 2d_physics/layer_6="health pickups"
 2d_physics/layer_7="Pickup"
+2d_physics/layer_8="weeds"
 
 [rendering]
 

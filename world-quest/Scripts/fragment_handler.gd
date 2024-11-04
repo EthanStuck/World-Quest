@@ -17,3 +17,5 @@ var north_added = false
 var south_fragment = false
 var south_complete = false
 var south_added = false
+
+var num_carrots = 0

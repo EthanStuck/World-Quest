@@ -28,7 +28,7 @@ func deweed():
 		else:
 			var carrot = carrot3.instantiate()
 			get_parent().add_child(carrot)
-			carrot.global_position = global_position
+			#carrot.global_position = position
 
 
 
