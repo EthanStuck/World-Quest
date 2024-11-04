@@ -28,7 +28,6 @@ texture = ExtResource("2_caon1")
 
 [node name="Player" parent="." instance=ExtResource("2_ngss5")]
 position = Vector2(965, 479)
-inv = null
 
 [node name="TravelBack" type="Area2D" parent="."]
 position = Vector2(1001, 482)

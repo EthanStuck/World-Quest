@@ -1,5 +1,7 @@
 extends Area2D
 
+@export var item: InvItem
+
 func _ready():
 	$BaseSprite.z_index = position.y + 10
 	$GlowSprite.z_index = position.y + 13
