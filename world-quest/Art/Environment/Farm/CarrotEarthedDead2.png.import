@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7p1vdcph3tjn"
-path="res://.godot/imported/CarrotEarthedDead2.png-2cef82ddcf35bb6c614a288fbcb810bc.ctex"
+path="res://.godot/imported/CarrotEarthedDead2.png-a61e9d99235874fc81a14f21acb239e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Environment/Farm/CarrotEarthedDead2.png"
-dest_files=["res://.godot/imported/CarrotEarthedDead2.png-2cef82ddcf35bb6c614a288fbcb810bc.ctex"]
+source_file="res://art/Environment/Farm/CarrotEarthedDead2.png"
+dest_files=["res://.godot/imported/CarrotEarthedDead2.png-a61e9d99235874fc81a14f21acb239e5.ctex"]
 
 [params]
 

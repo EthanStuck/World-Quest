@@ -1,0 +1,108 @@
+[gd_scene load_steps=13 format=3 uid="uid://dafbxhoth4wqr"]
+
+<<<<<<< Updated upstream
+[ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://Art/Environment/Town/Town Ground.png" id="1_716ti"]
+=======
+>>>>>>> Stashed changes
+[ext_resource type="Script" path="res://Scripts/fishing.gd" id="1_cr84t"]
+[ext_resource type="Texture2D" uid="uid://datkgacy3b6ji" path="res://art/Environment/Fishing/fishing_background.png" id="2_qf7g3"]
+[ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="2_ynwdu"]
+[ext_resource type="Texture2D" uid="uid://dy2x08p37whl5" path="res://art/Items/bobber.png" id="4_yuh8n"]
+[ext_resource type="Texture2D" uid="uid://b6orc8rvuhfqm" path="res://art/Environment/Fishing/bubbles1.png" id="5_pe5ip"]
+[ext_resource type="Texture2D" uid="uid://ck8vnnkydl15v" path="res://art/Environment/Fishing/bubbles2.png" id="6_cs0ot"]
+[ext_resource type="Texture2D" uid="uid://bk84p534jf5s3" path="res://art/Environment/Fishing/bubbles3.png" id="7_e8jco"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spray"]
+size = Vector2(251, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0iwd"]
+size = Vector2(151, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kscm7"]
+size = Vector2(6.75, 221)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hlvfi"]
+size = Vector2(6.5, 217.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rn5dd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_pe5ip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cs0ot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_e8jco")
+}],
+"loop": true,
+"name": &"bubs",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Fishing" type="Node"]
+script = ExtResource("1_cr84t")
+
+[node name="Water" type="ColorRect" parent="."]
+offset_right = 1006.0
+offset_bottom = 1002.0
+color = Color(0.358546, 0.652979, 1, 1)
+
+[node name="Floor-Background" type="TextureRect" parent="."]
+offset_left = -245.0
+offset_top = -249.0
+offset_right = 1255.0
+offset_bottom = 1251.0
+texture = ExtResource("2_qf7g3")
+
+[node name="Player" parent="." instance=ExtResource("2_ynwdu")]
+position = Vector2(512, 918)
+
+[node name="TravelBack" type="Area2D" parent="."]
+position = Vector2(508, 999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TravelBack"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_spray")
+
+[node name="Pier bounaries" type="Node" parent="."]
+
+[node name="Top" type="StaticBody2D" parent="Pier bounaries"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pier bounaries/Top"]
+position = Vector2(504, 759)
+shape = SubResource("RectangleShape2D_u0iwd")
+
+[node name="Left" type="StaticBody2D" parent="Pier bounaries"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pier bounaries/Left"]
+position = Vector2(436.375, 874.5)
+shape = SubResource("RectangleShape2D_kscm7")
+
+[node name="Right" type="StaticBody2D" parent="Pier bounaries"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pier bounaries/Right"]
+position = Vector2(572.75, 873.75)
+shape = SubResource("RectangleShape2D_hlvfi")
+
+[node name="Bobber" type="Sprite2D" parent="."]
+position = Vector2(956, 1051)
+scale = Vector2(0.150002, 0.146553)
+texture = ExtResource("4_yuh8n")
+
+[node name="Bubbles" type="AnimatedSprite2D" parent="."]
+position = Vector2(1072, 830)
+scale = Vector2(0.115, 0.1075)
+sprite_frames = SubResource("SpriteFrames_rn5dd")
+animation = &"bubs"
+
+[connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]

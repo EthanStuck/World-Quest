@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dafbxhoth4wqr"]
 
-[ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://Art/Environment/Town/Town Ground.png" id="1_716ti"]
 [ext_resource type="Script" path="res://Scripts/fishing.gd" id="1_cr84t"]
+[ext_resource type="Texture2D" uid="uid://datkgacy3b6ji" path="res://art/Environment/Fishing/fishing_background.png" id="2_qf7g3"]
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="2_ynwdu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spray"]
@@ -10,10 +10,17 @@ size = Vector2(251, 20)
 [node name="Fishing" type="Node"]
 script = ExtResource("1_cr84t")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1006.0
+offset_bottom = 1010.0
+color = Color(0.386514, 0.786791, 1, 1)
+
 [node name="Floor-Background" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_716ti")
+offset_left = -249.0
+offset_top = -245.0
+offset_right = 1251.0
+offset_bottom = 1255.0
+texture = ExtResource("2_qf7g3")
 
 [node name="Player" parent="." instance=ExtResource("2_ynwdu")]
 position = Vector2(512, 918)
@@ -24,5 +31,7 @@ position = Vector2(508, 999)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TravelBack"]
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_spray")
+
+[node name="Pier barriers" type="Node" parent="."]
 
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
