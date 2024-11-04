@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://e12gx1qyncbd" path="res://Scenes/house_1.tscn" id="4_frgo4"]
 [ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="5_iox4c"]
 [ext_resource type="PackedScene" uid="uid://824o7o7xcu1u" path="res://Scenes/weed_1.tscn" id="6_2q7pf"]
-[ext_resource type="PackedScene" uid="uid://d02uuaegyf06h" path="res://Scenes/farm_plot.tscn" id="6_pqpco"]
+[ext_resource type="PackedScene" path="res://Scenes/farm_plot.tscn" id="6_pqpco"]
 [ext_resource type="PackedScene" uid="uid://xnv4dcevn0ab" path="res://Scenes/carrot_earthed_1.tscn" id="6_wgft4"]
 [ext_resource type="PackedScene" uid="uid://cvfdqtodwcb1r" path="res://Scenes/carrot_earthed_2.tscn" id="7_2heeb"]
 [ext_resource type="PackedScene" uid="uid://cisfavbpmoi1x" path="res://Scenes/carrot_earthed_3.tscn" id="8_nsblg"]
-[ext_resource type="PackedScene" uid="uid://b15ykjqpixre" path="res://Scenes/farmer_npc_2.tscn" id="11_tceck"]
+[ext_resource type="PackedScene" path="res://Scenes/farmer_npc_2.tscn" id="11_tceck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igecs"]
 size = Vector2(236.5, 290)
