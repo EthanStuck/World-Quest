@@ -31,8 +31,6 @@ func _process(delta):
 		$Animations.z_index = position.y + 35
 		if Input.is_action_just_pressed('strike'):
 			strike(delta)
-		if Input.is_action_just_pressed('cast'):
-			cast(delta)
 
 
 func move(delta):
@@ -99,9 +97,6 @@ func strike(delta):
 			await get_tree().create_timer(.25).timeout
 			$HitBox/HitBoxShape.disabled = true
 			$Animations.animation = 'walk_left'
-
-func cast(delta):
-	$Animations.animation = 'fish'
 
 func foot_step_sound():
 	''' make foot step sounds when walking '''

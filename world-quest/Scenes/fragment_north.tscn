@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://hqh8mc8x0fu6"]
 
 [ext_resource type="Script" path="res://Scripts/fragment_north.gd" id="1_dnete"]
-[ext_resource type="Texture2D" uid="uid://dj8ukb7sdndle" path="res://art/Environment/Town/Statue/Statue Fragment TR.png" id="2_liejt"]
-[ext_resource type="Texture2D" uid="uid://cfk5hrr3foh8b" path="res://art/Environment/Town/Statue/Statue Fragment TR Glow.png" id="3_oxyh4"]
+[ext_resource type="Texture2D" uid="uid://dj8ukb7sdndle" path="res://Art/Environment/Town/Statue/Statue Fragment TR.png" id="2_liejt"]
+[ext_resource type="Texture2D" uid="uid://cfk5hrr3foh8b" path="res://Art/Environment/Town/Statue/Statue Fragment TR Glow.png" id="3_oxyh4"]
 [ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="4_tk0fy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bma85"]
