@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://xnv4dcevn0ab"]
+[gd_scene load_steps=7 format=3 uid="uid://xnv4dcevn0ab"]
 
 [ext_resource type="Script" path="res://Scripts/carrot_earthed.gd" id="1_6ojhj"]
 [ext_resource type="Texture2D" uid="uid://r6qjeci75sy1" path="res://Art/Environment/Farm/CarrotEarthed1.png" id="1_imju7"]
 [ext_resource type="Resource" uid="uid://b7j41hslue23k" path="res://inventory/items/carrot.tres" id="2_l81ge"]
 [ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="4_0hbbo"]
+[ext_resource type="Texture2D" uid="uid://b74kq1rabxaa5" path="res://Art/Environment/Farm/CarrotEarthedDead1.png" id="5_jfkhu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ecu6a"]
 radius = 6.0
@@ -13,9 +14,13 @@ height = 20.0
 script = ExtResource("1_6ojhj")
 item = ExtResource("2_l81ge")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-2, -8)
+[node name="FullSprite" type="Sprite2D" parent="."]
+position = Vector2(3, -10)
 texture = ExtResource("1_imju7")
+
+[node name="DeadSprite" type="Sprite2D" parent="."]
+position = Vector2(3, -10)
+texture = ExtResource("5_jfkhu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -8)

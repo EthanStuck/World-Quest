@@ -3,13 +3,27 @@ extends Area2D
 @export var item: InvItem
 var player = null
 var interactable = false
+var dead
 
 func _ready():
-	$Sprite2D.z_index = position.y
+	# these are broken rn for some reason
+	#$FullSprite.z_index = position.y
+	#$DeadSprite.z_index = position.y
+	$FullSprite.z_index = 5
+	$DeadSprite.z_index = 5
+	if not FragmentHandler.east_complete:
+		$FullSprite.hide()
+		dead = true
+	else:
+		$DeadSprite.hide()
+		dead = false
 
 func _process(delta):
 	if Input.is_action_just_pressed('interact'):
-		playercollect()
+		if dead:
+			water_plant()
+		else:
+			playercollect()
 
 
 func playercollect():
@@ -19,7 +33,14 @@ func playercollect():
 		$PickupSound.play()
 		await get_tree().create_timer(0.1).timeout
 		queue_free()
+		FragmentHandler.num_carrots += 1
 
+func water_plant():
+	''' water the plant '''
+	if interactable:
+		dead = false
+		$DeadSprite.hide()
+		$FullSprite.show()
 
 func _on_body_entered(body: Node2D) -> void:
 	''' player enters area '''
@@ -29,7 +50,6 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.
 	''' player leaves area '''
 	if body.has_method("player"):
 		player = body
