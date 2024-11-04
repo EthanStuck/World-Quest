@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dafbxhoth4wqr"]
+[gd_scene load_steps=8 format=3 uid="uid://dafbxhoth4wqr"]
 
 [ext_resource type="Script" path="res://Scripts/fishing.gd" id="1_cr84t"]
 [ext_resource type="Texture2D" uid="uid://datkgacy3b6ji" path="res://art/Environment/Fishing/fishing_background.png" id="2_qf7g3"]
@@ -6,6 +6,15 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spray"]
 size = Vector2(251, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enqme"]
+size = Vector2(14.5, 211)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_alepp"]
+size = Vector2(166, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aq0wo"]
+size = Vector2(10.5, 210)
 
 [node name="Fishing" type="Node"]
 script = ExtResource("1_cr84t")
@@ -33,5 +42,23 @@ position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_spray")
 
 [node name="Pier barriers" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Pier barriers"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pier barriers/StaticBody2D"]
+position = Vector2(428.25, 873.5)
+shape = SubResource("RectangleShape2D_enqme")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Pier barriers"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pier barriers/StaticBody2D2"]
+position = Vector2(500, 760)
+shape = SubResource("RectangleShape2D_alepp")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Pier barriers"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pier barriers/StaticBody2D3"]
+position = Vector2(571.75, 875)
+shape = SubResource("RectangleShape2D_aq0wo")
 
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
