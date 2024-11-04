@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cygpy8pi86l0o"]
+[gd_scene load_steps=20 format=3 uid="uid://cygpy8pi86l0o"]
 
 [ext_resource type="Script" path="res://Scripts/town.gd" id="1_coop3"]
 [ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://Art/Environment/Town/Town Ground.png" id="1_jlrqu"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://djxpxdkw8e8aa" path="res://Scenes/farmer_npc.tscn" id="7_kku8a"]
 [ext_resource type="PackedScene" uid="uid://va1gl8neyqxq" path="res://Scenes/fisher_npc.tscn" id="10_l0e7v"]
 [ext_resource type="AudioStream" uid="uid://t4ryq6nkg2ad" path="res://Sounds/moonlightcoffee.mp3" id="12_wvob6"]
-[ext_resource type="PackedScene" uid="uid://5ruqoyek1n6x" path="res://Scenes/sword.tscn" id="14_0x5pq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_orjsd"]
 size = Vector2(223, 266)
@@ -412,11 +411,11 @@ flip_h = true
 stream = ExtResource("12_wvob6")
 autoplay = true
 
-[node name="sword" parent="." instance=ExtResource("14_0x5pq")]
-position = Vector2(337, 501)
-
 [node name="Player" parent="." instance=ExtResource("3_m0p8w")]
 position = Vector2(400, 485)
+
+[node name="SwordSpawnLocation" type="Marker2D" parent="."]
+position = Vector2(337, 500)
 
 [connection signal="area_entered" from="Travel Areas/ToFishing" to="." method="_on_to_fishing_area_entered"]
 [connection signal="area_entered" from="Travel Areas/ToFighting" to="." method="_on_to_fighting_area_entered"]

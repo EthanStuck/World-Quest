@@ -82,20 +82,21 @@ func move(delta):
 		velocity = velocity.slide(collision.get_normal())
 
 func strike(delta):
-	$StrikeSound.play()
-	if velocity.x >= 0:
-		$Animations.animation = 'strike_right'
-		$HitBox/HitBoxShape.disabled = false
-		await get_tree().create_timer(.25).timeout
-		$HitBox/HitBoxShape.disabled = true
-		$Animations.animation = 'walk_right'
-	else:
-		#$Animations.flip_h = velocity.x < 0
-		$Animations.animation = 'strike_left'
-		$HitBox/HitBoxShape.disabled = false
-		await get_tree().create_timer(.25).timeout
-		$HitBox/HitBoxShape.disabled = true
-		$Animations.animation = 'walk_left'
+	if FragmentHandler.sword_pickup:
+		$StrikeSound.play()
+		if velocity.x >= 0:
+			$Animations.animation = 'strike_right'
+			$HitBox/HitBoxShape.disabled = false
+			await get_tree().create_timer(.25).timeout
+			$HitBox/HitBoxShape.disabled = true
+			$Animations.animation = 'walk_right'
+		else:
+			#$Animations.flip_h = velocity.x < 0
+			$Animations.animation = 'strike_left'
+			$HitBox/HitBoxShape.disabled = false
+			await get_tree().create_timer(.25).timeout
+			$HitBox/HitBoxShape.disabled = true
+			$Animations.animation = 'walk_left'
 
 func foot_step_sound():
 	''' make foot step sounds when walking '''
