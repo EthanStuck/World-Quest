@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://824o7o7xcu1u"]
+
+[ext_resource type="Texture2D" uid="uid://cqq0yn82xbqo" path="res://Art/Environment/Farm/Weed1.png" id="1_j2yh7"]
+[ext_resource type="Script" path="res://Scripts/weed.gd" id="1_l60cx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2bx3"]
+size = Vector2(27, 11)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bo5rc"]
+radius = 22.0
+
+[node name="Weed1" type="StaticBody2D"]
+script = ExtResource("1_l60cx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -18)
+texture = ExtResource("1_j2yh7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-0.5, -5)
+shape = SubResource("RectangleShape2D_f2bx3")
+
+[node name="InteractZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractZone"]
+visible = false
+position = Vector2(0, -17)
+shape = SubResource("CircleShape2D_bo5rc")
+
+[connection signal="body_entered" from="InteractZone" to="." method="_on_interact_zone_body_entered"]
+[connection signal="body_exited" from="InteractZone" to="." method="_on_interact_zone_body_exited"]

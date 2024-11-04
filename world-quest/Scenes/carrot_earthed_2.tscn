@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvfdqtodwcb1r"]
+
+[ext_resource type="Texture2D" uid="uid://5q7frijksxt5" path="res://Art/Environment/Farm/CarrotEarthed2.png" id="1_cgrno"]
+[ext_resource type="Script" path="res://Scripts/carrot_earthed.gd" id="1_oegfo"]
+[ext_resource type="Resource" uid="uid://b7j41hslue23k" path="res://inventory/items/carrot.tres" id="2_pw57r"]
+[ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="3_g8hyp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ecu6a"]
+radius = 5.0
+height = 18.0
+
+[node name="CarrotEarthed2" type="Area2D"]
+script = ExtResource("1_oegfo")
+item = ExtResource("2_pw57r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.38419e-07, -8)
+scale = Vector2(0.97263, 1.12431)
+texture = ExtResource("1_cgrno")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("CapsuleShape2D_ecu6a")
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_g8hyp")
+pitch_scale = 3.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

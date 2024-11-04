@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://va1gl8neyqxq"]
+
+[ext_resource type="Script" path="res://Scripts/fisher_npc.gd" id="1_3cxfs"]
+[ext_resource type="Texture2D" uid="uid://dh6ehh8q3mcs6" path="res://Art/Characters/NPCs/NPC Fisher.png" id="1_e1no7"]
+[ext_resource type="Texture2D" uid="uid://8viiykyl7sll" path="res://Art/Characters/NPCs/2.png" id="2_41ps1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggbpy"]
+size = Vector2(28, 10)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2w0gd"]
+radius = 29.0
+height = 86.0
+
+[node name="FisherNPC" type="StaticBody2D"]
+script = ExtResource("1_3cxfs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_e1no7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 28)
+shape = SubResource("RectangleShape2D_ggbpy")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+shape = SubResource("CapsuleShape2D_2w0gd")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = 2000
+offset_left = 20.0
+offset_top = -8.0
+offset_right = 225.0
+offset_bottom = 86.0
+texture = ExtResource("2_41ps1")
+flip_v = true
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 183.0
+offset_bottom = 78.0
+theme_override_font_sizes/normal_font_size = 10
+tab_size = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="InteractLabel" type="Label" parent="."]
+z_index = 2000
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0435
+offset_top = 36.079
+offset_right = 88.9565
+offset_bottom = 59.079
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+text = "Press 'E' to Talk"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

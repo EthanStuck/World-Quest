@@ -10,6 +10,10 @@ func _ready():
 	''' player startup '''
 	#screen_size = get_viewport_rect().size
 	$fight_music.play()
+	if FragmentHandler.west_complete:
+		$TextureRect.hide()
+		$TownMusic.play()
+		$fight_music.stop()
 
 func _process(delta):
 	#if wave_spawn_count == 14:

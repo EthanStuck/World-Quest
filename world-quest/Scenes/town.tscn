@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cygpy8pi86l0o"]
+[gd_scene load_steps=20 format=3 uid="uid://cygpy8pi86l0o"]
 
 [ext_resource type="Script" path="res://Scripts/town.gd" id="1_coop3"]
 [ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://Art/Environment/Town/Town Ground.png" id="1_jlrqu"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="5_5quc5"]
 [ext_resource type="PackedScene" uid="uid://co3ujvpfkw4ww" path="res://Scenes/rock_1.tscn" id="5_xd64k"]
 [ext_resource type="PackedScene" uid="uid://djxpxdkw8e8aa" path="res://Scenes/farmer_npc.tscn" id="7_kku8a"]
+[ext_resource type="PackedScene" uid="uid://va1gl8neyqxq" path="res://Scenes/fisher_npc.tscn" id="10_l0e7v"]
 [ext_resource type="AudioStream" uid="uid://t4ryq6nkg2ad" path="res://Sounds/moonlightcoffee.mp3" id="12_wvob6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_orjsd"]
@@ -50,7 +51,7 @@ position = Vector2(495, 157)
 
 [node name="dne_sign2" parent="Signs" instance=ExtResource("3_ccisg")]
 z_index = 4
-position = Vector2(811, 469)
+position = Vector2(1358, 423)
 rotation = 1.5708
 skew = -1.28805
 
@@ -359,7 +360,10 @@ position = Vector2(789, 599)
 position = Vector2(-192, 975)
 
 [node name="FarmerNPC" parent="NPCs" instance=ExtResource("7_kku8a")]
-position = Vector2(606, 422)
+position = Vector2(626, 425)
+
+[node name="FisherNPC" parent="NPCs" instance=ExtResource("10_l0e7v")]
+position = Vector2(444, 77)
 
 [node name="Statue" parent="." instance=ExtResource("3_b6cju")]
 position = Vector2(500, 440)
