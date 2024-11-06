@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dafbxhoth4wqr"]
 
 [ext_resource type="Script" path="res://Scripts/fishing.gd" id="1_cr84t"]
-[ext_resource type="Texture2D" uid="uid://datkgacy3b6ji" path="res://art/Environment/Fishing/fishing_background.png" id="2_qf7g3"]
+[ext_resource type="Texture2D" uid="uid://datkgacy3b6ji" path="res://Art/Environment/Fishing/fishing_background.png" id="2_qf7g3"]
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="2_ynwdu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spray"]

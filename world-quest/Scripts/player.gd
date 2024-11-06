@@ -28,11 +28,11 @@ func _process(delta):
 	''' continuous processes '''
 	if not dead:
 		move(delta)
-		$Animations.z_index = position.y + 35
+		$Animations.z_index = position.y + 44
 		if Input.is_action_just_pressed('strike'):
 			strike(delta)
-		if Input.is_action_just_pressed('cast'):
-			cast(delta)
+		#if Input.is_action_just_pressed('cast'):
+			#cast(delta)
 
 
 func move(delta):
