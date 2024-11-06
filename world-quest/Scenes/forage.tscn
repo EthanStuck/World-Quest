@@ -1,17 +1,17 @@
 [gd_scene load_steps=14 format=3 uid="uid://dkodwqm8vyx33"]
 
-[ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://art/Environment/Town/Town Ground.png" id="1_wkxcn"]
+[ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://Art/Environment/Town/Town Ground.png" id="1_wkxcn"]
 [ext_resource type="Script" path="res://Scripts/forage.gd" id="1_xne0s"]
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="2_yeobe"]
 [ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="5_5jdd0"]
-[ext_resource type="PackedScene" uid="uid://bfs71d1sfekpu" path="res://Scenes/yellowrock.tscn" id="6_g2t7q"]
+[ext_resource type="PackedScene" path="res://Scenes/yellowrock.tscn" id="6_g2t7q"]
 [ext_resource type="AudioStream" uid="uid://jtisxo0leha" path="res://Sounds/8_bit_ice_cave_lofi.mp3" id="6_k1mo2"]
 [ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="6_t14jb"]
 [ext_resource type="PackedScene" uid="uid://djfagua3lio6l" path="res://Scenes/fern_bush.tscn" id="9_8ujb5"]
-[ext_resource type="PackedScene" uid="uid://xnv4dcevn0ab" path="res://Scenes/carrot_earthed_1.tscn" id="10_icn3w"]
+[ext_resource type="PackedScene" path="res://Scenes/carrot_earthed_1.tscn" id="10_icn3w"]
 [ext_resource type="PackedScene" uid="uid://co3ujvpfkw4ww" path="res://Scenes/rock_1.tscn" id="10_osbjn"]
-[ext_resource type="PackedScene" uid="uid://cvfdqtodwcb1r" path="res://Scenes/carrot_earthed_2.tscn" id="11_ir5vq"]
-[ext_resource type="PackedScene" uid="uid://cisfavbpmoi1x" path="res://Scenes/carrot_earthed_3.tscn" id="12_t8nix"]
+[ext_resource type="PackedScene" path="res://Scenes/carrot_earthed_2.tscn" id="11_ir5vq"]
+[ext_resource type="PackedScene" path="res://Scenes/carrot_earthed_3.tscn" id="12_t8nix"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4d0a"]
 size = Vector2(247, 273)
@@ -72,7 +72,7 @@ position = Vector2(263, 721)
 position = Vector2(483, 175)
 
 [node name="Player" parent="." instance=ExtResource("2_yeobe")]
-position = Vector2(479, 55)
+position = Vector2(482, 124)
 
 [node name="Tree" parent="." instance=ExtResource("6_t14jb")]
 position = Vector2(66, 134)

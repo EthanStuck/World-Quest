@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="5_5quc5"]
 [ext_resource type="PackedScene" uid="uid://co3ujvpfkw4ww" path="res://Scenes/rock_1.tscn" id="5_xd64k"]
 [ext_resource type="PackedScene" uid="uid://djxpxdkw8e8aa" path="res://Scenes/farmer_npc.tscn" id="7_kku8a"]
-[ext_resource type="PackedScene" uid="uid://va1gl8neyqxq" path="res://Scenes/fisher_npc.tscn" id="10_l0e7v"]
+[ext_resource type="PackedScene" path="res://Scenes/fisher_npc.tscn" id="10_l0e7v"]
 [ext_resource type="AudioStream" uid="uid://t4ryq6nkg2ad" path="res://Sounds/moonlightcoffee.mp3" id="12_wvob6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_orjsd"]
