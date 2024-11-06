@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bwg3gjgjkc1je"
-path="res://.godot/imported/Farm Plot Fence Sides.png-dc5435bdff700c372f272139cba89c67.ctex"
+path="res://.godot/imported/Farm Plot Fence Sides.png-6e567cf3b061fd04d9b6e3a75ec5b54d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Environment/Farm/Farm Plot Fence Sides.png"
-dest_files=["res://.godot/imported/Farm Plot Fence Sides.png-dc5435bdff700c372f272139cba89c67.ctex"]
+source_file="res://Art/Environment/Farm/Farm Plot Fence Sides.png"
+dest_files=["res://.godot/imported/Farm Plot Fence Sides.png-6e567cf3b061fd04d9b6e3a75ec5b54d.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dj8ukb7sdndle"
-path="res://.godot/imported/Statue Fragment TR.png-ecb3433bb2d141fc2661c9e5edef2d4a.ctex"
+path="res://.godot/imported/Statue Fragment TR.png-b348a9bc4da72ee6a9cbd3bd8b65dbbc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Environment/Town/Statue/Statue Fragment TR.png"
-dest_files=["res://.godot/imported/Statue Fragment TR.png-ecb3433bb2d141fc2661c9e5edef2d4a.ctex"]
+source_file="res://Art/Environment/Town/Statue/Statue Fragment TR.png"
+dest_files=["res://.godot/imported/Statue Fragment TR.png-b348a9bc4da72ee6a9cbd3bd8b65dbbc.ctex"]
 
 [params]
 

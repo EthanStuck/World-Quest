@@ -39,8 +39,6 @@ func water_plant():
 	''' water the plant '''
 	if interactable:
 		dead = false
-		remove_from_group('dead_plant')
-		await get_tree().create_timer(1).timeout
 		$DeadSprite.hide()
 		$FullSprite.show()
 

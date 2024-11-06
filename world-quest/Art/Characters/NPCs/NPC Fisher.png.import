@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dh6ehh8q3mcs6"
-path="res://.godot/imported/NPC Fisher.png-4c3135ba9f5e0a772c3dd6efcc222a7c.ctex"
+path="res://.godot/imported/NPC Fisher.png-4f84d0bfe7aa715b90ff50ba3d86fc1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Characters/NPCs/NPC Fisher.png"
-dest_files=["res://.godot/imported/NPC Fisher.png-4c3135ba9f5e0a772c3dd6efcc222a7c.ctex"]
+source_file="res://Art/Characters/NPCs/NPC Fisher.png"
+dest_files=["res://.godot/imported/NPC Fisher.png-4f84d0bfe7aa715b90ff50ba3d86fc1a.ctex"]
 
 [params]
 

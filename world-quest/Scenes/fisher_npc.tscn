@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://5bfixjr7xd81"]
+[gd_scene load_steps=6 format=3 uid="uid://va1gl8neyqxq"]
 
 [ext_resource type="Script" path="res://Scripts/fisher_npc.gd" id="1_3cxfs"]
-[ext_resource type="Texture2D" uid="uid://dh6ehh8q3mcs6" path="res://art/Characters/NPCs/NPC Fisher.png" id="1_e1no7"]
-[ext_resource type="Texture2D" uid="uid://8viiykyl7sll" path="res://art/Characters/NPCs/2.png" id="2_41ps1"]
+[ext_resource type="Texture2D" uid="uid://dh6ehh8q3mcs6" path="res://Art/Characters/NPCs/NPC Fisher.png" id="1_e1no7"]
+[ext_resource type="Texture2D" uid="uid://8viiykyl7sll" path="res://Art/Characters/NPCs/2.png" id="2_41ps1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ggbpy"]
 size = Vector2(28, 10)
@@ -46,30 +46,6 @@ offset_top = 18.0
 offset_right = 183.0
 offset_bottom = 78.0
 theme_override_font_sizes/normal_font_size = 10
-text = "The spirit in the lake has hidden the fragment inside a fish! Press F to cast  and reel back in when you're at the pier."
-tab_size = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-visible = false
-z_index = 2000
-offset_left = 20.0
-offset_top = -8.0
-offset_right = 225.0
-offset_bottom = 86.0
-texture = ExtResource("2_41ps1")
-flip_v = true
-metadata/_edit_use_anchors_ = true
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect2"]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = 26.0
-offset_top = 18.0
-offset_right = 183.0
-offset_bottom = 78.0
-theme_override_font_sizes/normal_font_size = 10
-text = "If you catch at least 10 fish you should find the one with the statue fragment!"
 tab_size = 3
 metadata/_edit_use_anchors_ = true
 

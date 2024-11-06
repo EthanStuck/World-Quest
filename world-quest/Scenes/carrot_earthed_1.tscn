@@ -10,7 +10,7 @@
 radius = 6.0
 height = 20.0
 
-[node name="CarrotEarthed1" type="Area2D" groups=["dead_plant"]]
+[node name="CarrotEarthed1" type="Area2D"]
 script = ExtResource("1_6ojhj")
 item = ExtResource("2_l81ge")
 

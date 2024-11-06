@@ -19,7 +19,7 @@ var dead = false
 func _physics_process(delta: float) -> void:
 	if not dead:
 		$Animations.animation = 'float'
-		$Animations.z_index = position.y + 29
+		$Animations.z_index = position.y + 24
 		$Animations.play()
 		player_position = player.position
 		target_position = (player_position - position).normalized()

@@ -40,6 +40,7 @@ sprite_frames = SubResource("SpriteFrames_57unu")
 animation = &"floating"
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-0.5, 23.5)
 shape = SubResource("RectangleShape2D_meiti")
 

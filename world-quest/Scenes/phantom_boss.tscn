@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://dnbt1gxwbh66t"]
 
 [ext_resource type="Script" path="res://Scripts/phantom_boss.gd" id="1_yl0oe"]
-[ext_resource type="Texture2D" uid="uid://cumr5i0jkecjx" path="res://art/Characters/Enemies/phantomBoss1.png" id="2_1jd57"]
-[ext_resource type="Texture2D" uid="uid://dts1ays8qelll" path="res://art/Characters/Enemies/phantomBoss2.png" id="3_gancp"]
-[ext_resource type="Texture2D" uid="uid://lqt54jforvah" path="res://art/Characters/Enemies/phantomBoss3.png" id="4_chjct"]
+[ext_resource type="Texture2D" uid="uid://cumr5i0jkecjx" path="res://Art/Characters/Enemies/phantomBoss1.png" id="2_1jd57"]
+[ext_resource type="Texture2D" uid="uid://dts1ays8qelll" path="res://Art/Characters/Enemies/phantomBoss2.png" id="3_gancp"]
+[ext_resource type="Texture2D" uid="uid://lqt54jforvah" path="res://Art/Characters/Enemies/phantomBoss3.png" id="4_chjct"]
 [ext_resource type="AudioStream" uid="uid://c3ybtlj478ae2" path="res://Sounds/Effects/phantom_death.mp3" id="5_f4qgd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_57unu"]
