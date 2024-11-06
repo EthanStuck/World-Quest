@@ -12,7 +12,9 @@ var screen_size = Vector2(1000,1000)
 @export var currentHealth: int = maxHealth
 
 var dead = false
-
+var water_range = false
+var weed_range = false
+var interacting = false
 
 
 var foot_step = false
@@ -22,6 +24,7 @@ func _ready():
 	#screen_size = get_viewport_rect().size
 	$Death/Death_message.hide()
 	$Animations.play()
+	#$Animations.animation = 'water_right'
 	
 	
 func _process(delta):
@@ -33,6 +36,11 @@ func _process(delta):
 			strike(delta)
 		#if Input.is_action_just_pressed('cast'):
 			#cast(delta)
+		if Input.is_action_just_pressed('interact'):
+			if weed_range:
+				deweed()
+			elif water_range:
+				water()
 
 
 func move(delta):
@@ -71,7 +79,8 @@ func move(delta):
 	
 	else:
 		#$Animations.animation = 'idle'
-		$Animations.stop()
+		if not interacting:
+			$Animations.stop()
 	
 	# update position and control animation direction
 	#$Animations.flip_h = velocity.x < 0
@@ -147,3 +156,43 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 func _on_health_pickup_box_area_entered(area: Area2D) -> void:
 	currentHealth += 30
 	$PickupSound.play()
+	
+func deweed():
+	interacting = true
+	var prev_anim = $Animations.animation
+	$Animations.animation = 'deweed_right'
+	await get_tree().create_timer(0.5).timeout
+	$Animations.animation = prev_anim
+	weed_range = false
+	interacting = false
+	
+func water():
+	interacting = true
+	var prev_anim = $Animations.animation
+	$Animations.stop()
+	$Animations.play('water_right')
+	await get_tree().create_timer(1).timeout
+	#$Animations.animation = prev_anim
+	$Animations.play(prev_anim)
+	water_range = false
+	interacting = false
+
+
+func _on_interact_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group('weed'):
+		weed_range = true
+
+
+func _on_interact_area_body_exited(body: Node2D) -> void:
+	if body.is_in_group('weed'):
+		weed_range = true
+
+
+func _on_interact_area_area_entered(area: Area2D) -> void:
+	if area.is_in_group('dead_plant'):
+		water_range = true
+
+
+func _on_interact_area_area_exited(area: Area2D) -> void:
+	if area.is_in_group('dead_plant'):
+		water_range = false

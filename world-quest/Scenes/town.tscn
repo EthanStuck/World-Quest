@@ -412,13 +412,10 @@ stream = ExtResource("12_wvob6")
 autoplay = true
 
 [node name="Player" parent="." instance=ExtResource("3_m0p8w")]
-position = Vector2(400, 485)
+position = Vector2(500, 531)
 
 [node name="SwordSpawnLocation" type="Marker2D" parent="."]
 position = Vector2(337, 500)
-
-[node name="Old Man" parent="." instance=ExtResource("4_l2skv")]
-position = Vector2(336, 499)
 
 [connection signal="area_entered" from="Travel Areas/ToFishing" to="." method="_on_to_fishing_area_entered"]
 [connection signal="area_entered" from="Travel Areas/ToFighting" to="." method="_on_to_fighting_area_entered"]

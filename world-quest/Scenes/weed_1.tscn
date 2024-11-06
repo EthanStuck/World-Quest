@@ -9,7 +9,7 @@ size = Vector2(27, 11)
 [sub_resource type="CircleShape2D" id="CircleShape2D_bo5rc"]
 radius = 22.0
 
-[node name="Weed1" type="StaticBody2D"]
+[node name="Weed1" type="StaticBody2D" groups=["weed"]]
 script = ExtResource("1_l60cx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

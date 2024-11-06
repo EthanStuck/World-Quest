@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://b4en6qsd4qi5m"]
+[gd_scene load_steps=38 format=4 uid="uid://b4en6qsd4qi5m"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_a5bgk"]
 [ext_resource type="Texture2D" uid="uid://dj2rswwkqxhl5" path="res://Art/Characters/main character/walk_up1.png" id="2_8qcdx"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://4drssm70csm1" path="res://Art/Characters/main character/Old2/strike_down.png" id="3_c7xug"]
 [ext_resource type="Texture2D" uid="uid://bpim83v187jyt" path="res://Art/Characters/main character/strike_right.png" id="3_hncnx"]
 [ext_resource type="Texture2D" uid="uid://c7hux50mfyigk" path="res://Art/Characters/main character/walk_up2.png" id="3_l78oe"]
+[ext_resource type="Texture2D" uid="uid://dpufpju1i1h1i" path="res://Art/Characters/main character/deweed_right.png" id="3_qon7u"]
 [ext_resource type="Texture2D" uid="uid://cmbkt1yr2leit" path="res://Art/Characters/main character/walk_up3.png" id="4_xmkfh"]
 [ext_resource type="Texture2D" uid="uid://bidu56yonqwjd" path="res://Art/Characters/main character/walk_down1.png" id="5_mop0j"]
 [ext_resource type="Texture2D" uid="uid://cuepdmx6m2x8i" path="res://Art/Characters/main character/walk_down2.png" id="6_xjg1r"]
@@ -24,10 +25,23 @@
 [ext_resource type="Texture2D" uid="uid://bir2xjants3bb" path="res://Art/HUD/healthbar_over.png" id="15_6jhfj"]
 [ext_resource type="AudioStream" uid="uid://b1ndw0pglixa2" path="res://Sounds/Effects/sword-sound-effect-2-234986.mp3" id="15_kno2j"]
 [ext_resource type="Texture2D" uid="uid://dapjhie8nsoce" path="res://Art/HUD/compass.png" id="17_m33ck"]
+[ext_resource type="Texture2D" uid="uid://jam3rf0qvxpq" path="res://Art/Characters/main character/water_right1.png" id="19_286ge"]
+[ext_resource type="Texture2D" uid="uid://bik5sjj7j5bxt" path="res://Art/Characters/main character/water_right2.png" id="20_m2c76"]
+[ext_resource type="Texture2D" uid="uid://v4l13jtasacb" path="res://Art/Characters/main character/water_right3.png" id="21_qsndn"]
+[ext_resource type="Texture2D" uid="uid://djy5ww3kh43xc" path="res://Art/Characters/main character/water_right4.png" id="22_us0v4"]
+[ext_resource type="Texture2D" uid="uid://c0hgeynlne1bs" path="res://Art/Characters/main character/water_right5.png" id="23_dkllw"]
 [ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="25_vhyrv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_85u5v"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qon7u")
+}],
+"loop": true,
+"name": &"deweed_right",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("6_xjg1r")
@@ -121,6 +135,26 @@ animations = [{
 "loop": true,
 "name": &"walk_right",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_286ge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_m2c76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_qsndn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_us0v4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_dkllw")
+}],
+"loop": true,
+"name": &"water_right",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3ct8"]
@@ -147,9 +181,11 @@ inv = ExtResource("2_afkq7")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_85u5v")
-animation = &"idle"
+animation = &"water_right"
+frame_progress = 0.0614169
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1, 40)
 shape = SubResource("RectangleShape2D_g3ct8")
 
@@ -261,3 +297,7 @@ stream = ExtResource("25_vhyrv")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="HealthPickupBox" to="." method="_on_health_pickup_box_area_entered"]
+[connection signal="area_entered" from="InteractArea" to="." method="_on_interact_area_area_entered"]
+[connection signal="area_exited" from="InteractArea" to="." method="_on_interact_area_area_exited"]
+[connection signal="body_entered" from="InteractArea" to="." method="_on_interact_area_body_entered"]
+[connection signal="body_exited" from="InteractArea" to="." method="_on_interact_area_body_exited"]
