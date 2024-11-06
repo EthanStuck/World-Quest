@@ -15,6 +15,7 @@ func _process(delta):
 func deweed():
 	''' remove the weed and make a carrot in its place '''
 	if interactable:
+		await get_tree().create_timer(0.5).timeout
 		queue_free()
 		var num = int(randf_range(1,3))
 		if num == 1:

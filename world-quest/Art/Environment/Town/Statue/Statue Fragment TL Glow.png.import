@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqvj2wycgs1pd"
-path="res://.godot/imported/Statue Fragment TL Glow.png-0efa9aa29103ab00eaeacf1a500086cc.ctex"
+path="res://.godot/imported/Statue Fragment TL Glow.png-9c64e717c11d51328efcafdc7766903a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Environment/Town/Statue/Statue Fragment TL Glow.png"
-dest_files=["res://.godot/imported/Statue Fragment TL Glow.png-0efa9aa29103ab00eaeacf1a500086cc.ctex"]
+source_file="res://art/Environment/Town/Statue/Statue Fragment TL Glow.png"
+dest_files=["res://.godot/imported/Statue Fragment TL Glow.png-9c64e717c11d51328efcafdc7766903a.ctex"]
 
 [params]
 

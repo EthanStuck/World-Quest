@@ -46,7 +46,95 @@ offset_top = 18.0
 offset_right = 183.0
 offset_bottom = 78.0
 theme_override_font_sizes/normal_font_size = 10
-text = "You have to help us! Defeat the spirits and get back the pieces of our statue? Maybe go to the west first..."
+text = "Hey you! I know you're not from around here - I can tell you about this town and what's happened to it."
+tab_size = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+z_index = 2000
+offset_left = 20.0
+offset_top = -8.0
+offset_right = 225.0
+offset_bottom = 86.0
+texture = ExtResource("2_arsxi")
+flip_v = true
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 183.0
+offset_bottom = 78.0
+theme_override_font_sizes/normal_font_size = 10
+text = "Sherwood Creek was a once peaceful town, but after our statue was split it has fallen into dissaray."
+tab_size = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+z_index = 2000
+offset_left = 20.0
+offset_top = -8.0
+offset_right = 225.0
+offset_bottom = 86.0
+texture = ExtResource("2_arsxi")
+flip_v = true
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect3"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 183.0
+offset_bottom = 78.0
+theme_override_font_sizes/normal_font_size = 10
+text = "Forest spirits broke off four fragments from the statue and took along with it the magical power that once protected us."
+tab_size = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+z_index = 2000
+offset_left = 20.0
+offset_top = -8.0
+offset_right = 225.0
+offset_bottom = 86.0
+texture = ExtResource("2_arsxi")
+flip_v = true
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect4"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 183.0
+offset_bottom = 78.0
+theme_override_font_sizes/normal_font_size = 10
+text = "I know you are just a stranger but please, we need someone to help us restore the statue to revitalize the village!"
+tab_size = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+z_index = 2000
+offset_left = 20.0
+offset_top = -8.0
+offset_right = 225.0
+offset_bottom = 86.0
+texture = ExtResource("2_arsxi")
+flip_v = true
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect5"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 183.0
+offset_bottom = 78.0
+theme_override_font_sizes/normal_font_size = 10
+text = "The spirits took the fragments to the north, west, east, and south. Maybe you can find them if you follow the trails?"
 tab_size = 3
 metadata/_edit_use_anchors_ = true
 

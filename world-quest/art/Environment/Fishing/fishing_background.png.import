@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4drssm70csm1"
-path="res://.godot/imported/strike_down.png-a19cc5ad01f7e3d3111e0eba8ed3685b.ctex"
+uid="uid://datkgacy3b6ji"
+path="res://.godot/imported/fishing_background.png-ee65bb011c9ea526e5d21496a1953d53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Characters/main character/strike_down.png"
-dest_files=["res://.godot/imported/strike_down.png-a19cc5ad01f7e3d3111e0eba8ed3685b.ctex"]
+source_file="res://art/Environment/Fishing/fishing_background.png"
+dest_files=["res://.godot/imported/fishing_background.png-ee65bb011c9ea526e5d21496a1953d53.ctex"]
 
 [params]
 
