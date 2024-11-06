@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bk6vtmv2prukc"
-path="res://.godot/imported/loading_background_with_space.png-036e2a2be2d6ac13394a571f560d1a41.ctex"
+path="res://.godot/imported/loading_background_with_space.png-4d3bd1f3bc31fff07ee5e501307c00b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Environment/Town/loading_background_with_space.png"
-dest_files=["res://.godot/imported/loading_background_with_space.png-036e2a2be2d6ac13394a571f560d1a41.ctex"]
+source_file="res://art/Environment/Town/loading_background_with_space.png"
+dest_files=["res://.godot/imported/loading_background_with_space.png-4d3bd1f3bc31fff07ee5e501307c00b9.ctex"]
 
 [params]
 

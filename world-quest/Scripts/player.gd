@@ -12,12 +12,18 @@ var screen_size = Vector2(1000,1000)
 @export var currentHealth: int = maxHealth
 
 var dead = false
+<<<<<<< Updated upstream
 var water_range = false
 var weed_range = false
 var interacting = false
 
 
+=======
+>>>>>>> Stashed changes
 var foot_step = false
+
+@onready var fishing_scene = get_parent().get_node("Fishing")
+
 
 func _ready():
 	''' player startup '''

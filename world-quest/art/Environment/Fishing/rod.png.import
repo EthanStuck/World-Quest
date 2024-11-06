@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://doofubri4eup"
-path="res://.godot/imported/rod.png-18628fa455603b8bcfe4eeed53a7ff23.ctex"
+path="res://.godot/imported/rod.png-41ad6f75247071461923b26101bd1dcc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Environment/Fishing/rod.png"
-dest_files=["res://.godot/imported/rod.png-18628fa455603b8bcfe4eeed53a7ff23.ctex"]
+source_file="res://art/Environment/Fishing/rod.png"
+dest_files=["res://.godot/imported/rod.png-41ad6f75247071461923b26101bd1dcc.ctex"]
 
 [params]
 
