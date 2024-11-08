@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://hja5qhpk1j1d"]
+
+[ext_resource type="Script" path="res://Scripts/tutorial_fight.gd" id="1_jmkrq"]
+[ext_resource type="Texture2D" uid="uid://dffviavxo01cs" path="res://Art/HUD/Tutorials/TutorialFight.png" id="1_v5q2q"]
+[ext_resource type="Texture2D" uid="uid://c5pcreylusy50" path="res://Art/HUD/Tutorials/TutorialSpaceAnimimate1.png" id="2_kafdu"]
+[ext_resource type="Texture2D" uid="uid://3tukox6y3i7" path="res://Art/HUD/Tutorials/TutorialSpaceAnimimate2.png" id="3_rpm1h"]
+[ext_resource type="PackedScene" uid="uid://3lopmm1jj64u" path="res://Scenes/dummy_player.tscn" id="4_cqfrk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oldrw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kafdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rpm1h")
+}],
+"loop": true,
+"name": &"Continue",
+"speed": 1.25
+}]
+
+[node name="TutorialFight" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jmkrq")
+
+[node name="Tutorial" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_v5q2q")
+
+[node name="Continue" type="AnimatedSprite2D" parent="."]
+position = Vector2(199, 363)
+sprite_frames = SubResource("SpriteFrames_oldrw")
+animation = &"Continue"
+
+[node name="DummyPlayer" parent="." instance=ExtResource("4_cqfrk")]
+position = Vector2(424, 352)

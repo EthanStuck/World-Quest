@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://diukfbv7nelts"]
+
+[ext_resource type="Script" path="res://Scripts/tutorial_forage.gd" id="1_fq22x"]
+[ext_resource type="Texture2D" uid="uid://dybokb8xlhj2n" path="res://Art/HUD/Tutorials/TutorialForage.png" id="2_5hfgv"]
+[ext_resource type="Texture2D" uid="uid://c5pcreylusy50" path="res://Art/HUD/Tutorials/TutorialSpaceAnimimate1.png" id="3_i8o0n"]
+[ext_resource type="Texture2D" uid="uid://3tukox6y3i7" path="res://Art/HUD/Tutorials/TutorialSpaceAnimimate2.png" id="4_kx4mv"]
+[ext_resource type="PackedScene" uid="uid://3lopmm1jj64u" path="res://Scenes/dummy_player.tscn" id="5_6a7me"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_66ld5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_i8o0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kx4mv")
+}],
+"loop": true,
+"name": &"Continue",
+"speed": 1.25
+}]
+
+[node name="TutorialForage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fq22x")
+
+[node name="Tutorial" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_5hfgv")
+
+[node name="Continue" type="AnimatedSprite2D" parent="."]
+position = Vector2(199, 363)
+sprite_frames = SubResource("SpriteFrames_66ld5")
+animation = &"Continue"
+
+[node name="DummyPlayer" parent="." instance=ExtResource("5_6a7me")]
+position = Vector2(38, -47)

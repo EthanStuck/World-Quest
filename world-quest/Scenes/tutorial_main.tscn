@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://jy0g301dpbbk"]
+
+[ext_resource type="Script" path="res://Scripts/tutorial_main.gd" id="1_xqce2"]
+[ext_resource type="Texture2D" uid="uid://ijltsfxpqlx8" path="res://Art/HUD/Tutorials/TutorialMain.png" id="2_g0jnd"]
+[ext_resource type="Texture2D" uid="uid://c5pcreylusy50" path="res://Art/HUD/Tutorials/TutorialSpaceAnimimate1.png" id="3_jfkry"]
+[ext_resource type="Texture2D" uid="uid://3tukox6y3i7" path="res://Art/HUD/Tutorials/TutorialSpaceAnimimate2.png" id="4_de1qq"]
+[ext_resource type="PackedScene" uid="uid://3lopmm1jj64u" path="res://Scenes/dummy_player.tscn" id="5_4bod7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_66ld5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jfkry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_de1qq")
+}],
+"loop": true,
+"name": &"Continue",
+"speed": 1.25
+}]
+
+[node name="TutorialMain" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xqce2")
+
+[node name="Tutorial" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_g0jnd")
+
+[node name="Continue" type="AnimatedSprite2D" parent="."]
+position = Vector2(199, 363)
+sprite_frames = SubResource("SpriteFrames_66ld5")
+animation = &"Continue"
+
+[node name="DummyPlayer" parent="." instance=ExtResource("5_4bod7")]
+position = Vector2(48, 306)
