@@ -1,10 +1,13 @@
 extends StaticBody2D
-@onready var text_bubble = $TextureRect
+@onready var text_bubble1 = $TextureRect
+@onready var text_bubble2 = $TextureRect2
 var interactable = false
+var progress = -1
 
 func _ready():
 	$Sprite2D.z_index = position.y + 32
-	text_bubble.visible = false
+	text_bubble1.visible = true
+	text_bubble2.visible = false
 	$InteractLabel.visible = false
 
 func _process(delta):
@@ -21,12 +24,20 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		$InteractLabel.visible = false
 		interactable = false
-		text_bubble.visible = false
+		text_bubble1.visible = false
+		text_bubble2.visible = false
+		progress = 0
 
 
 func toggle_text():
 	if interactable:
-		if not text_bubble.visible:
-			text_bubble.visible = true
+		if progress == -1:
+			text_bubble1.visible = false
+			text_bubble2.visible = true
+			progress = 1
+		elif progress == 0:
+			text_bubble2.visible = true
+			progress = 1
 		else:
-			text_bubble.visible = false
+			text_bubble2.visible = false
+			progress = 0

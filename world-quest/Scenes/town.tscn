@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://5ruqoyek1n6x" path="res://Scenes/sword.tscn" id="14_0x5pq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_orjsd"]
-size = Vector2(223, 266)
+size = Vector2(223, 269)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bkke3"]
 size = Vector2(271, 294)
@@ -48,7 +48,7 @@ texture = ExtResource("1_jlrqu")
 
 [node name="dne_sign" parent="Signs" instance=ExtResource("3_ccisg")]
 z_index = 4
-position = Vector2(495, 157)
+position = Vector2(485, -423)
 
 [node name="dne_sign2" parent="Signs" instance=ExtResource("3_ccisg")]
 z_index = 4
@@ -375,7 +375,7 @@ position = Vector2(500, 440)
 position = Vector2(487, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Travel Areas/ToFishing"]
-position = Vector2(1, -123)
+position = Vector2(1, -124.5)
 shape = SubResource("RectangleShape2D_orjsd")
 
 [node name="ToFighting" type="Area2D" parent="Travel Areas"]

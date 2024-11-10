@@ -46,6 +46,29 @@ offset_top = 18.0
 offset_right = 183.0
 offset_bottom = 78.0
 theme_override_font_sizes/normal_font_size = 10
+text = "Those dang spirits are possessing the fish and I can't catch anything! Hey... could you help me?"
+tab_size = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+z_index = 2000
+offset_left = 20.0
+offset_top = -8.0
+offset_right = 225.0
+offset_bottom = 86.0
+texture = ExtResource("2_41ps1")
+flip_v = true
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 183.0
+offset_bottom = 78.0
+theme_override_font_sizes/normal_font_size = 10
+text = "I think you should be able to catch the spirit if you catch at least 10 fish! Maybe they'll drop the staue fragment too..."
 tab_size = 3
 metadata/_edit_use_anchors_ = true
 

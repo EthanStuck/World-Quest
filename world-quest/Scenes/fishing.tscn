@@ -22,7 +22,7 @@ position = Vector2(512, 918)
 position = Vector2(508, 999)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TravelBack"]
-position = Vector2(0.5, 0)
+position = Vector2(277, 494)
 shape = SubResource("RectangleShape2D_spray")
 
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
