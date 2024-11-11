@@ -6,13 +6,16 @@ var player = null
 func _ready():
 	$BaseSprite.z_index = position.y + 10
 	$GlowSprite.z_index = position.y + 13
+	$Glow.play()
+	$SpawnSound.play()
 
 
-func _on_iiinteractable_area_body_entered(body: Node2D) -> void:
+func _on_interactable_area_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
 		FragmentHandler.west_fragment = true
 		player = body
 		playercollect()
+		$PickupSound.play()
 		await get_tree().create_timer(0.1).timeout
 		self.queue_free()
 

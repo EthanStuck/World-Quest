@@ -1,15 +1,41 @@
-[gd_scene load_steps=6 format=3 uid="uid://hqh8mc8x0fu6"]
+[gd_scene load_steps=12 format=3 uid="uid://hqh8mc8x0fu6"]
 
 [ext_resource type="Script" path="res://Scripts/fragment_north.gd" id="1_dnete"]
 [ext_resource type="Texture2D" uid="uid://dj8ukb7sdndle" path="res://Art/Environment/Town/Statue/Statue Fragment TR.png" id="2_liejt"]
+[ext_resource type="Resource" uid="uid://ioby3sn611eg" path="res://inventory/items/fragment_north.tres" id="2_pq41p"]
 [ext_resource type="Texture2D" uid="uid://cfk5hrr3foh8b" path="res://Art/Environment/Town/Statue/Statue Fragment TR Glow.png" id="3_oxyh4"]
 [ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="4_tk0fy"]
+[ext_resource type="Texture2D" uid="uid://cto2akv2r0nm1" path="res://Art/Environment/Town/Statue/GlowAnimation1.png" id="5_xcqv3"]
+[ext_resource type="Texture2D" uid="uid://doleb8nwvwpa3" path="res://Art/Environment/Town/Statue/GlowAnimation2.png" id="6_mpijf"]
+[ext_resource type="Texture2D" uid="uid://ctyst4t1srsfn" path="res://Art/Environment/Town/Statue/GlowAnimation3.png" id="7_jbqsn"]
+[ext_resource type="AudioStream" uid="uid://b1ndw0pglixa2" path="res://Sounds/Effects/sword-sound-effect-2-234986.mp3" id="8_q8ltq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bma85"]
 radius = 23.0868
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_5u0dx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_xcqv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mpijf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jbqsn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mpijf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.5
+}]
+
 [node name="FragmentNorth" type="Area2D"]
 script = ExtResource("1_dnete")
+item = ExtResource("2_pq41p")
 
 [node name="BaseSprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_liejt")
@@ -30,5 +56,12 @@ wait_time = 3.0
 one_shot = true
 autostart = true
 
+[node name="Glow" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5u0dx")
+
+[node name="SpawnSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_q8ltq")
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_interactable_area_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
