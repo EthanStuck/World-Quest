@@ -3,6 +3,9 @@ extends Node
 @onready var fragment = preload("res://Scenes/fragment_east.tscn")
 var num_pumpkins = 0 # number pumpkins brought to plot
 
+func _ready():
+	FragmentHandler.at = 'farming'
+
 
 func _on_travel_back_area_entered(area: Area2D) -> void:
 	''' Travel back to town '''

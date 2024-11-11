@@ -399,7 +399,20 @@ position = Vector2(998, 471)
 position = Vector2(128.5, 0)
 shape = SubResource("RectangleShape2D_xsqjt")
 
+[node name="FromFishing" type="Marker2D" parent="Travel Areas"]
+position = Vector2(485, 110)
+
+[node name="FromFighting" type="Marker2D" parent="Travel Areas"]
+position = Vector2(53, 502)
+
+[node name="FromForaging" type="Marker2D" parent="Travel Areas"]
+position = Vector2(511, 906)
+
+[node name="FromFarming" type="Marker2D" parent="Travel Areas"]
+position = Vector2(946, 480)
+
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 modulate = Color(0.517647, 0, 0.6, 0.4)
 offset_left = -246.0
 offset_top = -250.0
@@ -409,6 +422,7 @@ texture = SubResource("GradientTexture2D_njl3l")
 flip_h = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+visible = false
 stream = ExtResource("12_wvob6")
 autoplay = true
 

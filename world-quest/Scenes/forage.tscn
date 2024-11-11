@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://co3ujvpfkw4ww" path="res://Scenes/rock_1.tscn" id="10_osbjn"]
 [ext_resource type="PackedScene" uid="uid://cvfdqtodwcb1r" path="res://Scenes/carrot_earthed_2.tscn" id="11_ir5vq"]
 [ext_resource type="PackedScene" uid="uid://cisfavbpmoi1x" path="res://Scenes/carrot_earthed_3.tscn" id="12_t8nix"]
-[ext_resource type="PackedScene" path="res://Scenes/forage_phantom.tscn" id="13_fcihy"]
+[ext_resource type="PackedScene" uid="uid://bbu4owxc6jxut" path="res://Scenes/forage_phantom.tscn" id="13_fcihy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4d0a"]
 size = Vector2(247, 273)

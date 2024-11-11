@@ -10,7 +10,6 @@ var screen_size = Vector2(1000,1000)
 
 @export var maxHealth = 300
 @export var currentHealth: int = maxHealth
-@onready var pumpkin_load = preload("res://Scenes/dummy_pumpkin.tscn")
 
 var dead = false
 var water_range = false

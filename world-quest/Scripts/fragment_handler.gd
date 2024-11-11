@@ -24,3 +24,6 @@ var num_carrots = 0
 var sword_pickup = false
 var bucket_collected = false
 var water_amount = 0
+
+
+var at : String

@@ -3,6 +3,8 @@ extends Node
 var total_pickup = 0
 @onready var fragment = preload("res://Scenes/fragment_south.tscn")
 
+func _ready():
+	FragmentHandler.at = 'foraging'
 
 func _on_travel_back_area_entered(area: Area2D) -> void:
 	''' Travel back to town '''

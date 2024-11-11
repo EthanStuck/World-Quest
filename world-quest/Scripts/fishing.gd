@@ -22,6 +22,7 @@ func _ready() -> void:
 	# playing music and water animation
 	$PondSounds.play()
 	$Animated_water.play()
+	FragmentHandler.at = 'fishing'
 
 # Input event: listen for the cast action
 func _input(event):

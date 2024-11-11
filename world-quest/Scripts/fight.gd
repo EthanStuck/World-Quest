@@ -10,6 +10,7 @@ func _ready():
 	''' player startup '''
 	#screen_size = get_viewport_rect().size
 	$fight_music.play()
+	FragmentHandler.at = 'fighting'
 	if FragmentHandler.west_complete:
 		$TextureRect.hide()
 		$TownMusic.play()
