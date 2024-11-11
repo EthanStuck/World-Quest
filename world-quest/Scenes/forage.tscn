@@ -477,6 +477,7 @@ position = Vector2(335, 337)
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 modulate = Color(100, 100, 0, 1)
+z_index = 1001
 offset_left = 60.0
 offset_top = 200.0
 offset_right = 72.0
@@ -485,6 +486,7 @@ text = "1"
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
 modulate = Color(96.217, 100, 0, 1)
+z_index = 1001
 offset_left = 622.0
 offset_top = 226.0
 offset_right = 637.0
@@ -493,6 +495,7 @@ text = "5"
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="."]
 modulate = Color(100, 100, 0, 1)
+z_index = 1001
 offset_left = 64.0
 offset_top = 393.0
 offset_right = 78.0
@@ -501,6 +504,7 @@ text = "9"
 
 [node name="RichTextLabel5" type="RichTextLabel" parent="."]
 modulate = Color(100, 100, 0, 1)
+z_index = 1001
 offset_left = 613.0
 offset_top = 386.0
 offset_right = 637.0
@@ -509,6 +513,7 @@ text = "13"
 
 [node name="RichTextLabel6" type="RichTextLabel" parent="."]
 modulate = Color(100, 96.216, 0, 1)
+z_index = 1001
 offset_left = 61.0
 offset_top = 763.0
 offset_right = 86.0
@@ -517,6 +522,7 @@ text = "17"
 
 [node name="RichTextLabel7" type="RichTextLabel" parent="."]
 modulate = Color(100, 100, 0, 1)
+z_index = 1001
 offset_left = 643.0
 offset_top = 709.0
 offset_right = 672.0
@@ -525,6 +531,7 @@ text = "21"
 
 [node name="RichTextLabel8" type="RichTextLabel" parent="."]
 modulate = Color(100, 100, 0, 1)
+z_index = 1001
 offset_left = 57.0
 offset_top = 929.0
 offset_right = 97.0
@@ -533,6 +540,7 @@ text = "25"
 
 [node name="RichTextLabel9" type="RichTextLabel" parent="."]
 modulate = Color(100, 100, 0, 1)
+z_index = 1001
 offset_left = 636.0
 offset_top = 881.0
 offset_right = 676.0
