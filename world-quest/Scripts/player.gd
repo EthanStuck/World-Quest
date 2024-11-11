@@ -272,6 +272,7 @@ func _on_interact_area_area_exited(area: Area2D) -> void:
 func _on_hurt_box_area_entered(area: Area2D) -> void:
 	$HurtSound.play()
 	currentHealth -= 10
+	apply_shake()
 	# Detects player death and restarts lvl
 	if currentHealth < 0:
 		dead = true
