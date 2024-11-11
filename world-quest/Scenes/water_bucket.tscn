@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://6sora81mono5"]
+
+[ext_resource type="Script" path="res://Scripts/water_bucket.gd" id="1_e04in"]
+[ext_resource type="Resource" uid="uid://b3bq20duqmyo8" path="res://inventory/items/bucket.tres" id="2_qql5y"]
+[ext_resource type="Texture2D" uid="uid://6xf006ytmrsc" path="res://Art/Items/WaterBucket.png" id="3_jyt48"]
+[ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="4_sbtdt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5d6b2"]
+radius = 16.0312
+
+[node name="WaterBucket" type="Area2D"]
+script = ExtResource("1_e04in")
+item = ExtResource("2_qql5y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_jyt48")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5d6b2")
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_sbtdt")
+pitch_scale = 3.0
+
+[connection signal="body_entered" from="." to="." method="_on_interactable_area_body_entered"]

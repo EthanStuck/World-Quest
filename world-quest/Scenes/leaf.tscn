@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://4q16yi3lqarn"]
+
+[ext_resource type="Script" path="res://Scripts/leaf.gd" id="1_qlkks"]
+[ext_resource type="Texture2D" uid="uid://bvswb1for0t4y" path="res://Art/Environment/Farm/LeafFall1.png" id="2_yci4j"]
+[ext_resource type="Texture2D" uid="uid://o721hf4t606v" path="res://Art/Environment/Farm/LeafFall2.png" id="3_xnhxo"]
+[ext_resource type="Texture2D" uid="uid://dimwtnq4vp5k4" path="res://Art/Environment/Farm/LeafFall3.png" id="4_gjufe"]
+[ext_resource type="Texture2D" uid="uid://pkl3uf5yesmi" path="res://Art/Environment/Farm/LeafFall4.png" id="5_nmxbc"]
+[ext_resource type="Texture2D" uid="uid://bk4jjshxv5f4j" path="res://Art/Environment/Farm/LeafFall5.png" id="6_p5q21"]
+[ext_resource type="Texture2D" uid="uid://mhgj8igjalvi" path="res://Art/Environment/Farm/LeafFall6.png" id="7_lig4n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cf07l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yci4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xnhxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gjufe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nmxbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p5q21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lig4n")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}]
+
+[node name="Leaf" type="Node2D"]
+script = ExtResource("1_qlkks")
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cf07l")
+animation = &"fall"
+frame_progress = 0.749953

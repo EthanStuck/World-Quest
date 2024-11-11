@@ -15,9 +15,17 @@ var dead = false
 var water_range = false
 var weed_range = false
 var interacting = false
-
-
+var facing = 'right'
+var colliding_pos : Vector2
 var foot_step = false
+
+# setup for screenshake (from tutorial)
+@export var shake_decay_rate : float = 5.0
+@export var noise_shake_speed : float = 30.0
+@export var noise_shake_strength : float = 60.0
+@onready var noise = FastNoiseLite.new()
+var noise_i : float = 0.0
+var shake_strength = 0.0
 
 func _ready():
 	''' player startup '''
@@ -26,7 +34,7 @@ func _ready():
 	$Animations.play()
 	
 	
-func _process(delta):
+func _process(delta: float):
 	''' continuous processes '''
 	if not dead:
 		move(delta)
@@ -35,9 +43,13 @@ func _process(delta):
 			strike(delta)
 		if Input.is_action_just_pressed('interact'):
 			if weed_range:
-				deweed()
+				deweed(delta)
 			elif water_range:
 				water()
+	
+	# camera shake stuff
+	shake_strength = lerp(shake_strength, 0.0, shake_decay_rate * delta)
+	$Camera2D.offset = get_noise_offset(delta, noise_shake_speed, shake_strength)
 
 
 func move(delta):
@@ -59,10 +71,12 @@ func move(delta):
 		# player movement x direction
 		if Input.is_action_pressed('move_right'):
 			velocity.x = 1
+			facing = 'right'
 			if not Input.is_action_pressed('strike'):
 				$Animations.animation = 'walk_right'
 		elif Input.is_action_pressed('move_left'):
 			velocity.x = -1
+			facing = 'left'
 			if not Input.is_action_pressed('strike'):
 				$Animations.animation = 'walk_left'
 		else:
@@ -125,42 +139,78 @@ func player():
 func collect(item):
 	inv.insert(item)
 
+func get_noise_offset(delta: float, speed: float, strength: float) -> Vector2:
+	''' used for camera shake, gotten from youtube tutorial '''
+	noise_i += delta * speed
+	# Set the x values of each call to 'get_noise_2d' to a different value
+	# so that our x and y vectors will be reading from unrelated areas of noise
+	return Vector2(
+		noise.get_noise_2d(1, noise_i) * strength,
+		noise.get_noise_2d(100, noise_i) * strength
+	)
 
-func deweed():
-	interacting = true
+func apply_shake():
+	''' activate camera shake (from tutorial) '''
+	shake_strength = noise_shake_strength
+
+func deweed(delta):
+	''' remove weeds from plant '''
+	interacting = true # used to disable other animations/actions
+	
+	# knockdirection found taking difference from player position and object position
+	var knockback_direction = (global_position - colliding_pos + Vector2(0, 44) - Vector2(0, 30)).normalized()
 	var prev_anim = $Animations.animation
-	$Animations.animation = 'deweed_right'
-	await get_tree().create_timer(0.5).timeout
-	$Animations.animation = prev_anim
+	if facing == 'right':
+		$Animations.play('deweed_right')
+		await get_tree().create_timer(2).timeout
+		apply_shake()
+		position += knockback_direction * 20
+	elif facing == 'left':
+		$Animations.play('deweed_left')
+		await get_tree().create_timer(2).timeout
+		apply_shake()
+		position += knockback_direction * 20
+	await get_tree().create_timer(.25).timeout
+	$Animations.play(prev_anim)
 	weed_range = false
 	interacting = false
 	
 func water():
-	interacting = true
-	var prev_anim = $Animations.animation
-	$Animations.stop()
-	$Animations.play('water_right')
-	await get_tree().create_timer(1).timeout
-	#$Animations.animation = prev_anim
-	$Animations.play(prev_anim)
-	water_range = false
-	interacting = false
+	''' water plants '''
+	if FragmentHandler.bucket_collected:
+		interacting = true
+		var prev_anim = $Animations.animation
+		$Animations.stop()
+		$Animations.play('water_right')
+		await get_tree().create_timer(1).timeout
+		$Animations.play(prev_anim)
+		water_range = false
+		interacting = false
 	
-func _on_interact_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group('weed'):
-		weed_range = true
+#func _on_interact_area_body_entered(body: Node2D) -> void:
+	#if body.is_in_group('weed'):
+		#weed_range = true
 
-func _on_interact_area_body_exited(body: Node2D) -> void:
-	if body.is_in_group('weed'):
-		weed_range = true
+#func _on_interact_area_body_exited(body: Node2D) -> void:
+	#if body.is_in_group('weed'):
+		#weed_range = true
 
 func _on_interact_area_area_entered(area: Area2D) -> void:
+	''' check to see what interaction zone player entered, 
+		change state accordingly '''
 	if area.is_in_group('dead_plant'):
 		water_range = true
+	if area.is_in_group('weed'):
+		weed_range = true
+	colliding_pos = area.global_position
 		
 func _on_interact_area_area_exited(area: Area2D) -> void:
+	''' disable state change when interaction zone left '''
 	if area.is_in_group('dead_plant'):
 		water_range = false
+	if area.is_in_group('weed'):
+		weed_range = false
+	colliding_pos = Vector2.ZERO
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
 	$HurtSound.play()

@@ -244,7 +244,7 @@ position = Vector2(491, 67)
 [node name="Pumpkins" type="Node" parent="."]
 
 [node name="Pumpkin" parent="Pumpkins" instance=ExtResource("7_6ltom")]
-position = Vector2(489, 476)
+position = Vector2(516, 483)
 
 [node name="Weeds" type="Node" parent="."]
 
@@ -421,6 +421,6 @@ position = Vector2(290, 343)
 position = Vector2(518, 495)
 
 [node name="WaterBucket" parent="." instance=ExtResource("13_ad70v")]
-position = Vector2(269, 490)
+position = Vector2(192, 481)
 
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]

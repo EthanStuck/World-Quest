@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://b4en6qsd4qi5m"]
+[gd_scene load_steps=40 format=4 uid="uid://b4en6qsd4qi5m"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_a5bgk"]
 [ext_resource type="Texture2D" uid="uid://pom1tmjukm2t" path="res://Art/Characters/main character/walk_up1.png" id="2_8qcdx"]
@@ -8,8 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://4drssm70csm1" path="res://Art/Characters/main character/strike_down.png" id="3_c7xug"]
 [ext_resource type="Texture2D" uid="uid://bsyq1ldlfv278" path="res://Art/Characters/main character/strike_right.png" id="3_hncnx"]
 [ext_resource type="Texture2D" uid="uid://dbejhter2pvoe" path="res://Art/Characters/main character/walk_up2.png" id="3_l78oe"]
-[ext_resource type="Texture2D" uid="uid://jpsay716koeg" path="res://Art/Characters/main character/deweed_right.png" id="4_1pnr6"]
+[ext_resource type="Texture2D" uid="uid://dc8mwup8fyf8a" path="res://Art/Characters/main character/deweed_right1.png" id="4_obs7g"]
 [ext_resource type="Texture2D" uid="uid://d2bxdg7qytm00" path="res://Art/Characters/main character/walk_up3.png" id="4_xmkfh"]
+[ext_resource type="Texture2D" uid="uid://bf2ix11kh7rpy" path="res://Art/Characters/main character/deweed_right2.png" id="5_6bdmq"]
 [ext_resource type="Texture2D" uid="uid://c5odanx2vk67m" path="res://Art/Characters/main character/walk_down1.png" id="5_mop0j"]
 [ext_resource type="Texture2D" uid="uid://x7of8qlyiwnn" path="res://Art/Characters/main character/walk_down2.png" id="6_xjg1r"]
 [ext_resource type="Texture2D" uid="uid://dsd32lcf3l8wi" path="res://Art/Characters/main character/walk_down3.png" id="7_6dare"]
@@ -45,11 +46,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_1pnr6")
+"texture": ExtResource("4_obs7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6bdmq")
 }],
 "loop": true,
 "name": &"deweed_right",
-"speed": 5.0
+"speed": 0.5
 }, {
 "frames": [{
 "duration": 1.0,
@@ -190,7 +194,7 @@ inv = ExtResource("2_afkq7")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_85u5v")
-animation = &"idle"
+animation = &"deweed_right"
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 visible = false
@@ -292,7 +296,7 @@ vertical_alignment = 1
 wait_time = 3.0
 one_shot = true
 
-[node name="InteractArea" type="Area2D" parent="."]
+[node name="InteractArea" type="Area2D" parent="." groups=["player_zone"]]
 visible = false
 collision_layer = 3
 collision_mask = 129
