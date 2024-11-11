@@ -53,7 +53,7 @@ script = ExtResource("1_71syc")
 
 [node name="Sprites" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_47awj")
-animation = &"weeded2"
+animation = &"alive"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

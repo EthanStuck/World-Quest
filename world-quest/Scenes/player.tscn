@@ -1,21 +1,24 @@
-[gd_scene load_steps=46 format=4 uid="uid://b4en6qsd4qi5m"]
+[gd_scene load_steps=56 format=4 uid="uid://b4en6qsd4qi5m"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_a5bgk"]
 [ext_resource type="Texture2D" uid="uid://pom1tmjukm2t" path="res://Art/Characters/main character/walk_up1.png" id="2_8qcdx"]
 [ext_resource type="Resource" uid="uid://b56wuqxufjoy1" path="res://inventory/playerinv.tres" id="2_afkq7"]
 [ext_resource type="Texture2D" uid="uid://75nw22o0ipl6" path="res://Art/Characters/main character/cast1.png" id="3_3d1br"]
 [ext_resource type="Texture2D" uid="uid://dr3mhbhhanavt" path="res://Art/Characters/main character/strike_left.png" id="3_08vig"]
-[ext_resource type="Texture2D" uid="uid://cfhhsm7tbe01g" path="res://Art/Characters/main character/deweed_left.png" id="3_45jg5"]
 [ext_resource type="Texture2D" uid="uid://4drssm70csm1" path="res://Art/Characters/main character/strike_down.png" id="3_c7xug"]
 [ext_resource type="Texture2D" uid="uid://bsyq1ldlfv278" path="res://Art/Characters/main character/strike_right.png" id="3_hncnx"]
 [ext_resource type="Texture2D" uid="uid://dbejhter2pvoe" path="res://Art/Characters/main character/walk_up2.png" id="3_l78oe"]
+[ext_resource type="Texture2D" uid="uid://cq6awhmwd4yrc" path="res://Art/Characters/main character/carry_left2_1.png" id="3_mcqgj"]
+[ext_resource type="Texture2D" uid="uid://d27ra2ph0pega" path="res://Art/Characters/main character/carry_left2_2.png" id="4_0731y"]
 [ext_resource type="Texture2D" uid="uid://bm7gdhdw24yms" path="res://Art/Characters/main character/cast2.png" id="4_dg1al"]
 [ext_resource type="Texture2D" uid="uid://dc8mwup8fyf8a" path="res://Art/Characters/main character/deweed_right1.png" id="4_obs7g"]
 [ext_resource type="Texture2D" uid="uid://d2bxdg7qytm00" path="res://Art/Characters/main character/walk_up3.png" id="4_xmkfh"]
 [ext_resource type="Texture2D" uid="uid://bf2ix11kh7rpy" path="res://Art/Characters/main character/deweed_right2.png" id="5_6bdmq"]
 [ext_resource type="Texture2D" uid="uid://gq0ldwoyyfan" path="res://Art/Characters/main character/cast3.png" id="5_expap"]
 [ext_resource type="Texture2D" uid="uid://c5odanx2vk67m" path="res://Art/Characters/main character/walk_down1.png" id="5_mop0j"]
+[ext_resource type="Texture2D" uid="uid://cx21ca068eh3r" path="res://Art/Characters/main character/carry_right2_1.png" id="5_tbeoo"]
 [ext_resource type="Texture2D" uid="uid://ba5sqdo2jr78f" path="res://Art/Characters/main character/cast4.png" id="6_dt2wf"]
+[ext_resource type="Texture2D" uid="uid://0dwevdlnb4fd" path="res://Art/Characters/main character/carry_right2_2.png" id="6_uao24"]
 [ext_resource type="Texture2D" uid="uid://x7of8qlyiwnn" path="res://Art/Characters/main character/walk_down2.png" id="6_xjg1r"]
 [ext_resource type="Texture2D" uid="uid://780ro1juwstl" path="res://Art/Characters/main character/cast5_idle.png" id="7_1ox28"]
 [ext_resource type="Texture2D" uid="uid://dsd32lcf3l8wi" path="res://Art/Characters/main character/walk_down3.png" id="7_6dare"]
@@ -24,7 +27,9 @@
 [ext_resource type="Texture2D" uid="uid://cbgkoer6o4c4t" path="res://Art/Characters/main character/walk_right3.png" id="10_5skrh"]
 [ext_resource type="Texture2D" uid="uid://btypmffhynckp" path="res://Art/Characters/main character/walk_left1.png" id="11_2l7kw"]
 [ext_resource type="PackedScene" uid="uid://n0f2ys4hudtp" path="res://inventory/inv_ui.tscn" id="12_b8y0o"]
+[ext_resource type="Texture2D" uid="uid://cqc04666wtdvt" path="res://Art/Characters/main character/deweed_left1.png" id="12_lvbp5"]
 [ext_resource type="Texture2D" uid="uid://chqqh3173jiec" path="res://Art/Characters/main character/walk_left2.png" id="12_q1ojq"]
+[ext_resource type="Texture2D" uid="uid://dyxxof3o63jkt" path="res://Art/Characters/main character/deweed_left2.png" id="13_bwh18"]
 [ext_resource type="Texture2D" uid="uid://sjdlpmo4gflh" path="res://Art/Characters/main character/walk_left3.png" id="13_nb6w2"]
 [ext_resource type="Texture2D" uid="uid://cogeeivnw4vg3" path="res://Art/HUD/healthbar_under.png" id="14_2qv34"]
 [ext_resource type="Script" path="res://Scripts/progress_bar.gd" id="14_fyhi1"]
@@ -38,10 +43,37 @@
 [ext_resource type="Texture2D" uid="uid://cc442rb0kkxor" path="res://Art/Characters/main character/water_right4.png" id="23_rkh3b"]
 [ext_resource type="Texture2D" uid="uid://e1m0gdm1mx3x" path="res://Art/Characters/main character/water_right5.png" id="24_sdiwp"]
 [ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="25_vhyrv"]
+[ext_resource type="Texture2D" uid="uid://c47qmn8ypwv6d" path="res://Art/Characters/main character/water_left1.png" id="31_lxvl2"]
+[ext_resource type="Texture2D" uid="uid://dk2ya28anu0yf" path="res://Art/Characters/main character/water_left2.png" id="32_g60sd"]
+[ext_resource type="Texture2D" uid="uid://b4yic2px5ig28" path="res://Art/Characters/main character/water_left3.png" id="33_2sc72"]
+[ext_resource type="Texture2D" uid="uid://fscp3xuqi6ky" path="res://Art/Characters/main character/water_left4.png" id="34_tyk7m"]
+[ext_resource type="Texture2D" uid="uid://b7v7odubuk3v1" path="res://Art/Characters/main character/water_left5.png" id="35_l4ghh"]
 [ext_resource type="AudioStream" uid="uid://ccfogog8wndm5" path="res://Sounds/Effects/fly-fishing-reel-running_5-40946.mp3" id="39_ddlou"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_85u5v"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0731y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mcqgj")
+}],
+"loop": true,
+"name": &"carry_left",
+"speed": 0.75
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_uao24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tbeoo")
+}],
+"loop": true,
+"name": &"carry_right",
+"speed": 0.75
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_3d1br")
@@ -64,11 +96,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_45jg5")
+"texture": ExtResource("12_lvbp5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_bwh18")
 }],
 "loop": true,
 "name": &"deweed_left",
-"speed": 5.0
+"speed": 0.5
 }, {
 "frames": [{
 "duration": 1.0,
@@ -177,6 +212,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("31_lxvl2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_g60sd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_2sc72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_tyk7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_l4ghh")
+}],
+"loop": true,
+"name": &"water_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("20_g6y2g")
 }, {
 "duration": 1.0,
@@ -220,8 +275,8 @@ inv = ExtResource("2_afkq7")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_85u5v")
-animation = &"cast_up"
-frame_progress = 0.00800675
+animation = &"idle"
+frame_progress = 0.996341
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 visible = false
@@ -336,6 +391,9 @@ stream = ExtResource("25_vhyrv")
 
 [node name="CastSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("39_ddlou")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(4, -42)
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="HealthPickupBox" to="." method="_on_health_pickup_box_area_entered"]

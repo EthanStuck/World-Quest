@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b40rncr1lio40"]
+
+[ext_resource type="Texture2D" uid="uid://cafnwtjbbwrrr" path="res://Art/Environment/Farm/Pumpkin.png" id="1_wdmjo"]
+
+[node name="DummyPumpkin" type="Node2D"]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+texture = ExtResource("1_wdmjo")

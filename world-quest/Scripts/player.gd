@@ -10,6 +10,7 @@ var screen_size = Vector2(1000,1000)
 
 @export var maxHealth = 300
 @export var currentHealth: int = maxHealth
+@onready var pumpkin_load = preload("res://Scenes/dummy_pumpkin.tscn")
 
 var dead = false
 var water_range = false
@@ -18,6 +19,11 @@ var interacting = false
 var facing = 'right'
 var colliding_pos : Vector2
 var foot_step = false
+var carrying = false
+var pickup_range = false
+var foot_timer = 0.55
+
+
 
 # setup for screenshake (from tutorial)
 @export var shake_decay_rate : float = 5.0
@@ -26,6 +32,7 @@ var foot_step = false
 @onready var noise = FastNoiseLite.new()
 var noise_i : float = 0.0
 var shake_strength = 0.0
+
 
 func _ready():
 	''' player startup '''
@@ -41,10 +48,15 @@ func _process(delta: float):
 		if Input.is_action_just_pressed('strike'):
 			strike(delta)
 		if Input.is_action_just_pressed('interact'):
-			if weed_range:
-				deweed(delta)
-			elif water_range:
-				water()
+			if not carrying:
+				if weed_range:
+					deweed(delta)
+				elif water_range:
+					water()
+				elif pickup_range:
+					carry()
+			elif carrying:
+				uncarry()
 		if Input.is_action_just_pressed('cast'):
 			cast(delta)
 		else:
@@ -62,12 +74,20 @@ func move(delta):
 	if not interacting:
 		if Input.is_action_pressed('move_down'):
 			velocity.y = 1
-			if not Input.is_action_pressed('move_right') and not Input.is_action_pressed('move_left'):
+			if not Input.is_action_pressed('move_right') and not Input.is_action_pressed('move_left') and not carrying:
 				$Animations.animation = 'walk_front'
+			elif not Input.is_action_pressed('move_right') and not Input.is_action_pressed('move_left') and carrying:
+				$Animations.animation = 'carry_right'
+				if $Animations.frame == 1:
+					apply_shake()
 		elif Input.is_action_pressed('move_up'):
 			velocity.y = -1
-			if not Input.is_action_pressed('move_right') and not Input.is_action_pressed('move_left'):
+			if not Input.is_action_pressed('move_right') and not Input.is_action_pressed('move_left') and not carrying:
 				$Animations.animation = 'walk_back'
+			elif not Input.is_action_pressed('move_right') and not Input.is_action_pressed('move_left') and carrying:
+				$Animations.animation = 'carry_left'
+				if $Animations.frame == 1:
+					apply_shake()
 		else:
 			velocity.y = 0
 		
@@ -75,13 +95,21 @@ func move(delta):
 		if Input.is_action_pressed('move_right'):
 			velocity.x = 1
 			facing = 'right'
-			if not Input.is_action_pressed('strike'):
+			if not Input.is_action_pressed('strike') and not carrying:
 				$Animations.animation = 'walk_right'
+			elif not Input.is_action_pressed('strike') and carrying:
+				$Animations.animation = 'carry_right'
+				if $Animations.frame == 1:
+					apply_shake()
 		elif Input.is_action_pressed('move_left'):
 			velocity.x = -1
 			facing = 'left'
-			if not Input.is_action_pressed('strike'):
+			if not Input.is_action_pressed('strike') and not carrying:
 				$Animations.animation = 'walk_left'
+			elif not Input.is_action_pressed('strike') and carrying:
+				$Animations.animation = 'carry_left'
+				if $Animations.frame == 1:
+					apply_shake()
 		else:
 			velocity.x = 0
 	else:
@@ -99,6 +127,7 @@ func move(delta):
 		#$Animations.animation = 'idle'
 		if not interacting:
 			$Animations.stop()
+
 	
 	# update position and control animation direction
 	#$Animations.flip_h = velocity.x < 0
@@ -111,7 +140,7 @@ func move(delta):
 		velocity = velocity.slide(collision.get_normal())
 
 func strike(delta):
-	if FragmentHandler.sword_pickup:
+	if FragmentHandler.sword_pickup and not carrying and not interacting:
 		$StrikeSound.play()
 		if velocity.x >= 0:
 			$Animations.animation = 'strike_right'
@@ -134,7 +163,7 @@ func foot_step_sound():
 		# make sound slightly less repetitive
 		$FootStep.pitch_scale = randf_range(.95, 1.05)
 		foot_step = true
-		await get_tree().create_timer(.55).timeout
+		await get_tree().create_timer(foot_timer).timeout
 		foot_step = false
 
 func player():
@@ -190,19 +219,31 @@ func water():
 		interacting = true
 		var prev_anim = $Animations.animation
 		$Animations.stop()
-		$Animations.play('water_right')
+		if facing == 'right':
+			$Animations.play('water_right')
+		elif facing == 'left':
+			$Animations.play('water_left')
 		await get_tree().create_timer(1).timeout
 		$Animations.play(prev_anim)
 		water_range = false
 		interacting = false
 	
-#func _on_interact_area_body_entered(body: Node2D) -> void:
-	#if body.is_in_group('weed'):
-		#weed_range = true
+func carry():
+	carrying = true
+	speed = 15
+	foot_timer = 3 + 2/3
+	if facing == 'right':
+		$Animations.play('carry_right')
+	else:
+		$Animations.play('carry_left')
 
-#func _on_interact_area_body_exited(body: Node2D) -> void:
-	#if body.is_in_group('weed'):
-		#weed_range = true
+
+func uncarry():
+	carrying = false
+	speed = 75
+	foot_timer = .55
+	$Animations.play('idle')
+
 
 func _on_interact_area_area_entered(area: Area2D) -> void:
 	''' check to see what interaction zone player entered, 
@@ -211,6 +252,8 @@ func _on_interact_area_area_entered(area: Area2D) -> void:
 		water_range = true
 	if area.is_in_group('weed'):
 		weed_range = true
+	if area.is_in_group('pumpkin'):
+		pickup_range = true
 	colliding_pos = area.global_position
 		
 func _on_interact_area_area_exited(area: Area2D) -> void:
@@ -219,6 +262,8 @@ func _on_interact_area_area_exited(area: Area2D) -> void:
 		water_range = false
 	if area.is_in_group('weed'):
 		weed_range = false
+	if area.is_in_group('pumpkin'):
+		pickup_range = false
 	colliding_pos = Vector2.ZERO
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
