@@ -1,8 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://3lopmm1jj64u"]
+[gd_scene load_steps=28 format=3 uid="uid://3lopmm1jj64u"]
 
 [ext_resource type="Script" path="res://Scripts/dummy_player.gd" id="1_aaqvx"]
+[ext_resource type="Texture2D" uid="uid://cx21ca068eh3r" path="res://Art/Characters/main character/carry_right2_1.png" id="2_ao0ov"]
 [ext_resource type="Texture2D" uid="uid://cfhhsm7tbe01g" path="res://Art/Characters/main character/deweed_left.png" id="2_pdnu2"]
 [ext_resource type="Texture2D" uid="uid://jpsay716koeg" path="res://Art/Characters/main character/deweed_right.png" id="3_deih5"]
+[ext_resource type="Texture2D" uid="uid://0dwevdlnb4fd" path="res://Art/Characters/main character/carry_right2_2.png" id="3_vnerv"]
 [ext_resource type="Texture2D" uid="uid://x7of8qlyiwnn" path="res://Art/Characters/main character/walk_down2.png" id="4_et6ra"]
 [ext_resource type="Texture2D" uid="uid://4drssm70csm1" path="res://Art/Characters/main character/strike_down.png" id="5_r1gi8"]
 [ext_resource type="Texture2D" uid="uid://dr3mhbhhanavt" path="res://Art/Characters/main character/strike_left.png" id="6_ard0x"]
@@ -28,6 +30,17 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hi2ej"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ao0ov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vnerv")
+}],
+"loop": true,
+"name": &"carry_right",
+"speed": 0.75
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_pdnu2")
@@ -185,4 +198,4 @@ shape = SubResource("CircleShape2D_rrxvs")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hi2ej")
-animation = &"spin"
+animation = &"carry_right"

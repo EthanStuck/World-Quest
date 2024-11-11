@@ -2,6 +2,7 @@ extends Control
 
 func _ready():
 	$DummyPlayer.direction = Vector2(1,0)
+	#$DummyPlayer.speed = 15
 	$Continue.play('Continue')
 
 func _process(delta: float) -> void:
