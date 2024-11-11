@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://b4en6qsd4qi5m"]
+[gd_scene load_steps=56 format=4 uid="uid://b4en6qsd4qi5m"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_a5bgk"]
 [ext_resource type="Texture2D" uid="uid://pom1tmjukm2t" path="res://Art/Characters/main character/walk_up1.png" id="2_8qcdx"]
@@ -275,8 +275,6 @@ inv = ExtResource("2_afkq7")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_85u5v")
-animation = &"idle"
-frame_progress = 0.996341
 animation = &"cast_up"
 frame_progress = 0.0826327
 
