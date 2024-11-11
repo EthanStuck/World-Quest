@@ -45,7 +45,7 @@ animations = [{
 size = Vector2(49, 8)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_foesl"]
-radius = 32.0156
+radius = 30.0
 
 [node name="Pumpkin" type="StaticBody2D"]
 position = Vector2(0, -6)

@@ -54,6 +54,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("4_et6ra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_76s2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gw8nj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_gbgp2")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 2.5
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("5_r1gi8")
 }],
 "loop": true,
@@ -168,4 +185,4 @@ shape = SubResource("CircleShape2D_rrxvs")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hi2ej")
-animation = &"idle"
+animation = &"spin"
