@@ -45,7 +45,7 @@ sprite_frames = SubResource("SpriteFrames_66ld5")
 animation = &"Continue"
 
 [node name="DummyPlayer" parent="." instance=ExtResource("5_4bod7")]
-position = Vector2(48, 306)
+position = Vector2(36, 336)
 
 [node name="TutorialMusic" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamMP3_ie0oj")

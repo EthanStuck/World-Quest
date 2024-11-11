@@ -4,6 +4,8 @@ var interactable = false
 var in_zone = false
 @onready var spirit_load = preload("res://Scenes/tiny_spirit.tscn")
 @onready var leaf_load = preload("res://Scenes/leaf.tscn")
+signal weeded
+signal watered
 
 func _ready():
 	$Sprites.z_index = position.y + 30
@@ -46,6 +48,7 @@ func deweed():
 		state = 2
 		$InteractZone.remove_from_group('weed')
 		$InteractZone.add_to_group('dead_plant')
+		weeded.emit()
 	if in_zone:
 		interactable = true
 
@@ -61,6 +64,7 @@ func revive():
 		$InteractZone.remove_from_group('dead_plant')
 		$InteractZone.add_to_group('pumpkin')
 		state = 3
+		watered.emit()
 	if in_zone:
 		interactable = true
 

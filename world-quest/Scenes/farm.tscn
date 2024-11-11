@@ -151,9 +151,6 @@ position = Vector2(-51, 509)
 [node name="Tree25" parent="Environment/Trees" instance=ExtResource("5_iox4c")]
 position = Vector2(57, 604)
 
-[node name="Tree26" parent="Environment/Trees" instance=ExtResource("5_iox4c")]
-position = Vector2(293, 631)
-
 [node name="Tree27" parent="Environment/Trees" instance=ExtResource("5_iox4c")]
 position = Vector2(-75, 683)
 
@@ -244,7 +241,7 @@ position = Vector2(555, -144)
 [node name="Pumpkins" type="Node" parent="."]
 
 [node name="Pumpkin" parent="Pumpkins" instance=ExtResource("7_6ltom")]
-position = Vector2(489, 476)
+position = Vector2(331, 546)
 
 [node name="Weeds" type="Node" parent="."]
 
@@ -415,7 +412,7 @@ position = Vector2(1250, 1223)
 [node name="NPCs" type="Node" parent="."]
 
 [node name="FarmerNPC2" parent="NPCs" instance=ExtResource("11_tceck")]
-position = Vector2(171, 561)
+position = Vector2(284, 544)
 
 [node name="FragmentSpawnLocation" type="Marker2D" parent="."]
 position = Vector2(518, 495)
@@ -424,4 +421,6 @@ position = Vector2(518, 495)
 position = Vector2(269, 490)
 
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
+[connection signal="watered" from="Pumpkins/Pumpkin" to="NPCs/FarmerNPC2" method="watered"]
+[connection signal="weeded" from="Pumpkins/Pumpkin" to="NPCs/FarmerNPC2" method="weed_pulled"]
 [connection signal="shake" from="NPCs/FarmerNPC2" to="Player" method="shake_receiver"]
