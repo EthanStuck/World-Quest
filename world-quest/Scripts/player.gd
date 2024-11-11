@@ -209,9 +209,11 @@ func deweed(delta):
 	interacting = false
 
 func cast(delta):
+	interacting = true
 	if $Animations.animation != 'cast':
 		$Animations.play('cast_up')
 		await get_tree().create_timer(2).timeout
+		interacting = false
 	
 func water():
 	''' water plants '''
