@@ -16,3 +16,4 @@ texture = ExtResource("1_cvnoo")
 visible = false
 position = Vector2(0, 9.5)
 shape = SubResource("RectangleShape2D_o54bb")
+disabled = true

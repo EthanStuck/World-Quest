@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dkodwqm8vyx33"]
+[gd_scene load_steps=15 format=3 uid="uid://dkodwqm8vyx33"]
 
 [ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://Art/Environment/Town/Town Ground.png" id="1_wkxcn"]
 [ext_resource type="Script" path="res://Scripts/forage.gd" id="1_xne0s"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://co3ujvpfkw4ww" path="res://Scenes/rock_1.tscn" id="10_osbjn"]
 [ext_resource type="PackedScene" uid="uid://cvfdqtodwcb1r" path="res://Scenes/carrot_earthed_2.tscn" id="11_ir5vq"]
 [ext_resource type="PackedScene" uid="uid://cisfavbpmoi1x" path="res://Scenes/carrot_earthed_3.tscn" id="12_t8nix"]
+[ext_resource type="PackedScene" uid="uid://bbu4owxc6jxut" path="res://Scenes/forage_phantom.tscn" id="13_fcihy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4d0a"]
 size = Vector2(247, 273)
@@ -48,7 +49,19 @@ stream = ExtResource("5_5jdd0")
 pitch_scale = 0.33
 
 [node name="yellowrock" parent="." instance=ExtResource("6_g2t7q")]
-position = Vector2(713, 336)
+position = Vector2(68, 703)
+
+[node name="yellowrock9" parent="." instance=ExtResource("6_g2t7q")]
+position = Vector2(828, 817)
+
+[node name="yellowrock10" parent="." instance=ExtResource("6_g2t7q")]
+position = Vector2(615, 322)
+
+[node name="yellowrock11" parent="." instance=ExtResource("6_g2t7q")]
+position = Vector2(248, 332)
+
+[node name="yellowrock12" parent="." instance=ExtResource("6_g2t7q")]
+position = Vector2(241, 135)
 
 [node name="yellowrock2" parent="." instance=ExtResource("6_g2t7q")]
 position = Vector2(169, 176)
@@ -60,10 +73,10 @@ position = Vector2(827, 165)
 position = Vector2(627, 171)
 
 [node name="yellowrock5" parent="." instance=ExtResource("6_g2t7q")]
-position = Vector2(363, 686)
+position = Vector2(828, 648)
 
 [node name="yellowrock6" parent="." instance=ExtResource("6_g2t7q")]
-position = Vector2(146, 842)
+position = Vector2(645, 820)
 
 [node name="yellowrock7" parent="." instance=ExtResource("6_g2t7q")]
 position = Vector2(263, 721)
@@ -99,13 +112,13 @@ position = Vector2(343, 857)
 position = Vector2(259, 855)
 
 [node name="Tree9" parent="." instance=ExtResource("6_t14jb")]
-position = Vector2(161, 849)
+position = Vector2(170, 858)
 
 [node name="Tree10" parent="." instance=ExtResource("6_t14jb")]
 position = Vector2(69, 860)
 
 [node name="Tree11" parent="." instance=ExtResource("6_t14jb")]
-position = Vector2(348, 698)
+position = Vector2(362, 698)
 
 [node name="Tree12" parent="." instance=ExtResource("6_t14jb")]
 position = Vector2(261, 699)
@@ -120,7 +133,7 @@ position = Vector2(915, 640)
 position = Vector2(914, 812)
 
 [node name="Tree29" parent="." instance=ExtResource("6_t14jb")]
-position = Vector2(156, 138)
+position = Vector2(154, 138)
 
 [node name="Tree30" parent="." instance=ExtResource("6_t14jb")]
 position = Vector2(831, 805)
@@ -132,13 +145,13 @@ position = Vector2(742, 808)
 position = Vector2(648, 809)
 
 [node name="Tree14" parent="." instance=ExtResource("6_t14jb")]
-position = Vector2(74, 688)
+position = Vector2(74, 690)
 
 [node name="Tree15" parent="." instance=ExtResource("6_t14jb")]
 position = Vector2(881, 158)
 
 [node name="Tree16" parent="." instance=ExtResource("6_t14jb")]
-position = Vector2(886, 313)
+position = Vector2(884, 318)
 
 [node name="Tree17" parent="." instance=ExtResource("6_t14jb")]
 position = Vector2(805, 158)
@@ -147,10 +160,10 @@ position = Vector2(805, 158)
 position = Vector2(713, 166)
 
 [node name="Tree19" parent="." instance=ExtResource("6_t14jb")]
-position = Vector2(804, 319)
+position = Vector2(799, 317)
 
 [node name="Tree20" parent="." instance=ExtResource("6_t14jb")]
-position = Vector2(712, 316)
+position = Vector2(714, 322)
 
 [node name="Tree21" parent="." instance=ExtResource("6_t14jb")]
 position = Vector2(625, 314)
@@ -193,7 +206,7 @@ position = Vector2(570, 297)
 position = Vector2(415, 362)
 
 [node name="FernBush41" parent="." instance=ExtResource("9_8ujb5")]
-position = Vector2(411, 759)
+position = Vector2(414, 795)
 
 [node name="FernBush42" parent="." instance=ExtResource("9_8ujb5")]
 position = Vector2(947, 728)
@@ -307,90 +320,88 @@ position = Vector2(382, 189)
 position = Vector2(99, 451)
 
 [node name="Rock2" parent="." instance=ExtResource("10_osbjn")]
-position = Vector2(728, 408)
+position = Vector2(737, 451)
 
 [node name="Rock3" parent="." instance=ExtResource("10_osbjn")]
-position = Vector2(852, 723)
+position = Vector2(934, 899)
 
 [node name="Rock4" parent="." instance=ExtResource("10_osbjn")]
-position = Vector2(716, 737)
+position = Vector2(937, 553)
 
 [node name="Rock5" parent="." instance=ExtResource("10_osbjn")]
-position = Vector2(785, 583)
+position = Vector2(320, 943)
 
 [node name="Rock6" parent="." instance=ExtResource("10_osbjn")]
-position = Vector2(397, 164)
-
-[node name="Rock7" parent="." instance=ExtResource("10_osbjn")]
-position = Vector2(558, 266)
+position = Vector2(714, 246)
 
 [node name="Rock8" parent="." instance=ExtResource("10_osbjn")]
-position = Vector2(35, 641)
+position = Vector2(143, 555)
 
 [node name="Rock9" parent="." instance=ExtResource("10_osbjn")]
 position = Vector2(915, 558)
 
 [node name="Rock10" parent="." instance=ExtResource("10_osbjn")]
-position = Vector2(889, 419)
-
-[node name="Rock11" parent="." instance=ExtResource("10_osbjn")]
-position = Vector2(783, 240)
+position = Vector2(93, 947)
 
 [node name="Rock12" parent="." instance=ExtResource("10_osbjn")]
-position = Vector2(813, 423)
-
-[node name="Rock13" parent="." instance=ExtResource("10_osbjn")]
-position = Vector2(673, 404)
+position = Vector2(391, 576)
 
 [node name="Rock14" parent="." instance=ExtResource("10_osbjn")]
 position = Vector2(358, 419)
 
 [node name="Rock15" parent="." instance=ExtResource("10_osbjn")]
-position = Vector2(245, 609)
+position = Vector2(161, 580)
 
 [node name="Rock16" parent="." instance=ExtResource("10_osbjn")]
 position = Vector2(111, 407)
 
 [node name="Rock17" parent="." instance=ExtResource("10_osbjn")]
-position = Vector2(783, 530)
+position = Vector2(236, 945)
 
 [node name="Rock18" parent="." instance=ExtResource("10_osbjn")]
-position = Vector2(626, 710)
+position = Vector2(553, 619)
 
 [node name="Rock19" parent="." instance=ExtResource("10_osbjn")]
 position = Vector2(143, 610)
 
 [node name="Rock20" parent="." instance=ExtResource("10_osbjn")]
-position = Vector2(269, 423)
+position = Vector2(363, 931)
 
 [node name="Rock21" parent="." instance=ExtResource("10_osbjn")]
-position = Vector2(356, 247)
+position = Vector2(434, 283)
 
 [node name="Rock22" parent="." instance=ExtResource("10_osbjn")]
-position = Vector2(238, 227)
+position = Vector2(880, 245)
 
 [node name="Rock23" parent="." instance=ExtResource("10_osbjn")]
-position = Vector2(131, 254)
+position = Vector2(358, 786)
 
 [node name="Rock24" parent="." instance=ExtResource("10_osbjn")]
-position = Vector2(85, 227)
+position = Vector2(5, 252)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-modulate = Color(0, 0, 0, 1)
-offset_left = 370.0
-offset_top = 434.0
-offset_right = 624.0
-offset_bottom = 582.0
+modulate = Color(96.757, 100, 100, 1)
+offset_left = 335.0
+offset_top = 419.0
+offset_right = 772.0
+offset_bottom = 695.0
+scale = Vector2(0.72, 0.72)
 theme_override_font_sizes/bold_italics_font_size = 13
 theme_override_font_sizes/italics_font_size = 13
 bbcode_enabled = true
-text = "[center][i][color=#666666][b]In the forest, rocks lie in wait,
-Behind trees that you must locate.
-Find them at 2, 5, 7, then 14,
-The rest are at 19, 20, and 26, unseen.
-Seven rocks in total, hidden from view,
-Discover them all—your task is through![/b][/color][/i]
+text = "[center][i][color=#666666][b]In a forest so dense, where shadows dance,
+Behind certain trees lies a chance
+To find stones of yellow, shining bright,
+But spirits guard them, out of sight.
+
+Seek the stones at numbered trees,
+Though spirits linger, hidden with ease.
+The trees you seek are few, yet prime,
+In the forest’s depths, lost to time.
+
+Can you find them all, if spirits let you through?[/b][/color][/i]
 "
+fit_content = true
 
 [node name="FragmentSpawnLocation" type="Marker2D" parent="."]
 position = Vector2(491, 497)
@@ -404,8 +415,136 @@ position = Vector2(485, 343)
 [node name="CarrotEarthed3" parent="." instance=ExtResource("12_t8nix")]
 position = Vector2(524, 344)
 
+[node name="forage_phantom" parent="." instance=ExtResource("13_fcihy")]
+position = Vector2(69, 336)
+
+[node name="forage_phantom2" parent="." instance=ExtResource("13_fcihy")]
+position = Vector2(714, 178)
+
+[node name="forage_phantom3" parent="." instance=ExtResource("13_fcihy")]
+position = Vector2(148, 333)
+
+[node name="forage_phantom4" parent="." instance=ExtResource("13_fcihy")]
+position = Vector2(709, 322)
+
+[node name="forage_phantom5" parent="." instance=ExtResource("13_fcihy")]
+position = Vector2(72, 865)
+
+[node name="forage_phantom6" parent="." instance=ExtResource("13_fcihy")]
+position = Vector2(256, 865)
+
+[node name="forage_phantom7" parent="." instance=ExtResource("13_fcihy")]
+position = Vector2(165, 701)
+
+[node name="forage_phantom8" parent="." instance=ExtResource("13_fcihy")]
+position = Vector2(909, 651)
+
+[node name="forage_phantom16" parent="." instance=ExtResource("13_fcihy")]
+position = Vector2(877, 163)
+
+[node name="forage_phantom20" parent="." instance=ExtResource("13_fcihy")]
+position = Vector2(335, 127)
+
+[node name="forage_phantom17" parent="." instance=ExtResource("13_fcihy")]
+position = Vector2(913, 822)
+
+[node name="forage_phantom18" parent="." instance=ExtResource("13_fcihy")]
+position = Vector2(339, 863)
+
+[node name="forage_phantom19" parent="." instance=ExtResource("13_fcihy")]
+position = Vector2(166, 868)
+
+[node name="forage_phantom12" parent="." instance=ExtResource("13_fcihy")]
+position = Vector2(358, 704)
+
+[node name="forage_phantom13" parent="." instance=ExtResource("13_fcihy")]
+position = Vector2(738, 642)
+
+[node name="forage_phantom14" parent="." instance=ExtResource("13_fcihy")]
+position = Vector2(738, 813)
+
+[node name="forage_phantom15" parent="." instance=ExtResource("13_fcihy")]
+position = Vector2(732, 818)
+
+[node name="forage_phantom9" parent="." instance=ExtResource("13_fcihy")]
+position = Vector2(883, 322)
+
+[node name="forage_phantom10" parent="." instance=ExtResource("13_fcihy")]
+position = Vector2(802, 320)
+
+[node name="forage_phantom11" parent="." instance=ExtResource("13_fcihy")]
+position = Vector2(335, 337)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+modulate = Color(100, 100, 0, 1)
+offset_left = 60.0
+offset_top = 200.0
+offset_right = 72.0
+offset_bottom = 224.0
+text = "1"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+modulate = Color(96.217, 100, 0, 1)
+offset_left = 622.0
+offset_top = 226.0
+offset_right = 637.0
+offset_bottom = 249.0
+text = "5"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+modulate = Color(100, 100, 0, 1)
+offset_left = 64.0
+offset_top = 393.0
+offset_right = 78.0
+offset_bottom = 419.0
+text = "9"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="."]
+modulate = Color(100, 100, 0, 1)
+offset_left = 613.0
+offset_top = 386.0
+offset_right = 637.0
+offset_bottom = 414.0
+text = "13"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="."]
+modulate = Color(100, 96.216, 0, 1)
+offset_left = 61.0
+offset_top = 763.0
+offset_right = 86.0
+offset_bottom = 788.0
+text = "17"
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="."]
+modulate = Color(100, 100, 0, 1)
+offset_left = 643.0
+offset_top = 709.0
+offset_right = 672.0
+offset_bottom = 736.0
+text = "21"
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="."]
+modulate = Color(100, 100, 0, 1)
+offset_left = 57.0
+offset_top = 929.0
+offset_right = 97.0
+offset_bottom = 969.0
+text = "25"
+
+[node name="RichTextLabel9" type="RichTextLabel" parent="."]
+modulate = Color(100, 100, 0, 1)
+offset_left = 636.0
+offset_top = 881.0
+offset_right = 676.0
+offset_bottom = 921.0
+text = "29"
+
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
 [connection signal="body_entered" from="yellowrock" to="." method="_on_yellowrock_body_entered"]
+[connection signal="body_entered" from="yellowrock9" to="." method="_on_yellowrock_body_entered"]
+[connection signal="body_entered" from="yellowrock10" to="." method="_on_yellowrock_body_entered"]
+[connection signal="body_entered" from="yellowrock11" to="." method="_on_yellowrock_body_entered"]
+[connection signal="body_entered" from="yellowrock12" to="." method="_on_yellowrock_body_entered"]
 [connection signal="body_entered" from="yellowrock2" to="." method="_on_yellowrock_body_entered"]
 [connection signal="body_entered" from="yellowrock3" to="." method="_on_yellowrock_body_entered"]
 [connection signal="body_entered" from="yellowrock4" to="." method="_on_yellowrock_body_entered"]
