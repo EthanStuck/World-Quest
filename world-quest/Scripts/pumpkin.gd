@@ -6,6 +6,7 @@ var in_zone = false
 @onready var leaf_load = preload("res://Scenes/leaf.tscn")
 signal weeded
 signal watered
+var picked_up = false
 
 func _ready():
 	$Sprites.z_index = position.y + 30
@@ -25,7 +26,10 @@ func _process(delta):
 			elif state == 2:
 				revive()
 			elif state == 3:
-				pass
+				picked_up = true
+				hide()
+				$CollisionShape2D.disabled = true
+				$InteractZone/CollisionShape2D.disabled = true
 
 func deweed():
 	''' Remove layer of weeds from pumpkin '''
@@ -68,6 +72,12 @@ func revive():
 	if in_zone:
 		interactable = true
 
+#func placed(pos):
+	#show()
+	#$CollisionShape2d.disabled = false
+	#$InteractZone/CollisionShape2D.disabled = false
+	#position = pos
+
 func _on_interact_zone_area_entered(area: Area2D) -> void:
 	if area.is_in_group('player_zone'):
 		interactable = true
@@ -79,3 +89,12 @@ func _on_interact_zone_area_exited(area: Area2D) -> void:
 		interactable = false
 		in_zone = false
 		
+
+
+func _on_player_place(pos) -> void:
+	if picked_up:
+		show()
+		$CollisionShape2D.disabled = false
+		$InteractZone/CollisionShape2D.disabled = false
+		position = pos
+		picked_up = false

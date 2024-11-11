@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://dx5762dm4envq"]
+
+[ext_resource type="Script" path="res://Scripts/pumpkin_plot.gd" id="1_37rmm"]
+[ext_resource type="Texture2D" uid="uid://dejacw6v4cdq6" path="res://Art/Environment/Farm/Farm Plot Big.png" id="1_pgd3r"]
+[ext_resource type="Texture2D" uid="uid://dresig2uvrlps" path="res://Art/Environment/Farm/Farm Plot Big Fence Top.png" id="2_lcf3n"]
+[ext_resource type="Texture2D" uid="uid://br5limknamvjx" path="res://Art/Environment/Farm/Farm Plot Big Fence Sides.png" id="3_42o6o"]
+[ext_resource type="AudioStream" uid="uid://t4ryq6nkg2ad" path="res://Sounds/moonlightcoffee.mp3" id="5_rhvul"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ly55y"]
+size = Vector2(414, 441)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xohqn"]
+size = Vector2(426, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5op4x"]
+size = Vector2(62, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_keupi"]
+size = Vector2(4, 437)
+
+[node name="PumpkinPlot" type="Area2D"]
+script = ExtResource("1_37rmm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pgd3r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-28, 20.5)
+shape = SubResource("RectangleShape2D_ly55y")
+
+[node name="FenceTop" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="FenceTop"]
+texture = ExtResource("2_lcf3n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FenceTop"]
+position = Vector2(-27, -204)
+shape = SubResource("RectangleShape2D_xohqn")
+
+[node name="FenceBottom" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="FenceBottom"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FenceBottom"]
+position = Vector2(-209, 238)
+shape = SubResource("RectangleShape2D_5op4x")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FenceBottom"]
+position = Vector2(155, 239)
+shape = SubResource("RectangleShape2D_5op4x")
+
+[node name="FenceSides" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="FenceSides"]
+texture = ExtResource("3_42o6o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FenceSides"]
+position = Vector2(-237, 17)
+shape = SubResource("RectangleShape2D_keupi")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FenceSides"]
+position = Vector2(183, 17.5)
+shape = SubResource("RectangleShape2D_keupi")
+
+[node name="RewardSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_rhvul")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

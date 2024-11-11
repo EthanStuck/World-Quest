@@ -22,6 +22,7 @@ var foot_step = false
 var carrying = false
 var pickup_range = false
 var foot_timer = 0.55
+signal place
 
 
 
@@ -242,7 +243,10 @@ func uncarry():
 	speed = 75
 	foot_timer = .55
 	$Animations.play('idle')
-
+	if facing == 'right':
+		place.emit(position + Vector2(50,15))
+	elif facing == 'left':
+		place.emit(position + Vector2(-50,15))
 
 func _on_interact_area_area_entered(area: Area2D) -> void:
 	''' check to see what interaction zone player entered, 

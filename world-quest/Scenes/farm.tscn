@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b6j0228ya77aj"]
+[gd_scene load_steps=16 format=3 uid="uid://b6j0228ya77aj"]
 
 [ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://Art/Environment/Town/Town Ground.png" id="1_anppi"]
 [ext_resource type="Script" path="res://Scripts/farm.gd" id="1_w7msv"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cisfavbpmoi1x" path="res://Scenes/carrot_earthed_3.tscn" id="8_nsblg"]
 [ext_resource type="PackedScene" uid="uid://b15ykjqpixre" path="res://Scenes/farmer_npc_2.tscn" id="11_tceck"]
 [ext_resource type="PackedScene" uid="uid://6sora81mono5" path="res://Scenes/water_bucket.tscn" id="13_ad70v"]
+[ext_resource type="PackedScene" uid="uid://dx5762dm4envq" path="res://Scenes/pumpkin_plot.tscn" id="14_vnghr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igecs"]
 size = Vector2(236.5, 290)
@@ -244,22 +245,22 @@ position = Vector2(555, -144)
 position = Vector2(331, 546)
 
 [node name="Pumpkin2" parent="Pumpkins" instance=ExtResource("7_6ltom")]
-position = Vector2(672, 327)
+position = Vector2(345, 802)
 
 [node name="Pumpkin3" parent="Pumpkins" instance=ExtResource("7_6ltom")]
-position = Vector2(940, 338)
+position = Vector2(853, 648)
 
 [node name="Pumpkin4" parent="Pumpkins" instance=ExtResource("7_6ltom")]
-position = Vector2(924, 219)
+position = Vector2(818, 849)
 
 [node name="Pumpkin5" parent="Pumpkins" instance=ExtResource("7_6ltom")]
-position = Vector2(778, 176)
+position = Vector2(423, 661)
 
 [node name="Pumpkin6" parent="Pumpkins" instance=ExtResource("7_6ltom")]
-position = Vector2(817, 284)
+position = Vector2(650, 696)
 
 [node name="Pumpkin7" parent="Pumpkins" instance=ExtResource("7_6ltom")]
-position = Vector2(672, 158)
+position = Vector2(421, 340)
 
 [node name="Weeds" type="Node" parent="."]
 
@@ -438,7 +439,19 @@ position = Vector2(518, 495)
 [node name="WaterBucket" parent="." instance=ExtResource("13_ad70v")]
 position = Vector2(269, 490)
 
+[node name="PumpkinPlot" parent="." instance=ExtResource("14_vnghr")]
+position = Vector2(782, 272)
+
+[connection signal="place" from="Player" to="Pumpkins/Pumpkin" method="_on_player_place"]
+[connection signal="place" from="Player" to="Pumpkins/Pumpkin2" method="_on_player_place"]
+[connection signal="place" from="Player" to="Pumpkins/Pumpkin3" method="_on_player_place"]
+[connection signal="place" from="Player" to="Pumpkins/Pumpkin4" method="_on_player_place"]
+[connection signal="place" from="Player" to="Pumpkins/Pumpkin5" method="_on_player_place"]
+[connection signal="place" from="Player" to="Pumpkins/Pumpkin6" method="_on_player_place"]
+[connection signal="place" from="Player" to="Pumpkins/Pumpkin7" method="_on_player_place"]
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
 [connection signal="watered" from="Pumpkins/Pumpkin" to="NPCs/FarmerNPC2" method="watered"]
 [connection signal="weeded" from="Pumpkins/Pumpkin" to="NPCs/FarmerNPC2" method="weed_pulled"]
 [connection signal="shake" from="NPCs/FarmerNPC2" to="Player" method="shake_receiver"]
+[connection signal="pumpkin_added" from="PumpkinPlot" to="." method="_on_pumpkin_plot_pumpkin_added"]
+[connection signal="pumpkin_removed" from="PumpkinPlot" to="." method="_on_pumpkin_plot_pumpkin_removed"]
