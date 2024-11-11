@@ -179,8 +179,10 @@ func deweed(delta):
 	interacting = false
 
 func cast(delta):
-	$Animations.play('cast_up')
-	await get_tree().create_timer(2).timeout
+	if $Animations.animation != 'cast':
+		$CastSound.play()
+		$Animations.play('cast_up')
+		await get_tree().create_timer(2).timeout
 	
 func water():
 	''' water plants '''
