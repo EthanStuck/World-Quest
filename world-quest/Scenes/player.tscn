@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://b4en6qsd4qi5m"]
+[gd_scene load_steps=46 format=4 uid="uid://b4en6qsd4qi5m"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_a5bgk"]
 [ext_resource type="Texture2D" uid="uid://pom1tmjukm2t" path="res://Art/Characters/main character/walk_up1.png" id="2_8qcdx"]
@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://cc442rb0kkxor" path="res://Art/Characters/main character/water_right4.png" id="23_rkh3b"]
 [ext_resource type="Texture2D" uid="uid://e1m0gdm1mx3x" path="res://Art/Characters/main character/water_right5.png" id="24_sdiwp"]
 [ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="25_vhyrv"]
+[ext_resource type="AudioStream" uid="uid://ccfogog8wndm5" path="res://Sounds/Effects/fly-fishing-reel-running_5-40946.mp3" id="39_ddlou"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_85u5v"]
 animations = [{
@@ -220,7 +221,7 @@ inv = ExtResource("2_afkq7")
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_85u5v")
 animation = &"cast_up"
-frame_progress = 0.0166082
+frame_progress = 0.00800675
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 visible = false
@@ -332,6 +333,9 @@ shape = SubResource("RectangleShape2D_81ucm")
 
 [node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("25_vhyrv")
+
+[node name="CastSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("39_ddlou")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="HealthPickupBox" to="." method="_on_health_pickup_box_area_entered"]
