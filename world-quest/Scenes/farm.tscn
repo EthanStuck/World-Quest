@@ -152,7 +152,7 @@ position = Vector2(-51, 509)
 position = Vector2(57, 604)
 
 [node name="Tree26" parent="Environment/Trees" instance=ExtResource("5_iox4c")]
-position = Vector2(193, 569)
+position = Vector2(293, 631)
 
 [node name="Tree27" parent="Environment/Trees" instance=ExtResource("5_iox4c")]
 position = Vector2(-75, 683)
@@ -415,7 +415,7 @@ position = Vector2(1250, 1223)
 [node name="NPCs" type="Node" parent="."]
 
 [node name="FarmerNPC2" parent="NPCs" instance=ExtResource("11_tceck")]
-position = Vector2(290, 343)
+position = Vector2(171, 561)
 
 [node name="FragmentSpawnLocation" type="Marker2D" parent="."]
 position = Vector2(518, 495)
@@ -424,3 +424,4 @@ position = Vector2(518, 495)
 position = Vector2(269, 490)
 
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
+[connection signal="shake" from="NPCs/FarmerNPC2" to="Player" method="shake_receiver"]

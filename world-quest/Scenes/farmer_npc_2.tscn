@@ -1,8 +1,37 @@
-[gd_scene load_steps=6 format=3 uid="uid://b15ykjqpixre"]
+[gd_scene load_steps=9 format=3 uid="uid://b15ykjqpixre"]
 
 [ext_resource type="Texture2D" uid="uid://8mf3747dj6f7" path="res://Art/Characters/NPCs/NPC1.png" id="1_cpl2r"]
 [ext_resource type="Script" path="res://Scripts/farmer_npc_2.gd" id="1_rbv20"]
+[ext_resource type="Texture2D" uid="uid://b8bftkxcamtaa" path="res://Art/Characters/NPCs/NPC2.png" id="2_75fxe"]
 [ext_resource type="Texture2D" uid="uid://8viiykyl7sll" path="res://Art/Characters/NPCs/2.png" id="2_fqp62"]
+[ext_resource type="Texture2D" uid="uid://77yawspygx7r" path="res://Art/Characters/NPCs/NPC3.png" id="3_e6a32"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_li88w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_75fxe")
+}],
+"loop": true,
+"name": &"pull",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_e6a32")
+}],
+"loop": true,
+"name": &"sit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cpl2r")
+}],
+"loop": true,
+"name": &"stand",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxega"]
 size = Vector2(28, 10)
@@ -14,8 +43,9 @@ height = 86.0
 [node name="FarmerNPC2" type="StaticBody2D"]
 script = ExtResource("1_rbv20")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_cpl2r")
+[node name="Sprites" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_li88w")
+animation = &"stand"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

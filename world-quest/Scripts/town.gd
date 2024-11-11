@@ -8,7 +8,7 @@ func _on_to_foraging_area_entered(area: Area2D) -> void:
 
 func _on_to_fishing_area_entered(area: Area2D) -> void:
 	''' Send player to fishing scene '''
-	get_tree().change_scene_to_file("res://Scenes/tutorial_fishing.tscn")
+	get_tree().change_scene_to_file("res://Scenes/tutorial_fish.tscn")
 
 func _on_to_fighting_area_entered(area: Area2D) -> void:
 	''' Send player to fighting scene '''

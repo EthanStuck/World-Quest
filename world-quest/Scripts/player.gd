@@ -245,3 +245,7 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 func _on_health_pickup_box_area_entered(area: Area2D) -> void:
 	currentHealth += 30
 	$PickupSound.play()
+
+
+func shake_receiver() -> void:
+	apply_shake()

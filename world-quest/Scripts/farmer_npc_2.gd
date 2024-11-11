@@ -4,13 +4,27 @@ extends StaticBody2D
 @onready var text_bubble3 = $TextureRect3
 var interactable = false
 var progress = 0
+@onready var player = get_parent().get_node("Player")
+signal shake
 
 func _ready():
-	$Sprite2D.z_index = position.y + 32
+	$Sprites.z_index = position.y + 32
+	if not FragmentHandler.east_complete:
+		$Sprites.play('pull')
+		await get_tree().create_timer(3).timeout
+		#player/apply_shake()
+		shake.emit()
+		$Sprites.play('sit')
+		position.x -= 30
+		await get_tree().create_timer(1).timeout
+		text_bubble1.visible = true
+	else:
+		$Sprites.play('stand')
 	text_bubble1.visible = false
 	text_bubble2.visible = false
 	text_bubble3.visible = false
 	$InteractLabel.visible = false
+	
 
 func _process(delta):
 	if Input.is_action_just_pressed('interact'):
