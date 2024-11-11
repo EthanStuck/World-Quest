@@ -37,7 +37,6 @@ func _ready():
 func _process(delta: float):
 	''' continuous processes '''
 	if not dead:
-		move(delta)
 		$Animations.z_index = position.y + 44
 		if Input.is_action_just_pressed('strike'):
 			strike(delta)
@@ -48,6 +47,8 @@ func _process(delta: float):
 				water()
 		if Input.is_action_just_pressed('cast'):
 			cast(delta)
+		else:
+			move(delta)
 	
 	# camera shake stuff
 	shake_strength = lerp(shake_strength, 0.0, shake_decay_rate * delta)
@@ -178,7 +179,6 @@ func deweed(delta):
 	interacting = false
 
 func cast(delta):
-	var prev_anim = $Animations.animation
 	$Animations.play('cast_up')
 	await get_tree().create_timer(2).timeout
 	

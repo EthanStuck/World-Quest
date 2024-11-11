@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dafbxhoth4wqr"]
+[gd_scene load_steps=10 format=3 uid="uid://dafbxhoth4wqr"]
 
 [ext_resource type="Script" path="res://Scripts/fishing.gd" id="1_cr84t"]
 [ext_resource type="Texture2D" uid="uid://ddnypmicu1ckx" path="res://Art/Environment/Fishing/Fishing_background.png" id="2_18pfa"]
@@ -6,6 +6,26 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spray"]
 size = Vector2(251, 317)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_l3vu7"]
+a = Vector2(544, 275)
+b = Vector2(-163, 281)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_q41k3"]
+a = Vector2(1014, 442)
+b = Vector2(328, 442)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ljlg1"]
+a = Vector2(94, 17)
+b = Vector2(-4, 17)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_sphp7"]
+a = Vector2(432, 306)
+b = Vector2(432, 184)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_pdrje"]
+a = Vector2(745, 652)
+b = Vector2(745, 540)
 
 [node name="Fishing" type="Node"]
 script = ExtResource("1_cr84t")
@@ -24,5 +44,37 @@ position = Vector2(508, 999)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TravelBack"]
 position = Vector2(257, 357.5)
 shape = SubResource("RectangleShape2D_spray")
+
+[node name="Boundaries" type="Node" parent="."]
+
+[node name="Left_lake" type="StaticBody2D" parent="Boundaries"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Left_lake"]
+position = Vector2(168, 456)
+shape = SubResource("SegmentShape2D_l3vu7")
+
+[node name="Right_lake" type="StaticBody2D" parent="Boundaries"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Right_lake"]
+position = Vector2(486, 280)
+shape = SubResource("SegmentShape2D_q41k3")
+
+[node name="Top_pier" type="StaticBody2D" parent="Boundaries"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Top_pier"]
+position = Vector2(718, 587)
+shape = SubResource("SegmentShape2D_ljlg1")
+
+[node name="Left_pier" type="StaticBody2D" parent="Boundaries"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Left_pier"]
+position = Vector2(280, 421)
+shape = SubResource("SegmentShape2D_sphp7")
+
+[node name="Right_pier" type="StaticBody2D" parent="Boundaries"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Right_pier"]
+position = Vector2(69, 66)
+shape = SubResource("SegmentShape2D_pdrje")
 
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
