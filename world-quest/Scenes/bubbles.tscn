@@ -31,16 +31,15 @@ animations = [{
 radius = 9.21954
 
 [node name="Bubbles" type="RigidBody2D"]
-z_index = 100
+gravity_scale = 0.0
 script = ExtResource("1_ojefa")
 
 [node name="bub_animation" type="AnimatedSprite2D" parent="."]
-position = Vector2(1063, 812)
+position = Vector2(1, 2)
 scale = Vector2(0.0987505, 0.121875)
 sprite_frames = SubResource("SpriteFrames_nbt1b")
 animation = &"bubs"
 frame_progress = 0.296652
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1062, 812)
 shape = SubResource("CircleShape2D_ekruh")

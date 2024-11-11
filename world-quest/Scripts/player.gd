@@ -209,7 +209,6 @@ func deweed(delta):
 
 func cast(delta):
 	if $Animations.animation != 'cast':
-		$CastSound.play()
 		$Animations.play('cast_up')
 		await get_tree().create_timer(2).timeout
 	

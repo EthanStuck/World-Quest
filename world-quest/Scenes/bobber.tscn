@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://drlu5huhwyfx7"]
+[gd_scene load_steps=7 format=3 uid="uid://bomf2ql14dxko"]
 
-[ext_resource type="Texture2D" uid="uid://fvmgrvekaw16" path="res://art/Environment/Fishing/bobber2.png" id="1_nf1pp"]
+[ext_resource type="Texture2D" uid="uid://fvmgrvekaw16" path="res://Art/Environment/Fishing/bobber2.png" id="1_nf1pp"]
 [ext_resource type="Script" path="res://Scripts/bobber.gd" id="1_nmnqu"]
-[ext_resource type="Texture2D" uid="uid://bkl5qio4hpg8q" path="res://art/Environment/Fishing/bobber1.png" id="2_lhfi1"]
-[ext_resource type="Texture2D" uid="uid://cl8c6x5p8u3y7" path="res://art/Environment/Fishing/bobber3.png" id="3_cbtwc"]
+[ext_resource type="Texture2D" uid="uid://bkl5qio4hpg8q" path="res://Art/Environment/Fishing/bobber1.png" id="2_lhfi1"]
+[ext_resource type="Texture2D" uid="uid://cl8c6x5p8u3y7" path="res://Art/Environment/Fishing/bobber3.png" id="3_cbtwc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jsj2y"]
 animations = [{
