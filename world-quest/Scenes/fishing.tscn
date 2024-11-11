@@ -1,11 +1,27 @@
-[gd_scene load_steps=13 format=3 uid="uid://dafbxhoth4wqr"]
+[gd_scene load_steps=16 format=3 uid="uid://dafbxhoth4wqr"]
 
 [ext_resource type="Script" path="res://Scripts/fishing.gd" id="1_cr84t"]
 [ext_resource type="Texture2D" uid="uid://ddnypmicu1ckx" path="res://Art/Environment/Fishing/Fishing_background.png" id="2_18pfa"]
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="2_ynwdu"]
+[ext_resource type="Texture2D" uid="uid://dlc05ea3x0081" path="res://Art/Environment/Fishing/water1.png" id="3_7ryld"]
+[ext_resource type="Texture2D" uid="uid://cdlwpkop8sqw3" path="res://Art/Environment/Fishing/water2.png" id="4_4lor6"]
 [ext_resource type="AudioStream" uid="uid://ccfogog8wndm5" path="res://Sounds/Effects/fly-fishing-reel-running_5-40946.mp3" id="4_ehyc5"]
 [ext_resource type="Texture2D" uid="uid://c84htvj5af7kv" path="res://Art/Environment/Fishing/dock.png" id="5_e6qhg"]
 [ext_resource type="AudioStream" uid="uid://djadv4fp0fapj" path="res://Sounds/calm-pond-bright-wind-in-reeds-geese-water-ttp-190401-55746.mp3" id="6_n3ujv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p3utu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7ryld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4lor6")
+}],
+"loop": true,
+"name": &"water",
+"speed": 1.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spray"]
 size = Vector2(251, 317)
@@ -39,6 +55,12 @@ offset_top = -256.0
 offset_right = 1243.0
 offset_bottom = 1244.0
 texture = ExtResource("2_18pfa")
+
+[node name="Animated_water" type="AnimatedSprite2D" parent="."]
+position = Vector2(479, 269.625)
+scale = Vector2(0.356, 0.515693)
+sprite_frames = SubResource("SpriteFrames_p3utu")
+animation = &"water"
 
 [node name="Player" parent="." instance=ExtResource("2_ynwdu")]
 position = Vector2(495, 864)
