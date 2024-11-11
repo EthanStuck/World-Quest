@@ -401,10 +401,10 @@ shape = SubResource("RectangleShape2D_xsqjt")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.517647, 0, 0.6, 0.4)
-offset_left = -248.0
-offset_top = -240.0
-offset_right = 443.0
-offset_bottom = 1256.0
+offset_left = -246.0
+offset_top = -250.0
+offset_right = 445.0
+offset_bottom = 1246.0
 texture = SubResource("GradientTexture2D_njl3l")
 flip_h = true
 

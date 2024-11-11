@@ -46,6 +46,8 @@ func _process(delta: float):
 				deweed(delta)
 			elif water_range:
 				water()
+		if Input.is_action_just_pressed('cast'):
+			cast(delta)
 	
 	# camera shake stuff
 	shake_strength = lerp(shake_strength, 0.0, shake_decay_rate * delta)
@@ -174,6 +176,11 @@ func deweed(delta):
 	$Animations.play(prev_anim)
 	weed_range = false
 	interacting = false
+
+func cast(delta):
+	var prev_anim = $Animations.animation
+	$Animations.play('cast_up')
+	await get_tree().create_timer(2).timeout
 	
 func water():
 	''' water plants '''

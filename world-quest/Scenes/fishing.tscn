@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="2_ynwdu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spray"]
-size = Vector2(251, 20)
+size = Vector2(251, 317)
 
 [node name="Fishing" type="Node"]
 script = ExtResource("1_cr84t")
@@ -16,13 +16,13 @@ offset_bottom = 40.0
 texture = ExtResource("2_18pfa")
 
 [node name="Player" parent="." instance=ExtResource("2_ynwdu")]
-position = Vector2(764, 1138)
+position = Vector2(750, 1146)
 
 [node name="TravelBack" type="Area2D" parent="."]
 position = Vector2(508, 999)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TravelBack"]
-position = Vector2(257, 203)
+position = Vector2(257, 357.5)
 shape = SubResource("RectangleShape2D_spray")
 
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
