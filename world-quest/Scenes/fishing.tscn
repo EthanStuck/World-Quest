@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dafbxhoth4wqr"]
+[gd_scene load_steps=12 format=3 uid="uid://dafbxhoth4wqr"]
 
 [ext_resource type="Script" path="res://Scripts/fishing.gd" id="1_cr84t"]
 [ext_resource type="Texture2D" uid="uid://ddnypmicu1ckx" path="res://Art/Environment/Fishing/Fishing_background.png" id="2_18pfa"]
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="2_ynwdu"]
+[ext_resource type="AudioStream" uid="uid://ccfogog8wndm5" path="res://Sounds/Effects/fly-fishing-reel-running_5-40946.mp3" id="4_ehyc5"]
+[ext_resource type="Texture2D" uid="uid://c84htvj5af7kv" path="res://Art/Environment/Fishing/dock.png" id="5_e6qhg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spray"]
 size = Vector2(251, 317)
@@ -31,18 +33,20 @@ b = Vector2(745, 540)
 script = ExtResource("1_cr84t")
 
 [node name="Floor-Background" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -257.0
+offset_top = -256.0
+offset_right = 1243.0
+offset_bottom = 1244.0
 texture = ExtResource("2_18pfa")
 
 [node name="Player" parent="." instance=ExtResource("2_ynwdu")]
-position = Vector2(750, 1146)
+position = Vector2(495, 864)
 
 [node name="TravelBack" type="Area2D" parent="."]
 position = Vector2(508, 999)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TravelBack"]
-position = Vector2(257, 357.5)
+position = Vector2(-9, 106)
 shape = SubResource("RectangleShape2D_spray")
 
 [node name="Boundaries" type="Node" parent="."]
@@ -50,31 +54,46 @@ shape = SubResource("RectangleShape2D_spray")
 [node name="Left_lake" type="StaticBody2D" parent="Boundaries"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Left_lake"]
-position = Vector2(168, 456)
+position = Vector2(-92, 199)
 shape = SubResource("SegmentShape2D_l3vu7")
 
 [node name="Right_lake" type="StaticBody2D" parent="Boundaries"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Right_lake"]
-position = Vector2(486, 280)
+position = Vector2(231, 22)
 shape = SubResource("SegmentShape2D_q41k3")
 
 [node name="Top_pier" type="StaticBody2D" parent="Boundaries"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Top_pier"]
-position = Vector2(718, 587)
+position = Vector2(461, 331)
 shape = SubResource("SegmentShape2D_ljlg1")
 
 [node name="Left_pier" type="StaticBody2D" parent="Boundaries"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Left_pier"]
-position = Vector2(280, 421)
+position = Vector2(24, 165)
 shape = SubResource("SegmentShape2D_sphp7")
 
 [node name="Right_pier" type="StaticBody2D" parent="Boundaries"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Right_pier"]
-position = Vector2(69, 66)
+position = Vector2(-189, -191)
 shape = SubResource("SegmentShape2D_pdrje")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 371.0
+offset_top = 160.0
+offset_right = 641.0
+offset_bottom = 211.0
+horizontal_alignment = 1
+
+[node name="CastSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ehyc5")
+
+[node name="Dock" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(506, 408)
+texture = ExtResource("5_e6qhg")
 
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
