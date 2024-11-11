@@ -18,6 +18,11 @@ var bubbles : Array = []  # List of bubbles currently in the scene
 var bobbers : Array = []  # List of bobbers currently in the scene
 var cast_timer : float = 0.0  # Timer to track cast delay
 
+func _ready() -> void:
+	# playing music and water animation
+	$PondSounds.play()
+	$Animated_water.play()
+
 # Input event: listen for the cast action
 func _input(event):
 	if event.is_action_pressed("cast"):  # Check if the cast action was triggered

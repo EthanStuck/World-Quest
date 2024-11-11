@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dyjkr5aa52fp6"]
+[gd_scene load_steps=8 format=3 uid="uid://dyjkr5aa52fp6"]
 
 [ext_resource type="Texture2D" uid="uid://b6orc8rvuhfqm" path="res://Art/Environment/Fishing/bubbles1.png" id="1_2ioo8"]
 [ext_resource type="Script" path="res://Scripts/bubbles.gd" id="1_ojefa"]
 [ext_resource type="Texture2D" uid="uid://ck8vnnkydl15v" path="res://Art/Environment/Fishing/bubbles2.png" id="2_dqeuo"]
 [ext_resource type="Texture2D" uid="uid://bk84p534jf5s3" path="res://Art/Environment/Fishing/bubbles3.png" id="3_qlnfj"]
+[ext_resource type="AudioStream" uid="uid://ckgivo0eogday" path="res://Sounds/Effects/water-bubbles-257594.mp3" id="5_selp7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nbt1b"]
 animations = [{
@@ -43,3 +44,7 @@ frame_progress = 0.296652
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ekruh")
+
+[node name="BubbleSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_selp7")
+volume_db = -10.0
