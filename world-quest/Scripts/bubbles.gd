@@ -5,6 +5,7 @@ var target_position : Vector2  # The position to which the bubble moves
 
 func _ready() -> void:
 	$bub_animation.play()
+	$BubbleSound.play()
 	
 # Set the target position for the bubble to move towards
 func set_target_position(position: Vector2):

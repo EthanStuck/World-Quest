@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dafbxhoth4wqr"]
+[gd_scene load_steps=13 format=3 uid="uid://dafbxhoth4wqr"]
 
 [ext_resource type="Script" path="res://Scripts/fishing.gd" id="1_cr84t"]
 [ext_resource type="Texture2D" uid="uid://ddnypmicu1ckx" path="res://Art/Environment/Fishing/Fishing_background.png" id="2_18pfa"]
 [ext_resource type="PackedScene" uid="uid://b4en6qsd4qi5m" path="res://Scenes/player.tscn" id="2_ynwdu"]
 [ext_resource type="AudioStream" uid="uid://ccfogog8wndm5" path="res://Sounds/Effects/fly-fishing-reel-running_5-40946.mp3" id="4_ehyc5"]
 [ext_resource type="Texture2D" uid="uid://c84htvj5af7kv" path="res://Art/Environment/Fishing/dock.png" id="5_e6qhg"]
+[ext_resource type="AudioStream" uid="uid://djadv4fp0fapj" path="res://Sounds/calm-pond-bright-wind-in-reeds-geese-water-ttp-190401-55746.mp3" id="6_n3ujv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spray"]
 size = Vector2(251, 317)
@@ -95,5 +96,9 @@ stream = ExtResource("4_ehyc5")
 z_index = 1
 position = Vector2(506, 408)
 texture = ExtResource("5_e6qhg")
+
+[node name="PondSounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_n3ujv")
+parameters/looping = false
 
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
