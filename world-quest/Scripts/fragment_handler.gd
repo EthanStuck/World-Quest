@@ -18,7 +18,7 @@ var south_fragment = false
 var south_complete = false
 var south_added = false
 
-var game_complete = false
+var game_complete = true
 
 var num_carrots = 0
 var sword_pickup = false

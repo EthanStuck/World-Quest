@@ -22,6 +22,7 @@ var carrying = false
 var pickup_range = false
 var foot_timer = 0.55
 signal place
+signal pickup
 
 
 
@@ -48,7 +49,7 @@ func _process(delta: float):
 		if Input.is_action_just_pressed('strike'):
 			strike(delta)
 		if Input.is_action_just_pressed('interact'):
-			if not carrying:
+			if not carrying and not interacting:
 				if weed_range:
 					deweed(delta)
 				elif water_range:
@@ -230,6 +231,7 @@ func water():
 		interacting = false
 	
 func carry():
+	pickup.emit()
 	carrying = true
 	speed = 15
 	foot_timer = 3 + 2/3

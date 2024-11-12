@@ -7,6 +7,7 @@ var in_zone = false
 signal weeded
 signal watered
 var picked_up = false
+var pickupable = false
 
 func _ready():
 	$Sprites.z_index = position.y + 30
@@ -92,9 +93,13 @@ func _on_interact_zone_area_exited(area: Area2D) -> void:
 
 
 func _on_player_place(pos) -> void:
-	if picked_up:
+	if picked_up and pickupable:
 		show()
 		$CollisionShape2D.disabled = false
 		$InteractZone/CollisionShape2D.disabled = false
 		position = pos
 		picked_up = false
+
+
+func _on_player_pickup() -> void:
+	pickupable = true

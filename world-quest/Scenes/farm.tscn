@@ -442,6 +442,7 @@ position = Vector2(269, 490)
 [node name="PumpkinPlot" parent="." instance=ExtResource("14_vnghr")]
 position = Vector2(782, 272)
 
+[connection signal="pickup" from="Player" to="Pumpkins/Pumpkin" method="_on_player_pickup"]
 [connection signal="place" from="Player" to="Pumpkins/Pumpkin" method="_on_player_place"]
 [connection signal="place" from="Player" to="Pumpkins/Pumpkin2" method="_on_player_place"]
 [connection signal="place" from="Player" to="Pumpkins/Pumpkin3" method="_on_player_place"]

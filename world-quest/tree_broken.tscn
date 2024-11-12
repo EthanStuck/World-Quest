@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bskkkpfnshg65"]
+
+[ext_resource type="Script" path="res://Scripts/tree_broken.gd" id="1_0pdyo"]
+[ext_resource type="Texture2D" uid="uid://c7d28mur5t7l1" path="res://Art/Environment/Tree2.png" id="1_v0cf0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_683op"]
+size = Vector2(20, 36)
+
+[node name="TreeBroken" type="StaticBody2D"]
+script = ExtResource("1_0pdyo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_v0cf0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 81)
+shape = SubResource("RectangleShape2D_683op")
