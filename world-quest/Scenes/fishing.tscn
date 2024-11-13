@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dafbxhoth4wqr"]
+[gd_scene load_steps=18 format=3 uid="uid://dafbxhoth4wqr"]
 
 [ext_resource type="Script" path="res://Scripts/fishing.gd" id="1_cr84t"]
 [ext_resource type="Texture2D" uid="uid://ddnypmicu1ckx" path="res://Art/Environment/Fishing/Fishing_background.png" id="2_18pfa"]
@@ -8,6 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://ccfogog8wndm5" path="res://Sounds/Effects/fly-fishing-reel-running_5-40946.mp3" id="4_ehyc5"]
 [ext_resource type="Texture2D" uid="uid://c84htvj5af7kv" path="res://Art/Environment/Fishing/dock.png" id="5_e6qhg"]
 [ext_resource type="AudioStream" uid="uid://djadv4fp0fapj" path="res://Sounds/calm-pond-bright-wind-in-reeds-geese-water-ttp-190401-55746.mp3" id="6_n3ujv"]
+[ext_resource type="PackedScene" uid="uid://e12gx1qyncbd" path="res://Scenes/house_1.tscn" id="9_8oltf"]
+[ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="10_17nus"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p3utu"]
 animations = [{
@@ -122,5 +124,72 @@ texture = ExtResource("5_e6qhg")
 [node name="PondSounds" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_n3ujv")
 parameters/looping = false
+
+[node name="Houses" type="Node" parent="."]
+
+[node name="House1" parent="Houses" instance=ExtResource("9_8oltf")]
+position = Vector2(80, 572)
+
+[node name="House2" parent="Houses" instance=ExtResource("9_8oltf")]
+position = Vector2(910, 544)
+
+[node name="House3" parent="Houses" instance=ExtResource("9_8oltf")]
+position = Vector2(312, 824)
+
+[node name="House4" parent="Houses" instance=ExtResource("9_8oltf")]
+position = Vector2(114, 900)
+
+[node name="House5" parent="Houses" instance=ExtResource("9_8oltf")]
+position = Vector2(711, 823)
+
+[node name="House6" parent="Houses" instance=ExtResource("9_8oltf")]
+position = Vector2(948, 891)
+
+[node name="Trees" type="Node" parent="."]
+
+[node name="Tree" parent="Trees" instance=ExtResource("10_17nus")]
+position = Vector2(236, 898)
+
+[node name="Tree2" parent="Trees" instance=ExtResource("10_17nus")]
+position = Vector2(49, 946)
+
+[node name="Tree3" parent="Trees" instance=ExtResource("10_17nus")]
+position = Vector2(386, 940)
+
+[node name="Tree4" parent="Trees" instance=ExtResource("10_17nus")]
+position = Vector2(641, 928)
+
+[node name="Tree5" parent="Trees" instance=ExtResource("10_17nus")]
+position = Vector2(857, 925)
+
+[node name="Tree6" parent="Trees" instance=ExtResource("10_17nus")]
+position = Vector2(823, 755)
+
+[node name="Tree7" parent="Trees" instance=ExtResource("10_17nus")]
+position = Vector2(955, 640)
+
+[node name="Tree8" parent="Trees" instance=ExtResource("10_17nus")]
+position = Vector2(798, 576)
+
+[node name="Tree9" parent="Trees" instance=ExtResource("10_17nus")]
+position = Vector2(679, 631)
+
+[node name="Tree10" parent="Trees" instance=ExtResource("10_17nus")]
+position = Vector2(605, 675)
+
+[node name="Tree11" parent="Trees" instance=ExtResource("10_17nus")]
+position = Vector2(386, 668)
+
+[node name="Tree12" parent="Trees" instance=ExtResource("10_17nus")]
+position = Vector2(267, 595)
+
+[node name="Tree13" parent="Trees" instance=ExtResource("10_17nus")]
+position = Vector2(174, 726)
+
+[node name="Tree14" parent="Trees" instance=ExtResource("10_17nus")]
+position = Vector2(59, 703)
+
+[node name="Tree15" parent="Trees" instance=ExtResource("10_17nus")]
+position = Vector2(198, 543)
 
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
