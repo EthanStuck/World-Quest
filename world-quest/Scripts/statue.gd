@@ -30,6 +30,7 @@ func _process(delta):
 		add_fragment()
 	if FragmentHandler.west_added and FragmentHandler.north_added and FragmentHandler.south_added and FragmentHandler.east_added:
 		$FullSprite.show()
+		$CompletionSound.play()
 
 
 func add_fragment():

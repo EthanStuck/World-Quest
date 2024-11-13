@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://wsw1srii3b3"]
+[gd_scene load_steps=11 format=3 uid="uid://wsw1srii3b3"]
 
 [ext_resource type="Script" path="res://Scripts/statue.gd" id="1_abat6"]
 [ext_resource type="Texture2D" uid="uid://ueb6fv7hf2gr" path="res://Art/Environment/Town/Statue/Statue-Full-Glow.png" id="2_810h5"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dj8ukb7sdndle" path="res://Art/Environment/Town/Statue/Statue Fragment TR.png" id="5_jowu3"]
 [ext_resource type="Texture2D" uid="uid://cwfxwmr1yw5y8" path="res://Art/Environment/Town/Statue/Statue Fragment BL.png" id="6_rlpat"]
 [ext_resource type="Texture2D" uid="uid://ckjj27gfsx6im" path="res://Art/Environment/Town/Statue/Statue Fragment BR.png" id="7_rpxsq"]
+[ext_resource type="AudioStream" uid="uid://dfutx85elmkeu" path="res://Sounds/Effects/game-level-complete-143022.mp3" id="8_ich8c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qih3b"]
 size = Vector2(69, 33)
@@ -60,6 +61,9 @@ offset_right = 99.0
 offset_bottom = 107.0
 size_flags_horizontal = 4
 text = "Press 'E' to Add Fragment"
+
+[node name="CompletionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_ich8c")
 
 [connection signal="area_entered" from="InteractZone" to="." method="_on_interact_zone_area_entered"]
 [connection signal="area_exited" from="InteractZone" to="." method="_on_interact_zone_area_exited"]
