@@ -17,6 +17,9 @@ func _ready():
 	elif from == 'farming':
 		$Player.position = $"Travel Areas/FromFarming".position
 		reverse_transition('west')
+	else:
+		$ReverseTransitionRect.show()
+		$ReverseTransitionRect/AnimationPlayer.play('Fade')
 	FragmentHandler.at = 'town'
 	$TransitionRect.hide()
 	
