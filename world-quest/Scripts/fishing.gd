@@ -17,6 +17,7 @@ var frag : Area2D = null
 var bubbles : Array = []  # List of bubbles currently in the scene
 var bobbers : Array = []  # List of bobbers currently in the scene
 var cast_timer : float = 0.0  # Timer to track cast delay
+signal traveling
 
 func _ready() -> void:
 	# playing music and water animation
@@ -102,4 +103,12 @@ func check_for_fish():
 
 func _on_travel_back_area_entered(area: Area2D) -> void:
 	''' Travel back to town '''
+	transition('south')
+	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file("res://Scenes/town.tscn")
+
+
+func transition(direction : String):
+	$TransitionRect.show()
+	$TransitionRect/AnimationPlayer.play('Fade')
+	traveling.emit(direction)

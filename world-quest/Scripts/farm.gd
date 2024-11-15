@@ -2,6 +2,7 @@ extends Node
 
 @onready var fragment = preload("res://Scenes/fragment_east.tscn")
 var num_pumpkins = 0 # number pumpkins brought to plot
+signal traveling
 
 func _ready():
 	FragmentHandler.at = 'farming'
@@ -9,6 +10,8 @@ func _ready():
 
 func _on_travel_back_area_entered(area: Area2D) -> void:
 	''' Travel back to town '''
+	transition('west')
+	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file("res://Scenes/town.tscn")
 	
 #func _process(delta):
@@ -30,3 +33,9 @@ func _on_pumpkin_plot_pumpkin_added() -> void:
 
 func _on_pumpkin_plot_pumpkin_removed() -> void:
 	num_pumpkins -= 1
+
+
+func transition(direction : String):
+	$TransitionRect.show()
+	$TransitionRect/AnimationPlayer.play('Fade')
+	traveling.emit(direction)

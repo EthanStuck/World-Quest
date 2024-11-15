@@ -5,6 +5,7 @@ var boss = preload("res://Scenes/phantom_boss.tscn")
 var wave_spawn_count = 0
 var wave_num = 0
 @onready var timer = get_node("SpawnTimer")
+signal traveling
 
 func _ready():
 	''' player startup '''
@@ -31,6 +32,8 @@ func spawn_boss():
 	
 func _on_travel_back_area_entered(area: Area2D) -> void:
 	''' Travel back to town '''
+	transition('east')
+	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file("res://Scenes/town.tscn")
 	
 	
@@ -62,3 +65,8 @@ func _wave_counter():
 		
 func reset():
 	wave_spawn_count = 0
+
+func transition(direction : String):
+	$TransitionRect.show()
+	$TransitionRect/AnimationPlayer.play('Fade')
+	traveling.emit(direction)

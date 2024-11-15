@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://da5yjfi57uhll"]
+[gd_scene load_steps=17 format=3 uid="uid://da5yjfi57uhll"]
 
 [ext_resource type="Script" path="res://Scripts/fight.gd" id="1_5hnik"]
 [ext_resource type="Texture2D" uid="uid://bpc11km4px56g" path="res://Art/Environment/Town/fight Ground.png" id="2_caon1"]
@@ -15,6 +15,45 @@
 size = Vector2(261, 183)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_rfsu7"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_j8t3h"]
+specular_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_g72d8"]
+resource_name = "Fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uuk6k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_obk55"]
+_data = {
+"Fade": SubResource("Animation_g72d8"),
+"RESET": SubResource("Animation_uuk6k")
+}
 
 [node name="Fight" type="Node"]
 script = ExtResource("1_5hnik")
@@ -225,5 +264,26 @@ position = Vector2(814, 493)
 [node name="TownMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_l7upp")
 
+[node name="TransitionRect" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 1)
+z_index = 2000
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -257.0
+offset_top = -257.0
+offset_right = 860.0
+offset_bottom = 863.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_j8t3h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TransitionRect"]
+libraries = {
+"": SubResource("AnimationLibrary_obk55")
+}
+
+[connection signal="traveling" from="." to="Player" method="traveling"]
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

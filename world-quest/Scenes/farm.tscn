@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b6j0228ya77aj"]
+[gd_scene load_steps=20 format=3 uid="uid://b6j0228ya77aj"]
 
 [ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://Art/Environment/Town/Town Ground.png" id="1_anppi"]
 [ext_resource type="Script" path="res://Scripts/farm.gd" id="1_w7msv"]
@@ -17,6 +17,45 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igecs"]
 size = Vector2(236.5, 290)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_78pgx"]
+specular_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_g72d8"]
+resource_name = "Fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uuk6k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_obk55"]
+_data = {
+"Fade": SubResource("Animation_g72d8"),
+"RESET": SubResource("Animation_uuk6k")
+}
 
 [node name="Farm" type="Node"]
 script = ExtResource("1_w7msv")
@@ -442,6 +481,27 @@ position = Vector2(269, 490)
 [node name="PumpkinPlot" parent="." instance=ExtResource("14_vnghr")]
 position = Vector2(782, 272)
 
+[node name="TransitionRect" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 1)
+z_index = 2000
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -257.0
+offset_top = -257.0
+offset_right = 860.0
+offset_bottom = 863.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_78pgx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TransitionRect"]
+libraries = {
+"": SubResource("AnimationLibrary_obk55")
+}
+
+[connection signal="traveling" from="." to="Player" method="traveling"]
 [connection signal="pickup" from="Player" to="Pumpkins/Pumpkin" method="_on_player_pickup"]
 [connection signal="place" from="Player" to="Pumpkins/Pumpkin" method="_on_player_place"]
 [connection signal="place" from="Player" to="Pumpkins/Pumpkin2" method="_on_player_place"]
