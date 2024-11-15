@@ -23,6 +23,7 @@ var pickup_range = false
 var foot_timer = 0.55
 signal place
 signal pickup
+var direction = 'control' # determine if player has control
 
 
 
@@ -117,6 +118,19 @@ func move(delta):
 		velocity.y = 0
 		velocity.x = 0
 	
+	if direction != 'control':
+		if direction == 'north':
+			velocity.y = -1
+		
+		elif direction == 'south':
+			velocity.y = 1
+		
+		elif direction == 'west':
+			velocity.x = -1
+		
+		elif direction == 'east':
+			velocity.x = 1
+	
 	# normalize movement
 	if velocity.length() > 0:
 		$Animations.play()
@@ -133,7 +147,9 @@ func move(delta):
 	# update position and control animation direction
 	#$Animations.flip_h = velocity.x < 0
 	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screen_size)
+	
+	if direction == 'control':
+		position = position.clamp(Vector2.ZERO, screen_size)
 	
 	# control collisions
 	var collision = move_and_collide(velocity * delta)
@@ -303,3 +319,9 @@ func _on_health_pickup_box_area_entered(area: Area2D) -> void:
 
 func shake_receiver() -> void:
 	apply_shake()
+
+func traveling(received_direction):
+	''' Takes control of player when entering travel area '''
+	interacting = true
+	direction = received_direction
+	speed = 30
