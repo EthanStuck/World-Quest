@@ -143,7 +143,7 @@ func move(delta):
 func strike(delta):
 	if FragmentHandler.sword_pickup and not carrying and not interacting:
 		$StrikeSound.play()
-		if velocity.x >= 0:
+		if facing == 'right':
 			$Animations.animation = 'strike_right'
 			$HitBox/HitBoxShape.disabled = false
 			await get_tree().create_timer(.25).timeout

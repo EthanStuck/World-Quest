@@ -157,6 +157,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_xmkfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l78oe")
 }],
 "loop": true,
 "name": &"walk_back",
@@ -171,6 +174,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("7_6dare")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xjg1r")
 }],
 "loop": true,
 "name": &"walk_front",
@@ -275,8 +281,7 @@ inv = ExtResource("2_afkq7")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_85u5v")
-animation = &"cast_up"
-frame_progress = 0.0826327
+animation = &"walk_right"
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 visible = false
