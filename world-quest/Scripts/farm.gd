@@ -6,6 +6,7 @@ signal traveling
 
 func _ready():
 	FragmentHandler.at = 'farming'
+	reverse_transition('east')
 
 
 func _on_travel_back_area_entered(area: Area2D) -> void:
@@ -38,4 +39,9 @@ func _on_pumpkin_plot_pumpkin_removed() -> void:
 func transition(direction : String):
 	$TransitionRect.show()
 	$TransitionRect/AnimationPlayer.play('Fade')
+	traveling.emit(direction)
+
+func reverse_transition(direction : String):
+	$ReverseTransitionRect.show()
+	$ReverseTransitionRect/AnimationPlayer.play('Fade')
 	traveling.emit(direction)

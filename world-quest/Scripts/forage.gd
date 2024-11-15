@@ -6,6 +6,7 @@ signal traveling
 
 func _ready():
 	FragmentHandler.at = 'foraging'
+	reverse_transition('south')
 
 func _on_travel_back_area_entered(area: Area2D) -> void:
 	''' Travel back to town '''
@@ -31,4 +32,9 @@ func _on_yellowrock_body_entered(body: Node2D) -> void:
 func transition(direction : String):
 	$TransitionRect.show()
 	$TransitionRect/AnimationPlayer.play('Fade')
+	traveling.emit(direction)
+
+func reverse_transition(direction : String):
+	$ReverseTransitionRect.show()
+	$ReverseTransitionRect/AnimationPlayer.play('Fade')
 	traveling.emit(direction)

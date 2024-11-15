@@ -12,6 +12,7 @@ func _ready():
 	#screen_size = get_viewport_rect().size
 	$fight_music.play()
 	FragmentHandler.at = 'fighting'
+	reverse_transition('west')
 	if FragmentHandler.west_complete:
 		$TextureRect.hide()
 		$TownMusic.play()
@@ -69,4 +70,9 @@ func reset():
 func transition(direction : String):
 	$TransitionRect.show()
 	$TransitionRect/AnimationPlayer.play('Fade')
+	traveling.emit(direction)
+
+func reverse_transition(direction : String):
+	$ReverseTransitionRect.show()
+	$ReverseTransitionRect/AnimationPlayer.play('Fade')
 	traveling.emit(direction)

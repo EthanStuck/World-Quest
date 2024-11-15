@@ -7,12 +7,16 @@ func _ready():
 	var from = FragmentHandler.at
 	if from == 'fighting':
 		$Player.position = $"Travel Areas/FromFighting".position
+		reverse_transition('east')
 	elif from == 'foraging':
 		$Player.position = $"Travel Areas/FromForaging".position
+		reverse_transition('north')
 	elif from == 'fishing':
 		$Player.position = $"Travel Areas/FromFishing".position
+		reverse_transition('south')
 	elif from == 'farming':
 		$Player.position = $"Travel Areas/FromFarming".position
+		reverse_transition('west')
 	FragmentHandler.at = 'town'
 	$TransitionRect.hide()
 	
@@ -45,4 +49,9 @@ func _on_to_farming_area_entered(area: Area2D) -> void:
 func transition(direction : String):
 	$TransitionRect.show()
 	$TransitionRect/AnimationPlayer.play('Fade')
+	traveling.emit(direction)
+
+func reverse_transition(direction : String):
+	$ReverseTransitionRect.show()
+	$ReverseTransitionRect/AnimationPlayer.play('Fade')
 	traveling.emit(direction)

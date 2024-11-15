@@ -115,6 +115,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("10_8ugj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gw8nj")
 }],
 "loop": true,
 "name": &"walk_back",
@@ -129,6 +132,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("12_fde53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_et6ra")
 }],
 "loop": true,
 "name": &"walk_front",
@@ -198,4 +204,4 @@ shape = SubResource("CircleShape2D_rrxvs")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hi2ej")
-animation = &"carry_right"
+animation = &"walk_front"

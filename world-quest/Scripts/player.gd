@@ -325,3 +325,15 @@ func traveling(received_direction):
 	interacting = true
 	direction = received_direction
 	speed = 30
+	if received_direction == 'south':
+		$Animations.play('walk_front')
+	elif received_direction == 'north':
+		$Animations.play('walk_back')
+	elif received_direction == 'east':
+		$Animations.play('walk_right')
+	elif received_direction == 'west':
+		$Animations.play('walk_left')
+	await get_tree().create_timer(1).timeout
+	interacting = false
+	direction = 'control'
+	speed = 75

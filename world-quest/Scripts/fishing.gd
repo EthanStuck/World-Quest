@@ -24,6 +24,7 @@ func _ready() -> void:
 	$PondSounds.play()
 	$Animated_water.play()
 	FragmentHandler.at = 'fishing'
+	reverse_transition('north')
 
 # Input event: listen for the cast action
 func _input(event):
@@ -111,4 +112,9 @@ func _on_travel_back_area_entered(area: Area2D) -> void:
 func transition(direction : String):
 	$TransitionRect.show()
 	$TransitionRect/AnimationPlayer.play('Fade')
+	traveling.emit(direction)
+
+func reverse_transition(direction : String):
+	$ReverseTransitionRect.show()
+	$ReverseTransitionRect/AnimationPlayer.play('Fade')
 	traveling.emit(direction)
