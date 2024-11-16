@@ -194,7 +194,7 @@ func strike(delta):
 				buffer = false
 				$Animations.play('strike_right_3')
 				$Animations.frame = 1
-				strike_state = 0
+				strike_state = 3
 				await get_tree().create_timer(.1).timeout
 				position.x -= 5
 				$StrikeSound.play()
@@ -267,7 +267,7 @@ func slash_handler():
 		if $Animations.frame == 2:
 			#$StrikeSound.play()
 			$HitBoxes/HitBox3Right/Collision.disabled = false
-			#position.x -= 10
+			#position.x += 10
 		elif $Animations.frame == 0:
 			$HitBoxes/HitBox3Right/Collision.disabled = true
 	elif strike_state == 3 and facing == 'left':

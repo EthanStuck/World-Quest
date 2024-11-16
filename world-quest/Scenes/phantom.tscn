@@ -38,6 +38,7 @@ script = ExtResource("1_qechl")
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_57unu")
 animation = &"floating"
+frame_progress = 0.0059082
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 visible = false
