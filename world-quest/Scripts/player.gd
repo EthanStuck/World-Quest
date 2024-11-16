@@ -453,3 +453,14 @@ func traveling(received_direction):
 	interacting = false
 	direction = 'control'
 	speed = 75
+
+
+func fragment_collected(piece : String):
+	''' plays fragment collection animation '''
+	interacting = true
+	var prev_anim = $Animations.animation
+	var anim_string = 'fragment_collected_' + piece
+	$Animations.play(anim_string)
+	await get_tree().create_timer(2).timeout
+	interacting = false
+	$Animations.play(prev_anim)

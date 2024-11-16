@@ -2,10 +2,12 @@ extends Node
 var currentWave: int
 var enemy = preload("res://Scenes/phantom.tscn")
 var boss = preload("res://Scenes/phantom_boss.tscn")
+@onready var fragment = preload("res://Scenes/fragment_west.tscn")
 var wave_spawn_count = 0
 var wave_num = 0
 @onready var timer = get_node("SpawnTimer")
 signal traveling
+signal fragment_collected
 
 func _ready():
 	''' player startup '''
@@ -21,7 +23,9 @@ func _ready():
 func _process(delta):
 	#if wave_spawn_count == 14:
 		#spawn_boss()
-	pass
+	if get_node('Phantom_Boss'):
+		$FragmentSpawn.position = get_node('Phantom_Boss').position
+
 		
 func spawn_boss():
 	if not FragmentHandler.west_complete:
@@ -30,6 +34,21 @@ func spawn_boss():
 		boss_instance.position = $Spawner.position
 		add_child(boss_instance)
 		timer.stop()
+		boss_instance.died.connect(on_boss_dead)
+
+		
+func on_boss_dead():
+	''' boss is killed, spawn fragment '''
+	var fragment_instance = fragment.instantiate()
+	get_parent().add_child(fragment_instance)
+	fragment_instance.global_position = $FragmentSpawn.position
+	FragmentHandler.west_complete = true
+	fragment_instance.collected.connect(on_fragment_collected)
+	
+func on_fragment_collected():
+	''' send signal to player that fragment was collected '''
+	fragment_collected.emit('west')
+	
 	
 func _on_travel_back_area_entered(area: Area2D) -> void:
 	''' Travel back to town '''

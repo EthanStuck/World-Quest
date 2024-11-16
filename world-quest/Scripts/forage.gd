@@ -4,6 +4,7 @@ var total_pickup = 0
 @onready var fragment = preload("res://Scenes/fragment_south.tscn")
 @onready var spirit_load = preload("res://Scenes/tiny_spirit.tscn")
 signal traveling
+signal fragment_collected
 
 func _ready():
 	FragmentHandler.at = 'foraging'
@@ -29,7 +30,11 @@ func _on_yellowrock_body_entered(body: Node2D) -> void:
 			get_parent().add_child(fragment_instance)
 			fragment_instance.global_position = $FragmentSpawnLocation.position
 			FragmentHandler.south_complete = true
+			fragment_instance.collected.connect(on_fragment_collected)
 
+func on_fragment_collected():
+	''' send signal to player that fragment was collected '''
+	fragment_collected.emit('south')
 
 func spawn_tiny_phantom():
 	''' randomly spawn tiny phantoms to run around until area complete '''

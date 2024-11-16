@@ -311,5 +311,6 @@ libraries = {
 "": SubResource("AnimationLibrary_a2dk5")
 }
 
+[connection signal="fragment_collected" from="." to="Player" method="fragment_collected"]
 [connection signal="traveling" from="." to="Player" method="traveling"]
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]

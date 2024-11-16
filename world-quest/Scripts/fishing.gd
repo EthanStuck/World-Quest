@@ -18,6 +18,7 @@ var bubbles : Array = []  # List of bubbles currently in the scene
 var bobbers : Array = []  # List of bobbers currently in the scene
 var cast_timer : float = 0.0  # Timer to track cast delay
 signal traveling
+signal fragment_collected
 
 func _ready() -> void:
 	# playing music and water animation
@@ -98,9 +99,14 @@ func check_for_fish():
 		frag = fragment.instantiate()
 		frag.position = Vector2(505, 400)
 		add_child(frag)
+		frag.collected.connect(on_fragment_collected)
 
 	# Reset for next cast
 	bubbles.clear()
+
+func on_fragment_collected():
+	''' send signal to player that fragment was collected '''
+	fragment_collected.emit('north')
 
 func _on_travel_back_area_entered(area: Area2D) -> void:
 	''' Travel back to town '''

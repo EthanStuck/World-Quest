@@ -14,6 +14,7 @@ var currentHealth: int = maxHealth
 var knockbackPower = 300
 @onready var fragment = preload("res://Scenes/fragment_west.tscn")
 var dead = false
+signal died
 
 func _physics_process(delta: float) -> void:
 	if not dead:
@@ -49,10 +50,11 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 		await get_tree().create_timer(.25).timeout
 		queue_free()
 		wave_counter.emit()
-		var fragment_instance = fragment.instantiate()
-		get_parent().add_child(fragment_instance)
-		fragment_instance.global_position = global_position
-		FragmentHandler.west_complete = true
+		died.emit()
+		#var fragment_instance = fragment.instantiate()
+		#get_parent().add_child(fragment_instance)
+		#fragment_instance.global_position = global_position
+		#FragmentHandler.west_complete = true
 	else:
 		modulate = Color(1,0,0)
 		await get_tree().create_timer(.25).timeout

@@ -3,6 +3,7 @@ extends Node
 @onready var fragment = preload("res://Scenes/fragment_east.tscn")
 var num_pumpkins = 0 # number pumpkins brought to plot
 signal traveling
+signal fragment_collected
 
 func _ready():
 	FragmentHandler.at = 'farming'
@@ -23,7 +24,11 @@ func _on_pumpkin_plot_pumpkin_added() -> void:
 		get_parent().add_child(fragment_instance)
 		fragment_instance.global_position = $FragmentSpawnLocation.position
 		FragmentHandler.east_complete = true
+		fragment_instance.collected.connect(on_fragment_collected)
 
+func on_fragment_collected():
+	''' send signal to player that fragment was collected '''
+	fragment_collected.emit('east')
 
 func _on_pumpkin_plot_pumpkin_removed() -> void:
 	num_pumpkins -= 1

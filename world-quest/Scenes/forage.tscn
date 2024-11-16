@@ -940,6 +940,7 @@ position = Vector2(647, 890)
 [node name="Spawn8" type="Marker2D" parent="TinyPhantomSpawns"]
 position = Vector2(257, 936)
 
+[connection signal="fragment_collected" from="." to="Player" method="fragment_collected"]
 [connection signal="traveling" from="." to="Player" method="traveling"]
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
 [connection signal="body_entered" from="YellowRocks/yellowrock" to="." method="_on_yellowrock_body_entered"]
