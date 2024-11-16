@@ -7,6 +7,7 @@ var wave_spawn_count = 0
 var wave_num = 0
 @onready var timer = get_node("SpawnTimer")
 signal traveling
+var boss_alive = false
 signal fragment_collected
 
 func _ready():
@@ -23,7 +24,7 @@ func _ready():
 func _process(delta):
 	#if wave_spawn_count == 14:
 		#spawn_boss()
-	if get_node('Phantom_Boss'):
+	if boss_alive:
 		$FragmentSpawn.position = get_node('Phantom_Boss').position
 
 		
@@ -34,11 +35,13 @@ func spawn_boss():
 		boss_instance.position = $Spawner.position
 		add_child(boss_instance)
 		timer.stop()
+		boss_alive = true
 		boss_instance.died.connect(on_boss_dead)
 
 		
 func on_boss_dead():
 	''' boss is killed, spawn fragment '''
+	boss_alive = false
 	var fragment_instance = fragment.instantiate()
 	get_parent().add_child(fragment_instance)
 	fragment_instance.global_position = $FragmentSpawn.position

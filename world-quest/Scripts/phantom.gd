@@ -43,8 +43,8 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 	if currentHealth <= 0:
 		dead = true
 		modulate = Color(1,0,0)
-		$CollisionBox.disabled = true
-		$HurtBox/HurtBoxShape.disabled = true
+		$CollisionBox.set_deferred('disabled', true)
+		$HurtBox/HurtBoxShape.set_deferred('disabled', true)
 		await get_tree().create_timer(.25).timeout
 		
 		# 'roll dice' to see if drop health
