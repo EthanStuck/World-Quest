@@ -11,19 +11,22 @@ var screen_size = Vector2(1000,1000)
 @export var maxHealth = 300
 @export var currentHealth: int = maxHealth
 
-var dead = false
-var water_range = false
-var weed_range = false
-var interacting = false
-var facing = 'right'
+var dead = false # if player is dead
+var water_range = false # if player is in range of waterable plant
+var weed_range = false # if player in range of weeds
+var interacting = false # # if player is interacting with something
+var facing = 'right' # stores which direction is facing (right or left)
 var colliding_pos : Vector2
-var foot_step = false
-var carrying = false
-var pickup_range = false
+var foot_step = false # if foot step is currently playing
+var carrying = false # if player is holding pumpkin
+var pickup_range = false # if player is in range of pickup-able pumpkin
 var foot_timer = 0.55
-signal place
-signal pickup
+signal place # signals that player placed a pumpkin
+signal pickup # signals that player picked up a  pumpkin
 var direction = 'control' # determine if player has control
+var strike_state = 0 # determine which attack player is on
+var slashing = false # check if player striking
+var buffer = false # allows players to buffer strike inputs
 
 
 
@@ -47,10 +50,14 @@ func _process(delta: float):
 	''' continuous processes '''
 	if not dead:
 		$Animations.z_index = position.y + 44
+		if buffer:
+			# continuously input strike if buffered
+			strike(delta)
 		if Input.is_action_just_pressed('strike'):
 			strike(delta)
 		if Input.is_action_just_pressed('interact'):
 			if not carrying and not interacting:
+				# check what interact is being done
 				if weed_range:
 					deweed(delta)
 				elif water_range:
@@ -63,7 +70,10 @@ func _process(delta: float):
 			cast(delta)
 		else:
 			move(delta)
-	
+		
+		if slashing:
+			slash_handler()
+
 	# camera shake stuff
 	shake_strength = lerp(shake_strength, 0.0, shake_decay_rate * delta)
 	$Camera2D.offset = get_noise_offset(delta, noise_shake_speed, shake_strength)
@@ -73,7 +83,7 @@ func move(delta):
 	''' controls player movement '''
 	
 	# player movement y direction
-	if not interacting:
+	if not interacting and not slashing:
 		if Input.is_action_pressed('move_down'):
 			velocity.y = 1
 			if not Input.is_action_pressed('move_right') and not Input.is_action_pressed('move_left') and not carrying:
@@ -140,7 +150,7 @@ func move(delta):
 	
 	else:
 		#$Animations.animation = 'idle'
-		if not interacting:
+		if not interacting and not slashing:
 			$Animations.stop()
 
 	
@@ -157,21 +167,121 @@ func move(delta):
 		velocity = velocity.slide(collision.get_normal())
 
 func strike(delta):
-	if FragmentHandler.sword_pickup and not carrying and not interacting:
-		$StrikeSound.play()
+	''' Player attacks '''
+	if FragmentHandler.sword_pickup and not carrying and not interacting and not slashing:
+		#$StrikeSound.play()
+		slashing = true
 		if facing == 'right':
-			$Animations.animation = 'strike_right'
-			$HitBox/HitBoxShape.disabled = false
-			await get_tree().create_timer(.25).timeout
-			$HitBox/HitBoxShape.disabled = true
-			$Animations.animation = 'walk_right'
+			if strike_state == 0 or strike_state == 3:
+				buffer = false
+				$Animations.play('strike_right_1')
+				strike_state = 1
+				await get_tree().create_timer(.1).timeout
+				position.x += 10
+				$StrikeSound.play()
+				await get_tree().create_timer(.3).timeout
+			elif strike_state == 1:
+				buffer = false
+				$Animations.play('strike_right_2')
+				strike_state = 2
+				await get_tree().create_timer(.2).timeout
+				position.x += 10
+				$StrikeSound.play()
+				await get_tree().create_timer(.3).timeout
+			elif strike_state == 2:
+				buffer = false
+				$Animations.play('strike_right_3')
+				strike_state = 0
+				await get_tree().create_timer(.1).timeout
+				position.x -= 5
+				$StrikeSound.play()
+				await get_tree().create_timer(.3).timeout
+		elif facing == 'left':
+			if strike_state == 0 or strike_state == 3:
+				buffer = false
+				$Animations.play('strike_left_1')
+				strike_state = 1
+				await get_tree().create_timer(.1).timeout
+				position.x -= 10
+				$StrikeSound.play()
+				await get_tree().create_timer(.3).timeout
+			elif strike_state == 1:
+				buffer = false
+				$Animations.play('strike_left_2')
+				strike_state = 2
+				await get_tree().create_timer(.2).timeout
+				position.x -= 10
+				$StrikeSound.play()
+				await get_tree().create_timer(.3).timeout
+			elif strike_state == 2:
+				buffer = false
+				$Animations.play('strike_left_3')
+				strike_state = 3
+				await get_tree().create_timer(.1).timeout
+				position.x += 5
+				$StrikeSound.play()
+				await get_tree().create_timer(.3).timeout
+		slashing = false
+		check_stop_slashing()
+			
+	elif slashing:
+		buffer = true
+
+func slash_handler():
+	''' handles when to play sounds, when to enable hitboxes, etc. '''
+	if strike_state == 1 and facing == 'right':
+		if $Animations.frame == 1:
+			#$StrikeSound.play()
+			$HitBoxes/HitBox1Right/Collision.disabled = false
+			#position.x += 10
+		elif $Animations.frame == 3:
+			$HitBoxes/HitBox1Right/Collision.disabled = true
+	elif strike_state == 1 and facing == 'left':
+		if $Animations.frame == 1:
+			#$StrikeSound.play()
+			$HitBoxes/HitBox1Left/Collision.disabled = false
+			#position.x -= 10
+		elif $Animations.frame == 3:
+			$HitBoxes/HitBox1Left/Collision.disabled = true
+	elif strike_state == 2 and facing == 'right':
+		if $Animations.frame == 2:
+			#$StrikeSound.play()
+			$HitBoxes/HitBox2Right/Collision.disabled = false
+			#position.x += 10
+		elif $Animations.frame == 4:
+			$HitBoxes/HitBox2Right/Collision.disabled = true
+	elif strike_state == 2 and facing == 'left':
+		if $Animations.frame == 2:
+			#$StrikeSound.play()
+			$HitBoxes/HitBox2Left/Collision.disabled = false
+			#position.x -= 10
+		elif $Animations.frame == 4:
+			$HitBoxes/HitBox2Left/Collision.disabled = true
+	elif strike_state == 3 and facing == 'right':
+		if $Animations.frame == 1:
+			#$StrikeSound.play()
+			$HitBoxes/HitBox3Right/Collision.disabled = false
+			#position.x -= 10
+		elif $Animations.frame == 3:
+			$HitBoxes/HitBox3Right/Collision.disabled = true
+	elif strike_state == 3 and facing == 'left':
+		if $Animations.frame == 1:
+			#$StrikeSound.play()
+			$HitBoxes/HitBox3Left/Collision.disabled = false
+			#position.x += 10
+		elif $Animations.frame == 3:
+			$HitBoxes/HitBox3Left/Collision.disabled = true
+	
+
+func check_stop_slashing():
+	''' determine if player stopped attacking '''
+	await get_tree().create_timer(1).timeout
+	if not slashing:
+		strike_state = 0
+		if facing == 'right':
+			$Animations.play('walk_right')
 		else:
-			#$Animations.flip_h = velocity.x < 0
-			$Animations.animation = 'strike_left'
-			$HitBox/HitBoxShape.disabled = false
-			await get_tree().create_timer(.25).timeout
-			$HitBox/HitBoxShape.disabled = true
-			$Animations.animation = 'walk_left'
+			$Animations.play('walk_left')
 
 func foot_step_sound():
 	''' make foot step sounds when walking '''

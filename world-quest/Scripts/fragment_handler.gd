@@ -21,7 +21,7 @@ var south_added = false
 var game_complete = false
 
 var num_carrots = 0
-var sword_pickup = false
+var sword_pickup = true
 var bucket_collected = false
 var water_amount = 0
 

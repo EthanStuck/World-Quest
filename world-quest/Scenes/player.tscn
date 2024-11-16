@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://b4en6qsd4qi5m"]
+[gd_scene load_steps=83 format=4 uid="uid://b4en6qsd4qi5m"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_a5bgk"]
 [ext_resource type="Texture2D" uid="uid://pom1tmjukm2t" path="res://Art/Characters/main character/walk_up1.png" id="2_8qcdx"]
@@ -37,13 +37,37 @@
 [ext_resource type="Texture2D" uid="uid://bir2xjants3bb" path="res://Art/HUD/healthbar_over.png" id="15_6jhfj"]
 [ext_resource type="AudioStream" uid="uid://b1ndw0pglixa2" path="res://Sounds/Effects/sword-sound-effect-2-234986.mp3" id="15_kno2j"]
 [ext_resource type="Texture2D" uid="uid://dapjhie8nsoce" path="res://Art/HUD/compass.png" id="17_m33ck"]
+[ext_resource type="Texture2D" uid="uid://bnxgeuax6qkh5" path="res://Art/Characters/main character/strike_left1.png" id="19_2pbky"]
+[ext_resource type="Texture2D" uid="uid://dppypbrdvt2wx" path="res://Art/Characters/main character/strike_right1.png" id="20_4638c"]
+[ext_resource type="Texture2D" uid="uid://doe55c133ksem" path="res://Art/Characters/main character/strike_left2.png" id="20_fcd2o"]
 [ext_resource type="Texture2D" uid="uid://c16ketr5kritw" path="res://Art/Characters/main character/water_right1.png" id="20_g6y2g"]
+[ext_resource type="Texture2D" uid="uid://bw78tf5al1ch8" path="res://Art/Characters/main character/strike_left3.png" id="21_6qja7"]
 [ext_resource type="Texture2D" uid="uid://eojf4dgfrdx8" path="res://Art/Characters/main character/water_right2.png" id="21_a5eh1"]
+[ext_resource type="Texture2D" uid="uid://n14c5ladvriy" path="res://Art/Characters/main character/strike_right2.png" id="21_eal26"]
+[ext_resource type="Texture2D" uid="uid://dxd2js4x7hoiv" path="res://Art/Characters/main character/strike_left4.png" id="22_0ddak"]
+[ext_resource type="Texture2D" uid="uid://tyst7my5f0f8" path="res://Art/Characters/main character/strike_right3.png" id="22_8xlnj"]
 [ext_resource type="Texture2D" uid="uid://b50m4ctly05qb" path="res://Art/Characters/main character/water_right3.png" id="22_tjptd"]
+[ext_resource type="Texture2D" uid="uid://dpbt4e6ux4we1" path="res://Art/Characters/main character/strike_right4.png" id="23_g8hww"]
 [ext_resource type="Texture2D" uid="uid://cc442rb0kkxor" path="res://Art/Characters/main character/water_right4.png" id="23_rkh3b"]
+[ext_resource type="Texture2D" uid="uid://bs2npytjkkto3" path="res://Art/Characters/main character/strike_left5.png" id="23_y7ta0"]
+[ext_resource type="Texture2D" uid="uid://ctnlx2xf4oc6b" path="res://Art/Characters/main character/strike_left6.png" id="24_elf6j"]
+[ext_resource type="Texture2D" uid="uid://d0d6mf4rmwenl" path="res://Art/Characters/main character/strike_right5.png" id="24_rmmyh"]
 [ext_resource type="Texture2D" uid="uid://e1m0gdm1mx3x" path="res://Art/Characters/main character/water_right5.png" id="24_sdiwp"]
+[ext_resource type="Texture2D" uid="uid://b1nwxya8qpag5" path="res://Art/Characters/main character/strike_left7.png" id="25_7gn2f"]
+[ext_resource type="Texture2D" uid="uid://c0g5njsbij6hm" path="res://Art/Characters/main character/strike_right6.png" id="25_oom44"]
 [ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="25_vhyrv"]
+[ext_resource type="Texture2D" uid="uid://cccsgjftcibok" path="res://Art/Characters/main character/strike_right7.png" id="26_cl4tx"]
+[ext_resource type="Texture2D" uid="uid://mqtheum7ynkp" path="res://Art/Characters/main character/strike_left8.png" id="26_egu30"]
+[ext_resource type="Texture2D" uid="uid://cw2t8cy4eg1xg" path="res://Art/Characters/main character/strike_left9.png" id="27_2ovjk"]
+[ext_resource type="Texture2D" uid="uid://cdkvv361ukpi4" path="res://Art/Characters/main character/strike_right8.png" id="27_5kwmw"]
+[ext_resource type="Texture2D" uid="uid://cps5o8xh0fo0q" path="res://Art/Characters/main character/strike_left10.png" id="28_6uyqn"]
+[ext_resource type="Texture2D" uid="uid://c12456rorurnl" path="res://Art/Characters/main character/strike_right9.png" id="28_acmq7"]
+[ext_resource type="Texture2D" uid="uid://db0vjpfbv4uv0" path="res://Art/Characters/main character/strike_left11.png" id="29_kv1nl"]
+[ext_resource type="Texture2D" uid="uid://g3grs7vrorox" path="res://Art/Characters/main character/strike_right10.png" id="29_yauve"]
+[ext_resource type="Texture2D" uid="uid://bi05380o210v2" path="res://Art/Characters/main character/strike_right11.png" id="30_724ly"]
+[ext_resource type="Texture2D" uid="uid://b4samtih4u0pe" path="res://Art/Characters/main character/strike_left12.png" id="30_n6ube"]
 [ext_resource type="Texture2D" uid="uid://c47qmn8ypwv6d" path="res://Art/Characters/main character/water_left1.png" id="31_lxvl2"]
+[ext_resource type="Texture2D" uid="uid://brt1txgut7hcy" path="res://Art/Characters/main character/strike_right12.png" id="31_ywp44"]
 [ext_resource type="Texture2D" uid="uid://dk2ya28anu0yf" path="res://Art/Characters/main character/water_left2.png" id="32_g60sd"]
 [ext_resource type="Texture2D" uid="uid://b4yic2px5ig28" path="res://Art/Characters/main character/water_left3.png" id="33_2sc72"]
 [ext_resource type="Texture2D" uid="uid://fscp3xuqi6ky" path="res://Art/Characters/main character/water_left4.png" id="34_tyk7m"]
@@ -142,11 +166,119 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("19_2pbky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_fcd2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_6qja7")
+}, {
+"duration": 10.0,
+"texture": ExtResource("22_0ddak")
+}],
+"loop": true,
+"name": &"strike_left_1",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_y7ta0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_elf6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_7gn2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_egu30")
+}, {
+"duration": 10.0,
+"texture": ExtResource("27_2ovjk")
+}],
+"loop": true,
+"name": &"strike_left_2",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_6uyqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_kv1nl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_n6ube")
+}, {
+"duration": 10.0,
+"texture": ExtResource("19_2pbky")
+}],
+"loop": true,
+"name": &"strike_left_3",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("3_hncnx")
 }],
 "loop": true,
 "name": &"strike_right",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_4638c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_eal26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_8xlnj")
+}, {
+"duration": 10.0,
+"texture": ExtResource("23_g8hww")
+}],
+"loop": true,
+"name": &"strike_right_1",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_rmmyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_oom44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_cl4tx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_5kwmw")
+}, {
+"duration": 10.0,
+"texture": ExtResource("28_acmq7")
+}],
+"loop": true,
+"name": &"strike_right_2",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_yauve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_724ly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_ywp44")
+}, {
+"duration": 10.0,
+"texture": ExtResource("20_4638c")
+}],
+"loop": true,
+"name": &"strike_right_3",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -273,6 +405,16 @@ size = Vector2(43, 34)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81ucm"]
 size = Vector2(30, 88)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6nwg8"]
+radius = 44.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4mgwb"]
+radius = 17.0
+height = 104.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cy6fw"]
+radius = 64.0
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 67
 collision_mask = 9
@@ -281,7 +423,7 @@ inv = ExtResource("2_afkq7")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_85u5v")
-animation = &"walk_right"
+animation = &"strike_right_3"
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 visible = false
@@ -399,6 +541,64 @@ stream = ExtResource("39_ddlou")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(4, -42)
+
+[node name="HitBoxes" type="Node2D" parent="."]
+
+[node name="HitBox1Right" type="Area2D" parent="HitBoxes"]
+collision_layer = 16
+collision_mask = 4
+
+[node name="Collision" type="CollisionShape2D" parent="HitBoxes/HitBox1Right"]
+position = Vector2(4, -7)
+shape = SubResource("CircleShape2D_6nwg8")
+disabled = true
+
+[node name="HitBox2Right" type="Area2D" parent="HitBoxes"]
+collision_layer = 16
+collision_mask = 4
+
+[node name="Collision" type="CollisionShape2D" parent="HitBoxes/HitBox2Right"]
+position = Vector2(14, 9)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_4mgwb")
+disabled = true
+
+[node name="HitBox3Right" type="Area2D" parent="HitBoxes"]
+collision_layer = 16
+collision_mask = 4
+
+[node name="Collision" type="CollisionShape2D" parent="HitBoxes/HitBox3Right"]
+position = Vector2(12, -21)
+shape = SubResource("CircleShape2D_cy6fw")
+disabled = true
+
+[node name="HitBox1Left" type="Area2D" parent="HitBoxes"]
+collision_layer = 16
+collision_mask = 4
+
+[node name="Collision" type="CollisionShape2D" parent="HitBoxes/HitBox1Left"]
+position = Vector2(-4, -7)
+shape = SubResource("CircleShape2D_6nwg8")
+disabled = true
+
+[node name="HitBox2Left" type="Area2D" parent="HitBoxes"]
+collision_layer = 16
+collision_mask = 4
+
+[node name="Collision" type="CollisionShape2D" parent="HitBoxes/HitBox2Left"]
+position = Vector2(-14, 9)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_4mgwb")
+disabled = true
+
+[node name="HitBox3Left" type="Area2D" parent="HitBoxes"]
+collision_layer = 16
+collision_mask = 4
+
+[node name="Collision" type="CollisionShape2D" parent="HitBoxes/HitBox3Left"]
+position = Vector2(-12, -21)
+shape = SubResource("CircleShape2D_cy6fw")
+disabled = true
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="HealthPickupBox" to="." method="_on_health_pickup_box_area_entered"]
