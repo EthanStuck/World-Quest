@@ -18,10 +18,12 @@ func _ready():
 		$Player.position = $"Travel Areas/FromFarming".position
 		reverse_transition('west')
 	else:
-		$ReverseTransitionRect.show()
-		$ReverseTransitionRect/AnimationPlayer.play('Fade')
+		$Player.position = $"Travel Areas/Spawn".position
+		reverse_transition('north')
 	FragmentHandler.at = 'town'
 	$TransitionRect.hide()
+	if FragmentHandler.west_complete:
+		$PurpleGradient.hide()
 	
 
 func _on_to_foraging_area_entered(area: Area2D) -> void:

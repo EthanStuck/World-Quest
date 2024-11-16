@@ -486,9 +486,12 @@ position = Vector2(511, 906)
 [node name="FromFarming" type="Marker2D" parent="Travel Areas"]
 position = Vector2(946, 480)
 
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
+[node name="Spawn" type="Marker2D" parent="Travel Areas"]
+position = Vector2(502, 642)
+
+[node name="PurpleGradient" type="TextureRect" parent="."]
 modulate = Color(0.517647, 0, 0.6, 0.4)
+z_index = 1000
 offset_left = -246.0
 offset_top = -250.0
 offset_right = 445.0
@@ -510,7 +513,8 @@ position = Vector2(400, 485)
 [node name="TransitionRect" type="TextureRect" parent="."]
 visible = false
 modulate = Color(0, 0, 0, 1)
-z_index = 2000
+z_index = 4096
+z_as_relative = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
