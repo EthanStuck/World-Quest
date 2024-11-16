@@ -73,7 +73,11 @@ func _process(delta: float):
 		
 		if slashing:
 			slash_handler()
-
+		
+		if currentHealth == maxHealth or $Animations.animation.contains('fragment'):
+			$HealthBar.hide()
+		else:
+			$HealthBar.show()
 	# camera shake stuff
 	shake_strength = lerp(shake_strength, 0.0, shake_decay_rate * delta)
 	$Camera2D.offset = get_noise_offset(delta, noise_shake_speed, shake_strength)
@@ -438,6 +442,9 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 
 func _on_health_pickup_box_area_entered(area: Area2D) -> void:
 	currentHealth += 30
+	if currentHealth > maxHealth:
+		currentHealth = maxHealth
+	health_update.emit()
 	$PickupSound.play()
 
 

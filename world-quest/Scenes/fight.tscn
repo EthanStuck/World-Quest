@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://da5yjfi57uhll"]
+[gd_scene load_steps=22 format=3 uid="uid://da5yjfi57uhll"]
 
 [ext_resource type="Script" path="res://Scripts/fight.gd" id="1_5hnik"]
 [ext_resource type="Texture2D" uid="uid://bpc11km4px56g" path="res://Art/Environment/Town/fight Ground.png" id="2_caon1"]
@@ -93,6 +93,9 @@ _data = {
 "Fade": SubResource("Animation_pvajo"),
 "RESET": SubResource("Animation_e6mry")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bovo2"]
+size = Vector2(20, 1492)
 
 [node name="Fight" type="Node"]
 script = ExtResource("1_5hnik")
@@ -345,6 +348,16 @@ libraries = {
 }
 
 [node name="FragmentSpawn" type="Marker2D" parent="."]
+
+[node name="barriers" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="barriers"]
+position = Vector2(-98, 512)
+shape = SubResource("RectangleShape2D_bovo2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="barriers"]
+position = Vector2(1156, 511)
+shape = SubResource("RectangleShape2D_bovo2")
 
 [connection signal="fragment_collected" from="." to="Player" method="fragment_collected"]
 [connection signal="traveling" from="." to="Player" method="traveling"]
