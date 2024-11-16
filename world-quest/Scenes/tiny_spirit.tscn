@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjm1brxd2nx2b"]
+[gd_scene load_steps=15 format=3 uid="uid://bjm1brxd2nx2b"]
 
 [ext_resource type="Script" path="res://Scripts/tiny_spirit.gd" id="1_wlq6x"]
 [ext_resource type="Texture2D" uid="uid://4ykbj5gk2u6e" path="res://Art/Characters/Enemies/PhantomSmall1.png" id="2_cyg04"]
@@ -7,6 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://pj4h1pqbwccx" path="res://Art/Characters/Enemies/PhantomSmall4.png" id="5_d4yb0"]
 [ext_resource type="Texture2D" uid="uid://cg5pyo8d52073" path="res://Art/Characters/Enemies/PhantomSmall5.png" id="6_l4g6r"]
 [ext_resource type="Texture2D" uid="uid://d3wtsko81trk1" path="res://Art/Characters/Enemies/PhantomSmall6.png" id="7_sxbua"]
+[ext_resource type="Texture2D" uid="uid://cbxn7xbn2cch2" path="res://Art/Characters/Enemies/PhantomSmall_left1.png" id="8_dvsxh"]
+[ext_resource type="Texture2D" uid="uid://b5jkql0x2c51k" path="res://Art/Characters/Enemies/PhantomSmall_left2.png" id="9_gncqk"]
+[ext_resource type="Texture2D" uid="uid://cwumg80qtxyyg" path="res://Art/Characters/Enemies/PhantomSmall_left3.png" id="10_lfeen"]
+[ext_resource type="Texture2D" uid="uid://bxp4q7nyki87t" path="res://Art/Characters/Enemies/PhantomSmall_left4.png" id="11_sho5d"]
+[ext_resource type="Texture2D" uid="uid://c7cg52pwl12u7" path="res://Art/Characters/Enemies/PhantomSmall_left5.png" id="12_lcyub"]
+[ext_resource type="Texture2D" uid="uid://cqbg20f3p8c1m" path="res://Art/Characters/Enemies/PhantomSmall_left6.png" id="13_aq67g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a45ll"]
 animations = [{
@@ -32,6 +38,29 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_dvsxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gncqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lfeen")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_sho5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_lcyub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_aq67g")
+}],
+"loop": true,
+"name": &"run_left",
+"speed": 5.0
 }]
 
 [node name="TinySpirit" type="Node2D"]
@@ -40,5 +69,4 @@ speed = 260
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_a45ll")
-animation = &"run"
-frame_progress = 0.350874
+animation = &"run_left"

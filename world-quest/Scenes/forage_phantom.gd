@@ -4,7 +4,7 @@ signal wave_counter
 const speed = 2
 var player_position
 var target_position
-@onready var player = get_parent().get_node("Player")
+@onready var player = get_parent().get_parent().get_node("Player")
 var chasing = false
 var wander = false
 var target
