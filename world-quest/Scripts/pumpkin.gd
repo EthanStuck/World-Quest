@@ -17,8 +17,11 @@ func _ready():
 	else:
 		$Sprites.play('alive')
 		state = 3
+		$InteractZone/CollisionDead.disabled = true
+		$InteractZone/CollisionShape2D.disabled = false
 
 func _process(delta):
+
 
 	if interactable:
 		if Input.is_action_just_pressed('interact'):
@@ -36,12 +39,14 @@ func deweed():
 	''' Remove layer of weeds from pumpkin '''
 	interactable = false
 	if state == 0:
+		$InteractZone/CollisionDead.set_deferred('disabled', true)
 		await get_tree().create_timer(2).timeout
 		var leaf = leaf_load.instantiate()
 		get_parent().add_child(leaf)
 		leaf.global_position = global_position
 		leaf.z_index = position.y + 31
 		$Sprites.play('weeded2')
+		$InteractZone/CollisionDead.set_deferred('disabled', false)
 		state = 1
 	elif state == 1:
 		await get_tree().create_timer(2).timeout
@@ -70,6 +75,8 @@ func revive():
 		$InteractZone.add_to_group('pumpkin')
 		state = 3
 		watered.emit()
+		$InteractZone/CollisionDead.set_deferred('disabled', true)
+		$InteractZone/CollisionShape2D.set_deferred('disabled', false)
 	if in_zone:
 		interactable = true
 

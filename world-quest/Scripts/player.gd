@@ -321,6 +321,8 @@ func apply_shake():
 func deweed(delta):
 	''' remove weeds from plant '''
 	interacting = true # used to disable other animations/actions
+	$InteractArea.set_collision_layer_value(1, false)
+	$InteractArea.set_collision_mask_value(1, false)
 	
 	# knockdirection found taking difference from player position and object position
 	var knockback_direction = (global_position - colliding_pos + Vector2(0, 44) - Vector2(0, 30)).normalized()
@@ -337,8 +339,10 @@ func deweed(delta):
 		position += knockback_direction * 20
 	await get_tree().create_timer(.25).timeout
 	$Animations.play(prev_anim)
-	weed_range = false
+	#weed_range = false
 	interacting = false
+	$InteractArea.set_collision_layer_value(1, true)
+	$InteractArea.set_collision_mask_value(1, true)
 
 func cast(delta):
 	interacting = true
@@ -349,6 +353,8 @@ func cast(delta):
 	
 func water():
 	''' water plants '''
+	#$InteractArea.set_collision_layer_value(1, false)
+	#$InteractArea.set_collision_mask_value(1, false)
 	if FragmentHandler.bucket_collected:
 		interacting = true
 		var prev_anim = $Animations.animation
@@ -361,6 +367,8 @@ func water():
 		$Animations.play(prev_anim)
 		water_range = false
 		interacting = false
+		#$InteractArea.set_collision_layer_value(1, true)
+		#$InteractArea.set_collision_mask_value(1, true)
 	
 func carry():
 	pickup.emit()

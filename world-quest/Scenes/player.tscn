@@ -439,7 +439,7 @@ loop_offset = 2.0
 size = Vector2(43, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81ucm"]
-size = Vector2(30, 88)
+size = Vector2(30, 14)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6nwg8"]
 radius = 44.0
@@ -567,6 +567,7 @@ collision_layer = 3
 collision_mask = 129
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, 37)
 shape = SubResource("RectangleShape2D_81ucm")
 
 [node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
@@ -581,6 +582,7 @@ position = Vector2(4, -42)
 [node name="HitBoxes" type="Node2D" parent="."]
 
 [node name="HitBox1Right" type="Area2D" parent="HitBoxes"]
+visible = false
 collision_layer = 16
 collision_mask = 4
 
@@ -590,6 +592,7 @@ shape = SubResource("CircleShape2D_6nwg8")
 disabled = true
 
 [node name="HitBox2Right" type="Area2D" parent="HitBoxes"]
+visible = false
 collision_layer = 16
 collision_mask = 4
 
@@ -600,6 +603,7 @@ shape = SubResource("CapsuleShape2D_4mgwb")
 disabled = true
 
 [node name="HitBox3Right" type="Area2D" parent="HitBoxes"]
+visible = false
 collision_layer = 16
 collision_mask = 4
 
@@ -609,6 +613,7 @@ shape = SubResource("CircleShape2D_cy6fw")
 disabled = true
 
 [node name="HitBox1Left" type="Area2D" parent="HitBoxes"]
+visible = false
 collision_layer = 16
 collision_mask = 4
 
@@ -618,6 +623,7 @@ shape = SubResource("CircleShape2D_6nwg8")
 disabled = true
 
 [node name="HitBox2Left" type="Area2D" parent="HitBoxes"]
+visible = false
 collision_layer = 16
 collision_mask = 4
 
@@ -628,6 +634,7 @@ shape = SubResource("CapsuleShape2D_4mgwb")
 disabled = true
 
 [node name="HitBox3Left" type="Area2D" parent="HitBoxes"]
+visible = false
 collision_layer = 16
 collision_mask = 4
 

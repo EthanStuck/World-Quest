@@ -12,7 +12,7 @@ var target_place
 var maxHealth = 100
 var currentHealth: int = maxHealth
 var knockbackPower = 300
-@onready var fragment = preload("res://Scenes/fragment_west.tscn")
+#@onready var fragment = preload("res://Scenes/fragment_west.tscn")
 var dead = false
 signal died
 
