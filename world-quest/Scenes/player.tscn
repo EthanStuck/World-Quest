@@ -165,6 +165,9 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 1000.0,
+"texture": ExtResource("22_0ddak")
+}, {
 "duration": 1.0,
 "texture": ExtResource("19_2pbky")
 }, {
@@ -173,15 +176,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("21_6qja7")
-}, {
-"duration": 10.0,
-"texture": ExtResource("22_0ddak")
 }],
 "loop": true,
 "name": &"strike_left_1",
 "speed": 10.0
 }, {
 "frames": [{
+"duration": 1000.0,
+"texture": ExtResource("27_2ovjk")
+}, {
 "duration": 1.0,
 "texture": ExtResource("23_y7ta0")
 }, {
@@ -193,15 +196,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("26_egu30")
-}, {
-"duration": 10.0,
-"texture": ExtResource("27_2ovjk")
 }],
 "loop": true,
 "name": &"strike_left_2",
 "speed": 10.0
 }, {
 "frames": [{
+"duration": 1000.0,
+"texture": ExtResource("19_2pbky")
+}, {
 "duration": 1.0,
 "texture": ExtResource("28_6uyqn")
 }, {
@@ -210,9 +213,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("30_n6ube")
-}, {
-"duration": 10.0,
-"texture": ExtResource("19_2pbky")
 }],
 "loop": true,
 "name": &"strike_left_3",
@@ -227,6 +227,9 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 1000.0,
+"texture": ExtResource("23_g8hww")
+}, {
 "duration": 1.0,
 "texture": ExtResource("20_4638c")
 }, {
@@ -235,15 +238,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("22_8xlnj")
-}, {
-"duration": 10.0,
-"texture": ExtResource("23_g8hww")
 }],
 "loop": true,
 "name": &"strike_right_1",
 "speed": 10.0
 }, {
 "frames": [{
+"duration": 1000.0,
+"texture": ExtResource("28_acmq7")
+}, {
 "duration": 1.0,
 "texture": ExtResource("24_rmmyh")
 }, {
@@ -255,15 +258,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("27_5kwmw")
-}, {
-"duration": 10.0,
-"texture": ExtResource("28_acmq7")
 }],
 "loop": true,
 "name": &"strike_right_2",
 "speed": 10.0
 }, {
 "frames": [{
+"duration": 1000.0,
+"texture": ExtResource("20_4638c")
+}, {
 "duration": 1.0,
 "texture": ExtResource("29_yauve")
 }, {
@@ -272,9 +275,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("31_ywp44")
-}, {
-"duration": 10.0,
-"texture": ExtResource("20_4638c")
 }],
 "loop": true,
 "name": &"strike_right_3",
@@ -423,7 +423,7 @@ inv = ExtResource("2_afkq7")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_85u5v")
-animation = &"strike_right_3"
+animation = &"strike_left_1"
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 visible = false

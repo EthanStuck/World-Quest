@@ -175,6 +175,7 @@ func strike(delta):
 			if strike_state == 0 or strike_state == 3:
 				buffer = false
 				$Animations.play('strike_right_1')
+				$Animations.frame = 1
 				strike_state = 1
 				await get_tree().create_timer(.1).timeout
 				position.x += 10
@@ -183,6 +184,7 @@ func strike(delta):
 			elif strike_state == 1:
 				buffer = false
 				$Animations.play('strike_right_2')
+				$Animations.frame = 1
 				strike_state = 2
 				await get_tree().create_timer(.2).timeout
 				position.x += 10
@@ -191,6 +193,7 @@ func strike(delta):
 			elif strike_state == 2:
 				buffer = false
 				$Animations.play('strike_right_3')
+				$Animations.frame = 1
 				strike_state = 0
 				await get_tree().create_timer(.1).timeout
 				position.x -= 5
@@ -200,6 +203,7 @@ func strike(delta):
 			if strike_state == 0 or strike_state == 3:
 				buffer = false
 				$Animations.play('strike_left_1')
+				$Animations.frame = 1
 				strike_state = 1
 				await get_tree().create_timer(.1).timeout
 				position.x -= 10
@@ -208,6 +212,7 @@ func strike(delta):
 			elif strike_state == 1:
 				buffer = false
 				$Animations.play('strike_left_2')
+				$Animations.frame = 1
 				strike_state = 2
 				await get_tree().create_timer(.2).timeout
 				position.x -= 10
@@ -216,6 +221,7 @@ func strike(delta):
 			elif strike_state == 2:
 				buffer = false
 				$Animations.play('strike_left_3')
+				$Animations.frame = 1
 				strike_state = 3
 				await get_tree().create_timer(.1).timeout
 				position.x += 5
@@ -230,46 +236,46 @@ func strike(delta):
 func slash_handler():
 	''' handles when to play sounds, when to enable hitboxes, etc. '''
 	if strike_state == 1 and facing == 'right':
-		if $Animations.frame == 1:
+		if $Animations.frame == 2:
 			#$StrikeSound.play()
 			$HitBoxes/HitBox1Right/Collision.disabled = false
 			#position.x += 10
-		elif $Animations.frame == 3:
+		elif $Animations.frame == 0:
 			$HitBoxes/HitBox1Right/Collision.disabled = true
 	elif strike_state == 1 and facing == 'left':
-		if $Animations.frame == 1:
+		if $Animations.frame == 2:
 			#$StrikeSound.play()
 			$HitBoxes/HitBox1Left/Collision.disabled = false
 			#position.x -= 10
-		elif $Animations.frame == 3:
+		elif $Animations.frame == 0:
 			$HitBoxes/HitBox1Left/Collision.disabled = true
 	elif strike_state == 2 and facing == 'right':
-		if $Animations.frame == 2:
+		if $Animations.frame == 3:
 			#$StrikeSound.play()
 			$HitBoxes/HitBox2Right/Collision.disabled = false
 			#position.x += 10
-		elif $Animations.frame == 4:
+		elif $Animations.frame == 0:
 			$HitBoxes/HitBox2Right/Collision.disabled = true
 	elif strike_state == 2 and facing == 'left':
-		if $Animations.frame == 2:
+		if $Animations.frame == 3:
 			#$StrikeSound.play()
 			$HitBoxes/HitBox2Left/Collision.disabled = false
 			#position.x -= 10
-		elif $Animations.frame == 4:
+		elif $Animations.frame == 0:
 			$HitBoxes/HitBox2Left/Collision.disabled = true
 	elif strike_state == 3 and facing == 'right':
-		if $Animations.frame == 1:
+		if $Animations.frame == 2:
 			#$StrikeSound.play()
 			$HitBoxes/HitBox3Right/Collision.disabled = false
 			#position.x -= 10
-		elif $Animations.frame == 3:
+		elif $Animations.frame == 0:
 			$HitBoxes/HitBox3Right/Collision.disabled = true
 	elif strike_state == 3 and facing == 'left':
-		if $Animations.frame == 1:
+		if $Animations.frame == 2:
 			#$StrikeSound.play()
 			$HitBoxes/HitBox3Left/Collision.disabled = false
 			#position.x += 10
-		elif $Animations.frame == 3:
+		elif $Animations.frame == 0:
 			$HitBoxes/HitBox3Left/Collision.disabled = true
 	
 
