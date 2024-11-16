@@ -58,7 +58,6 @@ func spawn_tiny_phantom():
 	print(spawn_location)
 	spirit.global_position = spawn_location
 	spirit.z_index = spirit.position.y
-	print('happening!')
 	var dir = randi_range(0,1)
 	if dir == 1:
 		spirit.speed = -spirit.speed
