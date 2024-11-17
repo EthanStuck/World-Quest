@@ -218,6 +218,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("12_lvbp5")
+}],
+"loop": true,
+"name": &"pickup_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_obs7g")
+}],
+"loop": true,
+"name": &"pickup_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("3_c7xug")
 }],
 "loop": true,
@@ -491,7 +507,7 @@ inv = ExtResource("2_afkq7")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_85u5v")
-animation = &"fragment_collected_rod"
+animation = &"pickup_left"
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 visible = false

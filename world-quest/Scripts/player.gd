@@ -29,6 +29,7 @@ var slashing = false # check if player striking
 var buffer = false # allows players to buffer strike inputs
 var tutorial = false # if player has tutorial pulled up
 var pumpkin_shake = false # dampen pumpkin carry step shaking
+var stone_range = false # if player is in range of forage item
 
 
 
@@ -61,7 +62,9 @@ func _process(delta: float):
 		if Input.is_action_just_pressed('interact'):
 			if not carrying and not interacting:
 				# check what interact is being done
-				if weed_range:
+				if stone_range:
+					stone_collect()
+				elif weed_range:
 					deweed(delta)
 				elif water_range:
 					water()
@@ -411,6 +414,18 @@ func uncarry():
 		place.emit(position + Vector2(-50,15))
 	apply_shake()
 
+func stone_collect():
+	''' pickup items in forage area '''
+	interacting = true
+	var prev_anim = $Animations.animation
+	if facing == 'right':
+		$Animations.play('pickup_right')
+	else:
+		$Animations.play('pickup_left')
+	await get_tree().create_timer(.5).timeout
+	$Animations.play(prev_anim)
+	interacting = false
+
 func _on_interact_area_area_entered(area: Area2D) -> void:
 	''' check to see what interaction zone player entered, 
 		change state accordingly '''
@@ -420,6 +435,9 @@ func _on_interact_area_area_entered(area: Area2D) -> void:
 		weed_range = true
 	if area.is_in_group('pumpkin'):
 		pickup_range = true
+	if area.is_in_group('stone'):
+		print('here')
+		stone_range = true
 	colliding_pos = area.global_position
 		
 func _on_interact_area_area_exited(area: Area2D) -> void:
@@ -430,6 +448,8 @@ func _on_interact_area_area_exited(area: Area2D) -> void:
 		weed_range = false
 	if area.is_in_group('pumpkin'):
 		pickup_range = false
+	if area.is_in_group('stone'):
+		stone_range = false
 	colliding_pos = Vector2.ZERO
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
