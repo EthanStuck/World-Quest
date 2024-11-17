@@ -436,7 +436,6 @@ func _on_interact_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group('pumpkin'):
 		pickup_range = true
 	if area.is_in_group('stone'):
-		print('here')
 		stone_range = true
 	colliding_pos = area.global_position
 		

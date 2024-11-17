@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dkodwqm8vyx33"]
+[gd_scene load_steps=21 format=3 uid="uid://dkodwqm8vyx33"]
 
 [ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://Art/Environment/Town/Town Ground.png" id="1_wkxcn"]
 [ext_resource type="Script" path="res://Scripts/forage.gd" id="1_xne0s"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="6_t14jb"]
 [ext_resource type="PackedScene" uid="uid://djfagua3lio6l" path="res://Scenes/fern_bush.tscn" id="9_8ujb5"]
 [ext_resource type="PackedScene" uid="uid://co3ujvpfkw4ww" path="res://Scenes/rock_1.tscn" id="10_osbjn"]
+[ext_resource type="PackedScene" uid="uid://ikum73r3r0ct" path="res://Scenes/spirit_npc.tscn" id="11_0j44i"]
 [ext_resource type="PackedScene" uid="uid://bbu4owxc6jxut" path="res://Scenes/forage_phantom.tscn" id="13_fcihy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4d0a"]
@@ -940,7 +941,11 @@ position = Vector2(647, 890)
 [node name="Spawn8" type="Marker2D" parent="TinyPhantomSpawns"]
 position = Vector2(257, 936)
 
+[node name="SpiritNPC" parent="." instance=ExtResource("11_0j44i")]
+position = Vector2(579, 415)
+
 [connection signal="fragment_collected" from="." to="Player" method="fragment_collected"]
+[connection signal="solved" from="." to="SpiritNPC" method="solved"]
 [connection signal="traveling" from="." to="Player" method="traveling"]
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
 [connection signal="body_entered" from="YellowRocks/yellowrock" to="." method="_on_yellowrock_body_entered"]

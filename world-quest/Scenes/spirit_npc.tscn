@@ -1,0 +1,213 @@
+[gd_scene load_steps=10 format=3 uid="uid://ikum73r3r0ct"]
+
+[ext_resource type="Script" path="res://Scripts/spirit_npc.gd" id="1_mdu2n"]
+[ext_resource type="Texture2D" uid="uid://baogv37uwiac5" path="res://Art/Characters/NPCs/Ghost NPC1.png" id="2_47oiq"]
+[ext_resource type="Texture2D" uid="uid://qc5xgknqjmva" path="res://Art/Characters/NPCs/Ghost NPC2.png" id="3_dntql"]
+[ext_resource type="Texture2D" uid="uid://cuiy3d52nt6qk" path="res://Art/Characters/NPCs/Ghost NPC3.png" id="4_qhvnn"]
+[ext_resource type="Texture2D" uid="uid://c1mk7l0prvcun" path="res://Art/Characters/NPCs/Ghost NPC4.png" id="5_y7p82"]
+[ext_resource type="Texture2D" uid="uid://8viiykyl7sll" path="res://Art/Characters/NPCs/2.png" id="6_cufvs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5b76r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_47oiq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dntql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qhvnn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y7p82")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lt1ag"]
+size = Vector2(11, 3)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_he02v"]
+radius = 29.0
+height = 86.0
+
+[node name="SpiritNPC" type="StaticBody2D"]
+script = ExtResource("1_mdu2n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5b76r")
+animation = &"idle"
+frame_progress = 0.254055
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 18)
+shape = SubResource("RectangleShape2D_lt1ag")
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-5, 0)
+shape = SubResource("CapsuleShape2D_he02v")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = 2000
+offset_left = -225.0
+offset_top = -7.0
+offset_right = -20.0
+offset_bottom = 87.0
+texture = ExtResource("6_cufvs")
+flip_h = true
+flip_v = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 183.0
+offset_bottom = 78.0
+theme_override_font_sizes/normal_font_size = 10
+text = "In a forest so dense, where shadows dance,
+Behind certain trees lies a chance."
+tab_size = 3
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+z_index = 2000
+offset_left = -225.0
+offset_top = -7.0
+offset_right = -20.0
+offset_bottom = 87.0
+texture = ExtResource("6_cufvs")
+flip_h = true
+flip_v = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 183.0
+offset_bottom = 78.0
+theme_override_font_sizes/normal_font_size = 10
+text = "To find stones of yellow, shining bright,
+But spirits guard them, out of sight."
+tab_size = 3
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+visible = false
+z_index = 2000
+offset_left = -225.0
+offset_top = -7.0
+offset_right = -20.0
+offset_bottom = 87.0
+texture = ExtResource("6_cufvs")
+flip_h = true
+flip_v = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect3"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 183.0
+offset_bottom = 78.0
+theme_override_font_sizes/normal_font_size = 10
+text = "Seek the stones at numbered trees,
+Though spirits linger, hidden with ease."
+tab_size = 3
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+visible = false
+z_index = 2000
+offset_left = -225.0
+offset_top = -7.0
+offset_right = -20.0
+offset_bottom = 87.0
+texture = ExtResource("6_cufvs")
+flip_h = true
+flip_v = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect4"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 183.0
+offset_bottom = 78.0
+theme_override_font_sizes/normal_font_size = 10
+text = "The trees you seek are few, yet prime,
+In the forest’s depths, lost to time."
+tab_size = 3
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+visible = false
+z_index = 2000
+offset_left = -225.0
+offset_top = -7.0
+offset_right = -20.0
+offset_bottom = 87.0
+texture = ExtResource("6_cufvs")
+flip_h = true
+flip_v = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect5"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 183.0
+offset_bottom = 78.0
+theme_override_font_sizes/normal_font_size = 10
+text = "
+Can you find them all, if spirits let you through?"
+tab_size = 3
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+visible = false
+z_index = 2000
+offset_left = -225.0
+offset_top = -7.0
+offset_right = -20.0
+offset_bottom = 87.0
+texture = ExtResource("6_cufvs")
+flip_h = true
+flip_v = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect6"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 183.0
+offset_bottom = 78.0
+theme_override_font_sizes/normal_font_size = 10
+text = "
+You seem to have solved the riddle. Well done."
+tab_size = 3
+
+[node name="InteractLabel" type="Label" parent="."]
+z_index = 2000
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0435
+offset_top = 36.079
+offset_right = 88.9565
+offset_bottom = 59.079
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+text = "Press 'E' to Talk"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

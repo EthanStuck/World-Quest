@@ -5,6 +5,7 @@ var total_pickup = 0
 @onready var spirit_load = preload("res://Scenes/tiny_spirit.tscn")
 signal traveling
 signal fragment_collected
+signal solved
 
 func _ready():
 	FragmentHandler.at = 'foraging'
@@ -31,6 +32,7 @@ func _on_yellowrock_body_entered(body: Node2D) -> void:
 	# when all pieces collected, spawn fragment
 	if total_pickup == 11:
 		if not FragmentHandler.south_fragment and not FragmentHandler.south_complete:
+			solved.emit()
 			$PickupSound.play()
 			var fragment_instance = fragment.instantiate()
 			add_child(fragment_instance)
