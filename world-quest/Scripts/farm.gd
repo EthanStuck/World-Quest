@@ -17,6 +17,12 @@ func _ready():
 	$Fences/FenceSide/Sprite2D3.z_index = $Fences/FenceTop.position.y + - 200
 	if FragmentHandler.east_opened or FragmentHandler.east_complete:
 		open_gates()
+	
+	if FragmentHandler.east_spawned:
+		var fragment_instance = fragment.instantiate()
+		add_child.call_deferred(fragment_instance)
+		fragment_instance.global_position = $FragmentSpawnLocation.position
+		fragment_instance.collected.connect(on_collected)
 
 
 func _on_travel_back_area_entered(area: Area2D) -> void:
@@ -33,6 +39,7 @@ func _on_pumpkin_plot_pumpkin_added() -> void:
 		add_child(fragment_instance)
 		fragment_instance.global_position = $FragmentSpawnLocation.position
 		FragmentHandler.east_complete = true
+		FragmentHandler.east_spawned = true
 		fragment_instance.collected.connect(on_collected)
 
 func on_collected(item):

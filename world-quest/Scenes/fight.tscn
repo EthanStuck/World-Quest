@@ -347,8 +347,6 @@ libraries = {
 "": SubResource("AnimationLibrary_a2dk5")
 }
 
-[node name="FragmentSpawn" type="Marker2D" parent="."]
-
 [node name="barriers" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="barriers"]
@@ -358,6 +356,9 @@ shape = SubResource("RectangleShape2D_bovo2")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="barriers"]
 position = Vector2(1156, 511)
 shape = SubResource("RectangleShape2D_bovo2")
+
+[node name="FragmentSpawn" type="Marker2D" parent="."]
+position = Vector2(505, 496)
 
 [connection signal="fragment_collected" from="." to="Player" method="fragment_collected"]
 [connection signal="traveling" from="." to="Player" method="traveling"]

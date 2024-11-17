@@ -33,18 +33,27 @@ func _ready() -> void:
 		add_child.call_deferred(rod)
 		rod.global_position = $RodSpawn.position
 		rod.collected.connect(on_collected)
+	
+	if FragmentHandler.north_spawned:
+		frag = fragment.instantiate()
+		frag.position = Vector2(505, 400)
+		add_child.call_deferred(frag)
+		FragmentHandler.north_complete = true
+		FragmentHandler.north_spawned = true
+		frag.collected.connect(on_collected)
 
 # Input event: listen for the cast action
 func _input(event):
-	if event.is_action_pressed("cast"):  # Check if the cast action was triggered
-		if is_casting:
-			check_for_fish()  # Check if fish is caught on second cast
-			$CastSound.play()
-			bobber.queue_free()
-			await get_tree().create_timer(1.0).timeout
-			$CastSound.stop()
-		else:
-			cast_bobber()  # Cast the bobber for the first time
+	if FragmentHandler.rod_pickup:
+		if event.is_action_pressed("cast"):  # Check if the cast action was triggered
+			if is_casting:
+				check_for_fish()  # Check if fish is caught on second cast
+				$CastSound.play()
+				bobber.queue_free()
+				await get_tree().create_timer(1.0).timeout
+				$CastSound.stop()
+			else:
+				cast_bobber()  # Cast the bobber for the first time
 
 # Cast the bobber and start the fishing process
 func cast_bobber():
@@ -101,11 +110,13 @@ func check_for_fish():
 		bubble.queue_free()
 
 	# Check if the quest is complete (10 fish caught), spawns fragment
-	if fish_caught >= 10:
+	if fish_caught >= 10 and not FragmentHandler.north_spawned:
 		ui_text.text = "Quest Complete!"
 		frag = fragment.instantiate()
 		frag.position = Vector2(505, 400)
 		add_child(frag)
+		FragmentHandler.north_complete = true
+		FragmentHandler.north_spawned = true
 		frag.collected.connect(on_collected)
 
 	# Reset for next cast

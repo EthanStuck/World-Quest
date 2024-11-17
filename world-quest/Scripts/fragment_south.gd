@@ -16,6 +16,7 @@ func _process(delta):
 	if interactable:
 		if Input.is_action_just_pressed('interact'):
 			FragmentHandler.south_fragment = true
+			FragmentHandler.south_spawned = false
 			playercollect()
 			$PickupSound.play()
 			await get_tree().create_timer(0.1).timeout

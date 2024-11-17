@@ -10,6 +10,12 @@ func _ready():
 	FragmentHandler.at = 'foraging'
 	reverse_transition('south')
 	spawn_tiny_phantom()
+	
+	if FragmentHandler.south_spawned:
+		var fragment_instance = fragment.instantiate()
+		add_child.call_deferred(fragment_instance)
+		fragment_instance.global_position = $FragmentSpawnLocation.position
+		fragment_instance.collected.connect(on_fragment_collected)
 
 func _on_travel_back_area_entered(area: Area2D) -> void:
 	''' Travel back to town '''
@@ -30,6 +36,7 @@ func _on_yellowrock_body_entered(body: Node2D) -> void:
 			add_child(fragment_instance)
 			fragment_instance.global_position = $FragmentSpawnLocation.position
 			FragmentHandler.south_complete = true
+			FragmentHandler.south_spawned = true
 			fragment_instance.collected.connect(on_fragment_collected)
 
 func on_fragment_collected(item):

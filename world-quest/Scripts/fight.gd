@@ -23,6 +23,12 @@ func _ready():
 	else:
 		$Player.currentHealth = $Player.maxHealth - 31
 		$Player.health_update.emit()
+	
+	if FragmentHandler.west_spawned:
+		var fragment_instance = fragment.instantiate()
+		add_child.call_deferred(fragment_instance)
+		fragment_instance.global_position = $FragmentSpawn.position
+		fragment_instance.collected.connect(on_fragment_collected)
 
 func _process(delta):
 	#if wave_spawn_count == 14:
@@ -51,6 +57,7 @@ func on_boss_dead():
 	add_child(fragment_instance)
 	fragment_instance.global_position = $FragmentSpawn.position
 	FragmentHandler.west_complete = true
+	FragmentHandler.west_spawned = true
 	fragment_instance.collected.connect(on_fragment_collected)
 	
 func on_fragment_collected(item):
