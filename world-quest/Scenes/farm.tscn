@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b6j0228ya77aj"]
+[gd_scene load_steps=30 format=3 uid="uid://b6j0228ya77aj"]
 
 [ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://Art/Environment/Town/Town Ground.png" id="1_anppi"]
 [ext_resource type="Script" path="res://Scripts/farm.gd" id="1_w7msv"]
@@ -12,8 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://dni3slhpkbh34" path="res://Scenes/pumpkin.tscn" id="7_6ltom"]
 [ext_resource type="PackedScene" uid="uid://cisfavbpmoi1x" path="res://Scenes/carrot_earthed_3.tscn" id="8_nsblg"]
 [ext_resource type="PackedScene" uid="uid://b15ykjqpixre" path="res://Scenes/farmer_npc_2.tscn" id="11_tceck"]
-[ext_resource type="PackedScene" uid="uid://6sora81mono5" path="res://Scenes/water_bucket.tscn" id="13_ad70v"]
 [ext_resource type="PackedScene" uid="uid://dx5762dm4envq" path="res://Scenes/pumpkin_plot.tscn" id="14_vnghr"]
+[ext_resource type="Texture2D" uid="uid://dresig2uvrlps" path="res://Art/Environment/Farm/Farm Plot Big Fence Top.png" id="15_l47et"]
+[ext_resource type="Texture2D" uid="uid://d1lyddd2cq82o" path="res://Art/Environment/Farm/Farm Plot Big Fence Side1.png" id="16_23iob"]
+[ext_resource type="Texture2D" uid="uid://dvddt1rroy8it" path="res://Art/Environment/Farm/Farm Plot Big Fence Side2.png" id="17_t4jm0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igecs"]
 size = Vector2(236.5, 290)
@@ -96,6 +98,18 @@ _data = {
 "RESET": SubResource("Animation_e6mry")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3fhmy"]
+size = Vector2(426, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umk0h"]
+size = Vector2(4, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mnxiw"]
+size = Vector2(4, 204)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nc2et"]
+size = Vector2(4, 158)
+
 [node name="Farm" type="Node"]
 script = ExtResource("1_w7msv")
 
@@ -121,10 +135,10 @@ shape = SubResource("RectangleShape2D_igecs")
 [node name="Houses" type="Node" parent="Environment"]
 
 [node name="House1" parent="Environment/Houses" instance=ExtResource("4_frgo4")]
-position = Vector2(165, 334)
+position = Vector2(182, 268)
 
 [node name="House2" parent="Environment/Houses" instance=ExtResource("4_frgo4")]
-position = Vector2(301, 180)
+position = Vector2(315, 104)
 
 [node name="Trees" type="Node" parent="Environment"]
 
@@ -195,10 +209,10 @@ position = Vector2(395, -206)
 position = Vector2(229, -151)
 
 [node name="Tree14" parent="Environment/Trees" instance=ExtResource("5_iox4c")]
-position = Vector2(362, 11)
+position = Vector2(400, -9)
 
 [node name="Tree15" parent="Environment/Trees" instance=ExtResource("5_iox4c")]
-position = Vector2(222, 65)
+position = Vector2(216, 44)
 
 [node name="Tree16" parent="Environment/Trees" instance=ExtResource("5_iox4c")]
 position = Vector2(92, 69)
@@ -207,16 +221,16 @@ position = Vector2(92, 69)
 position = Vector2(-74, 132)
 
 [node name="Tree18" parent="Environment/Trees" instance=ExtResource("5_iox4c")]
-position = Vector2(172, 172)
+position = Vector2(149, 113)
 
 [node name="Tree19" parent="Environment/Trees" instance=ExtResource("5_iox4c")]
-position = Vector2(45, 194)
+position = Vector2(45, 152)
 
 [node name="Tree20" parent="Environment/Trees" instance=ExtResource("5_iox4c")]
 position = Vector2(-100, 249)
 
 [node name="Tree21" parent="Environment/Trees" instance=ExtResource("5_iox4c")]
-position = Vector2(24, 309)
+position = Vector2(3, 275)
 
 [node name="Tree22" parent="Environment/Trees" instance=ExtResource("5_iox4c")]
 position = Vector2(-164, 317)
@@ -234,13 +248,13 @@ position = Vector2(57, 604)
 position = Vector2(-75, 683)
 
 [node name="Tree28" parent="Environment/Trees" instance=ExtResource("5_iox4c")]
-position = Vector2(-159, 764)
+position = Vector2(-154, 742)
 
 [node name="Tree29" parent="Environment/Trees" instance=ExtResource("5_iox4c")]
 position = Vector2(23, 775)
 
 [node name="Tree30" parent="Environment/Trees" instance=ExtResource("5_iox4c")]
-position = Vector2(201, 736)
+position = Vector2(212, 731)
 
 [node name="Tree31" parent="Environment/Trees" instance=ExtResource("5_iox4c")]
 position = Vector2(119, 692)
@@ -332,13 +346,13 @@ position = Vector2(853, 648)
 position = Vector2(818, 849)
 
 [node name="Pumpkin5" parent="Pumpkins" instance=ExtResource("7_6ltom")]
-position = Vector2(423, 661)
+position = Vector2(513, 693)
 
 [node name="Pumpkin6" parent="Pumpkins" instance=ExtResource("7_6ltom")]
-position = Vector2(650, 696)
+position = Vector2(650, 657)
 
 [node name="Pumpkin7" parent="Pumpkins" instance=ExtResource("7_6ltom")]
-position = Vector2(421, 340)
+position = Vector2(651, 840)
 
 [node name="Weeds" type="Node" parent="."]
 
@@ -514,9 +528,6 @@ position = Vector2(284, 544)
 [node name="FragmentSpawnLocation" type="Marker2D" parent="."]
 position = Vector2(518, 495)
 
-[node name="WaterBucket" parent="." instance=ExtResource("13_ad70v")]
-position = Vector2(269, 490)
-
 [node name="PumpkinPlot" parent="." instance=ExtResource("14_vnghr")]
 position = Vector2(782, 272)
 
@@ -561,6 +572,72 @@ libraries = {
 "": SubResource("AnimationLibrary_a2dk5")
 }
 
+[node name="Fences" type="Node2D" parent="."]
+
+[node name="FenceTop" type="StaticBody2D" parent="Fences"]
+position = Vector2(240, 489)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fences/FenceTop"]
+texture = ExtResource("15_l47et")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fences/FenceTop"]
+position = Vector2(-27, -204)
+shape = SubResource("RectangleShape2D_3fhmy")
+
+[node name="FenceTop2" type="StaticBody2D" parent="Fences"]
+position = Vector2(-180, 489)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fences/FenceTop2"]
+texture = ExtResource("15_l47et")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fences/FenceTop2"]
+position = Vector2(-27, -204)
+shape = SubResource("RectangleShape2D_3fhmy")
+
+[node name="FenceTop3" type="StaticBody2D" parent="Fences"]
+position = Vector2(240, 929)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fences/FenceTop3"]
+texture = ExtResource("15_l47et")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fences/FenceTop3"]
+position = Vector2(-27, -204)
+shape = SubResource("RectangleShape2D_3fhmy")
+
+[node name="FenceTop4" type="StaticBody2D" parent="Fences"]
+position = Vector2(-180, 929)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fences/FenceTop4"]
+texture = ExtResource("15_l47et")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fences/FenceTop4"]
+position = Vector2(-27, -204)
+shape = SubResource("RectangleShape2D_3fhmy")
+
+[node name="FenceSide" type="StaticBody2D" parent="Fences"]
+position = Vector2(660, 488)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fences/FenceSide"]
+texture = ExtResource("16_23iob")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Fences/FenceSide"]
+texture = ExtResource("17_t4jm0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fences/FenceSide"]
+position = Vector2(-237, -6)
+shape = SubResource("RectangleShape2D_umk0h")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Fences/FenceSide"]
+position = Vector2(-237, 132)
+shape = SubResource("RectangleShape2D_mnxiw")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Fences/FenceSide"]
+position = Vector2(-237, -121)
+shape = SubResource("RectangleShape2D_nc2et")
+
+[node name="BucketLocation" type="Marker2D" parent="."]
+position = Vector2(289, 617)
+
 [connection signal="fragment_collected" from="." to="Player" method="fragment_collected"]
 [connection signal="traveling" from="." to="Player" method="traveling"]
 [connection signal="pickup" from="Player" to="Pumpkins/Pumpkin" method="_on_player_pickup"]
@@ -580,6 +657,8 @@ libraries = {
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
 [connection signal="watered" from="Pumpkins/Pumpkin" to="NPCs/FarmerNPC2" method="watered"]
 [connection signal="weeded" from="Pumpkins/Pumpkin" to="NPCs/FarmerNPC2" method="weed_pulled"]
+[connection signal="bucket_spawn" from="NPCs/FarmerNPC2" to="." method="bucket_spawn"]
+[connection signal="open_gates" from="NPCs/FarmerNPC2" to="." method="open_gates"]
 [connection signal="shake" from="NPCs/FarmerNPC2" to="Player" method="shake_receiver"]
 [connection signal="pumpkin_added" from="PumpkinPlot" to="." method="_on_pumpkin_plot_pumpkin_added"]
 [connection signal="pumpkin_removed" from="PumpkinPlot" to="." method="_on_pumpkin_plot_pumpkin_removed"]

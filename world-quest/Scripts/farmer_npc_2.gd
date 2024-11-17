@@ -15,6 +15,10 @@ var interactable = false
 var progress = 0
 var state = 0
 signal shake
+signal bucket_spawn
+signal open_gates
+var bucket_spawned = false
+var gates_open = false
 
 func _ready():
 	# hide all text bubbles
@@ -142,6 +146,9 @@ func toggle_text():
 			progress = 0
 		elif progress == 5:
 			text_bubble5.visible = true
+			if not bucket_spawned:
+				bucket_spawned = true
+				bucket_spawn.emit()
 			progress = 6
 		elif progress == 6:
 			text_bubble5.visible = false
@@ -152,6 +159,9 @@ func toggle_text():
 		elif progress == 8:
 			text_bubble6.visible = false
 			text_bubble7.visible = true
+			if not gates_open:
+				open_gates.emit()
+				gates_open = true
 			progress = 9
 		elif progress == 9:
 			text_bubble7.visible = false
@@ -174,4 +184,3 @@ func toggle_text():
 		elif progress == 15:
 			text_bubble10.visible = false
 			progress = 14
-		print(progress)
