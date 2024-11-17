@@ -492,10 +492,10 @@ position = Vector2(502, 642)
 [node name="PurpleGradient" type="TextureRect" parent="."]
 modulate = Color(0.517647, 0, 0.6, 0.4)
 z_index = 1000
-offset_left = -246.0
+offset_left = -251.0
 offset_top = -250.0
 offset_right = 445.0
-offset_bottom = 1246.0
+offset_bottom = 1252.0
 texture = SubResource("GradientTexture2D_njl3l")
 flip_h = true
 
