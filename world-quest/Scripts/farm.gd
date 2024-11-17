@@ -30,7 +30,7 @@ func _on_pumpkin_plot_pumpkin_added() -> void:
 	num_pumpkins += 1
 	if num_pumpkins == 6 and not FragmentHandler.east_complete:
 		var fragment_instance = fragment.instantiate()
-		get_parent().add_child(fragment_instance)
+		add_child(fragment_instance)
 		fragment_instance.global_position = $FragmentSpawnLocation.position
 		FragmentHandler.east_complete = true
 		fragment_instance.collected.connect(on_collected)

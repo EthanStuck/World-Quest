@@ -27,7 +27,7 @@ func _on_yellowrock_body_entered(body: Node2D) -> void:
 		if not FragmentHandler.south_fragment and not FragmentHandler.south_complete:
 			$PickupSound.play()
 			var fragment_instance = fragment.instantiate()
-			get_parent().add_child(fragment_instance)
+			add_child(fragment_instance)
 			fragment_instance.global_position = $FragmentSpawnLocation.position
 			FragmentHandler.south_complete = true
 			fragment_instance.collected.connect(on_fragment_collected)

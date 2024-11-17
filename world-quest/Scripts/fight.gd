@@ -48,7 +48,7 @@ func on_boss_dead():
 	''' boss is killed, spawn fragment '''
 	boss_alive = false
 	var fragment_instance = fragment.instantiate()
-	get_parent().add_child(fragment_instance)
+	add_child(fragment_instance)
 	fragment_instance.global_position = $FragmentSpawn.position
 	FragmentHandler.west_complete = true
 	fragment_instance.collected.connect(on_fragment_collected)
