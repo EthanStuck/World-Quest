@@ -28,6 +28,7 @@ var strike_state = 0 # determine which attack player is on
 var slashing = false # check if player striking
 var buffer = false # allows players to buffer strike inputs
 var tutorial = false # if player has tutorial pulled up
+var pumpkin_shake = false # dampen pumpkin carry step shaking
 
 
 
@@ -100,7 +101,7 @@ func move(delta):
 			elif not Input.is_action_pressed('move_right') and not Input.is_action_pressed('move_left') and carrying:
 				$Animations.animation = 'carry_right'
 				if $Animations.frame == 1:
-					apply_shake()
+					apply_pumpkin_shake()
 		elif Input.is_action_pressed('move_up'):
 			velocity.y = -1
 			if not Input.is_action_pressed('move_right') and not Input.is_action_pressed('move_left') and not carrying:
@@ -108,7 +109,7 @@ func move(delta):
 			elif not Input.is_action_pressed('move_right') and not Input.is_action_pressed('move_left') and carrying:
 				$Animations.animation = 'carry_left'
 				if $Animations.frame == 1:
-					apply_shake()
+					apply_pumpkin_shake()
 		else:
 			velocity.y = 0
 		
@@ -121,7 +122,7 @@ func move(delta):
 			elif not Input.is_action_pressed('strike') and carrying:
 				$Animations.animation = 'carry_right'
 				if $Animations.frame == 1:
-					apply_shake()
+					apply_pumpkin_shake()
 		elif Input.is_action_pressed('move_left'):
 			velocity.x = -1
 			facing = 'left'
@@ -130,7 +131,7 @@ func move(delta):
 			elif not Input.is_action_pressed('strike') and carrying:
 				$Animations.animation = 'carry_left'
 				if $Animations.frame == 1:
-					apply_shake()
+					apply_pumpkin_shake()
 		else:
 			velocity.x = 0
 	else:
@@ -327,6 +328,14 @@ func apply_shake():
 	''' activate camera shake (from tutorial) '''
 	shake_strength = noise_shake_strength
 
+func apply_pumpkin_shake():
+	''' activate camera shake (from tutorial) '''
+	if not pumpkin_shake:
+		pumpkin_shake = true
+		shake_strength = noise_shake_strength
+		await get_tree().create_timer(1.5).timeout
+		pumpkin_shake = false
+
 func deweed(delta):
 	''' remove weeds from plant '''
 	interacting = true # used to disable other animations/actions
@@ -399,6 +408,7 @@ func uncarry():
 		place.emit(position + Vector2(50,15))
 	elif facing == 'left':
 		place.emit(position + Vector2(-50,15))
+	apply_shake()
 
 func _on_interact_area_area_entered(area: Area2D) -> void:
 	''' check to see what interaction zone player entered, 

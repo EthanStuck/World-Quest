@@ -65,7 +65,7 @@ func deweed():
 func revive():
 	''' Restore life to pumpkin '''
 	interactable = false
-	if state == 2:
+	if state == 2 and FragmentHandler.bucket_collected:
 		$InteractZone.remove_from_group('dead_plant')
 		$InteractZone.add_to_group('pumpkin')
 		await get_tree().create_timer(2).timeout
