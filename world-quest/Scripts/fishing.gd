@@ -30,7 +30,7 @@ func _ready() -> void:
 	
 	if not FragmentHandler.rod_pickup:
 		var rod = rod_load.instantiate()
-		get_parent().add_child.call_deferred(rod)
+		add_child.call_deferred(rod)
 		rod.global_position = $RodSpawn.position
 		rod.collected.connect(on_collected)
 

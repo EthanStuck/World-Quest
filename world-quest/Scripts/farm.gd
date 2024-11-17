@@ -63,6 +63,6 @@ func open_gates():
 func bucket_spawn():
 	if not FragmentHandler.bucket_collected:
 		var bucket = bucket_load.instantiate()
-		get_parent().add_child(bucket)
+		add_child(bucket)
 		bucket.global_position = $BucketLocation.position
 		bucket.collected.connect(on_collected)
