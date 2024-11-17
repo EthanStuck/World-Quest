@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bbu4owxc6jxut" path="res://Scenes/forage_phantom.tscn" id="13_fcihy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4d0a"]
-size = Vector2(247, 273)
+size = Vector2(247, 309)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_n1jfs"]
 specular_color = Color(0, 0, 0, 1)
@@ -105,7 +105,7 @@ texture = ExtResource("1_wkxcn")
 [node name="TravelBack" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TravelBack"]
-position = Vector2(485.5, -125.5)
+position = Vector2(485.5, -107.5)
 shape = SubResource("RectangleShape2D_a4d0a")
 
 [node name="PickupSound" type="AudioStreamPlayer2D" parent="."]

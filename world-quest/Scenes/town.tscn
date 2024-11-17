@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://5ruqoyek1n6x" path="res://Scenes/sword.tscn" id="14_0x5pq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_orjsd"]
-size = Vector2(223, 269)
+size = Vector2(223, 292)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bkke3"]
 size = Vector2(271, 294)
@@ -439,7 +439,7 @@ position = Vector2(-192, 975)
 position = Vector2(626, 425)
 
 [node name="FisherNPC" parent="NPCs" instance=ExtResource("10_l0e7v")]
-position = Vector2(444, 77)
+position = Vector2(423, 100)
 
 [node name="Statue" parent="." instance=ExtResource("3_b6cju")]
 position = Vector2(500, 440)
@@ -450,7 +450,7 @@ position = Vector2(500, 440)
 position = Vector2(487, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Travel Areas/ToFishing"]
-position = Vector2(1, -124.5)
+position = Vector2(1, -113)
 shape = SubResource("RectangleShape2D_orjsd")
 
 [node name="ToFighting" type="Area2D" parent="Travel Areas"]
