@@ -27,6 +27,7 @@ var direction = 'control' # determine if player has control
 var strike_state = 0 # determine which attack player is on
 var slashing = false # check if player striking
 var buffer = false # allows players to buffer strike inputs
+var tutorial = false # if player has tutorial pulled up
 
 
 
@@ -44,6 +45,7 @@ func _ready():
 	#screen_size = get_viewport_rect().size
 	$Death/Death_message.hide()
 	$Animations.play()
+	$Tutorials.hide()
 	
 	
 func _process(delta: float):
@@ -81,6 +83,9 @@ func _process(delta: float):
 	# camera shake stuff
 	shake_strength = lerp(shake_strength, 0.0, shake_decay_rate * delta)
 	$Camera2D.offset = get_noise_offset(delta, noise_shake_speed, shake_strength)
+	
+	if Input.is_action_just_pressed('menu'):
+		tutorial_handler()
 
 
 func move(delta):
@@ -486,3 +491,38 @@ func fragment_collected(piece : String):
 	await get_tree().create_timer(2).timeout
 	interacting = false
 	$Animations.play(prev_anim)
+
+
+func tutorial_handler():
+	''' enable/disable tutorial '''
+	var location = get_tree().current_scene.to_string()
+	if not tutorial:
+		if not interacting:
+			interacting = true
+		tutorial = true
+		$Tutorials.show()
+		if location.contains('Town'):
+			$Tutorials/TutorialMain.show()
+		elif location.contains('Fishing'):
+			$Tutorials/TutorialFish.show()
+		elif location.contains('Fight'):
+			$Tutorials/TutorialFight.show()
+		elif location.contains('Farm'):
+			$Tutorials/TutorialFarm.show()
+		elif location.contains('Forage'):
+			$Tutorials/TutorialForage.show()
+	else:
+		interacting = false
+		tutorial = false
+		$Tutorials.hide()
+		if location.contains('Town'):
+			$Tutorials/TutorialMain.hide()
+		elif location.contains('Fishing'):
+			$Tutorials/TutorialFish.hide()
+		elif location.contains('Fight'):
+			$Tutorials/TutorialFight.hide()
+		elif location.contains('Farm'):
+			$Tutorials/TutorialFarm.hide()
+		elif location.contains('Forage'):
+			$Tutorials/TutorialForage.hide()
+		

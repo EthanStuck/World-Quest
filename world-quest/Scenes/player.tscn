@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=4 uid="uid://b4en6qsd4qi5m"]
+[gd_scene load_steps=92 format=4 uid="uid://b4en6qsd4qi5m"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_a5bgk"]
 [ext_resource type="Texture2D" uid="uid://pom1tmjukm2t" path="res://Art/Characters/main character/walk_up1.png" id="2_8qcdx"]
@@ -77,6 +77,11 @@
 [ext_resource type="Texture2D" uid="uid://fscp3xuqi6ky" path="res://Art/Characters/main character/water_left4.png" id="34_tyk7m"]
 [ext_resource type="Texture2D" uid="uid://b7v7odubuk3v1" path="res://Art/Characters/main character/water_left5.png" id="35_l4ghh"]
 [ext_resource type="AudioStream" uid="uid://ccfogog8wndm5" path="res://Sounds/Effects/fly-fishing-reel-running_5-40946.mp3" id="39_ddlou"]
+[ext_resource type="Texture2D" uid="uid://dsnscsm8vr4a7" path="res://Art/HUD/Tutorials/TutorialMain_ingame.png" id="78_02u3q"]
+[ext_resource type="Texture2D" uid="uid://csuwl5lvfln5j" path="res://Art/HUD/Tutorials/TutorialForage_ingame.png" id="79_kftwq"]
+[ext_resource type="Texture2D" uid="uid://koqjq0253wkf" path="res://Art/HUD/Tutorials/TutorialFish_ingame.png" id="80_5fxxx"]
+[ext_resource type="Texture2D" uid="uid://cia56wdsm2wkl" path="res://Art/HUD/Tutorials/TutorialFight_ingame.png" id="81_iju4c"]
+[ext_resource type="Texture2D" uid="uid://cyht56xgfyj0b" path="res://Art/HUD/Tutorials/TutorialFarming_ingame.png" id="82_onbob"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_85u5v"]
 animations = [{
@@ -642,6 +647,59 @@ collision_mask = 4
 position = Vector2(-12, -21)
 shape = SubResource("CircleShape2D_cy6fw")
 disabled = true
+
+[node name="Tutorials" type="Control" parent="."]
+visible = false
+z_index = 4096
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TutorialMain" type="TextureRect" parent="Tutorials"]
+visible = false
+layout_mode = 0
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+texture = ExtResource("78_02u3q")
+
+[node name="TutorialForage" type="TextureRect" parent="Tutorials"]
+visible = false
+layout_mode = 0
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+texture = ExtResource("79_kftwq")
+
+[node name="TutorialFish" type="TextureRect" parent="Tutorials"]
+visible = false
+layout_mode = 0
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+texture = ExtResource("80_5fxxx")
+
+[node name="TutorialFight" type="TextureRect" parent="Tutorials"]
+visible = false
+layout_mode = 0
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+texture = ExtResource("81_iju4c")
+
+[node name="TutorialFarm" type="TextureRect" parent="Tutorials"]
+visible = false
+layout_mode = 0
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+texture = ExtResource("82_onbob")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="HealthPickupBox" to="." method="_on_health_pickup_box_area_entered"]

@@ -4,6 +4,7 @@ var forage_scene = preload("res://Scenes/forage.tscn").instantiate()
 signal traveling
 
 func _ready():
+	#$Tutorial.hide()
 	var from = FragmentHandler.at
 	if from == 'fighting':
 		$Player.position = $"Travel Areas/FromFighting".position
@@ -25,6 +26,7 @@ func _ready():
 	if FragmentHandler.west_complete:
 		$PurpleGradient.hide()
 	
+
 
 func _on_to_foraging_area_entered(area: Area2D) -> void:
 	''' Send player to foraging scene '''
