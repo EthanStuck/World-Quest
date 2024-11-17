@@ -417,6 +417,8 @@ func _on_interact_area_area_exited(area: Area2D) -> void:
 	colliding_pos = Vector2.ZERO
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
+	$HurtBox.set_collision_layer_value(2, false)
+	$HurtBox.set_collision_mask_value(3, false)
 	$HurtSound.play()
 	currentHealth -= 10
 	apply_shake()
@@ -431,11 +433,16 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 		await $Death/Death_timer.timeout
 		$Death/Death_message.hide()
 		currentHealth = maxHealth
+		$HurtBox.set_collision_layer_value(2, true)
+		$HurtBox.set_collision_mask_value(3, true)
 
 	else:
 		$Animations.modulate = Color(1,0,0)
 		await get_tree().create_timer(.25).timeout
 		$Animations.modulate = Color(1,1,1)
+		await get_tree().create_timer(.5).timeout
+		$HurtBox.set_collision_layer_value(2, true)
+		$HurtBox.set_collision_mask_value(3, true)
 		
 	health_update.emit()
 	
