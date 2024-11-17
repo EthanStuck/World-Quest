@@ -8,6 +8,7 @@ extends Node
 @onready var fragment = preload("res://Scenes/fragment_north.tscn")
 @onready var bobber_scene = preload("res://Scenes/bobber.tscn")  # Path to the bobber scene
 @onready var bubble_scene = preload("res://Scenes/bubbles.tscn")  # Path to the bubble scene
+@onready var rod_load = preload("res://Scenes/fishing_rod.tscn")
 @onready var ui_text = $Label  # UI text for showing messages
 
 var fish_caught : int = 0  # Number of fish caught
@@ -26,6 +27,12 @@ func _ready() -> void:
 	$Animated_water.play()
 	FragmentHandler.at = 'fishing'
 	reverse_transition('north')
+	
+	if not FragmentHandler.rod_pickup:
+		var rod = rod_load.instantiate()
+		get_parent().add_child.call_deferred(rod)
+		rod.global_position = $RodSpawn.position
+		rod.collected.connect(on_collected)
 
 # Input event: listen for the cast action
 func _input(event):
@@ -99,13 +106,13 @@ func check_for_fish():
 		frag = fragment.instantiate()
 		frag.position = Vector2(505, 400)
 		add_child(frag)
-		frag.collected.connect(on_fragment_collected)
+		frag.collected.connect(on_collected)
 
 	# Reset for next cast
 	bubbles.clear()
 
-func on_fragment_collected(item):
-	''' send signal to player that fragment was collected '''
+func on_collected(item):
+	''' send signal to player that item was collected '''
 	fragment_collected.emit(item)
 
 func _on_travel_back_area_entered(area: Area2D) -> void:

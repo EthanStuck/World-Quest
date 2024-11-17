@@ -363,11 +363,12 @@ func deweed(delta):
 	$InteractArea.set_collision_mask_value(1, true)
 
 func cast(delta):
-	interacting = true
-	if $Animations.animation != 'cast':
-		$Animations.play('cast_up')
-		await get_tree().create_timer(2).timeout
-		interacting = false
+	if FragmentHandler.rod_pickup:
+		interacting = true
+		if $Animations.animation != 'cast':
+			$Animations.play('cast_up')
+			await get_tree().create_timer(2).timeout
+			interacting = false
 	
 func water():
 	''' water plants '''

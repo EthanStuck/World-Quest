@@ -30,7 +30,7 @@ func _ready():
 		
 	if not FragmentHandler.sword_pickup:
 		var sword = sword_load.instantiate()
-		get_parent().add_child(sword)
+		get_parent().add_child.call_deferred(sword)
 		sword.global_position = $SwordSpawn.position
 		sword.collected.connect(on_collected)
 	
