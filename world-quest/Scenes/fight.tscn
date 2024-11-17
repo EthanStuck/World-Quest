@@ -261,7 +261,7 @@ position = Vector2(170, 1133)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.517647, 0, 0.6, 0.4)
-z_index = 4096
+z_index = 4095
 z_as_relative = false
 offset_left = -254.0
 offset_top = -238.0
