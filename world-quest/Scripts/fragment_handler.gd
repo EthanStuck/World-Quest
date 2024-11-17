@@ -9,6 +9,7 @@ var west_added = false # if west fragment is added to statue
 var east_fragment = false # if east fragment is held by player
 var east_complete = false # if east area content is complete
 var east_added = false # if east fragment is added to statue
+var east_opened = false # if gates have been opened
 
 var north_fragment = false # if north fragment is held by player
 var north_complete = false # if north area content is complete

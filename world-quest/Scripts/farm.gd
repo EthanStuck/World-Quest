@@ -15,6 +15,8 @@ func _ready():
 	$Fences/FenceTop4.z_index = $Fences/FenceTop.position.y - 200
 	$Fences/FenceSide/Sprite2D2.z_index = $Fences/FenceTop.position.y + 235
 	$Fences/FenceSide/Sprite2D3.z_index = $Fences/FenceTop.position.y + - 200
+	if FragmentHandler.east_opened or FragmentHandler.east_complete:
+		open_gates()
 
 
 func _on_travel_back_area_entered(area: Area2D) -> void:
@@ -55,6 +57,7 @@ func reverse_transition(direction : String):
 func open_gates():
 	$Fences/FenceSide/Sprite2D.hide()
 	$Fences/FenceSide/CollisionShape2D.set_deferred('disabled', true)
+	FragmentHandler.east_opened = true
 
 
 func bucket_spawn():

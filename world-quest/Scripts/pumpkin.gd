@@ -10,7 +10,6 @@ var picked_up = false
 var pickupable = false
 
 func _ready():
-	$Sprites.z_index = position.y + 30
 	if not FragmentHandler.east_complete:
 		$Sprites.play('weeded')
 		state = 0
@@ -21,6 +20,7 @@ func _ready():
 		$InteractZone/CollisionShape2D.disabled = false
 
 func _process(delta):
+	z_index = position.y + 30
 
 
 	if interactable:
