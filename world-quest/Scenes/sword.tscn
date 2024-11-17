@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://5ruqoyek1n6x"]
+[gd_scene load_steps=6 format=3 uid="uid://5ruqoyek1n6x"]
 
 [ext_resource type="Script" path="res://Scripts/sword.gd" id="1_8ksvx"]
 [ext_resource type="Resource" uid="uid://ch0b3nmviyalw" path="res://inventory/items/sword.tres" id="2_2jafu"]
 [ext_resource type="Texture2D" uid="uid://buvsp4ria0j34" path="res://Art/Characters/main character/sword.png" id="2_21i0c"]
+[ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="4_qfta6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_whif8"]
 radius = 27.0185
@@ -19,4 +20,28 @@ texture = ExtResource("2_21i0c")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_whif8")
 
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_qfta6")
+pitch_scale = 3.0
+
+[node name="InteractLabel" type="Label" parent="."]
+z_index = 2000
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = 15.0
+offset_right = 105.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+text = "Press 'E' to Collect"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="body_entered" from="." to="." method="_on_iinteractable_area_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

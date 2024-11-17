@@ -104,9 +104,9 @@ func check_for_fish():
 	# Reset for next cast
 	bubbles.clear()
 
-func on_fragment_collected():
+func on_fragment_collected(item):
 	''' send signal to player that fragment was collected '''
-	fragment_collected.emit('north')
+	fragment_collected.emit(item)
 
 func _on_travel_back_area_entered(area: Area2D) -> void:
 	''' Travel back to town '''

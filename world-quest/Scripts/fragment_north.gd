@@ -19,7 +19,7 @@ func _process(delta):
 			playercollect()
 			$PickupSound.play()
 			await get_tree().create_timer(0.1).timeout
-			collected.emit()
+			collected.emit('north')
 			self.queue_free()
 
 func _on_timer_timeout() -> void:

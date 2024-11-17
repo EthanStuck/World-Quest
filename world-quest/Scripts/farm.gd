@@ -13,7 +13,8 @@ func _ready():
 	$Fences/FenceTop2.z_index = $Fences/FenceTop.position.y - 200
 	$Fences/FenceTop3.z_index = $Fences/FenceTop.position.y - 200
 	$Fences/FenceTop4.z_index = $Fences/FenceTop.position.y - 200
-	$Fences/FenceSide.z_index = $Fences/FenceTop.position.y + 235
+	$Fences/FenceSide/Sprite2D2.z_index = $Fences/FenceTop.position.y + 235
+	$Fences/FenceSide/Sprite2D3.z_index = $Fences/FenceTop.position.y + - 200
 
 
 func _on_travel_back_area_entered(area: Area2D) -> void:
@@ -30,11 +31,11 @@ func _on_pumpkin_plot_pumpkin_added() -> void:
 		get_parent().add_child(fragment_instance)
 		fragment_instance.global_position = $FragmentSpawnLocation.position
 		FragmentHandler.east_complete = true
-		fragment_instance.collected.connect(on_fragment_collected)
+		fragment_instance.collected.connect(on_collected)
 
-func on_fragment_collected():
-	''' send signal to player that fragment was collected '''
-	fragment_collected.emit('east')
+func on_collected(item):
+	''' send signal to player that item was collected '''
+	fragment_collected.emit(item)
 
 func _on_pumpkin_plot_pumpkin_removed() -> void:
 	num_pumpkins -= 1
@@ -52,14 +53,13 @@ func reverse_transition(direction : String):
 
 
 func open_gates():
-	print('gates')
 	$Fences/FenceSide/Sprite2D.hide()
 	$Fences/FenceSide/CollisionShape2D.set_deferred('disabled', true)
 
 
 func bucket_spawn():
-	print('here')
 	if not FragmentHandler.bucket_collected:
 		var bucket = bucket_load.instantiate()
 		get_parent().add_child(bucket)
 		bucket.global_position = $BucketLocation.position
+		bucket.collected.connect(on_collected)

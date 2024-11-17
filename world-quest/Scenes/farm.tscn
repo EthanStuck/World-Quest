@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b6j0228ya77aj"]
+[gd_scene load_steps=31 format=3 uid="uid://b6j0228ya77aj"]
 
 [ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://Art/Environment/Town/Town Ground.png" id="1_anppi"]
 [ext_resource type="Script" path="res://Scripts/farm.gd" id="1_w7msv"]
@@ -15,7 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://dx5762dm4envq" path="res://Scenes/pumpkin_plot.tscn" id="14_vnghr"]
 [ext_resource type="Texture2D" uid="uid://dresig2uvrlps" path="res://Art/Environment/Farm/Farm Plot Big Fence Top.png" id="15_l47et"]
 [ext_resource type="Texture2D" uid="uid://d1lyddd2cq82o" path="res://Art/Environment/Farm/Farm Plot Big Fence Side1.png" id="16_23iob"]
-[ext_resource type="Texture2D" uid="uid://dvddt1rroy8it" path="res://Art/Environment/Farm/Farm Plot Big Fence Side2.png" id="17_t4jm0"]
+[ext_resource type="Texture2D" uid="uid://dfgtuv5f25v0m" path="res://Art/Environment/Farm/Farm Plot Big Fence Side4.png" id="16_iuwyt"]
+[ext_resource type="Texture2D" uid="uid://3hykx3dtpmob" path="res://Art/Environment/Farm/Farm Plot Big Fence Side3.png" id="17_ycfw5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igecs"]
 size = Vector2(236.5, 290)
@@ -621,7 +622,10 @@ position = Vector2(660, 488)
 texture = ExtResource("16_23iob")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Fences/FenceSide"]
-texture = ExtResource("17_t4jm0")
+texture = ExtResource("16_iuwyt")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Fences/FenceSide"]
+texture = ExtResource("17_ycfw5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fences/FenceSide"]
 position = Vector2(-237, -6)

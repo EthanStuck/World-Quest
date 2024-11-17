@@ -53,9 +53,9 @@ func on_boss_dead():
 	FragmentHandler.west_complete = true
 	fragment_instance.collected.connect(on_fragment_collected)
 	
-func on_fragment_collected():
+func on_fragment_collected(item):
 	''' send signal to player that fragment was collected '''
-	fragment_collected.emit('west')
+	fragment_collected.emit(item)
 	
 	
 func _on_travel_back_area_entered(area: Area2D) -> void:

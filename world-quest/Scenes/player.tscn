@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=4 uid="uid://b4en6qsd4qi5m"]
+[gd_scene load_steps=94 format=4 uid="uid://b4en6qsd4qi5m"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_a5bgk"]
 [ext_resource type="Texture2D" uid="uid://pom1tmjukm2t" path="res://Art/Characters/main character/walk_up1.png" id="2_8qcdx"]
@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://bir2xjants3bb" path="res://Art/HUD/healthbar_over.png" id="15_6jhfj"]
 [ext_resource type="AudioStream" uid="uid://b1ndw0pglixa2" path="res://Sounds/Effects/sword-sound-effect-2-234986.mp3" id="15_kno2j"]
 [ext_resource type="Texture2D" uid="uid://df3l64t6aw2cg" path="res://Art/Characters/main character/fragment_collected4.png" id="16_2qh11"]
+[ext_resource type="Texture2D" uid="uid://bgsw7kxxylq04" path="res://Art/Characters/main character/fragment_collected7.png" id="16_t0eu8"]
 [ext_resource type="Texture2D" uid="uid://6pqphyw8n3fc" path="res://Art/Characters/main character/fragment_collected6.png" id="17_8tsx8"]
 [ext_resource type="Texture2D" uid="uid://dapjhie8nsoce" path="res://Art/HUD/compass.png" id="17_m33ck"]
 [ext_resource type="Texture2D" uid="uid://dm5lo6nckwpm3" path="res://Art/Characters/main character/fragment_collected3.png" id="18_p8c8w"]
@@ -45,6 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://dppypbrdvt2wx" path="res://Art/Characters/main character/strike_right1.png" id="20_4638c"]
 [ext_resource type="Texture2D" uid="uid://doe55c133ksem" path="res://Art/Characters/main character/strike_left2.png" id="20_fcd2o"]
 [ext_resource type="Texture2D" uid="uid://c16ketr5kritw" path="res://Art/Characters/main character/water_right1.png" id="20_g6y2g"]
+[ext_resource type="Texture2D" uid="uid://bi334vvr5ypn2" path="res://Art/Characters/main character/fragment_collected8.png" id="20_hp0x7"]
 [ext_resource type="Texture2D" uid="uid://bw78tf5al1ch8" path="res://Art/Characters/main character/strike_left3.png" id="21_6qja7"]
 [ext_resource type="Texture2D" uid="uid://eojf4dgfrdx8" path="res://Art/Characters/main character/water_right2.png" id="21_a5eh1"]
 [ext_resource type="Texture2D" uid="uid://n14c5ladvriy" path="res://Art/Characters/main character/strike_right2.png" id="21_eal26"]
@@ -151,6 +153,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("16_t0eu8")
+}],
+"loop": true,
+"name": &"fragment_collected_bucket",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("16_2qh11")
 }],
 "loop": true,
@@ -171,6 +181,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"fragment_collected_south",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_hp0x7")
+}],
+"loop": true,
+"name": &"fragment_collected_sword",
 "speed": 5.0
 }, {
 "frames": [{
@@ -464,7 +482,7 @@ inv = ExtResource("2_afkq7")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_85u5v")
-animation = &"strike_left_1"
+animation = &"fragment_collected_sword"
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 visible = false

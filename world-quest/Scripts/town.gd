@@ -1,7 +1,9 @@
 extends Node
 
 var forage_scene = preload("res://Scenes/forage.tscn").instantiate()
+@onready var sword_load = preload("res://Scenes/sword.tscn")
 signal traveling
+signal collected
 
 func _ready():
 	#$Tutorial.hide()
@@ -25,8 +27,16 @@ func _ready():
 	$TransitionRect.hide()
 	if FragmentHandler.west_complete:
 		$PurpleGradient.hide()
+		
+	if not FragmentHandler.sword_pickup:
+		var sword = sword_load.instantiate()
+		get_parent().add_child(sword)
+		sword.global_position = $SwordSpawn.position
+		sword.collected.connect(on_collected)
 	
-
+func on_collected(item):
+	''' send signal to player that item was collected '''
+	collected.emit(item)
 
 func _on_to_foraging_area_entered(area: Area2D) -> void:
 	''' Send player to foraging scene '''

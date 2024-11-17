@@ -108,13 +108,19 @@ func weed_pulled():
 	progress = 6
 	text_bubble5.visible = true
 	state = 1
+	if not bucket_spawned:
+		bucket_spawned = true
+		bucket_spawn.emit()
 	
 func watered():
 	''' triggered when player waters the first pumpkin '''
-	progress = 9
+	progress = 8
 	text_bubble6.visible = true
 	text_bubble5.visible = false
 	state = 2
+	if not gates_open:
+		open_gates.emit()
+		gates_open = true
 	
 func completed():
 	''' triggered when player brings all pumpkins to the area '''
@@ -146,9 +152,6 @@ func toggle_text():
 			progress = 0
 		elif progress == 5:
 			text_bubble5.visible = true
-			if not bucket_spawned:
-				bucket_spawned = true
-				bucket_spawn.emit()
 			progress = 6
 		elif progress == 6:
 			text_bubble5.visible = false
@@ -159,9 +162,6 @@ func toggle_text():
 		elif progress == 8:
 			text_bubble6.visible = false
 			text_bubble7.visible = true
-			if not gates_open:
-				open_gates.emit()
-				gates_open = true
 			progress = 9
 		elif progress == 9:
 			text_bubble7.visible = false

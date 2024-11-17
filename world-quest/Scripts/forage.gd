@@ -32,9 +32,9 @@ func _on_yellowrock_body_entered(body: Node2D) -> void:
 			FragmentHandler.south_complete = true
 			fragment_instance.collected.connect(on_fragment_collected)
 
-func on_fragment_collected():
+func on_fragment_collected(item):
 	''' send signal to player that fragment was collected '''
-	fragment_collected.emit('south')
+	fragment_collected.emit(item)
 
 func spawn_tiny_phantom():
 	''' randomly spawn tiny phantoms to run around until area complete '''
@@ -60,7 +60,6 @@ func spawn_tiny_phantom():
 		spawn_location = $TinyPhantomSpawns/Spawn8.position
 	var spirit = spirit_load.instantiate()
 	get_parent().add_child(spirit)
-	print(spawn_location)
 	spirit.global_position = spawn_location
 	spirit.z_index = spirit.position.y
 	var dir = randi_range(0,1)
