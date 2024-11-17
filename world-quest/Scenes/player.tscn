@@ -459,7 +459,7 @@ inv = ExtResource("2_afkq7")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_85u5v")
-animation = &"idle"
+animation = &"strike_left_1"
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 visible = false

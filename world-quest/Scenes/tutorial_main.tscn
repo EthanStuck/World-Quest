@@ -54,3 +54,5 @@ autoplay = true
 
 [node name="StartSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_jt8s0")
+
+[connection signal="continued" from="." to="DummyPlayer" method="continue_pressed"]
