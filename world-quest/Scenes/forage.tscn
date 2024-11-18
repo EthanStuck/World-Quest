@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dkodwqm8vyx33"]
+[gd_scene load_steps=22 format=3 uid="uid://dkodwqm8vyx33"]
 
 [ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://Art/Environment/Town/Town Ground.png" id="1_wkxcn"]
 [ext_resource type="Script" path="res://Scripts/forage.gd" id="1_xne0s"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://djfagua3lio6l" path="res://Scenes/fern_bush.tscn" id="9_8ujb5"]
 [ext_resource type="PackedScene" uid="uid://co3ujvpfkw4ww" path="res://Scenes/rock_1.tscn" id="10_osbjn"]
 [ext_resource type="PackedScene" uid="uid://ikum73r3r0ct" path="res://Scenes/spirit_npc.tscn" id="11_0j44i"]
+[ext_resource type="PackedScene" uid="uid://b2yls8bw43bs0" path="res://Scenes/forage_npc.tscn" id="12_1aogm"]
 [ext_resource type="PackedScene" uid="uid://bbu4owxc6jxut" path="res://Scenes/forage_phantom.tscn" id="13_fcihy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4d0a"]
@@ -121,6 +122,7 @@ stream = ExtResource("6_k1mo2")
 autoplay = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
 modulate = Color(96.757, 100, 100, 1)
 offset_left = 335.0
 offset_top = 419.0
@@ -212,7 +214,7 @@ position = Vector2(169, 176)
 position = Vector2(827, 165)
 
 [node name="yellowrock4" parent="YellowRocks" instance=ExtResource("6_g2t7q")]
-position = Vector2(627, 171)
+position = Vector2(1278, 156)
 
 [node name="yellowrock5" parent="YellowRocks" instance=ExtResource("6_g2t7q")]
 position = Vector2(828, 648)
@@ -224,7 +226,7 @@ position = Vector2(645, 820)
 position = Vector2(263, 721)
 
 [node name="yellowrock8" parent="YellowRocks" instance=ExtResource("6_g2t7q")]
-position = Vector2(483, 175)
+position = Vector2(419, 321)
 
 [node name="Phantoms" type="Node2D" parent="."]
 
@@ -785,7 +787,7 @@ position = Vector2(932, 427)
 position = Vector2(267, 217)
 
 [node name="FernBush32" parent="Foliage/Ferns" instance=ExtResource("9_8ujb5")]
-position = Vector2(399, 228)
+position = Vector2(417, 216)
 
 [node name="FernBush33" parent="Foliage/Ferns" instance=ExtResource("9_8ujb5")]
 position = Vector2(209, 269)
@@ -904,7 +906,7 @@ position = Vector2(143, 610)
 position = Vector2(376, 936)
 
 [node name="Rock21" parent="Foliage/Rocks" instance=ExtResource("10_osbjn")]
-position = Vector2(434, 283)
+position = Vector2(280, 240)
 
 [node name="Rock22" parent="Foliage/Rocks" instance=ExtResource("10_osbjn")]
 position = Vector2(868, 257)
@@ -944,19 +946,24 @@ position = Vector2(257, 936)
 [node name="SpiritNPC" parent="." instance=ExtResource("11_0j44i")]
 position = Vector2(579, 415)
 
+[node name="ForageNPC" parent="." instance=ExtResource("12_1aogm")]
+position = Vector2(418, 223)
+
 [connection signal="fragment_collected" from="." to="Player" method="fragment_collected"]
 [connection signal="solved" from="." to="SpiritNPC" method="solved"]
+[connection signal="solved" from="." to="ForageNPC" method="solved"]
 [connection signal="traveling" from="." to="Player" method="traveling"]
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
-[connection signal="body_entered" from="YellowRocks/yellowrock" to="." method="_on_yellowrock_body_entered"]
-[connection signal="body_entered" from="YellowRocks/yellowrock9" to="." method="_on_yellowrock_body_entered"]
-[connection signal="body_entered" from="YellowRocks/yellowrock10" to="." method="_on_yellowrock_body_entered"]
-[connection signal="body_entered" from="YellowRocks/yellowrock11" to="." method="_on_yellowrock_body_entered"]
-[connection signal="body_entered" from="YellowRocks/yellowrock12" to="." method="_on_yellowrock_body_entered"]
-[connection signal="body_entered" from="YellowRocks/yellowrock2" to="." method="_on_yellowrock_body_entered"]
-[connection signal="body_entered" from="YellowRocks/yellowrock3" to="." method="_on_yellowrock_body_entered"]
-[connection signal="body_entered" from="YellowRocks/yellowrock4" to="." method="_on_yellowrock_body_entered"]
-[connection signal="body_entered" from="YellowRocks/yellowrock5" to="." method="_on_yellowrock_body_entered"]
-[connection signal="body_entered" from="YellowRocks/yellowrock6" to="." method="_on_yellowrock_body_entered"]
-[connection signal="body_entered" from="YellowRocks/yellowrock7" to="." method="_on_yellowrock_body_entered"]
-[connection signal="body_entered" from="YellowRocks/yellowrock8" to="." method="_on_yellowrock_body_entered"]
+[connection signal="collected" from="YellowRocks/yellowrock" to="." method="_on_yellowrock_collected"]
+[connection signal="collected" from="YellowRocks/yellowrock9" to="." method="_on_yellowrock_collected"]
+[connection signal="collected" from="YellowRocks/yellowrock10" to="." method="_on_yellowrock_collected"]
+[connection signal="collected" from="YellowRocks/yellowrock11" to="." method="_on_yellowrock_collected"]
+[connection signal="collected" from="YellowRocks/yellowrock12" to="." method="_on_yellowrock_collected"]
+[connection signal="collected" from="YellowRocks/yellowrock2" to="." method="_on_yellowrock_collected"]
+[connection signal="collected" from="YellowRocks/yellowrock3" to="." method="_on_yellowrock_collected"]
+[connection signal="collected" from="YellowRocks/yellowrock4" to="." method="_on_yellowrock_collected"]
+[connection signal="collected" from="YellowRocks/yellowrock5" to="." method="_on_yellowrock_collected"]
+[connection signal="collected" from="YellowRocks/yellowrock6" to="." method="_on_yellowrock_collected"]
+[connection signal="collected" from="YellowRocks/yellowrock7" to="." method="_on_yellowrock_collected"]
+[connection signal="collected" from="YellowRocks/yellowrock8" to="." method="_on_yellowrock_collected"]
+[connection signal="give_item" from="ForageNPC" to="." method="_on_forage_npc_give_item"]

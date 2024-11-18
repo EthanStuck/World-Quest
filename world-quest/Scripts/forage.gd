@@ -11,6 +11,8 @@ func _ready():
 	FragmentHandler.at = 'foraging'
 	reverse_transition('south')
 	spawn_tiny_phantom()
+	$YellowRocks/yellowrock8.hide()
+	$YellowRocks/yellowrock8/CollisionShape2D.disabled = true
 	
 	if FragmentHandler.south_spawned:
 		var fragment_instance = fragment.instantiate()
@@ -23,23 +25,6 @@ func _on_travel_back_area_entered(area: Area2D) -> void:
 	transition('north')
 	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file("res://Scenes/town.tscn")
-
-
-func _on_yellowrock_body_entered(body: Node2D) -> void:
-	''' track number of items collected to see when to spawn fragment '''
-	total_pickup += 1
-	
-	# when all pieces collected, spawn fragment
-	if total_pickup == 11:
-		if not FragmentHandler.south_fragment and not FragmentHandler.south_complete:
-			solved.emit()
-			$PickupSound.play()
-			var fragment_instance = fragment.instantiate()
-			add_child(fragment_instance)
-			fragment_instance.global_position = $FragmentSpawnLocation.position
-			FragmentHandler.south_complete = true
-			FragmentHandler.south_spawned = true
-			fragment_instance.collected.connect(on_fragment_collected)
 
 func on_fragment_collected(item):
 	''' send signal to player that fragment was collected '''
@@ -89,3 +74,24 @@ func reverse_transition(direction : String):
 	$ReverseTransitionRect.show()
 	$ReverseTransitionRect/AnimationPlayer.play('Fade')
 	traveling.emit(direction)
+
+
+func _on_forage_npc_give_item() -> void:
+	$YellowRocks/yellowrock8.show()
+	$YellowRocks/yellowrock8/CollisionShape2D.disabled = false
+
+
+func _on_yellowrock_collected() -> void:
+	total_pickup += 1
+	
+	# when all pieces collected, spawn fragment
+	if total_pickup == 11:
+		if not FragmentHandler.south_fragment and not FragmentHandler.south_complete:
+			solved.emit()
+			$PickupSound.play()
+			var fragment_instance = fragment.instantiate()
+			add_child(fragment_instance)
+			fragment_instance.global_position = $FragmentSpawnLocation.position
+			FragmentHandler.south_complete = true
+			FragmentHandler.south_spawned = true
+			fragment_instance.collected.connect(on_fragment_collected)
