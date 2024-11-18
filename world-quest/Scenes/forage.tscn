@@ -949,6 +949,7 @@ position = Vector2(579, 415)
 [node name="ForageNPC" parent="." instance=ExtResource("12_1aogm")]
 position = Vector2(418, 223)
 
+[connection signal="confused" from="." to="ForageNPC" method="confused"]
 [connection signal="fragment_collected" from="." to="Player" method="fragment_collected"]
 [connection signal="solved" from="." to="SpiritNPC" method="solved"]
 [connection signal="solved" from="." to="ForageNPC" method="solved"]

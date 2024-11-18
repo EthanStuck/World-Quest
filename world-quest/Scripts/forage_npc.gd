@@ -5,6 +5,8 @@ extends StaticBody2D
 @onready var text_bubble4 = $TextureRect4
 @onready var text_bubble5 = $TextureRect5
 @onready var text_bubble6 = $TextureRect6
+@onready var text_bubble7 = $TextureRect7
+@onready var text_bubble8 = $TextureRect8
 var interactable = false
 var progress = 0
 var state = 0
@@ -19,6 +21,8 @@ func _ready():
 	text_bubble4.visible = false
 	text_bubble5.visible = false
 	text_bubble6.visible = false
+	text_bubble7.visible = false
+	text_bubble8.visible = false
 	$InteractLabel.visible = false
 
 func _process(delta):
@@ -41,7 +45,12 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		text_bubble4.visible = false
 		text_bubble5.visible = false
 		text_bubble6.visible = false
-		progress = 0
+		text_bubble7.visible = false
+		text_bubble8.visible = false
+		if state == 0:
+			progress = 0
+		elif state == 1:
+			progress = 6
 
 func solved():
 	''' player has earned fragment '''
@@ -53,6 +62,8 @@ func solved():
 	text_bubble4.visible = false
 	text_bubble5.visible = false
 	text_bubble6.visible = false
+	text_bubble7.visible = false
+	text_bubble8.visible = false
 
 func toggle_text():
 	if interactable:
@@ -87,3 +98,23 @@ func toggle_text():
 		elif progress == 7 and state == 1:
 			text_bubble6.visible = false
 			progress = 6
+		elif progress == 8 and state == 2:
+			text_bubble7.visible = false
+			text_bubble8.visible = true
+			if not given:
+				give_item.emit()
+				given = true
+			progress = 9
+		elif progress == 9 and state == 2:
+			text_bubble8.visible = false
+			progress = 8
+
+
+func confused():
+	''' if player gets all pieces but NPC piece '''
+	#if not given:
+		#give_item.emit()
+		#given = true
+	state = 2
+	text_bubble7.visible = true
+	progress = 8

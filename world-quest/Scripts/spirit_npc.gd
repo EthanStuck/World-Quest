@@ -51,7 +51,10 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		text_bubble4.visible = false
 		text_bubble5.visible = false
 		text_bubble6.visible = false
-		progress = 0
+		if state == 0:
+			progress = 0
+		elif state == 1:
+			progress = 6
 
 
 func toggle_text():

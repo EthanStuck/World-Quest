@@ -147,6 +147,46 @@ theme_override_font_sizes/normal_font_size = 10
 text = "Wow you solved it! I must've been coming back here thinking about the answer for days now. Thank you!"
 tab_size = 3
 
+[node name="TextureRect7" type="TextureRect" parent="."]
+z_index = 2000
+offset_left = 20.0
+offset_top = -8.0
+offset_right = 225.0
+offset_bottom = 86.0
+texture = ExtResource("3_t4awp")
+flip_v = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect7"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 183.0
+offset_bottom = 78.0
+theme_override_font_sizes/normal_font_size = 10
+text = "Hey I have the last piece! Come here!"
+tab_size = 3
+
+[node name="TextureRect8" type="TextureRect" parent="."]
+z_index = 2000
+offset_left = 20.0
+offset_top = -8.0
+offset_right = 225.0
+offset_bottom = 86.0
+texture = ExtResource("3_t4awp")
+flip_v = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect8"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 183.0
+offset_bottom = 78.0
+theme_override_font_sizes/normal_font_size = 10
+text = "Can't believe that you found all of them, I was really stumped! Hope I didn't cause you any trouble!"
+tab_size = 3
+
 [node name="InteractLabel" type="Label" parent="."]
 z_index = 2000
 anchors_preset = 8

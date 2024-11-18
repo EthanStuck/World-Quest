@@ -6,6 +6,8 @@ var total_pickup = 0
 signal traveling
 signal fragment_collected
 signal solved
+var given # if NPC gave his piece
+signal confused
 
 func _ready():
 	FragmentHandler.at = 'foraging'
@@ -79,10 +81,14 @@ func reverse_transition(direction : String):
 func _on_forage_npc_give_item() -> void:
 	$YellowRocks/yellowrock8.show()
 	$YellowRocks/yellowrock8/CollisionShape2D.disabled = false
+	given = true
 
 
 func _on_yellowrock_collected() -> void:
 	total_pickup += 1
+	
+	if total_pickup == 10 and not given:
+		confused.emit()
 	
 	# when all pieces collected, spawn fragment
 	if total_pickup == 11:
