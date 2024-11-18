@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dafbxhoth4wqr"]
+[gd_scene load_steps=27 format=3 uid="uid://dafbxhoth4wqr"]
 
 [ext_resource type="Script" path="res://Scripts/fishing.gd" id="1_cr84t"]
 [ext_resource type="Texture2D" uid="uid://d18subsyjrqkj" path="res://Art/Environment/Fishing/Fishing_background.png" id="2_18pfa"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://djadv4fp0fapj" path="res://Sounds/calm-pond-bright-wind-in-reeds-geese-water-ttp-190401-55746.mp3" id="6_n3ujv"]
 [ext_resource type="PackedScene" uid="uid://e12gx1qyncbd" path="res://Scenes/house_1.tscn" id="9_8oltf"]
 [ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="10_17nus"]
+[ext_resource type="PackedScene" uid="uid://bvoeckyx2ttq2" path="res://Scenes/duck.tscn" id="11_08sxf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p3utu"]
 animations = [{
@@ -313,6 +314,20 @@ libraries = {
 
 [node name="RodSpawn" type="Marker2D" parent="."]
 position = Vector2(506, 538)
+
+[node name="Ducks" type="Node" parent="."]
+
+[node name="Duck" parent="Ducks" instance=ExtResource("11_08sxf")]
+position = Vector2(356, 338)
+
+[node name="Duck2" parent="Ducks" instance=ExtResource("11_08sxf")]
+position = Vector2(630, 389)
+
+[node name="Duck3" parent="Ducks" instance=ExtResource("11_08sxf")]
+position = Vector2(569, 214)
+
+[node name="Duck4" parent="Ducks" instance=ExtResource("11_08sxf")]
+position = Vector2(421, 300)
 
 [connection signal="fragment_collected" from="." to="Player" method="fragment_collected"]
 [connection signal="traveling" from="." to="Player" method="traveling"]

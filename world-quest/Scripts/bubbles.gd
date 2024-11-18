@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-@export var bubble_speed : float = 50.0  # Speed at which the bubble moves
+@export var bubble_speed : float = 60.0  # Speed at which the bubble moves
 var target_position : Vector2  # The position to which the bubble moves
 
 func _ready() -> void:
