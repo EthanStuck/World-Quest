@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cxlh5q26rghuo"
+path="res://.godot/imported/Pleasant Creek Loop.wav-2761e694d653001ed691bd2d4af8b6ac.sample"
+
+[deps]
+
+source_file="res://Sounds/Pleasant Creek Loop.wav"
+dest_files=["res://.godot/imported/Pleasant Creek Loop.wav-2761e694d653001ed691bd2d4af8b6ac.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

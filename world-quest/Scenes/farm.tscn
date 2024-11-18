@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://d1lyddd2cq82o" path="res://Art/Environment/Farm/Farm Plot Big Fence Side1.png" id="16_23iob"]
 [ext_resource type="Texture2D" uid="uid://dfgtuv5f25v0m" path="res://Art/Environment/Farm/Farm Plot Big Fence Side4.png" id="16_iuwyt"]
 [ext_resource type="Texture2D" uid="uid://3hykx3dtpmob" path="res://Art/Environment/Farm/Farm Plot Big Fence Side3.png" id="17_ycfw5"]
-[ext_resource type="AudioStream" uid="uid://jtisxo0leha" path="res://Sounds/8_bit_ice_cave_lofi.mp3" id="18_6puse"]
+[ext_resource type="AudioStream" uid="uid://c5tuenegi4ahk" path="res://Sounds/a_small_fire_will_do.wav" id="18_sflgj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igecs"]
 size = Vector2(236.5, 290)
@@ -644,7 +644,7 @@ shape = SubResource("RectangleShape2D_nc2et")
 position = Vector2(289, 617)
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("18_6puse")
+stream = ExtResource("18_sflgj")
 autoplay = true
 
 [connection signal="fragment_collected" from="." to="Player" method="fragment_collected"]
