@@ -3,7 +3,7 @@ extends Node
 @export var cast_range : float = 150.0
 @export var bubble_count : int = 1  # Number of bubbles that spawn
 @export var catch_radius : float = 15.0
-@export var cast_delay : float = 1.5  # Delay time to catch a fish
+@export var cast_delay : float = 0.5  # Delay time to catch a fish
 
 @onready var fragment = preload("res://Scenes/fragment_north.tscn")
 @onready var bobber_scene = preload("res://Scenes/bobber.tscn")  # Path to the bobber scene

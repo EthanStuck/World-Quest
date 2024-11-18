@@ -113,7 +113,7 @@ animations = [{
 "speed": 0.75
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("3_3d1br")
 }, {
 "duration": 1.0,
@@ -128,7 +128,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_1ox28")
 }],
-"loop": true,
+"loop": false,
 "name": &"cast_up",
 "speed": 5.0
 }, {
@@ -509,7 +509,7 @@ inv = ExtResource("2_afkq7")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_85u5v")
-animation = &"pickup_left"
+animation = &"cast_up"
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 visible = false
