@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dni3slhpkbh34"]
+[gd_scene load_steps=11 format=3 uid="uid://dni3slhpkbh34"]
 
 [ext_resource type="Script" path="res://Scripts/pumpkin.gd" id="1_71syc"]
 [ext_resource type="Texture2D" uid="uid://cafnwtjbbwrrr" path="res://Art/Environment/Farm/Pumpkin.png" id="2_hky0a"]
 [ext_resource type="Texture2D" uid="uid://efg827vh5viy" path="res://Art/Environment/Farm/PumpkinDead.png" id="3_gg7av"]
 [ext_resource type="Texture2D" uid="uid://csqiycph4s6s5" path="res://Art/Environment/Farm/Weed2.png" id="4_omsdp"]
 [ext_resource type="Texture2D" uid="uid://blftu03byvcrt" path="res://Art/Environment/Farm/Weed3.png" id="5_cr07q"]
+[ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="6_bexff"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_47awj"]
 animations = [{
@@ -75,6 +76,10 @@ disabled = true
 position = Vector2(0, 12)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_skdjg")
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_bexff")
+pitch_scale = 3.0
 
 [connection signal="area_entered" from="InteractZone" to="." method="_on_interact_zone_area_entered"]
 [connection signal="area_exited" from="InteractZone" to="." method="_on_interact_zone_area_exited"]

@@ -43,6 +43,7 @@ func _ready():
 		text_bubble_intro.visible = true
 		await get_tree().create_timer(3).timeout
 		shake.emit()
+		$FallSound.play()
 		text_bubble_intro.visible = false
 		text_bubble_intro2.visible = true
 		$Sprites.play('sit')

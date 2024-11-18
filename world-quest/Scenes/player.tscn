@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=4 uid="uid://b4en6qsd4qi5m"]
+[gd_scene load_steps=96 format=4 uid="uid://b4en6qsd4qi5m"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_a5bgk"]
 [ext_resource type="Texture2D" uid="uid://pom1tmjukm2t" path="res://Art/Characters/main character/walk_up1.png" id="2_8qcdx"]
@@ -85,6 +85,7 @@
 [ext_resource type="Texture2D" uid="uid://koqjq0253wkf" path="res://Art/HUD/Tutorials/TutorialFish_ingame.png" id="80_5fxxx"]
 [ext_resource type="Texture2D" uid="uid://cia56wdsm2wkl" path="res://Art/HUD/Tutorials/TutorialFight_ingame.png" id="81_iju4c"]
 [ext_resource type="Texture2D" uid="uid://cyht56xgfyj0b" path="res://Art/HUD/Tutorials/TutorialFarming_ingame.png" id="82_onbob"]
+[ext_resource type="AudioStream" uid="uid://dtkorbkwllxfm" path="res://Sounds/Effects/Bump.mp3" id="86_c51wl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_85u5v"]
 animations = [{
@@ -743,6 +744,9 @@ offset_top = -200.0
 offset_right = 200.0
 offset_bottom = 200.0
 texture = ExtResource("82_onbob")
+
+[node name="FallSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("86_c51wl")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="HealthPickupBox" to="." method="_on_health_pickup_box_area_entered"]

@@ -34,6 +34,7 @@ func _process(delta):
 				hide()
 				$CollisionShape2D.disabled = true
 				$InteractZone/CollisionShape2D.disabled = true
+				$PickupSound.play()
 
 func deweed():
 	''' Remove layer of weeds from pumpkin '''

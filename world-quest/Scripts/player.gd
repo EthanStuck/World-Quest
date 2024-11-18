@@ -336,6 +336,7 @@ func apply_pumpkin_shake():
 	if not pumpkin_shake:
 		pumpkin_shake = true
 		shake_strength = noise_shake_strength
+		$FallSound.play()
 		await get_tree().create_timer(1.5).timeout
 		pumpkin_shake = false
 
@@ -413,6 +414,7 @@ func uncarry():
 	elif facing == 'left':
 		place.emit(position + Vector2(-50,15))
 	apply_shake()
+	$FallSound.play()
 
 func stone_collect():
 	''' pickup items in forage area '''

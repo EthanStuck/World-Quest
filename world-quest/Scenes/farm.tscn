@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b6j0228ya77aj"]
+[gd_scene load_steps=32 format=3 uid="uid://b6j0228ya77aj"]
 
 [ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://Art/Environment/Town/Town Ground.png" id="1_anppi"]
 [ext_resource type="Script" path="res://Scripts/farm.gd" id="1_w7msv"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://d1lyddd2cq82o" path="res://Art/Environment/Farm/Farm Plot Big Fence Side1.png" id="16_23iob"]
 [ext_resource type="Texture2D" uid="uid://dfgtuv5f25v0m" path="res://Art/Environment/Farm/Farm Plot Big Fence Side4.png" id="16_iuwyt"]
 [ext_resource type="Texture2D" uid="uid://3hykx3dtpmob" path="res://Art/Environment/Farm/Farm Plot Big Fence Side3.png" id="17_ycfw5"]
+[ext_resource type="AudioStream" uid="uid://jtisxo0leha" path="res://Sounds/8_bit_ice_cave_lofi.mp3" id="18_6puse"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igecs"]
 size = Vector2(236.5, 290)
@@ -641,6 +642,10 @@ shape = SubResource("RectangleShape2D_nc2et")
 
 [node name="BucketLocation" type="Marker2D" parent="."]
 position = Vector2(289, 617)
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_6puse")
+autoplay = true
 
 [connection signal="fragment_collected" from="." to="Player" method="fragment_collected"]
 [connection signal="traveling" from="." to="Player" method="traveling"]
