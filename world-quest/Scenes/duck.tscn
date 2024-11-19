@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvoeckyx2ttq2"]
-
-[ext_resource type="Texture2D" uid="uid://g2dcrh11ltvc" path="res://Art/Environment/Fishing/duck.png" id="1_1jwvk"]
-
-[node name="Duck" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_1jwvk")
