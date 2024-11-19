@@ -520,8 +520,12 @@ func fragment_collected(piece : String):
 	var prev_anim = $Animations.animation
 	var anim_string = 'fragment_collected_' + piece
 	$Animations.play(anim_string)
-	$SpecialCollect.play()
-	await get_tree().create_timer(2).timeout
+	if piece == 'bucket' or piece == 'sword' or piece == 'rod':
+		$SpecialCollect.play()
+		await get_tree().create_timer(2).timeout
+	else:
+		$FragmentCollect.play()
+		await get_tree().create_timer(4).timeout
 	interacting = false
 	$Animations.play(prev_anim)
 

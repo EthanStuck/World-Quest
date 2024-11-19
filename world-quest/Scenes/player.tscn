@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://b4en6qsd4qi5m"]
+[gd_scene load_steps=98 format=3 uid="uid://b4en6qsd4qi5m"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_a5bgk"]
 [ext_resource type="Texture2D" uid="uid://pom1tmjukm2t" path="res://Art/Characters/main character/walk_up1.png" id="2_8qcdx"]
@@ -88,6 +88,7 @@
 [ext_resource type="Texture2D" uid="uid://cyht56xgfyj0b" path="res://Art/HUD/Tutorials/TutorialFarming_ingame.png" id="82_onbob"]
 [ext_resource type="AudioStream" uid="uid://dtkorbkwllxfm" path="res://Sounds/Effects/Bump.mp3" id="86_c51wl"]
 [ext_resource type="AudioStream" uid="uid://bbplj6g0esl04" path="res://Sounds/Collect1.mp3" id="87_kstsr"]
+[ext_resource type="AudioStream" uid="uid://cvei6pdinkgdh" path="res://Sounds/Pick up song.mp3" id="89_67mwr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_85u5v"]
 animations = [{
@@ -749,6 +750,9 @@ stream = ExtResource("86_c51wl")
 [node name="SpecialCollect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("87_kstsr")
 volume_db = 10.005
+
+[node name="FragmentCollect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("89_67mwr")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="HealthPickupBox" to="." method="_on_health_pickup_box_area_entered"]
