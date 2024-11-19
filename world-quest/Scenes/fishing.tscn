@@ -10,7 +10,6 @@
 [ext_resource type="AudioStream" uid="uid://djadv4fp0fapj" path="res://Sounds/calm-pond-bright-wind-in-reeds-geese-water-ttp-190401-55746.mp3" id="6_n3ujv"]
 [ext_resource type="PackedScene" uid="uid://e12gx1qyncbd" path="res://Scenes/house_1.tscn" id="9_8oltf"]
 [ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="10_17nus"]
-[ext_resource type="AudioStream" uid="uid://ctujxvws87ce" path="res://Sounds/gone_fishin_by_memoraphile_CC0.mp3" id="11_jjjrj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p3utu"]
 animations = [{

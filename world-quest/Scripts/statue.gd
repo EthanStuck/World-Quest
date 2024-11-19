@@ -11,6 +11,7 @@ func _ready():
 	$'Fragment-BR'.z_index = position.y + 7
 	$'Fragment-TL'.z_index = position.y + 10
 	$'Fragment-TL'.z_index = position.y + 10
+	$Statue_comp_animation.hide()
 	
 	if not FragmentHandler.west_added or not FragmentHandler.north_added or not FragmentHandler.south_added or not FragmentHandler.east_added:
 		$FullSprite.hide()
@@ -31,6 +32,7 @@ func _process(delta):
 	if FragmentHandler.west_added and FragmentHandler.north_added and FragmentHandler.south_added and FragmentHandler.east_added:
 		$FullSprite.show()
 		$CompletionSound.play()
+		$Statue_comp_animation.show()
 
 
 func add_fragment():
@@ -40,24 +42,28 @@ func add_fragment():
 		
 		if FragmentHandler.west_fragment:
 			$'Fragment-TL'.show()
+			$CompletionSound.play()
 			FragmentHandler.west_fragment = false
 			FragmentHandler.west_complete = true
 			FragmentHandler.west_added = true
 			
 		if FragmentHandler.north_fragment:
 			$'Fragment-TR'.show()
+			$CompletionSound.play()
 			FragmentHandler.north_fragment = false
 			FragmentHandler.north_complete = true
 			FragmentHandler.north_added = true
 			
 		if FragmentHandler.south_fragment:
 			$'Fragment-BL'.show()
+			$CompletionSound.play()
 			FragmentHandler.south_fragment = false
 			FragmentHandler.south_complete = true
 			FragmentHandler.south_added = true
 			
 		if FragmentHandler.east_fragment:
 			$'Fragment-BR'.show()
+			$CompletionSound.play()
 			FragmentHandler.east_fragment = false
 			FragmentHandler.east_complete = true
 			FragmentHandler.east_added = true
