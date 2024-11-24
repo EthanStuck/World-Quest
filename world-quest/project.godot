@@ -18,6 +18,10 @@ config/icon="res://icon.svg"
 [autoload]
 
 FragmentHandler="*res://Scripts/fragment_handler.gd"
+FarmSave="*res://farm_save.gd"
+ForageSave="*res://forage_save.gd"
+FightSave="*res://fight_save.gd"
+FishSave="*res://fish_save.gd"
 
 [display]
 

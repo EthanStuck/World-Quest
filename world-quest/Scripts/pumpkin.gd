@@ -1,19 +1,30 @@
 extends StaticBody2D
-var state : int # handles how healthy the pumpkin is
+@onready var state = 0 # handles how healthy the pumpkin is
 var interactable = false
 var in_zone = false
 @onready var spirit_load = preload("res://Scenes/tiny_spirit.tscn")
 @onready var leaf_load = preload("res://Scenes/leaf.tscn")
 signal weeded
 signal watered
+signal placed
 var picked_up = false
 var pickupable = false
 
 func _ready():
-	if not FragmentHandler.east_complete:
+	await get_tree().create_timer(0.01).timeout
+	if state == 3:
+		$Sprites.play('alive')
+		$InteractZone/CollisionDead.disabled = true
+		$InteractZone/CollisionShape2D.disabled = false
+		$InteractZone.remove_from_group('weed')
+		$InteractZone.add_to_group('pumpkin')
+	elif state == 2:
+		$Sprites.play('dead')
+		$InteractZone.remove_from_group('weed')
+		$InteractZone.add_to_group('dead_plant')
+	elif state == 0:
 		$Sprites.play('weeded')
-		state = 0
-	else:
+	if FragmentHandler.east_complete:
 		$Sprites.play('alive')
 		state = 3
 		$InteractZone/CollisionDead.disabled = true
@@ -59,7 +70,7 @@ func deweed():
 		state = 2
 		$InteractZone.remove_from_group('weed')
 		$InteractZone.add_to_group('dead_plant')
-		weeded.emit()
+		weeded.emit(state)
 	if in_zone:
 		interactable = true
 
@@ -75,7 +86,7 @@ func revive():
 		get_parent().add_child(spirit)
 		spirit.global_position = global_position
 		state = 3
-		watered.emit()
+		watered.emit(state)
 		$InteractZone/CollisionDead.set_deferred('disabled', true)
 		$InteractZone/CollisionShape2D.set_deferred('disabled', false)
 	if in_zone:
@@ -106,6 +117,7 @@ func _on_player_place(pos) -> void:
 		$CollisionShape2D.disabled = false
 		$InteractZone/CollisionShape2D.disabled = false
 		position = pos
+		placed.emit(pos)
 		picked_up = false
 
 
