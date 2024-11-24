@@ -23,6 +23,8 @@ func _ready():
 	else:
 		$Player.currentHealth = $Player.maxHealth - 31
 		$Player.health_update.emit()
+	if FightSave.boss_spawned and not FightSave.boss_killed:
+		spawn_boss()
 	
 	if FragmentHandler.west_spawned:
 		var fragment_instance = fragment.instantiate()
@@ -40,19 +42,21 @@ func _process(delta):
 
 		
 func spawn_boss():
-	if not FragmentHandler.west_complete:
+	if not FragmentHandler.west_complete and not boss_alive:
 		timer.set_wait_time(6)
 		var boss_instance = boss.instantiate()
 		boss_instance.position = $Spawner.position
 		add_child(boss_instance)
 		timer.stop()
 		boss_alive = true
+		FightSave.boss_spawned = true
 		boss_instance.died.connect(on_boss_dead)
 
 		
 func on_boss_dead():
 	''' boss is killed, spawn fragment '''
 	boss_alive = false
+	FightSave.boss_killed = true
 	var fragment_instance = fragment.instantiate()
 	add_child(fragment_instance)
 	fragment_instance.global_position = $FragmentSpawn.position
