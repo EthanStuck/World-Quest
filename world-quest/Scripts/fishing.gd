@@ -10,6 +10,7 @@ extends Node
 @onready var bubble_scene = preload("res://Scenes/bubbles.tscn")  # Path to the bubble scene
 @onready var rod_load = preload("res://Scenes/fishing_rod.tscn")
 @onready var ui_text = $Label  # UI text for showing messages
+@export var catfish_item: InvItem
 
 var fish_caught : int = 0  # Number of fish caught
 var is_casting : bool = false  # Whether the player has casted or not
@@ -27,6 +28,7 @@ func _ready() -> void:
 	$Animated_water.play()
 	FragmentHandler.at = 'fishing'
 	reverse_transition('north')
+	fish_caught = FishSave.num_fish
 	
 	if not FragmentHandler.rod_pickup:
 		var rod = rod_load.instantiate()
@@ -101,7 +103,9 @@ func check_for_fish():
 	# Handle the result of the cast
 	if caught_fish:
 		fish_caught += 1  # Increment the fish count
+		FishSave.num_fish += 1
 		ui_text.text = "You caught a fish!"
+		$Player.collect(catfish_item)
 	else:
 		ui_text.text = "Try again!"
 
