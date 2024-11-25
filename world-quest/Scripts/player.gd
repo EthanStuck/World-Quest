@@ -30,6 +30,7 @@ var buffer = false # allows players to buffer strike inputs
 var tutorial = false # if player has tutorial pulled up
 var pumpkin_shake = false # dampen pumpkin carry step shaking
 var stone_range = false # if player is in range of forage item
+var camera_control = false # if player in cutscene
 
 
 
@@ -52,6 +53,8 @@ func _ready():
 	
 func _process(delta: float):
 	''' continuous processes '''
+	if camera_control:
+		interacting = true
 	if not dead:
 		$Animations.z_index = position.y + 44
 		if buffer:
@@ -563,3 +566,20 @@ func tutorial_handler():
 		elif location.contains('Forage'):
 			$Tutorials/TutorialForage.hide()
 		
+func camera_controlled(location):
+	''' For moments when camera is controlled by game '''
+	var distance = $Camera2D.global_position.distance_to(location)
+	$Camera2D.position_smoothing_speed = distance/200
+	camera_control = true
+	interacting = true
+	$Animations.stop()
+	$Camera2D.position_smoothing_enabled = true
+	$Camera2D.global_position = location
+
+func camera_control_end():
+	''' release camera control '''
+	$Camera2D.global_position = global_position
+	await get_tree().create_timer(1.5).timeout
+	interacting = false
+	camera_control = false
+	$Camera2D.position_smoothing_enabled = false

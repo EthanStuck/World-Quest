@@ -508,6 +508,11 @@ position = Vector2(337, 501)
 
 [node name="Player" parent="." instance=ExtResource("3_m0p8w")]
 position = Vector2(417, 513)
+speed = 75
+maxHealth = 300
+shake_decay_rate = 5.0
+noise_shake_speed = 30.0
+noise_shake_strength = 60.0
 
 [node name="TransitionRect" type="TextureRect" parent="."]
 visible = false

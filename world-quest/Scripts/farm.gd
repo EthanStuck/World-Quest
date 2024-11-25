@@ -7,6 +7,9 @@ signal traveling
 signal fragment_collected
 signal first_watered
 signal first_weeded
+signal camera_control
+signal camera_end
+signal first_placed
 
 func _ready():
 	FragmentHandler.at = 'farming'
@@ -64,6 +67,13 @@ func _on_travel_back_area_entered(area: Area2D) -> void:
 func _on_pumpkin_plot_pumpkin_added() -> void:
 	''' pumpkin added to pumpkin plot '''
 	FarmSave.num_pumpkins += 1
+	if not FarmSave.first_placed:
+		FarmSave.first_placed = true
+		await get_tree().create_timer(.5).timeout
+		first_placed.emit()
+		camera_control.emit($NPCs/FarmerNPC2.global_position - Vector2(30, 0))
+		await get_tree().create_timer(5).timeout
+		camera_end.emit()
 	if FarmSave.num_pumpkins == 6 and not FragmentHandler.east_complete:
 		var fragment_instance = fragment.instantiate()
 		add_child(fragment_instance)

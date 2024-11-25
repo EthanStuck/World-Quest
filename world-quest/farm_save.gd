@@ -24,3 +24,6 @@ var entered = false
 
 # number of pumpkins brought to plot area
 var num_pumpkins = 0
+
+# if first pumpkin was placed in plot
+var first_placed = false

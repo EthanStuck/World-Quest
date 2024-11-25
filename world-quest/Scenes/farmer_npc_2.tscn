@@ -335,6 +335,29 @@ text = "It sounds like everyone loved the meal I made! Thank you for helping me 
 tab_size = 3
 metadata/_edit_use_anchors_ = true
 
+[node name="TextureRect13" type="TextureRect" parent="."]
+z_index = 2000
+offset_left = -227.0
+offset_top = -8.0
+offset_right = -22.0
+offset_bottom = 86.0
+texture = ExtResource("2_fqp62")
+flip_h = true
+flip_v = true
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect13"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 183.0
+offset_bottom = 78.0
+theme_override_font_sizes/normal_font_size = 10
+text = "Yes that's perfect! Six there would be just enough for everyone!"
+tab_size = 3
+metadata/_edit_use_anchors_ = true
+
 [node name="InteractLabel" type="Label" parent="."]
 z_index = 2000
 anchors_preset = 8
