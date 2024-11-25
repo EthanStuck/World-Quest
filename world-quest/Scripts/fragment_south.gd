@@ -5,12 +5,14 @@ var player = null
 var interactable = false
 signal collected
 
+
 func _ready():
 	$BaseSprite.z_index = position.y + 7
 	$GlowSprite.z_index = position.y + 10
 	$Glow.play()
 	$SpawnSound.play()
 	$InteractLabel.hide()
+
 
 func _process(delta):
 	if interactable:

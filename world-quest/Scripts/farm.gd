@@ -28,6 +28,9 @@ func _ready():
 		add_child.call_deferred(fragment_instance)
 		fragment_instance.global_position = $FragmentSpawnLocation.position
 		fragment_instance.collected.connect(on_collected)
+		camera_control.emit(fragment_instance.global_position)
+		await get_tree().create_timer(3).timeout
+		camera_end.emit()
 	
 	# save/load pumpkin positions
 	if not FarmSave.entered:
@@ -81,6 +84,9 @@ func _on_pumpkin_plot_pumpkin_added() -> void:
 		FragmentHandler.east_complete = true
 		FragmentHandler.east_spawned = true
 		fragment_instance.collected.connect(on_collected)
+		camera_control.emit(fragment_instance.global_position)
+		await get_tree().create_timer(3).timeout
+		camera_end.emit()
 
 func on_collected(item):
 	''' send signal to player that item was collected '''

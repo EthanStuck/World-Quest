@@ -9,6 +9,8 @@ var wave_num = 0
 signal traveling
 var boss_alive = false
 signal fragment_collected
+signal camera_control
+signal camera_end
 
 func _ready():
 	''' player startup '''
@@ -31,6 +33,9 @@ func _ready():
 		add_child.call_deferred(fragment_instance)
 		fragment_instance.global_position = $FragmentSpawn.position
 		fragment_instance.collected.connect(on_fragment_collected)
+		camera_control.emit(fragment_instance.global_position)
+		await get_tree().create_timer(3).timeout
+		camera_end.emit()
 
 func _process(delta):
 	#if wave_spawn_count == 14:
@@ -63,6 +68,9 @@ func on_boss_dead():
 	FragmentHandler.west_complete = true
 	FragmentHandler.west_spawned = true
 	fragment_instance.collected.connect(on_fragment_collected)
+	camera_control.emit(fragment_instance.global_position)
+	await get_tree().create_timer(3).timeout
+	camera_end.emit()
 	
 func on_fragment_collected(item):
 	''' send signal to player that fragment was collected '''

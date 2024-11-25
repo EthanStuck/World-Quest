@@ -12,6 +12,8 @@ var progress = 0
 var state = 0
 signal give_item
 var given = false
+signal camera_control
+signal camera_end
 
 func _ready():
 	$Sprite2D.z_index = position.y + 32
@@ -115,6 +117,11 @@ func confused():
 	#if not given:
 		#give_item.emit()
 		#given = true
+	camera_control.emit(global_position + Vector2(30, 0))
 	state = 2
 	text_bubble7.visible = true
 	progress = 8
+	await get_tree().create_timer(4).timeout
+	camera_end.emit()
+	text_bubble7.visible = false
+	

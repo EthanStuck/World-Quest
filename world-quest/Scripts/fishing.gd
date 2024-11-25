@@ -21,6 +21,8 @@ var bobbers : Array = []  # List of bobbers currently in the scene
 var cast_timer : float = 0.0  # Timer to track cast delay
 signal traveling
 signal fragment_collected
+signal camera_control
+signal camera_end
 
 func _ready() -> void:
 	# playing music and water animation
@@ -43,6 +45,9 @@ func _ready() -> void:
 		FragmentHandler.north_complete = true
 		FragmentHandler.north_spawned = true
 		frag.collected.connect(on_collected)
+		camera_control.emit(frag.global_position)
+		await get_tree().create_timer(3).timeout
+		camera_end.emit()
 
 # Input event: listen for the cast action
 func _input(event):
@@ -122,6 +127,9 @@ func check_for_fish():
 		FragmentHandler.north_complete = true
 		FragmentHandler.north_spawned = true
 		frag.collected.connect(on_collected)
+		camera_control.emit(frag.global_position)
+		await get_tree().create_timer(3).timeout
+		camera_end.emit()
 
 	# Reset for next cast
 	bubbles.clear()

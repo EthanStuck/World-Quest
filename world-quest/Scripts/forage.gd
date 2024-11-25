@@ -8,6 +8,8 @@ signal fragment_collected
 signal solved
 var given # if NPC gave his piece
 signal confused
+signal camera_control
+signal camera_end
 
 func _ready():
 	FragmentHandler.at = 'foraging'
@@ -22,10 +24,13 @@ func _ready():
 		add_child.call_deferred(fragment_instance)
 		fragment_instance.global_position = $FragmentSpawnLocation.position
 		fragment_instance.collected.connect(on_fragment_collected)
+		camera_control.emit(fragment_instance.global_position)
+		await get_tree().create_timer(3).timeout
+		camera_end.emit()
 	
 	# recall which rocks have been collected
 	if ForageSave.rock1_collected:
-		$YellowRocks/yellowrock1.queue_free()
+		$YellowRocks/yellowrock.queue_free()
 	if ForageSave.rock2_collected:
 		$YellowRocks/yellowrock2.queue_free()
 	if ForageSave.rock3_collected:
@@ -130,6 +135,9 @@ func _on_yellowrock_collected() -> void:
 			FragmentHandler.south_complete = true
 			FragmentHandler.south_spawned = true
 			fragment_instance.collected.connect(on_fragment_collected)
+			camera_control.emit(fragment_instance.global_position)
+			await get_tree().create_timer(3).timeout
+			camera_end.emit()
 
 
 # save which rocks have been collected

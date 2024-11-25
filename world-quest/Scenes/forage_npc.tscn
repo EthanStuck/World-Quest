@@ -184,7 +184,8 @@ offset_top = 18.0
 offset_right = 183.0
 offset_bottom = 78.0
 theme_override_font_sizes/normal_font_size = 10
-text = "Can't believe that you found all of them, I was really stumped! Hope I didn't cause you any trouble!"
+text = "I had found this yellow thing behind the tree with '5' on it...
+I was so lost with that riddle but glad you figured it out!"
 tab_size = 3
 
 [node name="InteractLabel" type="Label" parent="."]

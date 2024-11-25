@@ -360,6 +360,8 @@ shape = SubResource("RectangleShape2D_bovo2")
 [node name="FragmentSpawn" type="Marker2D" parent="."]
 position = Vector2(505, 496)
 
+[connection signal="camera_control" from="." to="Player" method="camera_controlled"]
+[connection signal="camera_end" from="." to="Player" method="camera_control_end"]
 [connection signal="fragment_collected" from="." to="Player" method="fragment_collected"]
 [connection signal="traveling" from="." to="Player" method="traveling"]
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
