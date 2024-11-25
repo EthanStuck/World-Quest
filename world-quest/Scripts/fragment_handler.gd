@@ -30,6 +30,7 @@ var sword_pickup = false # if player picked up sword
 var bucket_collected = false # if player picked up bucket
 var rod_pickup = false # if player picked up fishing rod
 var water_amount = 0
+var town_entered = false # if player has been in the town
 
 
 var at : String # stores where player is coming from

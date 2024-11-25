@@ -6,10 +6,12 @@ extends StaticBody2D
 @onready var text_bubble5 = $TextureRect5
 var interactable = false
 var progress = -1
+signal camera_control
+signal camera_end
 
 func _ready():
 	$Sprite2D.z_index = position.y + 32
-	text_bubble1.visible = true
+	text_bubble1.visible = false
 	text_bubble2.visible = false
 	text_bubble3.visible = false
 	text_bubble4.visible = false
@@ -62,3 +64,14 @@ func toggle_text():
 		else:
 			text_bubble5.visible = false
 			progress = 0
+
+
+func intro() -> void:
+	''' Call player to the npc '''
+	camera_control.emit(global_position + Vector2(30, 0))
+	text_bubble1.visible = true
+	await get_tree().create_timer(5).timeout
+	text_bubble1.visible = false
+	await get_tree().create_timer(.5).timeout
+	camera_end.emit()
+	

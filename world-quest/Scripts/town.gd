@@ -4,6 +4,7 @@ var forage_scene = preload("res://Scenes/forage.tscn").instantiate()
 @onready var sword_load = preload("res://Scenes/sword.tscn")
 signal traveling
 signal collected
+signal hey
 
 func _ready():
 	#$Tutorial.hide()
@@ -25,6 +26,10 @@ func _ready():
 		reverse_transition('north')
 	FragmentHandler.at = 'town'
 	$TransitionRect.hide()
+	if not FragmentHandler.town_entered:
+		FragmentHandler.town_entered = true
+		await get_tree().create_timer(1).timeout
+		hey.emit()
 	if FragmentHandler.west_complete:
 		$PurpleGradient.hide()
 		

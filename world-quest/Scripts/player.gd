@@ -569,7 +569,7 @@ func tutorial_handler():
 func camera_controlled(location):
 	''' For moments when camera is controlled by game '''
 	var distance = $Camera2D.global_position.distance_to(location)
-	$Camera2D.position_smoothing_speed = distance/200
+	$Camera2D.position_smoothing_speed = distance/350
 	camera_control = true
 	interacting = true
 	$Animations.stop()
@@ -578,8 +578,12 @@ func camera_controlled(location):
 
 func camera_control_end():
 	''' release camera control '''
+	var distance = $Camera2D.global_position.distance_to(global_position)
+	$Camera2D.position_smoothing_speed = distance/350
 	$Camera2D.global_position = global_position
 	await get_tree().create_timer(1.5).timeout
 	interacting = false
 	camera_control = false
+	$Camera2D.position_smoothing_speed = 15
+	await get_tree().create_timer(1).timeout
 	$Camera2D.position_smoothing_enabled = false

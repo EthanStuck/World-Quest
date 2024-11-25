@@ -508,11 +508,6 @@ position = Vector2(337, 501)
 
 [node name="Player" parent="." instance=ExtResource("3_m0p8w")]
 position = Vector2(417, 513)
-speed = 75
-maxHealth = 300
-shake_decay_rate = 5.0
-noise_shake_speed = 30.0
-noise_shake_strength = 60.0
 
 [node name="TransitionRect" type="TextureRect" parent="."]
 visible = false
@@ -557,7 +552,10 @@ libraries = {
 }
 
 [connection signal="collected" from="." to="Player" method="fragment_collected"]
+[connection signal="hey" from="." to="NPCs/FarmerNPC" method="intro"]
 [connection signal="traveling" from="." to="Player" method="traveling"]
+[connection signal="camera_control" from="NPCs/FarmerNPC" to="Player" method="camera_controlled"]
+[connection signal="camera_end" from="NPCs/FarmerNPC" to="Player" method="camera_control_end"]
 [connection signal="area_entered" from="Travel Areas/ToFishing" to="." method="_on_to_fishing_area_entered"]
 [connection signal="area_entered" from="Travel Areas/ToFighting" to="." method="_on_to_fighting_area_entered"]
 [connection signal="area_entered" from="Travel Areas/ToForaging" to="." method="_on_to_foraging_area_entered"]
