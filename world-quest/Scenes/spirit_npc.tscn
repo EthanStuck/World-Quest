@@ -30,9 +30,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lt1ag"]
 size = Vector2(11, 3)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_he02v"]
-radius = 29.0
-height = 86.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lowhl"]
+radius = 53.0769
+height = 140.307
 
 [node name="SpiritNPC" type="StaticBody2D"]
 script = ExtResource("1_mdu2n")
@@ -47,11 +47,9 @@ position = Vector2(-5, 18)
 shape = SubResource("RectangleShape2D_lt1ag")
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-5, 0)
-shape = SubResource("CapsuleShape2D_he02v")
+shape = SubResource("CapsuleShape2D_lowhl")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = 2000
@@ -191,20 +189,21 @@ You seem to have solved the riddle. Well done."
 tab_size = 3
 
 [node name="InteractLabel" type="Label" parent="."]
-z_index = 2000
+z_index = 1000
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -30.0435
-offset_top = 36.079
-offset_right = 88.9565
-offset_bottom = 59.079
+offset_left = -47.0
+offset_top = 45.0
+offset_right = 72.0
+offset_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.8, 0.8)
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Press 'E' to Talk"
 horizontal_alignment = 1
 vertical_alignment = 1

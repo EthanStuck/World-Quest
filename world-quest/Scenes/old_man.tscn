@@ -8,8 +8,8 @@
 size = Vector2(28, 11)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ouclt"]
-radius = 27.0
-height = 90.0
+radius = 53.0769
+height = 140.307
 
 [node name="Old Man" type="StaticBody2D"]
 scale = Vector2(0.998551, 0.997812)
@@ -27,7 +27,6 @@ shape = SubResource("RectangleShape2D_a1a1b")
 position = Vector2(51, -71)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 position = Vector2(-51, 71)
 shape = SubResource("CapsuleShape2D_ouclt")
 
@@ -117,20 +116,21 @@ tab_size = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="InteractLabel" type="Label" parent="."]
-z_index = 2000
+z_index = 1000
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -30.0435
-offset_top = 36.079
-offset_right = 88.9565
-offset_bottom = 59.079
+offset_left = -47.0
+offset_top = 45.0
+offset_right = 72.0
+offset_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.8, 0.8)
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Press 'E' to Talk"
 horizontal_alignment = 1
 vertical_alignment = 1

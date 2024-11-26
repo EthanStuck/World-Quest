@@ -593,6 +593,6 @@ func camera_control_end():
 	interacting = false
 	camera_control = false
 	$Camera2D.position_smoothing_speed = 15
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(.25).timeout
 	$Camera2D.position_smoothing_enabled = false
 	$HurtBox/HurtBoxShape.set_deferred('disabled', false)
