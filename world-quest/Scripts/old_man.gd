@@ -10,7 +10,7 @@ signal sword_spawn
 signal spirit_cam
 
 func _ready():
-	$Sprite2D.z_index = position.y + 32
+	z_index = position.y + 32
 	text_bubble.visible = false
 	text_bubble2.visible = false
 	text_bubble3.visible = false

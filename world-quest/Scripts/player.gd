@@ -520,6 +520,7 @@ func traveling(received_direction):
 
 func fragment_collected(piece : String):
 	''' plays fragment collection animation '''
+	$HurtBox/HurtBoxShape.set_deferred('disabled', true)
 	var music_time = get_parent().get_node('Music').get_playback_position()
 	get_parent().get_node('Music').stop()
 	interacting = true
@@ -535,6 +536,7 @@ func fragment_collected(piece : String):
 	interacting = false
 	$Animations.play(prev_anim)
 	get_parent().get_node('Music').play(music_time)
+	$HurtBox/HurtBoxShape.set_deferred('disabled', false)
 	
 
 

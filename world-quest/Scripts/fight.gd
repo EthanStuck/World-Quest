@@ -141,3 +141,8 @@ func _on_old_man_sword_spawn(location) -> void:
 	var sword = sword_load.instantiate()
 	add_child(sword)
 	sword.global_position = location
+	sword.collected.connect(sword_collected)
+
+func sword_collected(item):
+	''' send sword collected signal to player '''
+	fragment_collected.emit(item)
