@@ -31,8 +31,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ekruh"]
 radius = 9.21954
 
-[node name="Bubbles" type="RigidBody2D"]
-gravity_scale = 0.0
+[node name="Bubbles" type="Area2D"]
 script = ExtResource("1_ojefa")
 
 [node name="bub_animation" type="AnimatedSprite2D" parent="."]

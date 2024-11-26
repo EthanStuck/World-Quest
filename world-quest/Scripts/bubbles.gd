@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends Area2D
 
 @export var bubble_speed : float = 50.0  # Speed at which the bubble moves
 var target_position : Vector2  # The position to which the bubble moves
