@@ -52,6 +52,70 @@ text = "Defeat the spirits in combat to get back the piece of the statue! Press 
 tab_size = 3
 metadata/_edit_use_anchors_ = true
 
+[node name="TextureRect2" type="TextureRect" parent="."]
+z_index = 2000
+offset_left = 19.0
+offset_top = -84.0
+offset_right = 217.0
+offset_bottom = 8.0
+texture = ExtResource("3_nbwiq")
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 22.0
+offset_top = 24.0
+offset_right = 183.0
+offset_bottom = 94.0
+theme_override_font_sizes/normal_font_size = 10
+text = "
+Help! The spirits are attacking!"
+tab_size = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+z_index = 2000
+offset_left = 19.0
+offset_top = -84.0
+offset_right = 217.0
+offset_bottom = 8.0
+texture = ExtResource("3_nbwiq")
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect3"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 22.0
+offset_top = 24.0
+offset_right = 183.0
+offset_bottom = 94.0
+theme_override_font_sizes/normal_font_size = 10
+text = "We need your help! Use your sword to defeat them!"
+tab_size = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+z_index = 2000
+offset_left = 19.0
+offset_top = -84.0
+offset_right = 217.0
+offset_bottom = 8.0
+texture = ExtResource("3_nbwiq")
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect4"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 22.0
+offset_top = 24.0
+offset_right = 183.0
+offset_bottom = 94.0
+theme_override_font_sizes/normal_font_size = 10
+text = "We need your help! Use this sword to defeat them!"
+tab_size = 3
+metadata/_edit_use_anchors_ = true
+
 [node name="InteractLabel" type="Label" parent="."]
 z_index = 2000
 anchors_preset = 8

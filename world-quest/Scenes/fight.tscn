@@ -269,7 +269,7 @@ offset_right = 1248.0
 offset_bottom = 1265.0
 texture = SubResource("CanvasTexture_rfsu7")
 
-[node name="fight_music" type="AudioStreamPlayer2D" parent="."]
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_c4lbt")
 
 [node name="SpawnTimer" type="Timer" parent="."]
@@ -360,9 +360,16 @@ shape = SubResource("RectangleShape2D_bovo2")
 [node name="FragmentSpawn" type="Marker2D" parent="."]
 position = Vector2(505, 496)
 
+[node name="PhantomLocation" type="Marker2D" parent="."]
+position = Vector2(147, 463)
+
 [connection signal="camera_control" from="." to="Player" method="camera_controlled"]
 [connection signal="camera_end" from="." to="Player" method="camera_control_end"]
 [connection signal="fragment_collected" from="." to="Player" method="fragment_collected"]
 [connection signal="traveling" from="." to="Player" method="traveling"]
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="camera_control" from="Old Man" to="Player" method="camera_controlled"]
+[connection signal="camera_end" from="Old Man" to="Player" method="camera_control_end"]
+[connection signal="spirit_cam" from="Old Man" to="." method="_on_old_man_spirit_cam"]
+[connection signal="sword_spawn" from="Old Man" to="." method="_on_old_man_sword_spawn"]

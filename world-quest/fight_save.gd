@@ -3,3 +3,4 @@ extends Node
 
 var boss_spawned = false
 var boss_killed = false
+var entered = false

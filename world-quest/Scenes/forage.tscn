@@ -117,7 +117,7 @@ pitch_scale = 0.33
 [node name="Player" parent="." instance=ExtResource("2_yeobe")]
 position = Vector2(482, 124)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_k1mo2")
 autoplay = true
 
@@ -957,24 +957,24 @@ position = Vector2(418, 223)
 [connection signal="solved" from="." to="ForageNPC" method="solved"]
 [connection signal="traveling" from="." to="Player" method="traveling"]
 [connection signal="area_entered" from="TravelBack" to="." method="_on_travel_back_area_entered"]
-[connection signal="collected" from="YellowRocks/yellowrock" to="." method="_on_yellowrock_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock" to="." method="_on_yellowrock1_collected"]
+[connection signal="collected" from="YellowRocks/yellowrock" to="." method="_on_yellowrock_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock9" to="." method="_on_yellowrock_9_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock9" to="." method="_on_yellowrock_collected"]
-[connection signal="collected" from="YellowRocks/yellowrock10" to="." method="_on_yellowrock_10_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock10" to="." method="_on_yellowrock_collected"]
+[connection signal="collected" from="YellowRocks/yellowrock10" to="." method="_on_yellowrock_10_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock11" to="." method="_on_yellowrock_11_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock11" to="." method="_on_yellowrock_collected"]
-[connection signal="collected" from="YellowRocks/yellowrock12" to="." method="_on_yellowrock_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock12" to="." method="_on_yellowrock_12_collected"]
+[connection signal="collected" from="YellowRocks/yellowrock12" to="." method="_on_yellowrock_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock2" to="." method="_on_yellowrock_2_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock2" to="." method="_on_yellowrock_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock3" to="." method="_on_yellowrock_3_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock3" to="." method="_on_yellowrock_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock4" to="." method="_on_yellowrock_4_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock4" to="." method="_on_yellowrock_collected"]
-[connection signal="collected" from="YellowRocks/yellowrock5" to="." method="_on_yellowrock_5_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock5" to="." method="_on_yellowrock_collected"]
+[connection signal="collected" from="YellowRocks/yellowrock5" to="." method="_on_yellowrock_5_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock6" to="." method="_on_yellowrock_6_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock6" to="." method="_on_yellowrock_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock7" to="." method="_on_yellowrock_7_collected"]

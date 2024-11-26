@@ -519,6 +519,8 @@ func traveling(received_direction):
 
 func fragment_collected(piece : String):
 	''' plays fragment collection animation '''
+	var music_time = get_parent().get_node('Music').get_playback_position()
+	get_parent().get_node('Music').stop()
 	interacting = true
 	var prev_anim = $Animations.animation
 	var anim_string = 'fragment_collected_' + piece
@@ -531,6 +533,8 @@ func fragment_collected(piece : String):
 		await get_tree().create_timer(4).timeout
 	interacting = false
 	$Animations.play(prev_anim)
+	get_parent().get_node('Music').play(music_time)
+	
 
 
 func tutorial_handler():

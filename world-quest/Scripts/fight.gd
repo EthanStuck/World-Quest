@@ -3,6 +3,7 @@ var currentWave: int
 var enemy = preload("res://Scenes/phantom.tscn")
 var boss = preload("res://Scenes/phantom_boss.tscn")
 @onready var fragment = preload("res://Scenes/fragment_west.tscn")
+var sword_load = preload("res://Scenes/sword.tscn")
 var wave_spawn_count = 0
 var wave_num = 0
 @onready var timer = get_node("SpawnTimer")
@@ -15,13 +16,14 @@ signal camera_end
 func _ready():
 	''' player startup '''
 	#screen_size = get_viewport_rect().size
-	$fight_music.play()
+	$Music.play()
 	FragmentHandler.at = 'fighting'
 	reverse_transition('west')
+	FightSave.entered = true
 	if FragmentHandler.west_complete:
 		$TextureRect.hide()
 		$TownMusic.play()
-		$fight_music.stop()
+		$Music.stop()
 	else:
 		$Player.currentHealth = $Player.maxHealth - 31
 		$Player.health_update.emit()
@@ -122,3 +124,20 @@ func reverse_transition(direction : String):
 	$ReverseTransitionRect.show()
 	$ReverseTransitionRect/AnimationPlayer.play('Fade')
 	traveling.emit(direction)
+
+
+func _on_old_man_spirit_cam(location) -> void:
+	''' show the phantoms in intro cutscene '''
+	camera_control.emit($PhantomLocation.position)
+	var enemy_instance = enemy.instantiate()
+	add_child(enemy_instance)
+	enemy_instance.position = $PhantomLocation.position
+	await get_tree().create_timer(1.5).timeout
+	camera_control.emit(location)
+
+
+func _on_old_man_sword_spawn(location) -> void:
+	''' spawn the sword if player needs it '''
+	var sword = sword_load.instantiate()
+	add_child(sword)
+	sword.global_position = location
