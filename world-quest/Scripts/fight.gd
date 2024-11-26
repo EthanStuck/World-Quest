@@ -42,8 +42,8 @@ func _ready():
 func _process(delta):
 	#if wave_spawn_count == 14:
 		#spawn_boss()
-	if boss_alive:
-		$FragmentSpawn.position = get_node('Phantom_Boss').position
+	#if boss_alive:
+		#$FragmentSpawn.position = get_node('Phantom_Boss').position
 	if $Player.currentHealth == $Player.maxHealth:
 		$Player.currentHealth = $Player.maxHealth - 1
 

@@ -55,6 +55,7 @@ func _process(delta: float):
 	''' continuous processes '''
 	if camera_control:
 		interacting = true
+		$Animations.stop()
 	if not dead:
 		$Animations.z_index = position.y + 44
 		if buffer:
@@ -579,6 +580,7 @@ func camera_controlled(location):
 	$Animations.stop()
 	$Camera2D.position_smoothing_enabled = true
 	$Camera2D.global_position = location
+	$HurtBox/HurtBoxShape.set_deferred('disabled', true)
 
 func camera_control_end():
 	''' release camera control '''
@@ -591,3 +593,4 @@ func camera_control_end():
 	$Camera2D.position_smoothing_speed = 15
 	await get_tree().create_timer(1).timeout
 	$Camera2D.position_smoothing_enabled = false
+	$HurtBox/HurtBoxShape.set_deferred('disabled', false)
