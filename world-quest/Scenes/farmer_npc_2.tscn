@@ -261,7 +261,7 @@ offset_top = 18.0
 offset_right = 183.0
 offset_bottom = 78.0
 theme_override_font_sizes/normal_font_size = 10
-text = "If you could get six lively pumpkins into the fenced area, I could finally whip up this town a good meal!"
+text = "If you could get four lively pumpkins into that fenced plot out east, I could finally whip up this town a good meal!"
 tab_size = 3
 metadata/_edit_use_anchors_ = true
 
@@ -353,7 +353,7 @@ offset_top = 18.0
 offset_right = 183.0
 offset_bottom = 78.0
 theme_override_font_sizes/normal_font_size = 10
-text = "Yes that's perfect! Six there would be just enough for everyone!"
+text = "Yes that's perfect! Four there would be just enough for everyone!"
 tab_size = 3
 metadata/_edit_use_anchors_ = true
 

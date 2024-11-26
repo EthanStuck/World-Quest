@@ -93,7 +93,8 @@ func _process(delta: float):
 	$Camera2D.offset = get_noise_offset(delta, noise_shake_speed, shake_strength)
 	
 	if Input.is_action_just_pressed('menu'):
-		tutorial_handler()
+		if not camera_control:
+			tutorial_handler()
 
 
 func move(delta):
@@ -107,7 +108,7 @@ func move(delta):
 				$Animations.animation = 'walk_front'
 			elif not Input.is_action_pressed('move_right') and not Input.is_action_pressed('move_left') and carrying:
 				$Animations.animation = 'carry_right'
-				if $Animations.frame == 1:
+				if $Animations.frame == 1 and not pumpkin_shake:
 					apply_pumpkin_shake()
 		elif Input.is_action_pressed('move_up'):
 			velocity.y = -1
@@ -115,7 +116,7 @@ func move(delta):
 				$Animations.animation = 'walk_back'
 			elif not Input.is_action_pressed('move_right') and not Input.is_action_pressed('move_left') and carrying:
 				$Animations.animation = 'carry_left'
-				if $Animations.frame == 1:
+				if $Animations.frame == 1 and not pumpkin_shake:
 					apply_pumpkin_shake()
 		else:
 			velocity.y = 0
@@ -128,7 +129,7 @@ func move(delta):
 				$Animations.animation = 'walk_right'
 			elif not Input.is_action_pressed('strike') and carrying:
 				$Animations.animation = 'carry_right'
-				if $Animations.frame == 1:
+				if $Animations.frame == 1 and not pumpkin_shake:
 					apply_pumpkin_shake()
 		elif Input.is_action_pressed('move_left'):
 			velocity.x = -1
@@ -137,7 +138,7 @@ func move(delta):
 				$Animations.animation = 'walk_left'
 			elif not Input.is_action_pressed('strike') and carrying:
 				$Animations.animation = 'carry_left'
-				if $Animations.frame == 1:
+				if $Animations.frame == 1 and not pumpkin_shake:
 					apply_pumpkin_shake()
 		else:
 			velocity.x = 0
@@ -336,12 +337,13 @@ func apply_shake():
 	shake_strength = noise_shake_strength
 
 func apply_pumpkin_shake():
-	''' activate camera shake (from tutorial) '''
+	''' activate camera shake for stepping with pumpkin '''
 	if not pumpkin_shake:
 		pumpkin_shake = true
 		shake_strength = noise_shake_strength
 		$FallSound.play()
-		await get_tree().create_timer(1.5).timeout
+		$FootStep.play()
+		await get_tree().create_timer(.6667).timeout
 		pumpkin_shake = false
 
 func deweed(delta):
@@ -400,8 +402,9 @@ func water():
 func carry():
 	pickup.emit()
 	carrying = true
-	speed = 15
-	foot_timer = 3 + 2/3
+	speed = 30
+	#foot_timer = (3 + 2/3)
+	foot_timer = 100000
 	if facing == 'right':
 		$Animations.play('carry_right')
 	else:

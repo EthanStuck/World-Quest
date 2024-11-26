@@ -77,7 +77,7 @@ func _on_pumpkin_plot_pumpkin_added() -> void:
 		camera_control.emit($NPCs/FarmerNPC2.global_position - Vector2(30, 0))
 		await get_tree().create_timer(5).timeout
 		camera_end.emit()
-	if FarmSave.num_pumpkins == 6 and not FragmentHandler.east_complete:
+	if FarmSave.num_pumpkins == 4 and not FragmentHandler.east_complete:
 		var fragment_instance = fragment.instantiate()
 		add_child(fragment_instance)
 		fragment_instance.global_position = $FragmentSpawnLocation.position
