@@ -84,7 +84,7 @@ offset_top = 18.0
 offset_right = 183.0
 offset_bottom = 78.0
 theme_override_font_sizes/normal_font_size = 10
-text = "I did find this fragment behind the tree marked '5', though..."
+text = "I did find this strange yellow rock behind the tree marked '5', though..."
 tab_size = 3
 
 [node name="TextureRect4" type="TextureRect" parent="."]
@@ -124,7 +124,7 @@ offset_top = 18.0
 offset_right = 183.0
 offset_bottom = 78.0
 theme_override_font_sizes/normal_font_size = 10
-text = "You can try your luck but be careful! There is some kind of harmful spirits hiding in the trees."
+text = "You can try your luck but be careful! There's some harmful spirits hiding in the trees. A sword could be quite useful!"
 tab_size = 3
 
 [node name="TextureRect6" type="TextureRect" parent="."]

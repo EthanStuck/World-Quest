@@ -230,65 +230,128 @@ position = Vector2(419, 321)
 
 [node name="Phantoms" type="Node2D" parent="."]
 
-[node name="forage_phantom" parent="Phantoms" instance=ExtResource("13_fcihy")]
-position = Vector2(69, 336)
-
-[node name="forage_phantom2" parent="Phantoms" instance=ExtResource("13_fcihy")]
-position = Vector2(714, 178)
-
-[node name="forage_phantom3" parent="Phantoms" instance=ExtResource("13_fcihy")]
-position = Vector2(148, 333)
-
-[node name="forage_phantom4" parent="Phantoms" instance=ExtResource("13_fcihy")]
-position = Vector2(709, 322)
-
-[node name="forage_phantom5" parent="Phantoms" instance=ExtResource("13_fcihy")]
-position = Vector2(72, 865)
+[node name="forage_phantom9" parent="Phantoms" instance=ExtResource("13_fcihy")]
+position = Vector2(117, 532)
 
 [node name="forage_phantom6" parent="Phantoms" instance=ExtResource("13_fcihy")]
-position = Vector2(256, 865)
-
-[node name="forage_phantom7" parent="Phantoms" instance=ExtResource("13_fcihy")]
-position = Vector2(165, 701)
-
-[node name="forage_phantom8" parent="Phantoms" instance=ExtResource("13_fcihy")]
-position = Vector2(909, 651)
-
-[node name="forage_phantom16" parent="Phantoms" instance=ExtResource("13_fcihy")]
-position = Vector2(877, 163)
-
-[node name="forage_phantom20" parent="Phantoms" instance=ExtResource("13_fcihy")]
-position = Vector2(335, 127)
-
-[node name="forage_phantom17" parent="Phantoms" instance=ExtResource("13_fcihy")]
-position = Vector2(913, 822)
-
-[node name="forage_phantom18" parent="Phantoms" instance=ExtResource("13_fcihy")]
-position = Vector2(339, 863)
-
-[node name="forage_phantom19" parent="Phantoms" instance=ExtResource("13_fcihy")]
-position = Vector2(166, 868)
-
-[node name="forage_phantom12" parent="Phantoms" instance=ExtResource("13_fcihy")]
-position = Vector2(358, 704)
-
-[node name="forage_phantom13" parent="Phantoms" instance=ExtResource("13_fcihy")]
-position = Vector2(738, 642)
-
-[node name="forage_phantom14" parent="Phantoms" instance=ExtResource("13_fcihy")]
-position = Vector2(738, 813)
-
-[node name="forage_phantom15" parent="Phantoms" instance=ExtResource("13_fcihy")]
-position = Vector2(732, 818)
-
-[node name="forage_phantom9" parent="Phantoms" instance=ExtResource("13_fcihy")]
-position = Vector2(883, 322)
+position = Vector2(823, 97)
 
 [node name="forage_phantom10" parent="Phantoms" instance=ExtResource("13_fcihy")]
-position = Vector2(802, 320)
+position = Vector2(288, 491)
 
-[node name="forage_phantom11" parent="Phantoms" instance=ExtResource("13_fcihy")]
-position = Vector2(335, 337)
+[node name="forage_phantom14" parent="Phantoms" instance=ExtResource("13_fcihy")]
+position = Vector2(796, 453)
+
+[node name="forage_phantom25" parent="Phantoms" instance=ExtResource("13_fcihy")]
+position = Vector2(-49, 868)
+
+[node name="forage_phantom27" parent="Phantoms" instance=ExtResource("13_fcihy")]
+position = Vector2(39, 777)
+
+[node name="forage_phantom18" parent="Phantoms" instance=ExtResource("13_fcihy")]
+position = Vector2(264, 646)
+
+[node name="forage_phantom24" parent="Phantoms" instance=ExtResource("13_fcihy")]
+position = Vector2(685, 606)
+
+[node name="forage_phantom8" parent="Phantoms" instance=ExtResource("13_fcihy")]
+position = Vector2(1007, 118)
+
+[node name="forage_phantom4" parent="Phantoms" instance=ExtResource("13_fcihy")]
+position = Vector2(133, 257)
+
+[node name="forage_phantom32" parent="Phantoms" instance=ExtResource("13_fcihy")]
+position = Vector2(1047, 912)
+
+[node name="forage_phantom28" parent="Phantoms" instance=ExtResource("13_fcihy")]
+position = Vector2(530, 989)
+
+[node name="forage_phantom26" parent="Phantoms" instance=ExtResource("13_fcihy")]
+position = Vector2(271, 1013)
+
+[node name="forage_phantom20" parent="Phantoms" instance=ExtResource("13_fcihy")]
+position = Vector2(469, 594)
+
+[node name="forage_phantom22" parent="Phantoms" instance=ExtResource("13_fcihy")]
+position = Vector2(856, 537)
+
+[node name="forage_phantom21" parent="Phantoms" instance=ExtResource("13_fcihy")]
+position = Vector2(489, 755)
+
+[node name="forage_phantom30" parent="Phantoms" instance=ExtResource("13_fcihy")]
+position = Vector2(589, 710)
+
+[node name="forage_phantom16" parent="Phantoms" instance=ExtResource("13_fcihy")]
+position = Vector2(1068, 397)
+
+[node name="forage_phantom15" parent="Phantoms" instance=ExtResource("13_fcihy")]
+position = Vector2(795, 310)
+
+[node name="forage_phantom12" parent="Phantoms" instance=ExtResource("13_fcihy")]
+position = Vector2(452, 412)
+
+[node name="PhantomDestinations" type="Node2D" parent="."]
+position = Vector2(-254, -252)
+
+[node name="Marker22" type="Marker2D" parent="PhantomDestinations"]
+position = Vector2(992, 894)
+
+[node name="Marker20" type="Marker2D" parent="PhantomDestinations"]
+position = Vector2(612, 956)
+
+[node name="Marker21" type="Marker2D" parent="PhantomDestinations"]
+position = Vector2(908, 901)
+
+[node name="Marker24" type="Marker2D" parent="PhantomDestinations"]
+position = Vector2(1163, 903)
+
+[node name="Marker32" type="Marker2D" parent="PhantomDestinations"]
+position = Vector2(1167, 1074)
+
+[node name="Marker30" type="Marker2D" parent="PhantomDestinations"]
+position = Vector2(986, 1070)
+
+[node name="Marker28" type="Marker2D" parent="PhantomDestinations"]
+position = Vector2(593, 1115)
+
+[node name="Marker27" type="Marker2D" parent="PhantomDestinations"]
+position = Vector2(510, 1117)
+
+[node name="Marker26" type="Marker2D" parent="PhantomDestinations"]
+position = Vector2(420, 1120)
+
+[node name="Marker25" type="Marker2D" parent="PhantomDestinations"]
+position = Vector2(326, 1117)
+
+[node name="Marker4" type="Marker2D" parent="PhantomDestinations"]
+position = Vector2(589, 379)
+
+[node name="Marker6" type="Marker2D" parent="PhantomDestinations"]
+position = Vector2(968, 430)
+
+[node name="Marker8" type="Marker2D" parent="PhantomDestinations"]
+position = Vector2(1131, 415)
+
+[node name="Marker14" type="Marker2D" parent="PhantomDestinations"]
+position = Vector2(963, 574)
+
+[node name="Marker15" type="Marker2D" parent="PhantomDestinations"]
+position = Vector2(1056, 572)
+
+[node name="Marker16" type="Marker2D" parent="PhantomDestinations"]
+position = Vector2(1137, 574)
+
+[node name="Marker12" type="Marker2D" parent="PhantomDestinations"]
+position = Vector2(589, 589)
+
+[node name="Marker10" type="Marker2D" parent="PhantomDestinations"]
+position = Vector2(402, 585)
+
+[node name="Marker9" type="Marker2D" parent="PhantomDestinations"]
+position = Vector2(323, 588)
+
+[node name="Marker18" type="Marker2D" parent="PhantomDestinations"]
+position = Vector2(419, 953)
 
 [node name="TreeLabels" type="Control" parent="."]
 layout_mode = 3
@@ -949,6 +1012,9 @@ position = Vector2(579, 415)
 [node name="ForageNPC" parent="." instance=ExtResource("12_1aogm")]
 position = Vector2(418, 223)
 
+[node name="CutsceneLocation" type="Marker2D" parent="."]
+position = Vector2(511, 600)
+
 [connection signal="camera_control" from="." to="Player" method="camera_controlled"]
 [connection signal="camera_end" from="." to="Player" method="camera_control_end"]
 [connection signal="confused" from="." to="ForageNPC" method="confused"]
@@ -969,16 +1035,16 @@ position = Vector2(418, 223)
 [connection signal="collected" from="YellowRocks/yellowrock12" to="." method="_on_yellowrock_12_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock2" to="." method="_on_yellowrock_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock2" to="." method="_on_yellowrock_2_collected"]
-[connection signal="collected" from="YellowRocks/yellowrock3" to="." method="_on_yellowrock_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock3" to="." method="_on_yellowrock_3_collected"]
+[connection signal="collected" from="YellowRocks/yellowrock3" to="." method="_on_yellowrock_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock4" to="." method="_on_yellowrock_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock4" to="." method="_on_yellowrock_4_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock5" to="." method="_on_yellowrock_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock5" to="." method="_on_yellowrock_5_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock6" to="." method="_on_yellowrock_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock6" to="." method="_on_yellowrock_6_collected"]
-[connection signal="collected" from="YellowRocks/yellowrock7" to="." method="_on_yellowrock_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock7" to="." method="_on_yellowrock_7_collected"]
+[connection signal="collected" from="YellowRocks/yellowrock7" to="." method="_on_yellowrock_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock8" to="." method="_on_yellowrock_collected"]
 [connection signal="collected" from="YellowRocks/yellowrock8" to="." method="_on_yellowrock_8_collected"]
 [connection signal="camera_control" from="ForageNPC" to="Player" method="camera_controlled"]

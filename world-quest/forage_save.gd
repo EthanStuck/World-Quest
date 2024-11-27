@@ -17,3 +17,6 @@ var rock12_collected = false
 
 # num rocks collected
 var num_rocks = 0
+
+# if forage area entered
+var entered = false
