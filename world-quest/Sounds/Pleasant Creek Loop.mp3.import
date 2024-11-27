@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dms0tfmsisds4"
+path="res://.godot/imported/Pleasant Creek Loop.mp3-67464028743edd804534eae7b26db449.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Pleasant Creek Loop.mp3"
+dest_files=["res://.godot/imported/Pleasant Creek Loop.mp3-67464028743edd804534eae7b26db449.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

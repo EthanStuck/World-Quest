@@ -586,6 +586,8 @@ func camera_controlled(location):
 	$Camera2D.position_smoothing_enabled = true
 	$Camera2D.global_position = location
 	$HurtBox/HurtBoxShape.set_deferred('disabled', true)
+	if tutorial:
+		tutorial_handler()
 
 func camera_control_end():
 	''' release camera control '''
