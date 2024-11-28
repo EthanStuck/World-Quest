@@ -4,6 +4,12 @@ extends Area2D
 var player = null
 var interactable = false
 signal collected
+var destination = global_position
+var wait = true
+var direction
+var vel
+const speed = 50
+var giving = false
 
 func _ready():
 	$BaseSprite.z_index = position.y + 7
@@ -11,6 +17,8 @@ func _ready():
 	$Glow.play()
 	$SpawnSound.play()
 	$InteractLabel.hide()
+	await get_tree().create_timer(1).timeout
+	wait = false
 
 	
 func _process(delta):
@@ -23,6 +31,15 @@ func _process(delta):
 			await get_tree().create_timer(0.1).timeout
 			collected.emit('east')
 			self.queue_free()
+	if abs(destination - global_position) > Vector2.ZERO and not wait:
+		giving = true
+		direction = (destination - global_position).normalized()
+		vel = (direction * speed)
+		#linear_velocity = (direction.normalized() * speed)
+		#move_and_collide(direction.normalized() * speed)
+		global_position += vel * delta
+		dequeue()
+		
 
 func _on_interactable_area_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
@@ -44,3 +61,9 @@ func _on_body_exited(body: Node2D) -> void:
 	if body.has_method("player"):
 		interactable = false
 		$InteractLabel.hide()
+
+func dequeue():
+	''' despawn fragment '''
+	await get_tree().create_timer(4).timeout
+	queue_free()
+	

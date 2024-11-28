@@ -34,6 +34,7 @@ func _ready():
 		var fragment_instance = fragment.instantiate()
 		add_child.call_deferred(fragment_instance)
 		fragment_instance.global_position = $FragmentSpawn.position
+		fragment_instance.destination = $FragmentSpawn.position
 		fragment_instance.collected.connect(on_fragment_collected)
 		camera_control.emit(fragment_instance.global_position)
 		await get_tree().create_timer(3).timeout
@@ -67,6 +68,7 @@ func on_boss_dead():
 	var fragment_instance = fragment.instantiate()
 	add_child(fragment_instance)
 	fragment_instance.global_position = $FragmentSpawn.position
+	fragment_instance.destination = $FragmentSpawn.position
 	FragmentHandler.west_complete = true
 	FragmentHandler.west_spawned = true
 	fragment_instance.collected.connect(on_fragment_collected)

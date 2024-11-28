@@ -1,16 +1,21 @@
 extends StaticBody2D
 
 var interactable = false
+signal west
+signal east
+signal south
+signal north
 
 
 func _ready():
 	''' set the visual state of the statue depending on game completion '''
-	$FullSprite.z_index = position.y + 80
-	$BaseSprite.z_index = position.y + 80
-	$'Fragment-BL'.z_index = position.y + 7
-	$'Fragment-BR'.z_index = position.y + 7
-	$'Fragment-TL'.z_index = position.y + 10
-	$'Fragment-TL'.z_index = position.y + 10
+	z_index = position.y + 80
+	#$FullSprite.z_index = position.y + 80
+	#$BaseSprite.z_index = position.y + 80
+	#$'Fragment-BL'.z_index = position.y + 7
+	#$'Fragment-BR'.z_index = position.y + 7
+	#$'Fragment-TL'.z_index = position.y + 10
+	#$'Fragment-TL'.z_index = position.y + 10
 	$Statue_comp_animation.hide()
 	
 	if not FragmentHandler.west_added or not FragmentHandler.north_added or not FragmentHandler.south_added or not FragmentHandler.east_added:
@@ -41,6 +46,8 @@ func add_fragment():
 		$InteractLabel.hide()
 		
 		if FragmentHandler.west_fragment:
+			west.emit($'Fragment-TL'.global_position)
+			await get_tree().create_timer(4).timeout
 			$'Fragment-TL'.show()
 			$CompletionSound.play()
 			FragmentHandler.west_fragment = false
@@ -48,6 +55,8 @@ func add_fragment():
 			FragmentHandler.west_added = true
 			
 		if FragmentHandler.north_fragment:
+			north.emit($'Fragment-TR'.global_position)
+			await get_tree().create_timer(4).timeout
 			$'Fragment-TR'.show()
 			$CompletionSound.play()
 			FragmentHandler.north_fragment = false
@@ -55,6 +64,8 @@ func add_fragment():
 			FragmentHandler.north_added = true
 			
 		if FragmentHandler.south_fragment:
+			south.emit($'Fragment-BL'.global_position)
+			await get_tree().create_timer(4).timeout
 			$'Fragment-BL'.show()
 			$CompletionSound.play()
 			FragmentHandler.south_fragment = false
@@ -62,6 +73,8 @@ func add_fragment():
 			FragmentHandler.south_added = true
 			
 		if FragmentHandler.east_fragment:
+			east.emit($'Fragment-BR'.global_position)
+			await get_tree().create_timer(4).timeout
 			$'Fragment-BR'.show()
 			$CompletionSound.play()
 			FragmentHandler.east_fragment = false

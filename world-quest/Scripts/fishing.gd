@@ -41,6 +41,7 @@ func _ready() -> void:
 	if FragmentHandler.north_spawned:
 		frag = fragment.instantiate()
 		frag.position = Vector2(505, 400)
+		frag.destination = Vector2(505, 400)
 		add_child.call_deferred(frag)
 		FragmentHandler.north_complete = true
 		FragmentHandler.north_spawned = true
@@ -123,6 +124,7 @@ func check_for_fish():
 		ui_text.text = "Quest Complete!"
 		frag = fragment.instantiate()
 		frag.position = Vector2(505, 400)
+		frag.destination = Vector2(505, 400)
 		add_child(frag)
 		FragmentHandler.north_complete = true
 		FragmentHandler.north_spawned = true

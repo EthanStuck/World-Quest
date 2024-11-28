@@ -31,6 +31,7 @@ var tutorial = false # if player has tutorial pulled up
 var pumpkin_shake = false # dampen pumpkin carry step shaking
 var stone_range = false # if player is in range of forage item
 var camera_control = false # if player in cutscene
+var statue_range = false # if player is in range of statue
 
 
 
@@ -41,6 +42,12 @@ var camera_control = false # if player in cutscene
 @onready var noise = FastNoiseLite.new()
 var noise_i : float = 0.0
 var shake_strength = 0.0
+
+# load statue fragments to give to statue
+var east_fragment = preload("res://Scenes/fragment_east.tscn")
+var west_fragment = preload("res://Scenes/fragment_west.tscn")
+var north_fragment = preload("res://Scenes/fragment_north.tscn")
+var south_fragment = preload("res://Scenes/fragment_south.tscn")
 
 
 func _ready():
@@ -446,6 +453,8 @@ func _on_interact_area_area_entered(area: Area2D) -> void:
 		pickup_range = true
 	if area.is_in_group('stone'):
 		stone_range = true
+	if area.is_in_group('statue'):
+		statue_range = true
 	colliding_pos = area.global_position
 		
 func _on_interact_area_area_exited(area: Area2D) -> void:
@@ -458,6 +467,8 @@ func _on_interact_area_area_exited(area: Area2D) -> void:
 		pickup_range = false
 	if area.is_in_group('stone'):
 		stone_range = false
+	if area.is_in_group('statue'):
+		statue_range = false
 	colliding_pos = Vector2.ZERO
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
@@ -601,3 +612,84 @@ func camera_control_end():
 	await get_tree().create_timer(.25).timeout
 	$Camera2D.position_smoothing_enabled = false
 	$HurtBox/HurtBoxShape.set_deferred('disabled', false)
+
+
+func _on_statue_east(location) -> void:
+	''' place fragment on statue '''
+	interacting = true
+	$FragmentCollect.play()
+	var prev_anim = $Animations.animation
+	var fragment = east_fragment.instantiate()
+	get_parent().add_child(fragment)
+	if facing == 'right':
+		$Animations.play('give_right')
+		fragment.global_position = $FragmentPosRight.global_position
+	else:
+		$Animations.play('give_left')
+		fragment.global_position = $FragmentPosLeft.global_position
+	fragment.destination = location
+	fragment.get_node('Glow').hide()
+	await get_tree().create_timer(4).timeout
+	$Animations.play(prev_anim)
+	interacting = false
+	
+
+
+func _on_statue_north(location) -> void:
+	''' place fragment on statue '''
+	interacting = true
+	$FragmentCollect.play()
+	var prev_anim = $Animations.animation
+	var fragment = north_fragment.instantiate()
+	get_parent().add_child(fragment)
+	if facing == 'right':
+		$Animations.play('give_right')
+		fragment.global_position = $FragmentPosRight.global_position
+	else:
+		$Animations.play('give_left')
+		fragment.global_position = $FragmentPosLeft.global_position
+	fragment.destination = location
+	fragment.get_node('Glow').hide()
+	await get_tree().create_timer(4).timeout
+	$Animations.play(prev_anim)
+	interacting = false
+
+
+func _on_statue_south(location) -> void:
+	''' place fragment on statue '''
+	interacting = true
+	$FragmentCollect.play()
+	var prev_anim = $Animations.animation
+	var fragment = south_fragment.instantiate()
+	get_parent().add_child(fragment)
+	if facing == 'right':
+		$Animations.play('give_right')
+		fragment.global_position = $FragmentPosRight.global_position
+	else:
+		$Animations.play('give_left')
+		fragment.global_position = $FragmentPosLeft.global_position
+	fragment.destination = location
+	fragment.get_node('Glow').hide()
+	await get_tree().create_timer(4).timeout
+	$Animations.play(prev_anim)
+	interacting = false
+
+
+func _on_statue_west(location) -> void:
+	''' place fragment on statue '''
+	interacting = true
+	$FragmentCollect.play()
+	var prev_anim = $Animations.animation
+	var fragment = west_fragment.instantiate()
+	get_parent().add_child(fragment)
+	if facing == 'right':
+		$Animations.play('give_right')
+		fragment.global_position = $FragmentPosRight.global_position
+	else:
+		$Animations.play('give_left')
+		fragment.global_position = $FragmentPosLeft.global_position
+	fragment.destination = location
+	fragment.get_node('Glow').hide()
+	await get_tree().create_timer(4).timeout
+	$Animations.play(prev_anim)
+	interacting = false

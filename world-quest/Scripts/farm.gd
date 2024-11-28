@@ -27,6 +27,7 @@ func _ready():
 		var fragment_instance = fragment.instantiate()
 		add_child.call_deferred(fragment_instance)
 		fragment_instance.global_position = $FragmentSpawnLocation.position
+		fragment_instance.destination = $FragmentSpawnLocation.position
 		fragment_instance.collected.connect(on_collected)
 		camera_control.emit(fragment_instance.global_position)
 		await get_tree().create_timer(3).timeout
@@ -81,6 +82,7 @@ func _on_pumpkin_plot_pumpkin_added() -> void:
 		var fragment_instance = fragment.instantiate()
 		add_child(fragment_instance)
 		fragment_instance.global_position = $FragmentSpawnLocation.position
+		fragment_instance.destination = $FragmentSpawnLocation.position
 		FragmentHandler.east_complete = true
 		FragmentHandler.east_spawned = true
 		fragment_instance.collected.connect(on_collected)

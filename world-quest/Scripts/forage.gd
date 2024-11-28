@@ -48,6 +48,7 @@ func _ready():
 		var fragment_instance = fragment.instantiate()
 		add_child.call_deferred(fragment_instance)
 		fragment_instance.global_position = $FragmentSpawnLocation.position
+		fragment_instance.destination = $FragmentSpawnLocation.position
 		fragment_instance.collected.connect(on_fragment_collected)
 		camera_control.emit(fragment_instance.global_position)
 		await get_tree().create_timer(3).timeout
@@ -157,6 +158,7 @@ func _on_yellowrock_collected() -> void:
 			var fragment_instance = fragment.instantiate()
 			add_child(fragment_instance)
 			fragment_instance.global_position = $FragmentSpawnLocation.position
+			fragment_instance.destination = $FragmentSpawnLocation.position
 			FragmentHandler.south_complete = true
 			FragmentHandler.south_spawned = true
 			fragment_instance.collected.connect(on_fragment_collected)

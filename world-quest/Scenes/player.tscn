@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=3 uid="uid://b4en6qsd4qi5m"]
+[gd_scene load_steps=100 format=3 uid="uid://b4en6qsd4qi5m"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_a5bgk"]
 [ext_resource type="Texture2D" uid="uid://pom1tmjukm2t" path="res://Art/Characters/main character/walk_up1.png" id="2_8qcdx"]
@@ -55,11 +55,13 @@
 [ext_resource type="Texture2D" uid="uid://tyst7my5f0f8" path="res://Art/Characters/main character/strike_right3.png" id="22_8xlnj"]
 [ext_resource type="Texture2D" uid="uid://b50m4ctly05qb" path="res://Art/Characters/main character/water_right3.png" id="22_tjptd"]
 [ext_resource type="Texture2D" uid="uid://dpbt4e6ux4we1" path="res://Art/Characters/main character/strike_right4.png" id="23_g8hww"]
+[ext_resource type="Texture2D" uid="uid://q8wf4bejjf1t" path="res://Art/Characters/main character/give_fragment_left.png" id="23_pn1li"]
 [ext_resource type="Texture2D" uid="uid://cc442rb0kkxor" path="res://Art/Characters/main character/water_right4.png" id="23_rkh3b"]
 [ext_resource type="Texture2D" uid="uid://bs2npytjkkto3" path="res://Art/Characters/main character/strike_left5.png" id="23_y7ta0"]
 [ext_resource type="Texture2D" uid="uid://ctnlx2xf4oc6b" path="res://Art/Characters/main character/strike_left6.png" id="24_elf6j"]
 [ext_resource type="Texture2D" uid="uid://d0d6mf4rmwenl" path="res://Art/Characters/main character/strike_right5.png" id="24_rmmyh"]
 [ext_resource type="Texture2D" uid="uid://e1m0gdm1mx3x" path="res://Art/Characters/main character/water_right5.png" id="24_sdiwp"]
+[ext_resource type="Texture2D" uid="uid://t1ioilewm6oq" path="res://Art/Characters/main character/give_fragment_right.png" id="24_xlp04"]
 [ext_resource type="Texture2D" uid="uid://b1nwxya8qpag5" path="res://Art/Characters/main character/strike_left7.png" id="25_7gn2f"]
 [ext_resource type="Texture2D" uid="uid://c0g5njsbij6hm" path="res://Art/Characters/main character/strike_right6.png" id="25_oom44"]
 [ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="25_vhyrv"]
@@ -210,6 +212,22 @@ animations = [{
 }],
 "loop": true,
 "name": &"fragment_collected_west",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_pn1li")
+}],
+"loop": true,
+"name": &"give_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_xlp04")
+}],
+"loop": true,
+"name": &"give_right",
 "speed": 5.0
 }, {
 "frames": [{
@@ -507,8 +525,7 @@ inv = ExtResource("2_afkq7")
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_85u5v")
-animation = &"carry_right"
-frame_progress = 0.291614
+animation = &"give_left"
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 visible = false
@@ -758,6 +775,12 @@ volume_db = 10.005
 
 [node name="FragmentCollect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("89_67mwr")
+
+[node name="FragmentPosLeft" type="Marker2D" parent="."]
+position = Vector2(-41, -37)
+
+[node name="FragmentPosRight" type="Marker2D" parent="."]
+position = Vector2(41, -37)
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="HealthPickupBox" to="." method="_on_health_pickup_box_area_entered"]
