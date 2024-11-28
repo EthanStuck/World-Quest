@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bclqootqjwdt0"]
+
+[ext_resource type="Script" path="res://Scripts/credits.gd" id="1_nlhh6"]
+[ext_resource type="Texture2D" uid="uid://dd6a6mtea2mqw" path="res://Art/HUD/Credits.png" id="2_wkkvo"]
+[ext_resource type="AudioStream" uid="uid://bnycqchp7h47v" path="res://Sounds/main_menu_theme.mp3" id="3_v7mve"]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_nlhh6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(200, 550)
+texture = ExtResource("2_wkkvo")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_v7mve")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 75.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

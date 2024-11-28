@@ -77,3 +77,12 @@ func reverse_transition(direction : String):
 	$ReverseTransitionRect.show()
 	$ReverseTransitionRect/AnimationPlayer.play('Fade')
 	traveling.emit(direction)
+
+
+func _on_statue_finished() -> void:
+	''' Play end game cinematic '''
+	await get_tree().create_timer(5).timeout
+	$TransitionRect.show()
+	$TransitionRect/AnimationPlayer.play('Fade')
+	get_tree().change_scene_to_file("res://Scenes/credits.tscn")
+	

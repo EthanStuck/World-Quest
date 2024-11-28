@@ -5,6 +5,7 @@ signal west
 signal east
 signal south
 signal north
+signal finished
 
 
 func _ready():
@@ -38,6 +39,8 @@ func _process(delta):
 		$FullSprite.show()
 		$CompletionSound.play()
 		$Statue_comp_animation.show()
+		$Statue_comp_animation.play()
+		finished.emit(global_position)
 
 
 func add_fragment():
