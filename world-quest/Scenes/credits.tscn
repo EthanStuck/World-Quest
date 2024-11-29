@@ -8,7 +8,7 @@
 script = ExtResource("1_nlhh6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(200, 550)
+position = Vector2(200, 510)
 texture = ExtResource("2_wkkvo")
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]

@@ -9,12 +9,12 @@ func _ready():
 	
 func _process(delta):
 	if not end:
-		$Sprite2D.position.y -= 10 * delta
+		$Sprite2D.position.y -= 9 * delta
 	if $Sprite2D.position.y <= -100:
 		end = true
 	if Input.is_action_just_pressed("menu") or Input.is_action_just_pressed("strike") or Input.is_action_just_pressed("interact"):
-		get_tree().change_scene_to_file("res://Scenes/town.tscn")
+		get_tree().change_scene_to_file("res://Scenes/end_screen.tscn")
 	
 
 func _on_timer_timeout() -> void:
-	get_tree().change_scene_to_file("res://Scenes/town.tscn")
+	get_tree().change_scene_to_file("res://Scenes/end_screen.tscn")
