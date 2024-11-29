@@ -34,3 +34,5 @@ var town_entered = false # if player has been in the town
 
 
 var at : String # stores where player is coming from
+
+var continued = false # whether player has coninued from completion

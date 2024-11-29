@@ -33,10 +33,6 @@ func _ready():
 	
 
 func _process(delta):
-	print('west:', FragmentHandler.west_added)
-	print('east:', FragmentHandler.east_added)
-	print('south:', FragmentHandler.south_added)
-	print('north:', FragmentHandler.north_added)
 	if Input.is_action_just_pressed('interact'):
 		add_fragment()
 	if FragmentHandler.west_added and FragmentHandler.north_added and FragmentHandler.south_added and FragmentHandler.east_added:
@@ -44,7 +40,8 @@ func _process(delta):
 		$CompletionSound.play()
 		$Statue_comp_animation.show()
 		$Statue_comp_animation.play()
-		finished.emit(global_position)
+		if not FragmentHandler.continued:
+			finished.emit(global_position)
 
 
 func add_fragment():
