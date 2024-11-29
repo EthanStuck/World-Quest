@@ -40,7 +40,8 @@ func _process(delta):
 		$CompletionSound.play()
 		$Statue_comp_animation.show()
 		$Statue_comp_animation.play()
-		if not FragmentHandler.continued:
+		if not FragmentHandler.continued and not FragmentHandler.end_triggered:
+			FragmentHandler.end_triggered = true
 			finished.emit(global_position)
 
 

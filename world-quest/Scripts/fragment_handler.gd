@@ -35,4 +35,5 @@ var town_entered = false # if player has been in the town
 
 var at : String # stores where player is coming from
 
+var end_triggered = false # whether player has triggered end state
 var continued = false # whether player has coninued from completion
