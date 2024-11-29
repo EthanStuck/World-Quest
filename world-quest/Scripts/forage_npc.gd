@@ -71,14 +71,17 @@ func toggle_text():
 	if interactable:
 		if progress == 0 and state == 0:
 			text_bubble1.visible = true
+			$Speech.play()
 			progress = 1
 		elif progress == 1 and state == 0:
 			text_bubble2.visible = true
 			text_bubble1.visible = false
+			$Speech.play()
 			progress = 2
 		elif progress == 2 and state == 0:
 			text_bubble2.visible = false
 			text_bubble3.visible = true
+			$Speech.play()
 			if not given:
 				give_item.emit()
 				given = true
@@ -86,16 +89,19 @@ func toggle_text():
 		elif progress == 3 and state == 0:
 			text_bubble3.visible = false
 			text_bubble4.visible = true
+			$Speech.play()
 			progress = 4
 		elif progress == 4 and state == 0:
 			text_bubble4.visible = false
 			text_bubble5.visible = true
+			$Speech.play()
 			progress = 5
 		elif progress == 5 and state == 0:
 			text_bubble5.visible = false
 			progress = 0
 		elif progress == 6 and state == 1:
 			text_bubble6.visible = true
+			$Speech.play()
 			progress = 7
 		elif progress == 7 and state == 1:
 			text_bubble6.visible = false
@@ -103,6 +109,7 @@ func toggle_text():
 		elif progress == 8 and state == 2:
 			text_bubble7.visible = false
 			text_bubble8.visible = true
+			$Speech.play()
 			if not given:
 				give_item.emit()
 				given = true
@@ -120,6 +127,7 @@ func confused():
 	camera_control.emit(global_position + Vector2(30, 0))
 	state = 2
 	text_bubble7.visible = true
+	$Speech.play()
 	progress = 8
 	await get_tree().create_timer(4).timeout
 	camera_end.emit()

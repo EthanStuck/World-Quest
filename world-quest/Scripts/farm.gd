@@ -10,6 +10,7 @@ signal first_weeded
 signal camera_control
 signal camera_end
 signal first_placed
+signal completed
 
 func _ready():
 	FragmentHandler.at = 'farming'
@@ -32,6 +33,7 @@ func _ready():
 		camera_control.emit(fragment_instance.global_position)
 		await get_tree().create_timer(3).timeout
 		camera_end.emit()
+		completed.emit()
 	
 	# save/load pumpkin positions
 	if not FarmSave.entered:
@@ -89,6 +91,7 @@ func _on_pumpkin_plot_pumpkin_added() -> void:
 		camera_control.emit(fragment_instance.global_position)
 		await get_tree().create_timer(3).timeout
 		camera_end.emit()
+		completed.emit()
 
 func on_collected(item):
 	''' send signal to player that item was collected '''

@@ -5,6 +5,7 @@ var forage_scene = preload("res://Scenes/forage.tscn").instantiate()
 signal traveling
 signal collected
 signal hey
+signal camera_control
 
 func _ready():
 	#$Tutorial.hide()
@@ -79,8 +80,9 @@ func reverse_transition(direction : String):
 	traveling.emit(direction)
 
 
-func _on_statue_finished() -> void:
+func _on_statue_finished(location) -> void:
 	''' Play end game cinematic '''
+	camera_control.emit(location)
 	await get_tree().create_timer(5).timeout
 	$TransitionRect.show()
 	$TransitionRect/AnimationPlayer.play('Fade')

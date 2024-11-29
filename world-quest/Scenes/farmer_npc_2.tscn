@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b15ykjqpixre"]
+[gd_scene load_steps=11 format=3 uid="uid://b15ykjqpixre"]
 
 [ext_resource type="Texture2D" uid="uid://8mf3747dj6f7" path="res://Art/Characters/NPCs/NPC1.png" id="1_cpl2r"]
 [ext_resource type="Script" path="res://Scripts/farmer_npc_2.gd" id="1_rbv20"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://8viiykyl7sll" path="res://Art/Characters/NPCs/2.png" id="2_fqp62"]
 [ext_resource type="Texture2D" uid="uid://77yawspygx7r" path="res://Art/Characters/NPCs/NPC3.png" id="3_e6a32"]
 [ext_resource type="AudioStream" uid="uid://dtkorbkwllxfm" path="res://Sounds/Effects/Bump.mp3" id="6_dgtx4"]
+[ext_resource type="AudioStream" uid="uid://ckvfnsdxxmpfl" path="res://Sounds/Effects/HighSpeech.mp3" id="7_grasa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_li88w"]
 animations = [{
@@ -379,6 +380,11 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Press 'E' to Talk"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Speech" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_grasa")
+volume_db = -8.0
+pitch_scale = 1.5
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

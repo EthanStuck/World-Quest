@@ -33,13 +33,16 @@ func intro_player():
 	''' give player sword if they need it/ tell them to use it '''
 	camera_control.emit(global_position + Vector2(30, 0))
 	text_bubble2.visible = true
+	$Speech.play()
 	await get_tree().create_timer(2).timeout
 	spirit_cam.emit(global_position + Vector2(30, 0))
 	text_bubble2.visible = false
 	if FragmentHandler.sword_pickup:
 		text_bubble3.visible = true
+		$Speech.play()
 	else:
 		text_bubble4.visible = true
+		$Speech.play()
 		await get_tree().create_timer(.5).timeout
 		sword_spawn.emit(global_position + Vector2(0, 50))
 	await get_tree().create_timer(3.5).timeout
@@ -64,5 +67,6 @@ func toggle_text():
 	if interactable:
 		if not text_bubble.visible:
 			text_bubble.visible = true
+			$Speech.play()
 		else:
 			text_bubble.visible = false

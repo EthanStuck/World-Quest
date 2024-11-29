@@ -34,9 +34,11 @@ func toggle_text():
 		if progress == -1:
 			text_bubble1.visible = false
 			text_bubble2.visible = true
+			$Speech.play()
 			progress = 1
 		elif progress == 0:
 			text_bubble2.visible = true
+			$Speech.play()
 			progress = 1
 		else:
 			text_bubble2.visible = false

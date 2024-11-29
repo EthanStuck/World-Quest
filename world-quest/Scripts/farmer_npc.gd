@@ -45,21 +45,26 @@ func toggle_text():
 		if progress == -1:
 			text_bubble1.visible = false
 			text_bubble2.visible = true
+			$Speech.play()
 			progress = 1
 		elif progress == 0:
 			text_bubble2.visible = true
+			$Speech.play()
 			progress = 1
 		elif progress == 1:
 			text_bubble2.visible = false
 			text_bubble3.visible = true
+			$Speech.play()
 			progress = 2
 		elif progress == 2:
 			text_bubble3.visible = false
 			text_bubble4.visible = true
+			$Speech.play()
 			progress = 3
 		elif progress == 3:
 			text_bubble4.visible = false
 			text_bubble5.visible = true
+			$Speech.play()
 			progress = 4
 		else:
 			text_bubble5.visible = false
@@ -70,6 +75,7 @@ func intro() -> void:
 	''' Call player to the npc '''
 	camera_control.emit(global_position + Vector2(30, 0))
 	text_bubble1.visible = true
+	$Speech.play()
 	await get_tree().create_timer(5).timeout
 	text_bubble1.visible = false
 	await get_tree().create_timer(.5).timeout

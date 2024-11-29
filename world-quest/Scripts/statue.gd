@@ -33,6 +33,10 @@ func _ready():
 	
 
 func _process(delta):
+	print('west:', FragmentHandler.west_added)
+	print('east:', FragmentHandler.east_added)
+	print('south:', FragmentHandler.south_added)
+	print('north:', FragmentHandler.north_added)
 	if Input.is_action_just_pressed('interact'):
 		add_fragment()
 	if FragmentHandler.west_added and FragmentHandler.north_added and FragmentHandler.south_added and FragmentHandler.east_added:
@@ -50,34 +54,61 @@ func add_fragment():
 		
 		if FragmentHandler.west_fragment:
 			west.emit($'Fragment-TL'.global_position)
-			await get_tree().create_timer(4).timeout
-			$'Fragment-TL'.show()
-			$CompletionSound.play()
-			FragmentHandler.west_fragment = false
+			if not FragmentHandler.north_fragment and not FragmentHandler.south_fragment and not FragmentHandler.east_fragment:
+				await get_tree().create_timer(4).timeout
+				$'Fragment-TL'.show()
+				$CompletionSound.play()
+				FragmentHandler.west_fragment = false
 			FragmentHandler.west_complete = true
 			FragmentHandler.west_added = true
 			
 		if FragmentHandler.north_fragment:
 			north.emit($'Fragment-TR'.global_position)
-			await get_tree().create_timer(4).timeout
-			$'Fragment-TR'.show()
-			$CompletionSound.play()
-			FragmentHandler.north_fragment = false
+			if not FragmentHandler.south_fragment and not FragmentHandler.east_fragment:
+				await get_tree().create_timer(4).timeout
+				$'Fragment-TR'.show()
+				$CompletionSound.play()
+				if FragmentHandler.west_fragment:
+					$'Fragment-TL'.show()
+					$CompletionSound.play()
+					FragmentHandler.west_fragment = false
+				FragmentHandler.north_fragment = false
 			FragmentHandler.north_complete = true
 			FragmentHandler.north_added = true
 			
 		if FragmentHandler.south_fragment:
 			south.emit($'Fragment-BL'.global_position)
-			await get_tree().create_timer(4).timeout
-			$'Fragment-BL'.show()
-			$CompletionSound.play()
-			FragmentHandler.south_fragment = false
+			if not FragmentHandler.east_fragment:
+				await get_tree().create_timer(4).timeout
+				$'Fragment-BL'.show()
+				$CompletionSound.play()
+				FragmentHandler.south_fragment = false
+				if FragmentHandler.west_fragment:
+					$'Fragment-TL'.show()
+					$CompletionSound.play()
+					FragmentHandler.west_fragment = false
+				if FragmentHandler.north_fragment:
+					$'Fragment-TR'.show()
+					$CompletionSound.play()
+					FragmentHandler.north_fragment = false
 			FragmentHandler.south_complete = true
 			FragmentHandler.south_added = true
 			
 		if FragmentHandler.east_fragment:
 			east.emit($'Fragment-BR'.global_position)
 			await get_tree().create_timer(4).timeout
+			if FragmentHandler.west_fragment:
+				$'Fragment-TL'.show()
+				$CompletionSound.play()
+				FragmentHandler.west_fragment = false
+			if FragmentHandler.north_fragment:
+				$'Fragment-TR'.show()
+				$CompletionSound.play()
+				FragmentHandler.north_fragment = false
+			if FragmentHandler.south_fragment:
+				$'Fragment-BL'.show()
+				$CompletionSound.play()
+				FragmentHandler.south_fragment = false
 			$'Fragment-BR'.show()
 			$CompletionSound.play()
 			FragmentHandler.east_fragment = false

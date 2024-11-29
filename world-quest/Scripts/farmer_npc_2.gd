@@ -98,11 +98,13 @@ func intro():
 	await get_tree().create_timer(1).timeout
 	camera_control.emit(global_position - Vector2(30,0))
 	text_bubble_intro.visible = true
+	$Speech.play()
 	await get_tree().create_timer(3).timeout
 	shake.emit()
 	$FallSound.play()
 	text_bubble_intro.visible = false
 	text_bubble_intro2.visible = true
+	$Speech.play()
 	$Sprites.play('sit')
 	position.x -= 40
 	camera_control.emit(global_position - Vector2(30,0))
@@ -112,6 +114,7 @@ func intro():
 	await get_tree().create_timer(1).timeout
 	camera_end.emit()
 	text_bubble1.visible = true
+	$Speech.play()
 	
 
 func weed_pulled():
@@ -126,6 +129,7 @@ func weed_pulled():
 	text_bubble4.visible = false
 	progress = 6
 	text_bubble5.visible = true
+	$Speech.play()
 	state = 1
 	await get_tree().create_timer(2).timeout
 	if not bucket_spawned:
@@ -141,11 +145,13 @@ func watered():
 	progress = 8
 	text_bubble6.visible = true
 	text_bubble5.visible = false
+	$Speech.play()
 	state = 2
 	await get_tree().create_timer(4).timeout
 	progress = 9
 	text_bubble6.visible = false
 	text_bubble7.visible = true
+	$Speech.play()
 	await get_tree().create_timer(2).timeout
 	if not gates_open:
 		var gate_position = get_parent().get_parent().get_node('Fences').get_node('FenceSide').global_position
@@ -176,60 +182,71 @@ func completed():
 	''' triggered when player brings all pumpkins to the area '''
 	text_bubble6.visible = false
 	text_bubble7.visible = false
-	progress = 11
-	text_bubble8.visible = true
+	progress = 10
+	#text_bubble8.visible = true
+	#$Speech.play()
 	state = 3
 	
 func toggle_text():
 	if interactable:
 		if progress == 0:
 			text_bubble1.visible = true
+			$Speech.play()
 			progress = 1
 		elif progress == 1:
 			text_bubble1.visible = false
 			text_bubble2.visible = true
+			$Speech.play()
 			progress = 2
 		elif progress == 2:
 			text_bubble2.visible = false
 			text_bubble3.visible = true
+			$Speech.play()
 			progress = 3
 		elif progress == 3:
 			text_bubble3.visible = false
 			text_bubble4.visible = true
+			$Speech.play()
 			progress = 4
 		elif progress == 4:
 			text_bubble4.visible = false
 			progress = 0
 		elif progress == 5:
 			text_bubble5.visible = true
+			$Speech.play()
 			progress = 6
 		elif progress == 6:
 			text_bubble5.visible = false
 			progress = 5
 		elif progress == 7:
 			text_bubble6.visible = true
+			$Speech.play()
 			progress = 8
 		elif progress == 8:
 			text_bubble6.visible = false
 			text_bubble7.visible = true
+			$Speech.play()
 			progress = 9
 		elif progress == 9:
 			text_bubble7.visible = false
 			progress = 7
 		elif progress == 10:
 			text_bubble8.visible = true
+			$Speech.play()
 			progress = 11
 		elif progress == 11:
 			text_bubble8.visible = false
 			progress = 10
 		elif progress == 12:
 			text_bubble9.visible = true
+			$Speech.play()
 			progress = 13
 		elif progress == 13:
 			text_bubble9.visible = false
 			progress = 12
 		elif progress == 14:
 			text_bubble10.visible = true
+			$Speech.play()
 			progress = 15
 		elif progress == 15:
 			text_bubble10.visible = false

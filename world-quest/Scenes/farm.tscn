@@ -675,6 +675,7 @@ position = Vector2(818, 849)
 
 [connection signal="camera_control" from="." to="Player" method="camera_controlled"]
 [connection signal="camera_end" from="." to="Player" method="camera_control_end"]
+[connection signal="completed" from="." to="NPCs/FarmerNPC2" method="completed"]
 [connection signal="first_placed" from="." to="NPCs/FarmerNPC2" method="first_placed"]
 [connection signal="first_watered" from="." to="NPCs/FarmerNPC2" method="watered"]
 [connection signal="first_weeded" from="." to="NPCs/FarmerNPC2" method="weed_pulled"]

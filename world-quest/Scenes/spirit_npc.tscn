@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ikum73r3r0ct"]
+[gd_scene load_steps=11 format=3 uid="uid://ikum73r3r0ct"]
 
 [ext_resource type="Script" path="res://Scripts/spirit_npc.gd" id="1_mdu2n"]
 [ext_resource type="Texture2D" uid="uid://baogv37uwiac5" path="res://Art/Characters/NPCs/Ghost NPC1.png" id="2_47oiq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cuiy3d52nt6qk" path="res://Art/Characters/NPCs/Ghost NPC3.png" id="4_qhvnn"]
 [ext_resource type="Texture2D" uid="uid://c1mk7l0prvcun" path="res://Art/Characters/NPCs/Ghost NPC4.png" id="5_y7p82"]
 [ext_resource type="Texture2D" uid="uid://8viiykyl7sll" path="res://Art/Characters/NPCs/2.png" id="6_cufvs"]
+[ext_resource type="AudioStream" uid="uid://c1gi8441cr1uq" path="res://Sounds/Effects/LowSpeech.mp3" id="7_j3u47"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5b76r"]
 animations = [{
@@ -207,6 +208,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Press 'E' to Talk"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Speech" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_j3u47")
+volume_db = -8.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
