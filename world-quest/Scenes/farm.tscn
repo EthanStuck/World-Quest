@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://b6j0228ya77aj"]
+[gd_scene load_steps=33 format=4 uid="uid://b6j0228ya77aj"]
 
 [ext_resource type="Texture2D" uid="uid://bkmkjtn4exo32" path="res://Art/Environment/Town/Town Ground.png" id="1_anppi"]
 [ext_resource type="Script" path="res://Scripts/farm.gd" id="1_w7msv"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://d1lyddd2cq82o" path="res://Art/Environment/Farm/Farm Plot Big Fence Side1.png" id="16_23iob"]
 [ext_resource type="Texture2D" uid="uid://dfgtuv5f25v0m" path="res://Art/Environment/Farm/Farm Plot Big Fence Side4.png" id="16_iuwyt"]
 [ext_resource type="Texture2D" uid="uid://3hykx3dtpmob" path="res://Art/Environment/Farm/Farm Plot Big Fence Side3.png" id="17_ycfw5"]
+[ext_resource type="AudioStream" uid="uid://t4ryq6nkg2ad" path="res://Sounds/moonlightcoffee.mp3" id="18_0idde"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igecs"]
 size = Vector2(236.5, 290)
@@ -673,6 +674,9 @@ position = Vector2(651, 840)
 
 [node name="PumpkinPos6" type="Marker2D" parent="PumpkinMarkers"]
 position = Vector2(818, 849)
+
+[node name="TransitionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_0idde")
 
 [connection signal="camera_control" from="." to="Player" method="camera_controlled"]
 [connection signal="camera_end" from="." to="Player" method="camera_control_end"]

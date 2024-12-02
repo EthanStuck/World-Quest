@@ -66,7 +66,10 @@ func _ready():
 func _on_travel_back_area_entered(area: Area2D) -> void:
 	''' Travel back to town '''
 	transition('west')
+	$Music.stop()
+	$TransitionSound.play()
 	await get_tree().create_timer(1).timeout
+	$TransitionSound.stop()
 	get_tree().change_scene_to_file("res://Scenes/town.tscn")
 
 

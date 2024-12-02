@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://dafbxhoth4wqr"]
+[gd_scene load_steps=30 format=4 uid="uid://dafbxhoth4wqr"]
 
 [ext_resource type="Script" path="res://Scripts/fishing.gd" id="1_cr84t"]
 [ext_resource type="Texture2D" uid="uid://d18subsyjrqkj" path="res://Art/Environment/Fishing/Fishing_background.png" id="2_18pfa"]
@@ -11,7 +11,8 @@
 [ext_resource type="AudioStream" uid="uid://djadv4fp0fapj" path="res://Sounds/calm-pond-bright-wind-in-reeds-geese-water-ttp-190401-55746.mp3" id="6_n3ujv"]
 [ext_resource type="PackedScene" uid="uid://e12gx1qyncbd" path="res://Scenes/house_1.tscn" id="9_8oltf"]
 [ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="10_17nus"]
-[ext_resource type="PackedScene" uid="uid://nw46grvonif5" path="res://Scenes/duck.tscn" id="12_2vv5c"]
+[ext_resource type="PackedScene" path="res://Scenes/duck.tscn" id="12_2vv5c"]
+[ext_resource type="AudioStream" uid="uid://t4ryq6nkg2ad" path="res://Sounds/moonlightcoffee.mp3" id="13_ql52i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p3utu"]
 animations = [{
@@ -367,6 +368,9 @@ position = Vector2(506, 538)
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamMP3_wsse7")
 autoplay = true
+
+[node name="TransitionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_ql52i")
 
 [connection signal="camera_control" from="." to="Player" method="camera_controlled"]
 [connection signal="camera_end" from="." to="Player" method="camera_control_end"]

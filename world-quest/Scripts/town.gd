@@ -47,25 +47,37 @@ func on_collected(item):
 func _on_to_foraging_area_entered(area: Area2D) -> void:
 	''' Send player to foraging scene '''
 	transition('south')
+	$Music.stop()
+	$TransitionSound.play()
 	await get_tree().create_timer(1).timeout
+	$TransitionSound.stop()
 	get_tree().change_scene_to_file("res://Scenes/tutorial_forage.tscn")
 
 func _on_to_fishing_area_entered(area: Area2D) -> void:
 	''' Send player to fishing scene '''
 	transition('north')
+	$Music.stop()
+	$TransitionSound.play()
 	await get_tree().create_timer(1).timeout
+	$TransitionSound.stop()
 	get_tree().change_scene_to_file("res://Scenes/tutorial_fish.tscn")
 
 func _on_to_fighting_area_entered(area: Area2D) -> void:
 	''' Send player to fighting scene '''
 	transition('west')
+	$Music.stop()
+	$TransitionSound.play()
 	await get_tree().create_timer(1).timeout
+	$TransitionSound.stop()
 	get_tree().change_scene_to_file("res://Scenes/tutorial_fight.tscn")
 
 func _on_to_farming_area_entered(area: Area2D) -> void:
 	''' Send player to farming scene '''
 	transition('east')
+	$Music.stop()
+	$TransitionSound.play()
 	await get_tree().create_timer(1).timeout
+	$TransitionSound.stop()
 	get_tree().change_scene_to_file("res://Scenes/tutorial_farm.tscn")
 
 
