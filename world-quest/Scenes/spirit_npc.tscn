@@ -189,6 +189,28 @@ text = "
 You seem to have solved the riddle. Well done."
 tab_size = 3
 
+[node name="TextureRect7" type="TextureRect" parent="."]
+visible = false
+z_index = 2000
+offset_left = -225.0
+offset_top = -7.0
+offset_right = -20.0
+offset_bottom = 87.0
+texture = ExtResource("6_cufvs")
+flip_h = true
+flip_v = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect7"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 183.0
+offset_bottom = 78.0
+theme_override_font_sizes/normal_font_size = 10
+text = "Come if you wish to know where I have hidden the fragment."
+tab_size = 3
+
 [node name="InteractLabel" type="Label" parent="."]
 z_index = 1000
 anchors_preset = 8

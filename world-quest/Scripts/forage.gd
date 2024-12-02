@@ -10,6 +10,7 @@ var given # if NPC gave his piece
 signal confused
 signal camera_control
 signal camera_end
+signal spirit_intro
 
 func _ready():
 	FragmentHandler.at = 'foraging'
@@ -219,7 +220,8 @@ func intro():
 	await get_tree().create_timer(1.01).timeout
 	camera_control.emit($CutsceneLocation.position)
 	await get_tree().create_timer(2).timeout
-	camera_end.emit()
+	spirit_intro.emit()
+	#camera_end.emit()
 
 
 # save which rocks have been collected

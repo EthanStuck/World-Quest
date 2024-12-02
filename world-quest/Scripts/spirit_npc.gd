@@ -6,9 +6,12 @@ extends StaticBody2D
 @onready var text_bubble4 = $TextureRect4
 @onready var text_bubble5 = $TextureRect5
 @onready var text_bubble6 = $TextureRect6
+@onready var text_bubble7 = $TextureRect7
 var interactable = false
 var progress = 0
 var state = 0
+signal camera_control
+signal camera_end
 
 func _ready():
 	$AnimatedSprite2D.play('idle')
@@ -19,6 +22,7 @@ func _ready():
 	text_bubble4.visible = false
 	text_bubble5.visible = false
 	text_bubble6.visible = false
+	text_bubble7.visible = false
 	$InteractLabel.visible = false
 
 func _process(delta):
@@ -29,6 +33,15 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		$InteractLabel.visible = true
 		interactable = true
+
+func intro():
+	''' introduce player to area '''
+	text_bubble7.visible = true
+	camera_control.emit(global_position - Vector2(30,0))
+	$Speech.play()
+	await get_tree().create_timer(2).timeout
+	camera_end.emit()
+	text_bubble7.visible = false
 
 func solved():
 	''' player has earned fragment '''
