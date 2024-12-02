@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://dafbxhoth4wqr"]
+[gd_scene load_steps=29 format=4 uid="uid://dafbxhoth4wqr"]
 
 [ext_resource type="Script" path="res://Scripts/fishing.gd" id="1_cr84t"]
 [ext_resource type="Texture2D" uid="uid://d18subsyjrqkj" path="res://Art/Environment/Fishing/Fishing_background.png" id="2_18pfa"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://djadv4fp0fapj" path="res://Sounds/calm-pond-bright-wind-in-reeds-geese-water-ttp-190401-55746.mp3" id="6_n3ujv"]
 [ext_resource type="PackedScene" uid="uid://e12gx1qyncbd" path="res://Scenes/house_1.tscn" id="9_8oltf"]
 [ext_resource type="PackedScene" uid="uid://baqskbruw1dyi" path="res://Scenes/tree.tscn" id="10_17nus"]
+[ext_resource type="PackedScene" uid="uid://nw46grvonif5" path="res://Scenes/duck.tscn" id="12_2vv5c"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p3utu"]
 animations = [{
@@ -142,11 +143,27 @@ offset_right = 1243.0
 offset_bottom = 1244.0
 texture = ExtResource("2_18pfa")
 
-[node name="Animated_water" type="AnimatedSprite2D" parent="."]
+[node name="Water_animations" type="Node" parent="."]
+
+[node name="Animated_water" type="AnimatedSprite2D" parent="Water_animations"]
 position = Vector2(479, 269.625)
 scale = Vector2(0.356, 0.515693)
 sprite_frames = SubResource("SpriteFrames_p3utu")
 animation = &"water"
+
+[node name="Animated_water2" type="AnimatedSprite2D" parent="Water_animations"]
+position = Vector2(-12, 235)
+scale = Vector2(0.356, 0.515693)
+sprite_frames = SubResource("SpriteFrames_p3utu")
+animation = &"water"
+flip_v = true
+
+[node name="Animated_water3" type="AnimatedSprite2D" parent="Water_animations"]
+position = Vector2(1050, 253)
+scale = Vector2(0.356, 0.515693)
+sprite_frames = SubResource("SpriteFrames_p3utu")
+animation = &"water"
+flip_v = true
 
 [node name="Player" parent="." instance=ExtResource("2_ynwdu")]
 position = Vector2(495, 864)
@@ -275,6 +292,33 @@ position = Vector2(59, 703)
 
 [node name="Tree15" parent="Trees" instance=ExtResource("10_17nus")]
 position = Vector2(198, 543)
+
+[node name="Ducks" type="Node" parent="."]
+
+[node name="Duck" parent="Ducks" instance=ExtResource("12_2vv5c")]
+z_index = 100
+position = Vector2(335, 337)
+flip_h = true
+
+[node name="Duck" parent="Ducks/Duck" instance=ExtResource("12_2vv5c")]
+position = Vector2(666, -25)
+
+[node name="Duck2" parent="Ducks" instance=ExtResource("12_2vv5c")]
+z_index = 100
+position = Vector2(688, 392)
+
+[node name="Duck3" parent="Ducks" instance=ExtResource("12_2vv5c")]
+z_index = 100
+position = Vector2(375, 156)
+
+[node name="Duck4" parent="Ducks" instance=ExtResource("12_2vv5c")]
+z_index = 100
+position = Vector2(714, 272)
+flip_h = true
+
+[node name="Duck5" parent="Ducks" instance=ExtResource("12_2vv5c")]
+z_index = 100
+position = Vector2(-112, 353)
 
 [node name="TransitionRect" type="TextureRect" parent="."]
 visible = false

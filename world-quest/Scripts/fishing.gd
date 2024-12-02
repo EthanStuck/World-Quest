@@ -27,7 +27,9 @@ signal camera_end
 func _ready() -> void:
 	# playing music and water animation
 	$PondSounds.play()
-	$Animated_water.play()
+	$Water_animations/Animated_water.play()
+	$Water_animations/Animated_water2.play()
+	$Water_animations/Animated_water3.play()
 	FragmentHandler.at = 'fishing'
 	reverse_transition('north')
 	fish_caught = FishSave.num_fish
