@@ -135,6 +135,7 @@ func weed_pulled():
 	if not bucket_spawned:
 		bucket_spawned = true
 		bucket_spawn.emit()
+		$PickupSound.play()
 	await get_tree().create_timer(2).timeout
 	camera_end.emit()
 	

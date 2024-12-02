@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b15ykjqpixre"]
+[gd_scene load_steps=12 format=3 uid="uid://b15ykjqpixre"]
 
 [ext_resource type="Texture2D" uid="uid://8mf3747dj6f7" path="res://Art/Characters/NPCs/NPC1.png" id="1_cpl2r"]
 [ext_resource type="Script" path="res://Scripts/farmer_npc_2.gd" id="1_rbv20"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://77yawspygx7r" path="res://Art/Characters/NPCs/NPC3.png" id="3_e6a32"]
 [ext_resource type="AudioStream" uid="uid://dtkorbkwllxfm" path="res://Sounds/Effects/Bump.mp3" id="6_dgtx4"]
 [ext_resource type="AudioStream" uid="uid://ckvfnsdxxmpfl" path="res://Sounds/Effects/HighSpeech.mp3" id="7_grasa"]
+[ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="8_24br2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_li88w"]
 animations = [{
@@ -385,6 +386,10 @@ vertical_alignment = 1
 stream = ExtResource("7_grasa")
 volume_db = -8.0
 pitch_scale = 1.5
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_24br2")
+pitch_scale = 3.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

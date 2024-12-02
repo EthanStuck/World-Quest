@@ -42,6 +42,26 @@ func _ready():
 		$Phantoms/forage_phantom28.global_position = $PhantomDestinations/Marker28.global_position
 		$Phantoms/forage_phantom30.global_position = $PhantomDestinations/Marker30.global_position
 		$Phantoms/forage_phantom32.global_position = $PhantomDestinations/Marker32.global_position
+		$Phantoms/forage_phantom4.destination = $PhantomDestinations/Marker4.global_position
+		$Phantoms/forage_phantom6.destination = $PhantomDestinations/Marker6.global_position
+		$Phantoms/forage_phantom8.destination = $PhantomDestinations/Marker8.global_position
+		$Phantoms/forage_phantom9.destination = $PhantomDestinations/Marker9.global_position
+		$Phantoms/forage_phantom10.destination = $PhantomDestinations/Marker10.global_position
+		$Phantoms/forage_phantom12.destination = $PhantomDestinations/Marker12.global_position
+		$Phantoms/forage_phantom14.destination = $PhantomDestinations/Marker14.global_position
+		$Phantoms/forage_phantom15.destination = $PhantomDestinations/Marker15.global_position
+		$Phantoms/forage_phantom16.destination = $PhantomDestinations/Marker16.global_position
+		$Phantoms/forage_phantom18.destination = $PhantomDestinations/Marker18.global_position
+		$Phantoms/forage_phantom20.destination = $PhantomDestinations/Marker20.global_position
+		$Phantoms/forage_phantom21.destination = $PhantomDestinations/Marker21.global_position
+		$Phantoms/forage_phantom22.destination = $PhantomDestinations/Marker22.global_position
+		$Phantoms/forage_phantom24.destination = $PhantomDestinations/Marker24.global_position
+		$Phantoms/forage_phantom25.destination = $PhantomDestinations/Marker25.global_position
+		$Phantoms/forage_phantom26.destination = $PhantomDestinations/Marker26.global_position
+		$Phantoms/forage_phantom27.destination = $PhantomDestinations/Marker27.global_position
+		$Phantoms/forage_phantom28.destination = $PhantomDestinations/Marker28.global_position
+		$Phantoms/forage_phantom30.destination = $PhantomDestinations/Marker30.global_position
+		$Phantoms/forage_phantom32.destination = $PhantomDestinations/Marker32.global_position
 
 	
 	if FragmentHandler.south_spawned:
@@ -83,12 +103,12 @@ func _ready():
 
 func _on_travel_back_area_entered(area: Area2D) -> void:
 	''' Travel back to town only if all rocks are collected to avoid bug '''
-	if total_pickup == 11:
-		transition('north')
-		await get_tree().create_timer(1).timeout
-		get_tree().change_scene_to_file("res://Scenes/town.tscn")
-	else:
-		pass
+	#if total_pickup == 11:
+	transition('north')
+	await get_tree().create_timer(1).timeout
+	get_tree().change_scene_to_file("res://Scenes/town.tscn")
+	#else:
+	#	pass
 
 func on_fragment_collected(item):
 	''' send signal to player that fragment was collected '''

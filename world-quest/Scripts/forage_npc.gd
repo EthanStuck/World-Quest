@@ -84,6 +84,7 @@ func toggle_text():
 			$Speech.play()
 			if not given:
 				give_item.emit()
+				$PickupSound.play()
 				given = true
 			progress = 3
 		elif progress == 3 and state == 0:
@@ -112,6 +113,7 @@ func toggle_text():
 			$Speech.play()
 			if not given:
 				give_item.emit()
+				$PickupSound.play()
 				given = true
 			progress = 9
 		elif progress == 9 and state == 2:

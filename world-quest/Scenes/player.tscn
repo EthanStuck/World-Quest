@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://b4en6qsd4qi5m"]
+[gd_scene load_steps=102 format=3 uid="uid://b4en6qsd4qi5m"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_a5bgk"]
 [ext_resource type="Texture2D" uid="uid://pom1tmjukm2t" path="res://Art/Characters/main character/walk_up1.png" id="2_8qcdx"]
@@ -91,6 +91,8 @@
 [ext_resource type="AudioStream" uid="uid://dtkorbkwllxfm" path="res://Sounds/Effects/Bump.mp3" id="86_c51wl"]
 [ext_resource type="AudioStream" uid="uid://bbplj6g0esl04" path="res://Sounds/Collect1.mp3" id="87_kstsr"]
 [ext_resource type="AudioStream" uid="uid://cvei6pdinkgdh" path="res://Sounds/Pick up song.mp3" id="89_67mwr"]
+[ext_resource type="AudioStream" uid="uid://b6vbnq3icmv0c" path="res://Sounds/Effects/watering_sound.mp3" id="92_1cidf"]
+[ext_resource type="AudioStream" uid="uid://4hfjnfgsh2og" path="res://Sounds/Effects/deweed_sound.mp3" id="93_yb5bd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_85u5v"]
 animations = [{
@@ -632,7 +634,6 @@ wait_time = 3.0
 one_shot = true
 
 [node name="InteractArea" type="Area2D" parent="." groups=["player_zone"]]
-visible = false
 collision_layer = 3
 collision_mask = 129
 
@@ -781,6 +782,12 @@ position = Vector2(-41, -37)
 
 [node name="FragmentPosRight" type="Marker2D" parent="."]
 position = Vector2(41, -37)
+
+[node name="WateringSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("92_1cidf")
+
+[node name="DeweedingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("93_yb5bd")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="HealthPickupBox" to="." method="_on_health_pickup_box_area_entered"]

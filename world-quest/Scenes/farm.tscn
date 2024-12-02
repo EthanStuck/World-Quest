@@ -469,7 +469,8 @@ position = Vector2(1163, -88)
 [node name="Weed36" parent="Weeds" instance=ExtResource("6_2q7pf")]
 position = Vector2(1213, -88)
 
-[node name="Carrots" type="Node" parent="."]
+[node name="Carrots" type="Node2D" parent="."]
+visible = false
 
 [node name="CarrotEarthed1" parent="Carrots" instance=ExtResource("6_wgft4")]
 position = Vector2(1180, 1018)

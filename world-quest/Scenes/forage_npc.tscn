@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2yls8bw43bs0"]
+[gd_scene load_steps=8 format=3 uid="uid://b2yls8bw43bs0"]
 
 [ext_resource type="Script" path="res://Scripts/forage_npc.gd" id="1_743ij"]
 [ext_resource type="Texture2D" uid="uid://d0k4vibananc8" path="res://Art/Characters/NPCs/Old Man.png" id="2_s1y8b"]
 [ext_resource type="Texture2D" uid="uid://8viiykyl7sll" path="res://Art/Characters/NPCs/2.png" id="3_t4awp"]
 [ext_resource type="AudioStream" uid="uid://c1gi8441cr1uq" path="res://Sounds/Effects/LowSpeech.mp3" id="4_nndi1"]
+[ext_resource type="AudioStream" uid="uid://fchyyxjqruwu" path="res://Sounds/Effects/ExPickupSound.mp3" id="5_t5ekc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_it4hd"]
 size = Vector2(26, 7)
@@ -213,6 +214,10 @@ vertical_alignment = 1
 stream = ExtResource("4_nndi1")
 volume_db = -8.0
 pitch_scale = 1.5
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_t5ekc")
+pitch_scale = 3.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

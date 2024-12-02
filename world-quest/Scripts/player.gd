@@ -60,6 +60,7 @@ func _ready():
 	
 func _process(delta: float):
 	''' continuous processes '''
+	#print($InteractArea.)
 	if camera_control:
 		interacting = true
 		$Animations.stop()
@@ -170,7 +171,8 @@ func move(delta):
 	if velocity.length() > 0:
 		$Animations.play()
 		velocity = velocity.normalized() * speed
-		foot_step_sound()
+		if not carrying:
+			foot_step_sound()
 		
 	
 	else:
@@ -346,12 +348,15 @@ func apply_shake():
 func apply_pumpkin_shake():
 	''' activate camera shake for stepping with pumpkin '''
 	if not pumpkin_shake:
+		foot_step = true
 		pumpkin_shake = true
 		shake_strength = noise_shake_strength
 		$FallSound.play()
 		$FootStep.play()
+		$FootStep.pitch_scale = randf_range(.95, 1.05)
 		await get_tree().create_timer(.6667).timeout
 		pumpkin_shake = false
+		foot_step = false
 
 func deweed(delta):
 	''' remove weeds from plant '''
@@ -370,6 +375,7 @@ func deweed(delta):
 	elif facing == 'left':
 		$Animations.play('deweed_left')
 		await get_tree().create_timer(2).timeout
+		$DeweedingSound.play()
 		apply_shake()
 		position += knockback_direction * 20
 	await get_tree().create_timer(.25).timeout
@@ -393,6 +399,7 @@ func water():
 	#$InteractArea.set_collision_mask_value(1, false)
 	if FragmentHandler.bucket_collected:
 		interacting = true
+		$WateringSound.play(1)
 		var prev_anim = $Animations.animation
 		$Animations.stop()
 		if facing == 'right':
@@ -403,6 +410,7 @@ func water():
 		$Animations.play(prev_anim)
 		water_range = false
 		interacting = false
+		$WateringSound.stop()
 		#$InteractArea.set_collision_layer_value(1, true)
 		#$InteractArea.set_collision_mask_value(1, true)
 	

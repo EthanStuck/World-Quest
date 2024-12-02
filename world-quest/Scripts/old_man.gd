@@ -37,6 +37,7 @@ func intro_player():
 	await get_tree().create_timer(2).timeout
 	spirit_cam.emit(global_position + Vector2(30, 0))
 	text_bubble2.visible = false
+	await get_tree().create_timer(1.5).timeout
 	if FragmentHandler.sword_pickup:
 		text_bubble3.visible = true
 		$Speech.play()
@@ -45,7 +46,8 @@ func intro_player():
 		$Speech.play()
 		await get_tree().create_timer(.5).timeout
 		sword_spawn.emit(global_position + Vector2(0, 50))
-	await get_tree().create_timer(3.5).timeout
+		$PickupSound.play()
+	await get_tree().create_timer(2).timeout
 	text_bubble3.visible = false
 	text_bubble4.visible = false
 	camera_end.emit()
